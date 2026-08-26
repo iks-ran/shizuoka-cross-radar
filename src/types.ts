@@ -95,11 +95,13 @@ export interface LatestData {
   assignments: LatestAssignment[]
 }
 
+export type RouteMatchType = 'direct' | 'first_leg' | 'intermediate_overlap'
+
 export interface SearchResult {
   service: TrainService
-  originStop: Stop
-  arrivalStop: Stop
-  transferRequired: boolean
+  segmentStartStop: Stop
+  segmentEndStop: Stop
+  matchType: RouteMatchType
   departureMinutes: number
   arrivalMinutes: number
 }

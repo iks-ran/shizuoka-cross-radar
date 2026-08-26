@@ -7,7 +7,7 @@ The current release combines JR Central's current-day individual-train timetable
 ## Features
 
 - Departure station, destination station, and departure-time search across all 43 corridor stations
-- Direct trains and useful first-leg trains that terminate before the selected destination
+- Direct, first-leg, and intermediate-overlap trains sharing at least one segment of the selected corridor
 - Formation-at-boarding display and conservative cross-seat classification
 - Japanese, English, and Simplified Chinese UI
 - Asia/Tokyo date, time, and freshness logic
@@ -107,6 +107,8 @@ The data workflow runs every 30 minutes and on manual dispatch. Its default `FOR
 The checked-in `timetable.json` contains 43-station current-day services from JR Central and identifies itself with `source.id=jr-central` and `isFixture=false`. The checked-in `latest.json` identifies Yulog with `source.id=yulog` and `isMock=false`. A live timetable is used only on its matching Tokyo service date; an old snapshot is withheld until the updater publishes the new day.
 
 Passenger services that cannot be joined to a published operating diagram remain visible with an unknown formation. Attach and detach stations split operation segments so the formation shown at boarding reflects the applicable part of the trip.
+
+Search results are chronological by departure from the displayed overlap segment. Intermediate-overlap results show the actual shared segment, but the site does not calculate whether the passenger can reach that train or make any onward connection.
 
 Verified formation metadata currently classifies K/L/S as convertible cross seating, V as semi/box cross seating, and W/T/N/U as longitudinal. Unrecognized families, including F in this MVP, stay unknown.
 

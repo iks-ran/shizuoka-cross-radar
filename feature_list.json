@@ -112,6 +112,41 @@
         }
       ],
       "notes": "Yulog mode refreshes the JR Central timetable and Yulog formations together; unmapped diagrams remain unknown."
+    },
+    {
+      "id": "RADAR-002",
+      "priority": 4,
+      "title": "Route-overlap-inclusive search",
+      "behavior": "A passenger sees every upcoming same-direction train that operates over at least one segment of the selected corridor, classified as direct, first leg, or intermediate overlap without implying an unverified connection.",
+      "depends_on": [
+        "RADAR-001",
+        "DATA-002"
+      ],
+      "in_scope": [
+        "Segment-level route overlap matching",
+        "Direct, first-leg, and intermediate-overlap classification",
+        "Usable overlap display and connection-feasibility disclosure"
+      ],
+      "out_of_scope": [
+        "Connecting-train search",
+        "Transfer-time or catchability guarantees"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Domain and UI tests cover all three route classes and one-station touches, then the production build and smoke checks pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on a1cf946",
+          "command": "npm run verify",
+          "result": "Passed: 13 Python tests, static-data validation, 22 frontend tests covering all route classes, segment-only overlap, both directions, and departure-only ordering, then production build and smoke."
+        }
+      ],
+      "notes": "Search remains globally sorted by the departure time at the start of each displayed usable segment."
     }
   ]
 }

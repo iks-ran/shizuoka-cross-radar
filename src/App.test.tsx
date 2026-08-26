@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import { getTokyoDate } from './domain/time'
@@ -94,5 +94,54 @@ describe('App', () => {
     expect(screen.queryByText('Demo data')).not.toBeInTheDocument()
     expect(screen.getByText(/Timetable: JR Central/)).toBeInTheDocument()
     expect(screen.getByText('Formations: Yulog')).toBeInTheDocument()
+  })
+
+  it('labels an intermediate overlap and warns that catchability is not calculated', async () => {
+    const overlapTimetable = {
+      ...timetable,
+      stations: [
+        timetable.stations[0],
+        { id: 'kakegawa', order: 1, name: { ja: '掛川', en: 'Kakegawa', zhCN: '挂川' } },
+        { ...timetable.stations[1], order: 2 },
+      ],
+      services: [
+        {
+          id: 'kakegawa-shizuoka',
+          trainNumber: '100M',
+          destinationStationId: 'shizuoka',
+          destinationName: { ja: '静岡', en: 'Shizuoka', zhCN: '静冈' },
+          direction: 'eastbound',
+          serviceDays: ['all'],
+          stops: [
+            { stationId: 'kakegawa', arrival: null, departure: '10:00', dayOffset: 0 },
+            { stationId: 'shizuoka', arrival: '10:45', departure: null, dayOffset: 0 },
+          ],
+          operationSegments: [
+            { fromStationId: 'kakegawa', toStationId: 'shizuoka', diagramIds: ['A1'] },
+          ],
+        },
+      ],
+    }
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: string | URL | Request) => {
+        const url = String(input)
+        const payload = url.includes('timetable')
+          ? overlapTimetable
+          : url.includes('formations')
+            ? formations
+            : latest
+        return Promise.resolve(new Response(JSON.stringify(payload), { status: 200 }))
+      }),
+    )
+
+    render(<App />)
+    fireEvent.change(await screen.findByLabelText('Departure time (JST)'), { target: { value: '00:00' } })
+
+    expect(await screen.findByText('Intermediate overlap')).toBeInTheDocument()
+    expect(screen.getByText('Overlap segment: Kakegawa → Shizuoka')).toBeInTheDocument()
+    expect(
+      screen.getByText('Connection feasibility is not calculated. This does not mean you can catch this train.'),
+    ).toBeInTheDocument()
   })
 })

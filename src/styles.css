@@ -327,11 +327,49 @@ a:focus-visible {
   color: var(--ink);
 }
 
+.route-kind {
+  display: inline-flex;
+  margin-top: 0.55rem;
+  padding: 0.2rem 0.55rem;
+  color: #075f56;
+  background: #dcefeb;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.route-kind-first_leg {
+  color: #87550b;
+  background: #fff0d5;
+}
+
+.route-kind-intermediate_overlap {
+  color: #55426d;
+  background: #eee8f5;
+}
+
+.segment-note {
+  margin: 0.55rem 0 0;
+  color: #344f55;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
 .transfer-note {
   margin: 0.65rem 0 0;
   color: #87550b;
   font-size: 0.82rem;
   font-weight: 750;
+}
+
+.intermediate-warning {
+  margin: 0.55rem 0 0;
+  padding: 0.55rem 0.65rem;
+  color: #55426d;
+  background: #f5f1f8;
+  border-radius: 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 .seat-status {

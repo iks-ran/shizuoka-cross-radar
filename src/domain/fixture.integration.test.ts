@@ -11,12 +11,20 @@ const formations = formationsJson as FormationsData
 const latest = latestJson as LatestData
 
 describe('checked-in static data', () => {
-  it('can query a Hamamatsu to Shizuoka first leg', () => {
+  it('can query every route overlap from Hamamatsu to Shizuoka', () => {
     expect(timetable.isFixture).toBe(false)
     expect(timetable.source.id).toBe('jr-central')
     const results = searchUpcomingTrains(timetable, 'hamamatsu', 'shizuoka', '14:00', false)
     expect(results.length).toBeGreaterThanOrEqual(5)
-    expect(results.every((result) => result.originStop.stationId === 'hamamatsu')).toBe(true)
+    const stationOrder = new Map(timetable.stations.map((station) => [station.id, station.order]))
+    const originOrder = stationOrder.get('hamamatsu') ?? -1
+    const destinationOrder = stationOrder.get('shizuoka') ?? -1
+    expect(results.every((result) => {
+      const start = stationOrder.get(result.segmentStartStop.stationId) ?? -1
+      const end = stationOrder.get(result.segmentEndStop.stationId) ?? -1
+      return start >= originOrder && end <= destinationOrder && end > start
+    })).toBe(true)
+    expect(results.some((result) => result.matchType === 'intermediate_overlap')).toBe(true)
   })
 
   it('classifies every service in the changing daily snapshot', () => {

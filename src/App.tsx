@@ -10,7 +10,7 @@ import {
   isTokyoWeekend,
 } from './domain/time'
 import { detectLocale, intlLocale, translate, type MessageKey } from './i18n'
-import type { FormationSummary, Locale, SearchResult, Station } from './types'
+import type { FormationSummary, Locale, RouteMatchType, SearchResult, Station } from './types'
 
 const LANGUAGE_STORAGE_KEY = 'shizuoka-cross-seat-radar-language'
 
@@ -25,6 +25,12 @@ const seatMessage: Record<FormationSummary['status'], MessageKey> = {
   box_fixed: 'boxFixed',
   all_longitudinal: 'allLongitudinal',
   unknown: 'unknown',
+}
+
+const routeMessage: Record<RouteMatchType, MessageKey> = {
+  direct: 'routeDirect',
+  first_leg: 'routeFirstLeg',
+  intermediate_overlap: 'routeIntermediateOverlap',
 }
 
 const stopTime = (clock: string | null, dayOffset: number): string =>
@@ -44,22 +50,24 @@ function TrainCard({ result, summary, stations, locale, data, stale }: TrainCard
   const trainDestination = locale === 'zh-CN'
     ? result.service.destinationName.zhCN
     : result.service.destinationName[locale]
-  const arrivalStation = stationName(stations, result.arrivalStop.stationId, locale)
-  const originStation = stationName(stations, result.originStop.stationId, locale)
+  const segmentStartStation = stationName(stations, result.segmentStartStop.stationId, locale)
+  const segmentEndStation = stationName(stations, result.segmentEndStop.stationId, locale)
   const formationLabel = summary.currentUnits.length > 0 ? summary.currentUnits.join(' + ') : summary.rawFormation || '—'
   const statusText = t(seatMessage[summary.status])
 
   return (
     <article className="train-card">
       <div className="time-row">
-        <time className="departure-time" dateTime={result.originStop.departure ?? undefined}>
-          {stopTime(result.originStop.departure, result.originStop.dayOffset)}
+        <time className="departure-time" dateTime={result.segmentStartStop.departure ?? undefined}>
+          {stopTime(result.segmentStartStop.departure, result.segmentStartStop.dayOffset)}
         </time>
         <span className="time-arrow" aria-hidden="true">→</span>
-        <time className="arrival-time" dateTime={result.arrivalStop.arrival ?? undefined}>
-          {stopTime(result.arrivalStop.arrival, result.arrivalStop.dayOffset)}
+        <time className="arrival-time" dateTime={result.segmentEndStop.arrival ?? undefined}>
+          {stopTime(result.segmentEndStop.arrival, result.segmentEndStop.dayOffset)}
         </time>
       </div>
+
+      <span className={`route-kind route-kind-${result.matchType}`}>{t(routeMessage[result.matchType])}</span>
 
       <div className="service-row">
         <strong>{result.service.trainNumber}</strong>
@@ -67,10 +75,18 @@ function TrainCard({ result, summary, stations, locale, data, stale }: TrainCard
         <span>{t('forDestination', { station: trainDestination })}</span>
       </div>
 
-      {result.transferRequired && (
+      <p className="segment-note">
+        {t('overlapSegment', { origin: segmentStartStation, destination: segmentEndStation })}
+      </p>
+
+      {result.matchType === 'first_leg' && (
         <p className="transfer-note">
-          <span aria-hidden="true">↳</span> {t('transferRequired', { station: arrivalStation })}
+          <span aria-hidden="true">↳</span> {t('transferRequired', { station: segmentEndStation })}
         </p>
+      )}
+
+      {result.matchType === 'intermediate_overlap' && (
+        <p className="intermediate-warning">{t('intermediateWarning')}</p>
       )}
 
       <div className={`seat-status status-${summary.status}`}>
@@ -86,7 +102,7 @@ function TrainCard({ result, summary, stations, locale, data, stale }: TrainCard
       </div>
 
       <div className="formation-row">
-        <span>{t('formation', { station: originStation })}</span>
+        <span>{t('formation', { station: segmentStartStation })}</span>
         <strong>{formationLabel}</strong>
       </div>
 
@@ -275,7 +291,7 @@ export default function App() {
                   result={result}
                   summary={formationAtStation(
                     result.service,
-                    origin,
+                    result.segmentStartStop.stationId,
                     data.timetable.stations,
                     alignedLatest,
                     data.formations.formations,
