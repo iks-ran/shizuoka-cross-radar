@@ -13,6 +13,10 @@ from .base import SourceError
 OPERATION_BASE_URL = "https://tokaido-unyo-shizuoka.com/csv/unyo"
 OPERATION_PAGE_URL = "https://tokaido-unyo-shizuoka.com/unyo/202603/"
 DEFAULT_FAMILIES = ("4cars", "tns313", "ns313", "vl313", "u315", "f373")
+UNIQUE_PLANNED_FAMILIES = {
+    "u315": "U",
+    "f373": "F",
+}
 
 
 @dataclass(frozen=True)
@@ -24,6 +28,7 @@ class OperationRecord:
     partner_diagram_id: str | None
     route_marker: str | None
     family: str
+    planned_family: str | None
 
 
 @dataclass(frozen=True)
@@ -70,6 +75,7 @@ def parse_operation_csv(text: str, family: str) -> list[OperationRecord]:
                 partner_diagram_id=row["partner"].strip() or None,
                 route_marker=row["koro_mark"].strip() or None,
                 family=family,
+                planned_family=UNIQUE_PLANNED_FAMILIES.get(family),
             )
         )
     return records

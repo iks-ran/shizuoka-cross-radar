@@ -23,6 +23,22 @@ class FixtureGenerationTests(unittest.TestCase):
         self.assertEqual(directions, {"eastbound", "westbound"})
         covered = {stop["stationId"] for service in timetable["services"] for stop in service["stops"]}
         self.assertEqual(covered, {station["id"] for station in timetable["stations"]})
+        self.assertTrue(
+            all(
+                segment["plannedFormations"] == []
+                for service in timetable["services"]
+                for segment in service["operationSegments"]
+            )
+        )
+
+    def test_rejects_planned_formation_for_another_diagram(self) -> None:
+        source = json.loads((ROOT / "data/fixtures/timetable-source.json").read_text(encoding="utf-8"))
+        timetable = generate(source)
+        segment = timetable["services"][0]["operationSegments"][0]
+        segment["plannedFormations"] = [{"diagramId": "A999", "family": "U"}]
+
+        with self.assertRaisesRegex(ValidationError, "unknown diagram"):
+            validate_timetable(timetable)
 
     def test_checked_in_data_is_valid(self) -> None:
         validate_timetable(json.loads((ROOT / "public/data/timetable.json").read_text(encoding="utf-8")))

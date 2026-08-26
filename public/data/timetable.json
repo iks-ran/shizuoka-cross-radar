@@ -593,7 +593,8 @@
         {
           "fromStationId": "aino",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -708,7 +709,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A85"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -757,6 +759,12 @@
           "toStationId": "atami",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -891,7 +899,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -1006,6 +1015,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A71"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A71",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -1056,7 +1071,8 @@
           "diagramIds": [
             "A27",
             "A41"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -1219,7 +1235,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -1352,7 +1369,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A90"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -1533,6 +1551,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -1768,6 +1792,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -1992,7 +2022,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -2149,7 +2180,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A84"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -2228,6 +2260,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -2403,7 +2441,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A89"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -2450,7 +2489,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -2584,7 +2624,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -2658,7 +2699,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -2792,7 +2834,8 @@
           "diagramIds": [
             "A30",
             "A51"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -2967,7 +3010,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -3044,7 +3088,8 @@
         {
           "fromStationId": "hamamatsu",
           "toStationId": "toyohashi",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -3091,7 +3136,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -3171,6 +3217,16 @@
           "diagramIds": [
             "A707",
             "A711"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A707",
+              "family": "F"
+            },
+            {
+              "diagramId": "A711",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -3389,7 +3445,8 @@
           "diagramIds": [
             "A31",
             "A59"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -3426,7 +3483,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A147"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -3602,7 +3660,8 @@
           "diagramIds": [
             "A27",
             "A41"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -3736,7 +3795,8 @@
           "diagramIds": [
             "A21",
             "A28"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -3917,6 +3977,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A61"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A61",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -3996,6 +4062,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -4154,7 +4226,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -4372,7 +4445,8 @@
           "diagramIds": [
             "A32",
             "A35"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -4419,7 +4493,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -4583,7 +4658,8 @@
           "diagramIds": [
             "A145",
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -4717,7 +4793,8 @@
           "diagramIds": [
             "A29",
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -4850,6 +4927,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A703"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A703",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -5086,14 +5169,16 @@
           "diagramIds": [
             "A34",
             "A57"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -5130,7 +5215,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A147"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -5335,6 +5421,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -5462,7 +5554,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -5509,7 +5602,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -5745,7 +5839,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -5962,7 +6057,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A87"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -6023,6 +6119,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A71"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A71",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -6258,7 +6360,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A90"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -6415,7 +6518,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A85"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -6531,6 +6635,16 @@
           "diagramIds": [
             "A701",
             "A702"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A701",
+              "family": "F"
+            },
+            {
+              "diagramId": "A702",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -6581,7 +6695,8 @@
           "diagramIds": [
             "A55",
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -6715,6 +6830,16 @@
           "diagramIds": [
             "A708",
             "A709"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A708",
+              "family": "F"
+            },
+            {
+              "diagramId": "A709",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -6831,6 +6956,16 @@
           "diagramIds": [
             "A706",
             "A710"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A706",
+              "family": "F"
+            },
+            {
+              "diagramId": "A710",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -7007,7 +7142,8 @@
           "diagramIds": [
             "A33",
             "A56"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -7087,6 +7223,16 @@
           "diagramIds": [
             "A707",
             "A711"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A707",
+              "family": "F"
+            },
+            {
+              "diagramId": "A711",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -7134,7 +7280,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "numazu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -7213,6 +7360,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -7449,7 +7602,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -7672,7 +7826,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -7746,7 +7901,8 @@
           "diagramIds": [
             "A30",
             "A51"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -7831,6 +7987,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -7995,7 +8157,8 @@
           "diagramIds": [
             "A24",
             "A38"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -8231,14 +8394,16 @@
           "diagramIds": [
             "A55",
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "shizuoka",
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -8317,6 +8482,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -8438,6 +8609,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -8535,7 +8712,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A84"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -8582,7 +8760,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -8661,7 +8840,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -8734,6 +8914,12 @@
           "toStationId": "atami",
           "diagramIds": [
             "A67"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A67",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -8781,7 +8967,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "numazu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -8915,7 +9102,8 @@
           "diagramIds": [
             "A21",
             "A28"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -8995,6 +9183,16 @@
           "diagramIds": [
             "A707",
             "A711"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A707",
+              "family": "F"
+            },
+            {
+              "diagramId": "A711",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -9045,6 +9243,16 @@
           "diagramIds": [
             "A706",
             "A710"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A706",
+              "family": "F"
+            },
+            {
+              "diagramId": "A710",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -9208,14 +9416,16 @@
           "toStationId": "higashishizuoka",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "shizuoka",
           "toStationId": "shimada",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -9313,7 +9523,8 @@
           "diagramIds": [
             "A30",
             "A51"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -9392,6 +9603,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -9549,7 +9766,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -9784,7 +10002,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A89"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -9863,7 +10082,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -10021,7 +10241,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -10257,7 +10478,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -10336,6 +10558,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -10445,6 +10673,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A69"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A69",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -10530,6 +10764,12 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A702"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A702",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -10706,7 +10946,8 @@
           "diagramIds": [
             "A27",
             "A41"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -10785,7 +11026,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -11020,6 +11262,12 @@
           "toStationId": "atami",
           "diagramIds": [
             "A65"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A65",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -11069,6 +11317,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A67"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A67",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -11293,14 +11547,16 @@
           "diagramIds": [
             "A145",
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "numazu",
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -11347,7 +11603,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -11427,6 +11684,16 @@
           "diagramIds": [
             "A707",
             "A711"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A707",
+              "family": "F"
+            },
+            {
+              "diagramId": "A711",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -11506,6 +11773,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A705"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A705",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -11639,7 +11912,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A85"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -11814,7 +12088,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A84"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -11893,6 +12168,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -11943,6 +12224,16 @@
           "diagramIds": [
             "A706",
             "A710"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A706",
+              "family": "F"
+            },
+            {
+              "diagramId": "A710",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -12178,7 +12469,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A32"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -12257,7 +12549,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -12336,6 +12629,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -12392,7 +12691,8 @@
           "diagramIds": [
             "A30",
             "A51"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -12550,7 +12850,8 @@
           "diagramIds": [
             "A31",
             "A59"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -12623,7 +12924,8 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -12847,7 +13149,8 @@
           "diagramIds": [
             "A24",
             "A38"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -12980,7 +13283,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A55"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -13216,7 +13520,8 @@
           "diagramIds": [
             "A33",
             "A56"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -13451,7 +13756,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A87"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -13530,7 +13836,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -13627,6 +13934,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -13706,6 +14019,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -13785,6 +14104,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -13864,7 +14189,8 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14099,7 +14425,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A90"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14154,6 +14481,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -14233,7 +14566,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14469,7 +14803,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14542,7 +14877,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14615,7 +14951,8 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14712,7 +15049,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14791,6 +15129,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -14888,7 +15232,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -14973,6 +15318,12 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A705"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A705",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -15052,7 +15403,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -15288,7 +15640,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -15343,7 +15696,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A30"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -15380,6 +15734,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A73"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A73",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -15616,7 +15976,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -15695,6 +16056,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -15792,6 +16159,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -15889,6 +16262,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -15968,6 +16347,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -16203,7 +16588,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -16240,6 +16626,12 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A73"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A73",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -16313,7 +16705,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -16549,7 +16942,8 @@
           "diagramIds": [
             "A27",
             "A41"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -16586,6 +16980,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A73"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A73",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -16665,6 +17065,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -16763,14 +17169,16 @@
           "diagramIds": [
             "A31",
             "A59"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "shizuoka",
           "toStationId": "okitsu",
           "diagramIds": [
             "A31"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -16849,7 +17257,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -16890,7 +17299,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "mishima",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -16987,7 +17397,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A30"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -17222,7 +17633,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A35"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -17457,7 +17869,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A84"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -17524,7 +17937,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -17591,7 +18005,8 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -17688,7 +18103,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -17761,7 +18177,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -17840,6 +18257,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -17919,6 +18342,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -18154,7 +18583,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -18390,7 +18820,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -18469,6 +18900,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A704"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A704",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -18566,6 +19003,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -18645,6 +19088,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -18742,6 +19191,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -18821,7 +19276,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -19056,7 +19512,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A55"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -19111,6 +19568,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -19148,7 +19611,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -19383,6 +19847,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A65"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A65",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -19456,7 +19926,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A30"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -19553,7 +20024,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A31"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -19632,6 +20104,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -19711,6 +20189,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -19748,7 +20232,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -19984,7 +20469,8 @@
           "diagramIds": [
             "A24",
             "A38"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -20057,7 +20543,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -20130,7 +20617,8 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -20365,7 +20853,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A32"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -20402,7 +20891,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -20499,6 +20989,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -20578,6 +21074,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -20675,7 +21177,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -20754,7 +21257,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -20839,6 +21343,12 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A709"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A709",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -20973,7 +21483,8 @@
           "diagramIds": [
             "A33",
             "A56"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -21208,7 +21719,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A87"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -21245,7 +21757,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -21300,7 +21813,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -21397,6 +21911,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -21494,6 +22014,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -21573,6 +22099,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -21652,6 +22184,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -21689,7 +22227,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -21924,7 +22463,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A90"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -22160,7 +22700,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -22395,7 +22936,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -22492,7 +23034,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A31"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -22589,7 +23132,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -22668,7 +23212,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -22747,6 +23292,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -22820,7 +23371,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -22857,7 +23409,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -23093,7 +23646,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -23167,7 +23721,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -23204,7 +23759,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -23301,7 +23857,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -23398,6 +23955,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -23477,6 +24040,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -23556,6 +24125,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -23593,7 +24168,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -23828,7 +24404,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A89"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -23907,6 +24484,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A702"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A702",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -24142,7 +24725,8 @@
           "toStationId": "higashishizuoka",
           "diagramIds": [
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "shizuoka",
@@ -24150,7 +24734,8 @@
           "diagramIds": [
             "A30",
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -24217,7 +24802,8 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -24350,7 +24936,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A85"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -24429,7 +25016,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -24526,6 +25114,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -24623,6 +25217,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -24664,7 +25264,8 @@
         {
           "fromStationId": "mishima",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -24743,6 +25344,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -24978,7 +25585,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A84"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -25045,7 +25653,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A54"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -25280,7 +25889,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A35"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -25377,7 +25987,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -25474,7 +26085,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A31"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -25553,6 +26165,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -25632,6 +26250,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -25673,7 +26297,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "mishima",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -25908,7 +26533,8 @@
           "toStationId": "katahama",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "numazu",
@@ -25916,7 +26542,8 @@
           "diagramIds": [
             "A52",
             "A57"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -25990,7 +26617,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -26225,7 +26853,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -26299,7 +26928,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -26378,7 +27008,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -26475,7 +27106,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -26572,6 +27204,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -26657,6 +27295,12 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A704"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A704",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -26736,6 +27380,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -26953,6 +27603,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A65"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A65",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -27188,7 +27844,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A55"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -27285,6 +27942,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -27322,7 +27985,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A54"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -27419,6 +28083,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -27486,7 +28156,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -27565,6 +28236,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -27644,6 +28321,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -27880,7 +28563,8 @@
           "diagramIds": [
             "A27",
             "A41"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -27917,7 +28601,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A54"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28051,7 +28736,8 @@
           "diagramIds": [
             "A24",
             "A38"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28148,7 +28834,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A31"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28245,7 +28932,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28481,7 +29169,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28560,6 +29249,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -28639,7 +29334,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28676,7 +29372,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A54"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28911,7 +29608,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A85"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -28984,7 +29682,8 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A32"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -29057,6 +29756,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -29136,6 +29841,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -29233,7 +29944,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -29312,6 +30024,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A705"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A705",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -29391,6 +30109,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -29626,7 +30350,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A90"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -29802,7 +30527,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -29876,7 +30602,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -29913,7 +30640,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -30010,6 +30738,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -30167,6 +30901,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -30246,6 +30986,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -30283,7 +31029,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -30362,7 +31109,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -30598,7 +31346,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -30731,6 +31480,12 @@
           "toStationId": "atami",
           "diagramIds": [
             "A69"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A69",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -30966,7 +31721,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -31129,7 +31885,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -31202,6 +31959,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -31323,7 +32086,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -31402,6 +32166,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -31481,6 +32251,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -31554,7 +32330,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A32"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -31789,7 +32566,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A87"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -31886,7 +32664,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A31"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -32121,7 +32900,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A89"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -32158,7 +32938,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A54"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -32255,7 +33036,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -32334,6 +33116,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -32413,7 +33201,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -32498,6 +33287,12 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A708"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A708",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -32715,7 +33510,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A35"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -32890,7 +33686,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A84"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -32963,7 +33760,8 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -33000,7 +33798,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A54"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -33079,6 +33878,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -33236,6 +34041,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -33333,6 +34144,12 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -33412,6 +34229,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -33453,7 +34276,8 @@
         {
           "fromStationId": "mishima",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -33688,7 +34512,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -33822,7 +34647,8 @@
           "diagramIds": [
             "A33",
             "A56"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -34058,7 +34884,8 @@
           "diagramIds": [
             "A52",
             "A57"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -34294,7 +35121,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -34373,6 +35201,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -34548,7 +35382,8 @@
           "toStationId": "abekawa",
           "diagramIds": [
             "A31"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "shizuoka",
@@ -34556,7 +35391,8 @@
           "diagramIds": [
             "A31",
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -34677,7 +35513,8 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -34714,6 +35551,12 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A65"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A65",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -34835,7 +35678,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -35010,6 +35854,12 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A69"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A69",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -35246,7 +36096,8 @@
           "diagramIds": [
             "A30",
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -35325,6 +36176,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -35548,6 +36405,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A65"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A65",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -35627,6 +36490,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -35784,7 +36653,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -35863,6 +36733,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A709"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A709",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -36098,6 +36974,12 @@
           "toStationId": "atami",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -36334,7 +37216,8 @@
           "diagramIds": [
             "A27",
             "A41"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -36371,7 +37254,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -36528,6 +37412,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -36607,6 +37497,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -36741,7 +37637,8 @@
           "diagramIds": [
             "A32",
             "A55"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -36977,7 +37874,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -37051,7 +37949,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -37088,7 +37987,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -37323,7 +38223,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A85"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -37370,7 +38271,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "numazu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -37491,6 +38393,12 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -37570,6 +38478,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -37806,7 +38720,8 @@
           "diagramIds": [
             "A33",
             "A56"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -37969,7 +38884,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A29"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -38144,7 +39060,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A90"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -38265,7 +39182,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -38344,7 +39262,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -38429,6 +39348,12 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A703"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A703",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -38508,6 +39433,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -38665,7 +39596,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A84"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -38901,7 +39833,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -39034,6 +39967,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -39149,6 +40088,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A702"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A702",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -39283,7 +40228,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -39362,6 +40308,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -39597,7 +40549,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A87"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -39832,7 +40785,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -39879,7 +40833,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -40012,6 +40967,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A705"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A705",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -40062,7 +41023,8 @@
           "diagramIds": [
             "A31",
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -40177,7 +41139,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A54"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -40334,7 +41297,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A89"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -40413,7 +41377,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -40631,6 +41596,16 @@
           "diagramIds": [
             "A706",
             "A710"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A706",
+              "family": "F"
+            },
+            {
+              "diagramId": "A710",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -40710,6 +41685,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -40945,7 +41926,8 @@
           "toStationId": "atami",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -40992,7 +41974,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "numazu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -41113,6 +42096,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -41186,6 +42175,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A69"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A69",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -41265,6 +42260,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -41344,6 +42345,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A704"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A704",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -41478,7 +42485,8 @@
           "diagramIds": [
             "A24",
             "A38"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -41557,7 +42565,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -41690,6 +42699,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -41806,7 +42821,8 @@
           "diagramIds": [
             "A144",
             "A35"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -42041,7 +43057,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -42156,6 +43173,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A709"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A709",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -42380,14 +43403,16 @@
           "diagramIds": [
             "A52",
             "A57"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "shizuoka",
           "toStationId": "mishima",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -42545,7 +43570,8 @@
           "diagramIds": [
             "A31",
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -42582,6 +43608,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A71"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A71",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -42629,7 +43661,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -42750,7 +43783,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A59"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -42829,7 +43863,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -42963,7 +43998,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -43198,6 +44234,12 @@
           "toStationId": "atami",
           "diagramIds": [
             "A65"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A65",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -43415,6 +44457,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A702"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A702",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -43651,7 +44699,8 @@
           "diagramIds": [
             "A30",
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -43784,6 +44833,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -43863,7 +44918,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -43942,6 +44998,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -44075,6 +45137,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A712"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A712",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -44196,6 +45264,12 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A69"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A69",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -44354,7 +45428,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -44401,7 +45476,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "numazu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -44636,6 +45712,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -44721,6 +45803,12 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A704"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A704",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -44800,7 +45888,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -44934,7 +46023,8 @@
           "diagramIds": [
             "A32",
             "A55"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -45013,6 +46103,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -45147,7 +46243,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -45220,6 +46317,12 @@
           "toStationId": "kakegawa",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -45395,7 +46498,8 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A85"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -45552,7 +46656,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A89"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -45589,6 +46694,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A72"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A72",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -45668,7 +46779,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -45747,6 +46859,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -45971,7 +47089,8 @@
           "diagramIds": [
             "A24",
             "A38"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -46086,6 +47205,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A701"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A701",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -46322,7 +47447,8 @@
           "diagramIds": [
             "A33",
             "A56"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -46593,7 +47719,8 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -46630,7 +47757,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A59"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -46764,7 +47892,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -46811,7 +47940,8 @@
         {
           "fromStationId": "numazu",
           "toStationId": "atami",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -46892,6 +48022,20 @@
             "A706",
             "A710",
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A706",
+              "family": "F"
+            },
+            {
+              "diagramId": "A710",
+              "family": "F"
+            },
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -47007,6 +48151,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A709"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A709",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -47242,7 +48392,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -47363,6 +48514,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -47442,6 +48599,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A708"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A708",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -47563,6 +48726,12 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -47786,6 +48955,12 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -47823,6 +48998,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A69"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A69",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -47902,6 +49083,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -47976,7 +49163,8 @@
           "diagramIds": [
             "A23",
             "A37"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -48023,7 +49211,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "numazu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -48156,6 +49345,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A705"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A705",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -48289,6 +49484,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A708"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A708",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -48423,7 +49624,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -48502,6 +49704,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -48719,7 +49927,8 @@
           "toStationId": "higashishizuoka",
           "diagramIds": [
             "A59"
-          ]
+          ],
+          "plannedFormations": []
         },
         {
           "fromStationId": "shizuoka",
@@ -48727,7 +49936,8 @@
           "diagramIds": [
             "A29",
             "A59"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -48860,7 +50070,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A88"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -48897,7 +50108,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -49012,6 +50224,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A712"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A712",
+              "family": "F"
+            }
           ]
         }
       ]
@@ -49110,7 +50328,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -49189,6 +50408,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A63"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A63",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -49323,7 +50548,8 @@
           "diagramIds": [
             "A32",
             "A55"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -49439,7 +50665,8 @@
           "diagramIds": [
             "A31",
             "A34"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -49510,7 +50737,8 @@
         {
           "fromStationId": "futagawa",
           "toStationId": "hamamatsu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -49643,6 +50871,12 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A70"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A70",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -49680,6 +50914,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A68"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A68",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -49813,7 +51053,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A91"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -49892,6 +51133,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -49971,6 +51218,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -50045,7 +51298,8 @@
           "diagramIds": [
             "A54",
             "A57"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -50100,7 +51354,8 @@
           "toStationId": "okitsu",
           "diagramIds": [
             "A87"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -50233,7 +51488,8 @@
           "toStationId": "shizuoka",
           "diagramIds": [
             "A89"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -50312,7 +51568,8 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -50349,6 +51606,12 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A65"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A65",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -50399,7 +51662,8 @@
           "diagramIds": [
             "A22",
             "A36"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -50478,6 +51742,12 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -50759,7 +52029,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "toyohashi",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -50820,7 +52091,8 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A52"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -50912,7 +52184,8 @@
           "diagramIds": [
             "A27",
             "A41"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -50991,6 +52264,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A62"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A62",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -51065,7 +52344,8 @@
           "diagramIds": [
             "A25",
             "A39"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51187,7 +52467,8 @@
           "diagramIds": [
             "A24",
             "A38"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51266,7 +52547,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A83"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51313,7 +52595,8 @@
         {
           "fromStationId": "atami",
           "toStationId": "numazu",
-          "diagramIds": []
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },
@@ -51429,7 +52712,8 @@
           "diagramIds": [
             "A26",
             "A40"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51562,7 +52846,8 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A81"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51636,7 +52921,8 @@
           "diagramIds": [
             "A30",
             "A58"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51715,6 +53001,12 @@
           "toStationId": "toyohashi",
           "diagramIds": [
             "A75"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A75",
+              "family": "U"
+            }
           ]
         }
       ]
@@ -51800,7 +53092,8 @@
           "toStationId": "kikugawa",
           "diagramIds": [
             "A87"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51916,7 +53209,8 @@
           "diagramIds": [
             "A54",
             "A57"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -51953,7 +53247,8 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A86"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     },
@@ -52032,7 +53327,8 @@
           "toStationId": "kikugawa",
           "diagramIds": [
             "A82"
-          ]
+          ],
+          "plannedFormations": []
         }
       ]
     }

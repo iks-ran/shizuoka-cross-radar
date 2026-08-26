@@ -48,19 +48,19 @@
     {
       "id": "DATA-001",
       "priority": 2,
-      "title": "Server-side Yulog formation snapshot",
-      "behavior": "Python can normalize Yulog's current-day diagram assignments into static latest.json without browser-side source requests.",
+      "title": "Server-side current formation snapshot",
+      "behavior": "Python can normalize current-day diagram assignments into static latest.json without browser-side source requests.",
       "depends_on": [
         "RADAR-001"
       ],
       "in_scope": [
-        "Read-only Yulog adapter",
+        "Read-only current-assignment adapter",
         "Atomic validation and last-good-file preservation",
         "Unknown status for unverified formations"
       ],
       "out_of_scope": [
-        "Reporting or POST requests to Yulog",
-        "Yulog as a station timetable source"
+        "Reporting or POST requests",
+        "A formation source as a station timetable source"
       ],
       "status": "passing",
       "verification": [
@@ -77,7 +77,7 @@
           "result": "Deployed latest.json identified Yulog with isMock=false."
         }
       ],
-      "notes": "Repository Actions variable FORMATION_SOURCE is configured externally as yulog."
+      "notes": "The initial direct-Yulog implementation and deployment evidence are historical; DATA-003 supersedes the source adapter while preserving the normalized snapshot contract."
     },
     {
       "id": "DATA-002",
@@ -111,7 +111,7 @@
           "result": "Passed: generated 433 JR Central services over 43 stations, mapped 409 services to published diagrams, split 10 attach/detach services, then passed 13 Python tests, validation, 19 frontend tests, build, and production smoke."
         }
       ],
-      "notes": "Yulog mode refreshes the JR Central timetable and Yulog formations together; unmapped diagrams remain unknown."
+      "notes": "Live formation mode refreshes the JR Central timetable and current assignments together; unmapped diagrams remain unknown."
     },
     {
       "id": "RADAR-002",
@@ -147,6 +147,302 @@
         }
       ],
       "notes": "Search remains globally sorted by the departure time at the start of each displayed usable segment."
+    },
+    {
+      "id": "REPO-001",
+      "priority": 5,
+      "title": "Repository ignore hygiene",
+      "behavior": "Disposable local artifacts stay out of version control while generated static data required by the deployment remains tracked.",
+      "depends_on": [],
+      "in_scope": [
+        "Frontend and Python caches",
+        "Logs, virtual environments, and editor files",
+        "Interrupted atomic-generator scratch files"
+      ],
+      "out_of_scope": [
+        "Ignoring public deployment snapshots",
+        "Changing generated-data refresh behavior"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Repository checks pass and required public data snapshots remain tracked while disposable artifacts are ignored."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "git check-ignore; git ls-files -ci --exclude-standard; npm run verify",
+          "result": "Disposable build, cache, environment, log, editor, and atomic scratch paths are ignored; no tracked file matches the rules; all three public data snapshots remain tracked; full verification passed."
+        }
+      ],
+      "notes": "The scheduled updater intentionally commits public/data/timetable.json and public/data/latest.json."
+    },
+    {
+      "id": "DATA-003",
+      "priority": 6,
+      "title": "Consolidated Shizuoka operation source",
+      "behavior": "Current diagram assignments are read from the Tokaido Line Shizuoka Area Operation Information site's dated JSON mirror, while exact unique planned families provide a clearly disclosed fallback without overriding JR Central times.",
+      "depends_on": [
+        "DATA-001",
+        "DATA-002"
+      ],
+      "in_scope": [
+        "Read-only current-assignment JSON adapter",
+        "Unique U and F planned-family metadata from operation CSV assets",
+        "Current-over-planned precedence with no partial-source mixing",
+        "Visible planned-data disclosure",
+        "Source provenance and attribution",
+        "Atomic validation and last-good-file preservation"
+      ],
+      "out_of_scope": [
+        "Browser-side source requests",
+        "Reporting or POST requests",
+        "Guessing mixed-family planned operations",
+        "Replacing JR Central station times with operation-table times"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "The adapter, conservative planned fallback, disclosure UI, static snapshots, and all existing checks pass without a direct Yulog request."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "python3 -m scripts.update_data --source tokaido-shizuoka --operation-revision 202603 && npm run verify",
+          "result": "Generated 433 JR Central services with 409 operation mappings, 161 segments carrying exact planned metadata, and 48 current assignments; verified JR time precedence for 1420M, omission of mixed planned data for 1422M, 16 Python tests, validation, 29 frontend tests, build, and production smoke."
+        }
+      ],
+      "notes": "The target site states that its current-assignment display is populated with Yulog-provided data, so inherited provenance remains documented. The legacy yulog CLI value is only a deprecated alias for the Tokaido Shizuoka adapter."
+    },
+    {
+      "id": "RADAR-003",
+      "priority": 7,
+      "title": "Cross-seat-focused indirect results",
+      "behavior": "Direct trains remain visible, while first-leg and intermediate-overlap trains are hidden only when their formation at the displayed overlap start is confirmed as all-longitudinal.",
+      "depends_on": [
+        "RADAR-002",
+        "DATA-003"
+      ],
+      "in_scope": [
+        "Formation-aware filtering after route matching",
+        "Known and possible cross-seat indirect results",
+        "Direct-result preservation"
+      ],
+      "out_of_scope": [
+        "Hiding unknown formations that may contain cross seats",
+        "Changing formation classification",
+        "Changing route-overlap detection"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Confirmed longitudinal first-leg and intermediate results are hidden, possible-cross and direct results remain visible, and all repository checks pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "npm run verify",
+          "result": "Passed 16 Python tests, static-data validation, and 35 frontend tests covering direct longitudinal preservation, confirmed-longitudinal filtering for both indirect route types, known cross seats, possible cross seats, production build, and preview smoke."
+        }
+      ],
+      "notes": "Unknown and unverified formations count as possible cross-seat trains because the available data does not rule cross seating out."
+    },
+    {
+      "id": "RADAR-004",
+      "priority": 8,
+      "title": "Fastest complete itinerary for indirect results",
+      "behavior": "Each displayed first-leg and intermediate-overlap result has an earliest-arrival scheduled itinerary from the selected origin to destination that includes the displayed train; indirect overlaps without a complete itinerary are hidden.",
+      "depends_on": [
+        "RADAR-002",
+        "RADAR-003"
+      ],
+      "in_scope": [
+        "Same-direction timetable connection search",
+        "Displayed-train-constrained complete itineraries",
+        "Featured boarding at the formation-qualified overlap start",
+        "Omission of indirect overlaps without a complete scheduled itinerary",
+        "Leg, transfer, and final-arrival display",
+        "Disclosure that physical transfer feasibility is not modeled"
+      ],
+      "out_of_scope": [
+        "Delay-aware routing",
+        "Platform or walking-time data",
+        "Guaranteed connections",
+        "Backtracking or travel outside the Toyohashi–Atami corridor"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Planner and UI tests cover first-leg, intermediate, missed-connection, earliest-arrival, and no-complete-route behavior before build and smoke pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "npm run verify",
+          "result": "Passed 16 Python tests, static-data validation, and 42 frontend tests covering constrained earliest arrival, feeder and onward legs, early transfer, missed featured boarding, reverse direction, indirect-result omission, localized UI itinerary, checked-in live routing, build, and production smoke."
+        }
+      ],
+      "notes": "A scheduled connection is considered possible when the next train departs at or after arrival; platform movement and operational guarantees are disclosed as unmodeled."
+    },
+    {
+      "id": "RADAR-005",
+      "priority": 9,
+      "title": "Per-leg seating and result filters",
+      "behavior": "Transfer itineraries disclose the formation and seat category of every leg, and passengers can configure direct longitudinal, direct unknown, indirect unknown, and minimum featured-ride visibility.",
+      "depends_on": [
+        "RADAR-003",
+        "RADAR-004"
+      ],
+      "in_scope": [
+        "Formation-at-boarding classification for every itinerary leg",
+        "Direct longitudinal visibility toggle",
+        "Direct unknown visibility toggle",
+        "Indirect unknown visibility toggle",
+        "Optional minimum scheduled minutes aboard the featured indirect train"
+      ],
+      "out_of_scope": [
+        "Changing seat classification evidence",
+        "Filtering individual feeder or onward legs by seat type",
+        "Persisting filter settings across browser sessions"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Domain and UI tests cover every visibility category, featured-ride duration, per-leg seating, build, and production smoke."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "npm run verify",
+          "result": "Passed 16 Python tests, static-data validation, and 44 frontend tests covering the four visibility settings, minimum featured-ride boundary, filter controls, per-leg longitudinal and cross-seat categories/formations, featured duration display, build, and production smoke."
+        }
+      ],
+      "notes": "The minimum-duration input applies to scheduled time aboard the featured indirect train, not total itinerary duration. Visibility defaults preserve RADAR-003 behavior."
+    },
+    {
+      "id": "RADAR-006",
+      "priority": 10,
+      "title": "Robust constrained-journey ranking",
+      "behavior": "Complete routes containing a featured train rank by earliest final arrival, then latest origin departure, then fewer transfers and shorter transfer waits without prematurely discarding feasible alternatives.",
+      "depends_on": [
+        "RADAR-004",
+        "RADAR-005"
+      ],
+      "in_scope": [
+        "Pareto-safe feeder and onward routing",
+        "Deterministic complete-route tie-breaking",
+        "Atami–Mishima 763M feeder regression",
+        "Reverse-direction, overnight, dead-end, and early-alighting audit"
+      ],
+      "out_of_scope": [
+        "Minimum physical transfer times without platform data",
+        "Delay-aware routing",
+        "Unconstrained fastest routes that omit the featured train"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Adversarial and checked-in timetable regressions pass with intuitive latest-feeder selection and all production checks."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "npm run verify",
+          "result": "Passed 16 Python tests, static-data validation, and 55 frontend tests including the exact 763M feeder regression, exhaustive indirect Atami-to-Toyohashi consistency and direct-feeder dominance checks, adversarial ranking ties, reverse direction, overnight routing, build, and production smoke."
+        }
+      ],
+      "notes": "The planner retains Pareto-safe feeder and onward alternatives. For 763M at Mishima it selects 1425M (Atami 08:47) instead of the unnecessarily early 423M (06:18), while preserving earliest final-arrival priority."
+    },
+    {
+      "id": "RADAR-007",
+      "priority": 11,
+      "title": "Responsive bulk indirect-route search",
+      "behavior": "Long-corridor searches reuse timetable routing work so an Atami-to-Toyohashi 06:00 query does not block the interface for seconds.",
+      "depends_on": [
+        "RADAR-006"
+      ],
+      "in_scope": [
+        "Query-level route-profile reuse",
+        "Early omission of formation-filtered indirect candidates",
+        "Atami-to-Toyohashi 06:00 performance regression",
+        "Preservation of constrained-route ranking"
+      ],
+      "out_of_scope": [
+        "Web workers",
+        "Network or server-side route calculation",
+        "Relaxing route correctness or formation filtering"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "The exact long-corridor query completes within its regression budget while all route-ranking and production checks pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "npm run verify",
+          "result": "Passed 16 Python tests, static-data validation, 55 frontend tests, production build, and preview smoke. The checked-in Atami-to-Toyohashi 06:00 audit planned all 202 indirect candidates in about 0.33 seconds and passed its 1.5-second regression budget, down from about 2.4 seconds."
+        }
+      ],
+      "notes": "The planner caches Pareto-safe feeder and destination-bound onward profiles for each query. The UI also removes confirmed-longitudinal and disabled-unknown candidates before complete-route and per-leg formation work."
+    },
+    {
+      "id": "RADAR-008",
+      "priority": 12,
+      "title": "JR Central-inspired passenger theme",
+      "behavior": "Passengers see a clearer JR Central-inspired orange-and-white interface with Tokaido Line context, timetable-like hierarchy, and preserved accessible status distinctions.",
+      "depends_on": [
+        "RADAR-007"
+      ],
+      "in_scope": [
+        "JR Central corporate orange and white visual hierarchy",
+        "Tokaido Main Line corridor identification",
+        "Compact passenger-information styling for search and result cards",
+        "Responsive, keyboard-focus, contrast, and reduced-motion behavior",
+        "Clear independent-service disclosure without copied logo assets"
+      ],
+      "out_of_scope": [
+        "Using JR Central logo or other proprietary artwork",
+        "Claiming that the site is an official JR Central service",
+        "Changing timetable, formation, or journey-planning behavior"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Localized corridor and independent-service labels, existing passenger behavior, production build, and preview smoke all pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 27844c7",
+          "command": "npm run verify",
+          "result": "Passed 16 Python tests, static-data validation, 55 frontend tests including localized corridor and independent-service labels plus a regression against the duplicate corridor subtitle, production build, and preview smoke. Headless Firefox inspection covered the responsive search, direct results, and a four-leg indirect journey."
+        }
+      ],
+      "notes": "The visual direction follows JR Central's published orange-and-white corporate color pairing and official railway information-page conventions without reusing its logo."
     }
   ]
 }

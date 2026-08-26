@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 import unittest
+import urllib.request
 from datetime import date
+from io import BytesIO
 from pathlib import Path
 
 from scripts.data_sources.base import normalize_assignment
@@ -12,7 +14,10 @@ from scripts.data_sources.jr_central import (
     parse_holiday_csv,
 )
 from scripts.data_sources.operation_diagram import parse_operation_csv, parse_train_metadata_csv
-from scripts.data_sources.yulog import YulogFormationSource
+from scripts.data_sources.tokaido_shizuoka import (
+    CURRENT_ASSIGNMENTS_URL,
+    TokaidoShizuokaFormationSource,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,21 +34,42 @@ class AssignmentTests(unittest.TestCase):
         self.assertEqual(normalize_assignment("K8/?"), ([], "unknown"))
 
 
-class YulogTests(unittest.TestCase):
+class TokaidoShizuokaTests(unittest.TestCase):
     def test_normalizes_matching_tokyo_date(self) -> None:
-        payload = json.loads((ROOT / "data/fixtures/yulog-response.sample.json").read_text(encoding="utf-8"))
-        result = YulogFormationSource.parse_response(payload, date(2026, 8, 26))
+        payload = json.loads(
+            (ROOT / "data/fixtures/tokaido-shizuoka-current.sample.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        result = TokaidoShizuokaFormationSource.parse_response(payload, date(2026, 8, 26))
         self.assertEqual(result["serviceDate"], "2026-08-26")
         self.assertEqual(result["updatedAt"], "2026-08-26T11:20:04+09:00")
         assignments = {item["diagramId"]: item for item in result["assignments"]}
         self.assertEqual(assignments["A84"]["currentUnits"], ["K8", "L4"])
         self.assertEqual(assignments["A999"]["currentUnits"], ["ZZ1"])
+        self.assertEqual(result["source"]["id"], "tokaido-shizuoka")
         self.assertFalse(result["source"]["isMock"])
 
     def test_rejects_missing_date(self) -> None:
         payload = {"time": "2026/8/26_11:20:4"}
-        with self.assertRaisesRegex(RuntimeError, "No Yulog assignment map"):
-            YulogFormationSource.parse_response(payload, date(2026, 8, 26))
+        with self.assertRaisesRegex(RuntimeError, "No Tokaido Shizuoka assignment map"):
+            TokaidoShizuokaFormationSource.parse_response(payload, date(2026, 8, 26))
+
+    def test_fetches_only_the_tokaido_shizuoka_json_endpoint(self) -> None:
+        payload = (
+            ROOT / "data/fixtures/tokaido-shizuoka-current.sample.json"
+        ).read_bytes()
+        requested_urls: list[str] = []
+
+        def opener(request: urllib.request.Request, timeout: int) -> BytesIO:
+            requested_urls.append(request.full_url)
+            self.assertEqual(timeout, 20)
+            return BytesIO(payload)
+
+        result = TokaidoShizuokaFormationSource(opener=opener).fetch("2026-08-26")
+
+        self.assertEqual(requested_urls, [CURRENT_ASSIGNMENTS_URL])
+        self.assertEqual(result["source"]["id"], "tokaido-shizuoka")
 
 
 class OperationCsvTests(unittest.TestCase):
@@ -55,6 +81,15 @@ class OperationCsvTests(unittest.TestCase):
         self.assertEqual(records[1].train_number, "738M")
         self.assertEqual(records[0].partner_diagram_id, "A28")
         self.assertEqual(records[2].day_code, 2)
+        self.assertIsNone(records[0].planned_family)
+
+    def test_marks_only_unique_operation_families_as_planned(self) -> None:
+        sample = (ROOT / "data/fixtures/operation.sample.csv").read_text(encoding="utf-8")
+        unique = parse_operation_csv(sample, "u315")
+        mixed = parse_operation_csv(sample, "tns313")
+
+        self.assertTrue(all(record.planned_family == "U" for record in unique))
+        self.assertTrue(all(record.planned_family is None for record in mixed))
 
     def test_parses_attach_and_detach_metadata(self) -> None:
         sample = (
@@ -127,9 +162,27 @@ class JrCentralTests(unittest.TestCase):
         }
         operation = {
             "records": [
-                {"diagram_id": "A55", "train_number": "427M", "partner_diagram_id": "A58", "day_code": None},
-                {"diagram_id": "A58", "train_number": "427M", "partner_diagram_id": "A55", "day_code": None},
-                {"diagram_id": "A58", "train_number": "427M", "partner_diagram_id": None, "day_code": None},
+                {
+                    "diagram_id": "A55",
+                    "train_number": "427M",
+                    "partner_diagram_id": "A58",
+                    "day_code": None,
+                    "planned_family": "U",
+                },
+                {
+                    "diagram_id": "A58",
+                    "train_number": "427M",
+                    "partner_diagram_id": "A55",
+                    "day_code": None,
+                    "planned_family": "U",
+                },
+                {
+                    "diagram_id": "A58",
+                    "train_number": "427M",
+                    "partner_diagram_id": None,
+                    "day_code": None,
+                    "planned_family": "U",
+                },
             ],
             "trains": [
                 {
@@ -154,8 +207,21 @@ class JrCentralTests(unittest.TestCase):
         self.assertEqual(
             service["operationSegments"],
             [
-                {"fromStationId": "atami", "toStationId": "atami", "diagramIds": ["A55", "A58"]},
-                {"fromStationId": "shizuoka", "toStationId": "hamamatsu", "diagramIds": ["A58"]},
+                {
+                    "fromStationId": "atami",
+                    "toStationId": "atami",
+                    "diagramIds": ["A55", "A58"],
+                    "plannedFormations": [
+                        {"diagramId": "A55", "family": "U"},
+                        {"diagramId": "A58", "family": "U"},
+                    ],
+                },
+                {
+                    "fromStationId": "shizuoka",
+                    "toStationId": "hamamatsu",
+                    "diagramIds": ["A58"],
+                    "plannedFormations": [{"diagramId": "A58", "family": "U"}],
+                },
             ],
         )
 

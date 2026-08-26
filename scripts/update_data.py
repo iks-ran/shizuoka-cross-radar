@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 import tempfile
 from datetime import date, datetime
 from pathlib import Path
@@ -14,7 +15,7 @@ from .data_sources import (
     FixtureFormationSource,
     JrCentralTimetableSource,
     OperationDiagramSource,
-    YulogFormationSource,
+    TokaidoShizuokaFormationSource,
 )
 from .generate_fixture_timetable import generate as generate_fixture_timetable
 from .validation import validate_latest, validate_timetable
@@ -54,7 +55,12 @@ def write_timetable_atomically(payload: dict[str, Any], output: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Update paired static train snapshots")
-    parser.add_argument("--source", choices=("fixture", "yulog"), default="fixture")
+    parser.add_argument(
+        "--source",
+        choices=("fixture", "tokaido-shizuoka", "yulog"),
+        default="fixture",
+        help="Formation source; yulog is a rollout alias for tokaido-shizuoka",
+    )
     parser.add_argument("--fixture", type=Path, default=Path("data/fixtures/latest-source.json"))
     parser.add_argument(
         "--corridor",
@@ -80,12 +86,19 @@ def main() -> None:
     )
     corridor = json.loads(args.corridor.read_text(encoding="utf-8"))
 
-    if args.source == "fixture":
+    source = "tokaido-shizuoka" if args.source == "yulog" else args.source
+    if args.source == "yulog":
+        print(
+            "Warning: --source yulog is deprecated; using tokaido-shizuoka without a direct Yulog request.",
+            file=sys.stderr,
+        )
+
+    if source == "fixture":
         latest = FixtureFormationSource(args.fixture).fetch(args.service_date)
         fixture_timetable = json.loads(args.fixture_timetable.read_text(encoding="utf-8"))
         timetable = generate_fixture_timetable(fixture_timetable)
     else:
-        latest = YulogFormationSource().fetch(target_date.isoformat())
+        latest = TokaidoShizuokaFormationSource().fetch(target_date.isoformat())
         operation = OperationDiagramSource(args.operation_revision).fetch()
         holidays = CabinetOfficeHolidaySource().fetch()
         timetable = JrCentralTimetableSource().fetch(
@@ -100,7 +113,7 @@ def main() -> None:
     validate_timetable(timetable)
     write_timetable_atomically(timetable, args.timetable_output)
     write_latest_atomically(latest, args.output)
-    print(f"Updated {args.timetable_output} and {args.output} from {args.source}")
+    print(f"Updated {args.timetable_output} and {args.output} from {source}")
 
 
 if __name__ == "__main__":

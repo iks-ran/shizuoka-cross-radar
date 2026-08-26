@@ -68,6 +68,7 @@ def _create_service(
                 "fromStationId": stations[start_index]["id"],
                 "toStationId": stations[end_index]["id"],
                 "diagramIds": [diagram_id],
+                "plannedFormations": [],
             }
         ],
     }

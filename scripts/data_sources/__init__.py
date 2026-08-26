@@ -3,12 +3,12 @@
 from .fixture import FixtureFormationSource
 from .jr_central import CabinetOfficeHolidaySource, JrCentralTimetableSource
 from .operation_diagram import OperationDiagramSource
-from .yulog import YulogFormationSource
+from .tokaido_shizuoka import TokaidoShizuokaFormationSource
 
 __all__ = [
     "CabinetOfficeHolidaySource",
     "FixtureFormationSource",
     "JrCentralTimetableSource",
     "OperationDiagramSource",
-    "YulogFormationSource",
+    "TokaidoShizuokaFormationSource",
 ]

@@ -23,6 +23,10 @@ export interface OperationSegment {
   fromStationId: string
   toStationId: string
   diagramIds: string[]
+  plannedFormations?: Array<{
+    diagramId: string
+    family: string
+  }>
 }
 
 export interface TrainService {
@@ -106,9 +110,29 @@ export interface SearchResult {
   arrivalMinutes: number
 }
 
+export interface ScheduledJourneyLeg {
+  service: TrainService
+  fromStop: Stop
+  toStop: Stop
+  departureMinutes: number
+  arrivalMinutes: number
+}
+
+export interface ScheduledJourney {
+  legs: ScheduledJourneyLeg[]
+  departureMinutes: number
+  arrivalMinutes: number
+  transferCount: number
+  durationMinutes: number
+  featuredServiceId: string
+  featuredDurationMinutes: number
+}
+
 export interface FormationSummary {
   status: SeatStatus
+  basis: 'current' | 'planned' | 'unknown'
   currentUnits: string[]
+  plannedFamilies: string[]
   rawFormation: string | null
   crossSeatCarCount: number | null
   totalCarCount: number | null

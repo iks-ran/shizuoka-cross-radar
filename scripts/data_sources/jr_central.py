@@ -184,6 +184,31 @@ def _transition_metadata(
     return candidates[0] if candidates else None
 
 
+def _planned_formations(
+    rows: list[dict[str, Any]],
+    diagrams: set[str],
+) -> list[dict[str, str]]:
+    families_by_diagram: dict[str, set[str | None]] = {}
+    for row in rows:
+        diagram = _normalize_diagram(row.get("diagram_id"))
+        if diagram not in diagrams:
+            continue
+        planned_family = row.get("planned_family")
+        families_by_diagram.setdefault(diagram, set()).add(
+            planned_family if isinstance(planned_family, str) else None
+        )
+
+    planned: list[dict[str, str]] = []
+    for diagram in sorted(diagrams):
+        candidates = families_by_diagram.get(diagram, set())
+        if len(candidates) != 1:
+            continue
+        family = next(iter(candidates))
+        if family is not None:
+            planned.append({"diagramId": diagram, "family": family})
+    return planned
+
+
 def _operation_segments(
     train_number: str,
     stops: list[dict[str, Any]],
@@ -207,15 +232,17 @@ def _operation_segments(
     if not base_diagrams:
         base_diagrams = set(all_diagrams)
 
+    def segment(from_index: int, to_index: int, diagrams: set[str]) -> dict[str, Any]:
+        return {
+            "fromStationId": stops[from_index]["stationId"],
+            "toStationId": stops[to_index]["stationId"],
+            "diagramIds": sorted(diagrams),
+            "plannedFormations": _planned_formations(rows, diagrams),
+        }
+
     metadata = _transition_metadata(train_number, operation, service_date, holidays)
     if metadata is None:
-        return [
-            {
-                "fromStationId": stops[0]["stationId"],
-                "toStationId": stops[-1]["stationId"],
-                "diagramIds": sorted(all_diagrams),
-            }
-        ]
+        return [segment(0, len(stops) - 1, all_diagrams)]
 
     stop_indexes = {stop["stationId"]: index for index, stop in enumerate(stops)}
     events: list[tuple[int, str]] = []
@@ -225,35 +252,17 @@ def _operation_segments(
             events.append((stop_indexes[station_id], event_type))
     events.sort(key=lambda event: (event[0], 0 if event[1] == "detach" else 1))
     if not events:
-        return [
-            {
-                "fromStationId": stops[0]["stationId"],
-                "toStationId": stops[-1]["stationId"],
-                "diagramIds": sorted(all_diagrams),
-            }
-        ]
+        return [segment(0, len(stops) - 1, all_diagrams)]
 
     current = set(all_diagrams) if events[0][1] == "detach" else set(base_diagrams)
     segment_start = 0
     segments: list[dict[str, Any]] = []
     for event_index, event_type in events:
         if event_index > segment_start:
-            segments.append(
-                {
-                    "fromStationId": stops[segment_start]["stationId"],
-                    "toStationId": stops[event_index - 1]["stationId"],
-                    "diagramIds": sorted(current),
-                }
-            )
+            segments.append(segment(segment_start, event_index - 1, current))
         current = set(base_diagrams) if event_type == "detach" else set(all_diagrams)
         segment_start = event_index
-    segments.append(
-        {
-            "fromStationId": stops[segment_start]["stationId"],
-            "toStationId": stops[-1]["stationId"],
-            "diagramIds": sorted(current),
-        }
-    )
+    segments.append(segment(segment_start, len(stops) - 1, current))
     return segments
 
 

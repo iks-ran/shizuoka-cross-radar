@@ -1,12 +1,41 @@
+# Frontend dependencies and generated build/test output
 node_modules/
 .npm-cache/
 .tmp/
 dist/
 .vite/
 coverage/
+*.tsbuildinfo
+
+# Python environments and tool caches
+.venv/
+venv/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Logs and local editor/OS files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# Local configuration and secrets
 .env
 .env.*
 !.env.example
+
+# Atomic generator scratch files can remain after an interrupted process.
+# Final public/data/*.json snapshots are deployment inputs and stay tracked.
+/public/data/tmp*

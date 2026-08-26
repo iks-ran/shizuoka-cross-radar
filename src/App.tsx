@@ -1,6 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
 import { loadStaticData, type StaticData } from './data'
-import { formationAtStation } from './domain/classification'
+import {
+  DEFAULT_RESULT_VISIBILITY,
+  formationAtStation,
+  shouldDisplayRouteResult,
+  type ResultVisibilitySettings,
+} from './domain/classification'
+import { createScheduledJourneyPlanner } from './domain/journey'
 import { searchUpcomingTrains, stationName } from './domain/search'
 import {
   formatUpdatedAt,
@@ -10,7 +16,14 @@ import {
   isTokyoWeekend,
 } from './domain/time'
 import { detectLocale, intlLocale, translate, type MessageKey } from './i18n'
-import type { FormationSummary, Locale, RouteMatchType, SearchResult, Station } from './types'
+import type {
+  FormationSummary,
+  Locale,
+  RouteMatchType,
+  ScheduledJourney,
+  SearchResult,
+  Station,
+} from './types'
 
 const LANGUAGE_STORAGE_KEY = 'shizuoka-cross-seat-radar-language'
 
@@ -36,6 +49,13 @@ const routeMessage: Record<RouteMatchType, MessageKey> = {
 const stopTime = (clock: string | null, dayOffset: number): string =>
   clock === null ? '—' : `${clock}${dayOffset > 0 ? ` (+${dayOffset})` : ''}`
 
+const formationLabel = (summary: FormationSummary): string =>
+  summary.currentUnits.length > 0
+    ? summary.currentUnits.join(' + ')
+    : summary.plannedFamilies.length > 0
+      ? summary.plannedFamilies.join(' + ')
+      : summary.rawFormation || '—'
+
 interface TrainCardProps {
   result: SearchResult
   summary: FormationSummary
@@ -43,16 +63,27 @@ interface TrainCardProps {
   locale: Locale
   data: StaticData
   stale: boolean
+  journey: ScheduledJourney | null
+  journeyLegSummaries: FormationSummary[]
 }
 
-function TrainCard({ result, summary, stations, locale, data, stale }: TrainCardProps) {
+function TrainCard({
+  result,
+  summary,
+  stations,
+  locale,
+  data,
+  stale,
+  journey,
+  journeyLegSummaries,
+}: TrainCardProps) {
   const t = (key: MessageKey, values?: Record<string, string | number>) => translate(locale, key, values)
   const trainDestination = locale === 'zh-CN'
     ? result.service.destinationName.zhCN
     : result.service.destinationName[locale]
   const segmentStartStation = stationName(stations, result.segmentStartStop.stationId, locale)
   const segmentEndStation = stationName(stations, result.segmentEndStop.stationId, locale)
-  const formationLabel = summary.currentUnits.length > 0 ? summary.currentUnits.join(' + ') : summary.rawFormation || '—'
+  const displayedFormation = formationLabel(summary)
   const statusText = t(seatMessage[summary.status])
 
   return (
@@ -79,14 +110,68 @@ function TrainCard({ result, summary, stations, locale, data, stale }: TrainCard
         {t('overlapSegment', { origin: segmentStartStation, destination: segmentEndStation })}
       </p>
 
-      {result.matchType === 'first_leg' && (
-        <p className="transfer-note">
-          <span aria-hidden="true">↳</span> {t('transferRequired', { station: segmentEndStation })}
-        </p>
-      )}
-
-      {result.matchType === 'intermediate_overlap' && (
-        <p className="intermediate-warning">{t('intermediateWarning')}</p>
+      {result.matchType !== 'direct' && (
+        <section className="complete-route" aria-label={t('fastestWholeRoute')}>
+          <div className="complete-route-heading">
+            <h3>{t('fastestWholeRoute')}</h3>
+            <span>{t('scheduledRoute')}</span>
+          </div>
+          {journey ? (
+            <>
+              <ol className="journey-legs">
+                {journey.legs.map((leg, index) => {
+                  const fromStation = stationName(stations, leg.fromStop.stationId, locale)
+                  const toStation = stationName(stations, leg.toStop.stationId, locale)
+                  const featured = leg.service.id === journey.featuredServiceId
+                  const legSummary = journeyLegSummaries[index]
+                  const legStatus = legSummary?.status ?? 'unknown'
+                  const legFormation = legSummary ? formationLabel(legSummary) : '—'
+                  return (
+                    <li className={featured ? 'featured-leg' : ''} key={`${leg.service.id}-${leg.fromStop.stationId}-${leg.toStop.stationId}-${index}`}>
+                      <div className="journey-times">
+                        <time>{stopTime(leg.fromStop.departure, leg.fromStop.dayOffset)}</time>
+                        <span aria-hidden="true">→</span>
+                        <time>{stopTime(leg.toStop.arrival, leg.toStop.dayOffset)}</time>
+                      </div>
+                      <div className="journey-detail">
+                        <strong>{fromStation} → {toStation}</strong>
+                        <span>{leg.service.trainNumber}</span>
+                        {featured && <span className="featured-train-badge">{t('thisTrain')}</span>}
+                        {featured && (
+                          <span>{t('rideMinutes', { minutes: journey.featuredDurationMinutes })}</span>
+                        )}
+                      </div>
+                      <div className={`journey-seat-category journey-seat-${legStatus}`}>
+                        <span className="journey-seat-mark" aria-hidden="true" />
+                        <span>{t(seatMessage[legStatus])}</span>
+                        {legFormation !== '—' && <strong>{legFormation}</strong>}
+                        {legSummary?.basis === 'planned' && (
+                          <span className="journey-planned-badge">{t('planned')}</span>
+                        )}
+                      </div>
+                    </li>
+                  )
+                })}
+              </ol>
+              <p className="journey-summary">
+                <strong>
+                  {t('finalArrival', {
+                    station: stationName(stations, journey.legs.at(-1)?.toStop.stationId ?? '', locale),
+                    time: stopTime(
+                      journey.legs.at(-1)?.toStop.arrival ?? null,
+                      journey.legs.at(-1)?.toStop.dayOffset ?? 0,
+                    ),
+                  })}
+                </strong>
+                <span>{t('transfers', { count: journey.transferCount })}</span>
+                <span>{t('totalMinutes', { minutes: journey.durationMinutes })}</span>
+              </p>
+            </>
+          ) : (
+            <p className="route-unavailable">{t('noCompleteRoute')}</p>
+          )}
+          <p className="journey-disclaimer">{t('journeyDisclaimer')}</p>
+        </section>
       )}
 
       <div className={`seat-status status-${summary.status}`}>
@@ -103,13 +188,20 @@ function TrainCard({ result, summary, stations, locale, data, stale }: TrainCard
 
       <div className="formation-row">
         <span>{t('formation', { station: segmentStartStation })}</span>
-        <strong>{formationLabel}</strong>
+        <div className="formation-value">
+          <strong>{displayedFormation}</strong>
+          {summary.basis === 'planned' && <span className="planned-badge">{t('planned')}</span>}
+        </div>
       </div>
 
       <div className="freshness-row">
-        <span>{t('updated', { time: data.latest ? formatUpdatedAt(data.latest.updatedAt, intlLocale(locale)) : '—' })}</span>
+        <span>
+          {summary.basis === 'planned'
+            ? t('plannedWarning')
+            : t('updated', { time: data.latest ? formatUpdatedAt(data.latest.updatedAt, intlLocale(locale)) : '—' })}
+        </span>
         {data.latest?.source.isMock && <span className="mini-badge">{t('fixture')}</span>}
-        {stale && <span className="stale-badge">{t('stale')}</span>}
+        {summary.basis !== 'planned' && stale && <span className="stale-badge">{t('stale')}</span>}
       </div>
     </article>
   )
@@ -122,6 +214,9 @@ export default function App() {
   const [origin, setOrigin] = useState('hamamatsu')
   const [destination, setDestination] = useState('shizuoka')
   const [departureTime, setDepartureTime] = useState(getTokyoTime)
+  const [resultVisibility, setResultVisibility] = useState<ResultVisibilitySettings>(() => ({
+    ...DEFAULT_RESULT_VISIBILITY,
+  }))
   const [visibleCount, setVisibleCount] = useState(5)
   const [nowTick, setNowTick] = useState(() => new Date())
   const t = (key: MessageKey, values?: Record<string, string | number>) => translate(locale, key, values)
@@ -151,16 +246,98 @@ export default function App() {
     return () => window.clearInterval(timer)
   }, [])
 
-  useEffect(() => setVisibleCount(5), [origin, destination, departureTime])
+  useEffect(
+    () => setVisibleCount(5),
+    [origin, destination, departureTime, resultVisibility],
+  )
 
   const sameStation = origin === destination
   const timetableStale = !data?.timetable.isFixture && data?.timetable.serviceDate !== getTokyoDate(nowTick)
+  const alignedLatest =
+    data && (data.timetable.isFixture || data.latest?.serviceDate === data.timetable.serviceDate)
+      ? data.latest
+      : null
   const results = useMemo(
-    () =>
-      data && !sameStation && !timetableStale
-        ? searchUpcomingTrains(data.timetable, origin, destination, departureTime, isTokyoWeekend(nowTick))
-        : [],
-    [data, origin, destination, departureTime, sameStation, nowTick, timetableStale],
+    () => {
+      if (!data || sameStation || timetableStale) return []
+      const journeyPlanner = createScheduledJourneyPlanner(data.timetable, isTokyoWeekend(nowTick))
+      return searchUpcomingTrains(
+        data.timetable,
+        origin,
+        destination,
+        departureTime,
+        isTokyoWeekend(nowTick),
+      )
+        .map((result) => {
+          const summary = formationAtStation(
+            result.service,
+            result.segmentStartStop.stationId,
+            data.timetable.stations,
+            alignedLatest,
+            data.formations.formations,
+          )
+          return { result, summary }
+        })
+        .filter(({ result, summary }) => {
+          if (result.matchType === 'direct') {
+            return shouldDisplayRouteResult(
+              result.matchType,
+              summary,
+              null,
+              resultVisibility,
+            )
+          }
+          return (
+            summary.status !== 'all_longitudinal' &&
+            (summary.status !== 'unknown' || resultVisibility.showIndirectUnknown)
+          )
+        })
+        .map(({ result, summary }) => {
+          const journey = result.matchType === 'direct'
+            ? null
+            : journeyPlanner.findFastestIncluding(
+                origin,
+                destination,
+                departureTime,
+                result.service.id,
+                result.segmentStartStop.stationId,
+              )
+          const journeyLegSummaries = journey?.legs.map((leg) =>
+            formationAtStation(
+              leg.service,
+              leg.fromStop.stationId,
+              data.timetable.stations,
+              alignedLatest,
+              data.formations.formations,
+            ),
+          ) ?? []
+          return { result, summary, journey, journeyLegSummaries }
+        })
+        .filter(
+          ({ result, summary, journey }) =>
+            result.matchType === 'direct' ||
+            (
+              journey !== null &&
+              shouldDisplayRouteResult(
+                result.matchType,
+                summary,
+                journey.featuredDurationMinutes,
+                resultVisibility,
+              )
+            ),
+        )
+    },
+    [
+      data,
+      origin,
+      destination,
+      departureTime,
+      sameStation,
+      nowTick,
+      timetableStale,
+      alignedLatest,
+      resultVisibility,
+    ],
   )
   const stale = isLatestStale(data?.latest ?? null, nowTick)
 
@@ -188,18 +365,16 @@ export default function App() {
   }
 
   const isDemo = data.timetable.isFixture || data.timetable.source.isMock || data.latest?.source.isMock
-  const alignedLatest =
-    data.timetable.isFixture || data.latest?.serviceDate === data.timetable.serviceDate
-      ? data.latest
-      : null
-
   return (
     <div className="page">
       <header className="site-header">
-        <div>
-          <p className="eyebrow">JR CENTRAL · CA</p>
+        <div className="header-copy">
+          <p className="eyebrow">
+            <span className="line-symbol" aria-hidden="true">CA</span>
+            <span>{t('lineName')}</span>
+            <span className="corridor-label">{t('corridorLabel')}</span>
+          </p>
           <h1>{t('title')}</h1>
-          <p className="subtitle">{t('subtitle')}</p>
         </div>
         <nav className="language-switcher" aria-label="Language">
           {([
@@ -267,6 +442,72 @@ export default function App() {
             </label>
             <button type="button" onClick={() => setDepartureTime(getTokyoTime())}>{t('now')}</button>
           </div>
+
+          <fieldset className="result-filters">
+            <legend>{t('resultFilters')}</legend>
+            <p>{t('resultFiltersHint')}</p>
+            <div className="filter-grid">
+              <label className="filter-option">
+                <input
+                  type="checkbox"
+                  checked={resultVisibility.showDirectLongitudinal}
+                  onChange={(event) => setResultVisibility((current) => ({
+                    ...current,
+                    showDirectLongitudinal: event.target.checked,
+                  }))}
+                />
+                <span>{t('showDirectLongitudinal')}</span>
+              </label>
+              <label className="filter-option">
+                <input
+                  type="checkbox"
+                  checked={resultVisibility.showDirectUnknown}
+                  onChange={(event) => setResultVisibility((current) => ({
+                    ...current,
+                    showDirectUnknown: event.target.checked,
+                  }))}
+                />
+                <span>{t('showDirectUnknown')}</span>
+              </label>
+              <label className="filter-option">
+                <input
+                  type="checkbox"
+                  checked={resultVisibility.showIndirectUnknown}
+                  onChange={(event) => setResultVisibility((current) => ({
+                    ...current,
+                    showIndirectUnknown: event.target.checked,
+                  }))}
+                />
+                <span>{t('showIndirectUnknown')}</span>
+              </label>
+              <label className="filter-option">
+                <input
+                  type="checkbox"
+                  checked={resultVisibility.requireMinimumIndirectMinutes}
+                  onChange={(event) => setResultVisibility((current) => ({
+                    ...current,
+                    requireMinimumIndirectMinutes: event.target.checked,
+                  }))}
+                />
+                <span>{t('requireMinimumIndirectRide')}</span>
+              </label>
+            </div>
+            <label className="minimum-ride-input">
+              <span>{t('minimumRideMinutes')}</span>
+              <input
+                type="number"
+                min="0"
+                step="1"
+                value={resultVisibility.minimumIndirectMinutes}
+                disabled={!resultVisibility.requireMinimumIndirectMinutes}
+                onChange={(event) => setResultVisibility((current) => ({
+                  ...current,
+                  minimumIndirectMinutes: Math.max(0, Math.floor(Number(event.target.value) || 0)),
+                }))}
+              />
+              <span>{t('minutesShort')}</span>
+            </label>
+          </fieldset>
         </section>
 
         {data.latestLoadFailed && <p className="inline-warning" role="alert">{t('latestError')}</p>}
@@ -285,21 +526,17 @@ export default function App() {
             <div className="empty-state">{t('noTrains')}</div>
           ) : (
             <div className="train-list">
-              {results.slice(0, visibleCount).map((result) => (
+              {results.slice(0, visibleCount).map(({ result, summary, journey, journeyLegSummaries }) => (
                 <TrainCard
                   key={result.service.id}
                   result={result}
-                  summary={formationAtStation(
-                    result.service,
-                    result.segmentStartStop.stationId,
-                    data.timetable.stations,
-                    alignedLatest,
-                    data.formations.formations,
-                  )}
+                  summary={summary}
                   stations={data.timetable.stations}
                   locale={locale}
                   data={data}
                   stale={stale}
+                  journey={journey}
+                  journeyLegSummaries={journeyLegSummaries}
                 />
               ))}
             </div>
@@ -313,6 +550,7 @@ export default function App() {
         </section>
 
         <footer className="site-footer">
+          <p className="independent-note">{t('independentNotice')}</p>
           <p>{t('firstLegNote')}</p>
           <p>
             {data.timetable.source.url ? (

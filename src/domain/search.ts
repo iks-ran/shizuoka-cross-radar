@@ -1,7 +1,7 @@
 import type { SearchResult, Station, TimetableData, TrainService } from '../types'
 import { parseClockMinutes, stopMinutes } from './time'
 
-const runsToday = (service: TrainService, weekend: boolean): boolean =>
+export const serviceRunsToday = (service: TrainService, weekend: boolean): boolean =>
   service.serviceDays.includes('all') ||
   (weekend ? service.serviceDays.includes('weekend') : service.serviceDays.includes('weekday'))
 
@@ -26,7 +26,7 @@ export const searchUpcomingTrains = (
 
   const results: SearchResult[] = []
   for (const service of timetable.services) {
-    if (!runsToday(service, weekend)) continue
+    if (!serviceRunsToday(service, weekend)) continue
     if ((service.direction === 'eastbound' ? 1 : -1) !== desiredStep) continue
 
     const firstStop = service.stops.at(0)

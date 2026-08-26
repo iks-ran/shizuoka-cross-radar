@@ -11,16 +11,19 @@ from zoneinfo import ZoneInfo
 from .base import SourceError, build_latest_snapshot
 
 
-YULOG_READ_URL = "https://api.yulog.app/unyo/read/sz"
-YULOG_PAGE_URL = "https://yulog.app/unyo/"
+CURRENT_ASSIGNMENTS_URL = (
+    "https://tokaido-unyo-shizuoka.com/json/unyo/unyo-data-current.json"
+)
+OPERATION_PAGE_URL = "https://tokaido-unyo-shizuoka.com/unyo/"
 TOKYO = ZoneInfo("Asia/Tokyo")
 
 
-class YulogFormationSource:
-    """Read-only adapter for the request used by Yulog's Shizuoka page.
+class TokaidoShizuokaFormationSource:
+    """Read the dated current-assignment JSON used by the operation page.
 
-    This adapter is opt-in. The default workflow uses the fixture adapter until
-    the source maintainer's reuse and attribution requirements are confirmed.
+    This adapter is opt-in. The source page says that its current assignments
+    are populated with Yulog-provided data, so that inherited provenance must
+    remain documented even though this adapter does not call Yulog directly.
     """
 
     def __init__(
@@ -32,9 +35,13 @@ class YulogFormationSource:
         self._sleeper = sleeper
 
     def fetch(self, service_date: str | None = None) -> dict[str, Any]:
-        target_date = date.fromisoformat(service_date) if service_date else datetime.now(TOKYO).date()
+        target_date = (
+            date.fromisoformat(service_date)
+            if service_date
+            else datetime.now(TOKYO).date()
+        )
         request = urllib.request.Request(
-            YULOG_READ_URL,
+            CURRENT_ASSIGNMENTS_URL,
             headers={
                 "Accept": "application/json",
                 "User-Agent": "shizuoka-cross-seat-radar/0.1 (GitHub Actions read-only adapter)",
@@ -52,12 +59,14 @@ class YulogFormationSource:
                 last_error = exc
                 if attempt < 2:
                     self._sleeper(float(attempt + 1))
-        raise SourceError(f"Yulog read failed after retries: {last_error}")
+        raise SourceError(
+            f"Tokaido Shizuoka assignment read failed after retries: {last_error}"
+        )
 
     @staticmethod
     def parse_response(payload: Any, target_date: date) -> dict[str, Any]:
         if not isinstance(payload, dict):
-            raise SourceError("Yulog response must be an object")
+            raise SourceError("Tokaido Shizuoka assignment response must be an object")
 
         matching_day: dict[str, Any] | None = None
         for key, candidate in payload.items():
@@ -74,28 +83,32 @@ class YulogFormationSource:
                 break
 
         if matching_day is None:
-            raise SourceError(f"No Yulog assignment map for {target_date.isoformat()}")
+            raise SourceError(
+                f"No Tokaido Shizuoka assignment map for {target_date.isoformat()}"
+            )
         assignments = matching_day.get("train")
         if not isinstance(assignments, dict) or not assignments:
-            raise SourceError("Yulog current-day assignment map is empty")
-        if any(not isinstance(key, str) or not isinstance(value, str) for key, value in assignments.items()):
-            raise SourceError("Yulog assignment map contains non-string values")
+            raise SourceError("Tokaido Shizuoka current-day assignment map is empty")
+        if any(
+            not isinstance(key, str) or not isinstance(value, str)
+            for key, value in assignments.items()
+        ):
+            raise SourceError("Tokaido Shizuoka assignment map contains non-string values")
 
         raw_time = payload.get("time")
         if not isinstance(raw_time, str):
-            raise SourceError("Yulog response has no update time")
+            raise SourceError("Tokaido Shizuoka response has no update time")
         try:
             observed = datetime.strptime(raw_time, "%Y/%m/%d_%H:%M:%S").replace(tzinfo=TOKYO)
         except ValueError as exc:
-            raise SourceError("Yulog update time is invalid") from exc
+            raise SourceError("Tokaido Shizuoka update time is invalid") from exc
 
         return build_latest_snapshot(
             service_date=target_date.isoformat(),
             updated_at=observed.isoformat(),
-            source_id="yulog",
-            source_label="Yulog – Shizuoka Operation Status",
-            source_url=YULOG_PAGE_URL,
+            source_id="tokaido-shizuoka",
+            source_label="Tokaido Line Shizuoka Area Operation Information",
+            source_url=OPERATION_PAGE_URL,
             is_mock=False,
             assignments=assignments,
         )
-

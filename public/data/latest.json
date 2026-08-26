@@ -4,9 +4,9 @@
   "serviceDate": "2026-08-26",
   "updatedAt": "2026-08-26T21:51:51+09:00",
   "source": {
-    "id": "yulog",
-    "label": "Yulog – Shizuoka Operation Status",
-    "url": "https://yulog.app/unyo/",
+    "id": "tokaido-shizuoka",
+    "label": "Tokaido Line Shizuoka Area Operation Information",
+    "url": "https://tokaido-unyo-shizuoka.com/unyo/",
     "isMock": false
   },
   "assignments": [

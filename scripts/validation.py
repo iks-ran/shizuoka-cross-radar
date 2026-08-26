@@ -162,6 +162,20 @@ def validate_timetable(data: Any) -> None:
             diagram_ids = segment.get("diagramIds")
             _require(isinstance(diagram_ids, list), "operation segment diagramIds must be a list")
             _require(all(isinstance(item, str) and DIAGRAM_PATTERN.fullmatch(item) for item in diagram_ids), "invalid segment diagram id")
+            planned_formations = segment.get("plannedFormations", [])
+            _require(isinstance(planned_formations, list), "plannedFormations must be a list")
+            planned_diagrams: set[str] = set()
+            for planned in planned_formations:
+                _require(isinstance(planned, dict), "planned formation must be an object")
+                planned_diagram = planned.get("diagramId")
+                _require(planned_diagram in diagram_ids, "planned formation references an unknown diagram")
+                _require(planned_diagram not in planned_diagrams, "duplicate planned formation diagram")
+                planned_diagrams.add(planned_diagram)
+                family = planned.get("family")
+                _require(
+                    isinstance(family, str) and re.fullmatch(r"[A-Z]+", family) is not None,
+                    "invalid planned formation family",
+                )
 
 
 def _load(path: Path) -> Any:
