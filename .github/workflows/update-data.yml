@@ -1,0 +1,49 @@
+name: Update generated data
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-generated-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      FORMATION_SOURCE: ${{ vars.FORMATION_SOURCE || 'fixture' }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Run Python tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Update current formation snapshot
+        run: python -m scripts.update_data --source "$FORMATION_SOURCE"
+
+      - name: Validate generated data
+        run: python -m scripts.validation
+
+      - name: Commit valid changes
+        run: |
+          if git diff --quiet -- public/data/latest.json; then
+            echo "No generated-data changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/latest.json
+          git commit -m "data: update current formation snapshot"
+          git push
+

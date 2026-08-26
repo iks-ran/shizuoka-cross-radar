@@ -1,0 +1,5 @@
+operation_number,train_number,depature_station,depsta_time,terminal_station,termsta_time,position,day,koro_mark,partner,distance,change_flag,tbl_flag,option
+A21,731M,島田,600,静岡,630,1,1,0x01,A28,,,0x1,
+,738M,静岡,700,島田,730,2,1,0x02,A28,,,,
+A22,729M,浜松,610,静岡,720,1,2,0x01,A36,,,0x1,
+,,,,,,,,,,,,0x6,午後運用なし

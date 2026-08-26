@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "timeZone": "Asia/Tokyo",
+  "verifiedAt": "2026-08-26",
+  "formations": [
+    {
+      "family": "K",
+      "series": "313-300",
+      "carCount": 2,
+      "crossSeatCarCount": 2,
+      "layout": "convertible",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "L",
+      "series": "313-1300",
+      "carCount": 2,
+      "crossSeatCarCount": 2,
+      "layout": "convertible",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "S",
+      "series": "313-8000",
+      "carCount": 3,
+      "crossSeatCarCount": 3,
+      "layout": "convertible",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "V",
+      "series": "313-3000/3100",
+      "carCount": 2,
+      "crossSeatCarCount": 2,
+      "layout": "box_fixed",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "W",
+      "series": "313-2300/2350",
+      "carCount": 2,
+      "crossSeatCarCount": 0,
+      "layout": "longitudinal",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "T",
+      "series": "313-2500",
+      "carCount": 3,
+      "crossSeatCarCount": 0,
+      "layout": "longitudinal",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "N",
+      "series": "313-2600",
+      "carCount": 3,
+      "crossSeatCarCount": 0,
+      "layout": "longitudinal",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "U",
+      "series": "315-3000",
+      "carCount": 4,
+      "crossSeatCarCount": 0,
+      "layout": "longitudinal",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
+    },
+    {
+      "family": "F",
+      "series": "373",
+      "carCount": null,
+      "crossSeatCarCount": null,
+      "layout": "unknown",
+      "verified": false,
+      "evidenceUrl": null
+    }
+  ]
+}
