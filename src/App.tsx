@@ -4,6 +4,7 @@ import { formationAtStation } from './domain/classification'
 import { searchUpcomingTrains, stationName } from './domain/search'
 import {
   formatUpdatedAt,
+  getTokyoDate,
   getTokyoTime,
   isLatestStale,
   isTokyoWeekend,
@@ -40,7 +41,9 @@ interface TrainCardProps {
 
 function TrainCard({ result, summary, stations, locale, data, stale }: TrainCardProps) {
   const t = (key: MessageKey, values?: Record<string, string | number>) => translate(locale, key, values)
-  const trainDestination = stationName(stations, result.service.destinationStationId, locale)
+  const trainDestination = locale === 'zh-CN'
+    ? result.service.destinationName.zhCN
+    : result.service.destinationName[locale]
   const arrivalStation = stationName(stations, result.arrivalStop.stationId, locale)
   const originStation = stationName(stations, result.originStop.stationId, locale)
   const formationLabel = summary.currentUnits.length > 0 ? summary.currentUnits.join(' + ') : summary.rawFormation || '—'
@@ -135,12 +138,13 @@ export default function App() {
   useEffect(() => setVisibleCount(5), [origin, destination, departureTime])
 
   const sameStation = origin === destination
+  const timetableStale = !data?.timetable.isFixture && data?.timetable.serviceDate !== getTokyoDate(nowTick)
   const results = useMemo(
     () =>
-      data && !sameStation
+      data && !sameStation && !timetableStale
         ? searchUpcomingTrains(data.timetable, origin, destination, departureTime, isTokyoWeekend(nowTick))
         : [],
-    [data, origin, destination, departureTime, sameStation, nowTick],
+    [data, origin, destination, departureTime, sameStation, nowTick, timetableStale],
   )
   const stale = isLatestStale(data?.latest ?? null, nowTick)
 
@@ -167,7 +171,11 @@ export default function App() {
     )
   }
 
-  const isDemo = data.timetable.isFixture || data.latest?.source.isMock
+  const isDemo = data.timetable.isFixture || data.timetable.source.isMock || data.latest?.source.isMock
+  const alignedLatest =
+    data.timetable.isFixture || data.latest?.serviceDate === data.timetable.serviceDate
+      ? data.latest
+      : null
 
   return (
     <div className="page">
@@ -253,7 +261,9 @@ export default function App() {
             {!sameStation && <span>{t('count', { count: results.length })}</span>}
           </div>
 
-          {sameStation ? (
+          {timetableStale ? (
+            <div className="empty-state">{t('timetableStale')}</div>
+          ) : sameStation ? (
             <div className="empty-state">{t('sameStation')}</div>
           ) : results.length === 0 ? (
             <div className="empty-state">{t('noTrains')}</div>
@@ -267,7 +277,7 @@ export default function App() {
                     result.service,
                     origin,
                     data.timetable.stations,
-                    data.latest,
+                    alignedLatest,
                     data.formations.formations,
                   )}
                   stations={data.timetable.stations}
@@ -288,14 +298,23 @@ export default function App() {
 
         <footer className="site-footer">
           <p>{t('firstLegNote')}</p>
+          <p>
+            {data.timetable.source.url ? (
+              <a href={data.timetable.source.url} target="_blank" rel="noreferrer">
+                {t('timetableSource', { source: data.timetable.source.label })}
+              </a>
+            ) : (
+              t('timetableSource', { source: data.timetable.source.label })
+            )}
+          </p>
           {data.latest && (
             <p>
               {data.latest.source.url ? (
                 <a href={data.latest.source.url} target="_blank" rel="noreferrer">
-                  {t('source', { source: data.latest.source.label })}
+                  {t('formationSource', { source: data.latest.source.label })}
                 </a>
               ) : (
-                t('source', { source: data.latest.source.label })
+                t('formationSource', { source: data.latest.source.label })
               )}
             </p>
           )}
@@ -304,4 +323,3 @@ export default function App() {
     </div>
   )
 }
-

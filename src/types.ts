@@ -29,6 +29,7 @@ export interface TrainService {
   id: string
   trainNumber: string
   destinationStationId: string
+  destinationName: LocalizedName
   direction: 'eastbound' | 'westbound'
   serviceDays: Array<'all' | 'weekday' | 'weekend'>
   stops: Stop[]
@@ -38,9 +39,19 @@ export interface TrainService {
 export interface TimetableData {
   schemaVersion: 1
   timeZone: 'Asia/Tokyo'
+  serviceDate: string | null
+  updatedAt: string | null
+  source: DataSource
   isFixture: boolean
   stations: Station[]
   services: TrainService[]
+}
+
+export interface DataSource {
+  id: string
+  label: string
+  url: string | null
+  isMock: boolean
 }
 
 export type SeatLayout = 'convertible' | 'box_fixed' | 'longitudinal' | 'unknown'
@@ -80,12 +91,7 @@ export interface LatestData {
   timeZone: 'Asia/Tokyo'
   serviceDate: string
   updatedAt: string
-  source: {
-    id: string
-    label: string
-    url: string | null
-    isMock: boolean
-  }
+  source: DataSource
   assignments: LatestAssignment[]
 }
 
@@ -105,4 +111,3 @@ export interface FormationSummary {
   crossSeatCarCount: number | null
   totalCarCount: number | null
 }
-

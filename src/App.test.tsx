@@ -1,10 +1,14 @@
-import { render, screen } from '@testing-library/react'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { cleanup, render, screen } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
+import { getTokyoDate } from './domain/time'
 
 const timetable = {
   schemaVersion: 1,
   timeZone: 'Asia/Tokyo',
+  serviceDate: null,
+  updatedAt: null,
+  source: { id: 'fixture', label: 'Fixture timetable', url: null, isMock: true },
   isFixture: true,
   stations: [
     { id: 'hamamatsu', order: 0, name: { ja: '浜松', en: 'Hamamatsu', zhCN: '滨松' } },
@@ -30,6 +34,8 @@ const latest = {
 }
 
 describe('App', () => {
+  afterEach(cleanup)
+
   beforeEach(() => {
     localStorage.clear()
     vi.stubGlobal(
@@ -47,6 +53,46 @@ describe('App', () => {
     expect(await screen.findByText('Demo data')).toBeInTheDocument()
     expect(screen.getByLabelText('Departure station')).toHaveValue('hamamatsu')
     expect(screen.getByLabelText('Destination station')).toHaveValue('shizuoka')
-    expect(screen.getByText('No matching fixture trains remain after this time.')).toBeInTheDocument()
+    expect(screen.getByText('No matching trains remain after this time.')).toBeInTheDocument()
+  })
+
+  it('does not label aligned JR Central and Yulog snapshots as fixture data', async () => {
+    const serviceDate = getTokyoDate()
+    const liveTimetable = {
+      ...timetable,
+      serviceDate,
+      updatedAt: new Date().toISOString(),
+      source: {
+        id: 'jr-central',
+        label: 'JR Central conventional-line train information',
+        url: 'https://traininfo.jr-central.co.jp/',
+        isMock: false,
+      },
+      isFixture: false,
+    }
+    const liveLatest = {
+      ...latest,
+      serviceDate,
+      updatedAt: new Date().toISOString(),
+      source: { id: 'yulog', label: 'Yulog', url: 'https://yulog.app/unyo/', isMock: false },
+    }
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: string | URL | Request) => {
+        const url = String(input)
+        const payload = url.includes('timetable')
+          ? liveTimetable
+          : url.includes('formations')
+            ? formations
+            : liveLatest
+        return Promise.resolve(new Response(JSON.stringify(payload), { status: 200 }))
+      }),
+    )
+
+    render(<App />)
+    expect(await screen.findByLabelText('Departure station')).toBeInTheDocument()
+    expect(screen.queryByText('Demo data')).not.toBeInTheDocument()
+    expect(screen.getByText(/Timetable: JR Central/)).toBeInTheDocument()
+    expect(screen.getByText('Formations: Yulog')).toBeInTheDocument()
   })
 })

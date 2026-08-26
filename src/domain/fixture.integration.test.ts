@@ -10,8 +10,10 @@ const timetable = timetableJson as TimetableData
 const formations = formationsJson as FormationsData
 const latest = latestJson as LatestData
 
-describe('checked-in fixture data', () => {
+describe('checked-in static data', () => {
   it('can query a Hamamatsu to Shizuoka first leg', () => {
+    expect(timetable.isFixture).toBe(false)
+    expect(timetable.source.id).toBe('jr-central')
     const results = searchUpcomingTrains(timetable, 'hamamatsu', 'shizuoka', '14:00', false)
     expect(results.length).toBeGreaterThanOrEqual(5)
     expect(results.every((result) => result.originStop.stationId === 'hamamatsu')).toBe(true)

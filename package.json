@@ -4,10 +4,17 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "bootstrap": "bash scripts/bootstrap.sh",
+    "check:fast": "npm run check:harness && npm run test:python && npm run validate:data && npm test",
+    "check:harness": "python3 -m json.tool feature_list.json >/dev/null && bash -n scripts/bootstrap.sh scripts/smoke.sh scripts/verify.sh",
     "dev": "mkdir -p .tmp/vite && TMPDIR=.tmp/vite vite",
     "build": "tsc --noEmit && mkdir -p .tmp/vite && TMPDIR=.tmp/vite vite build",
     "preview": "mkdir -p .tmp/vite && TMPDIR=.tmp/vite vite preview",
-    "test": "mkdir -p .tmp/vitest && TMPDIR=.tmp/vitest vitest run"
+    "smoke": "bash scripts/smoke.sh",
+    "test": "mkdir -p .tmp/vitest && TMPDIR=.tmp/vitest vitest run",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "validate:data": "python3 -m scripts.validation",
+    "verify": "bash scripts/verify.sh"
   },
   "dependencies": {
     "react": "^19.2.8",

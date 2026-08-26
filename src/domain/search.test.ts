@@ -19,6 +19,7 @@ const service = (
     id,
     trainNumber: id,
     destinationStationId: stationIds.at(-1)!,
+    destinationName: { ja: '終点', en: 'Terminal', zhCN: '终点' },
     direction,
     serviceDays: ['all'],
     stops: stationIds.map((stationId, index) => {
@@ -38,6 +39,9 @@ const service = (
 const timetable: TimetableData = {
   schemaVersion: 1,
   timeZone: 'Asia/Tokyo',
+  serviceDate: null,
+  updatedAt: null,
+  source: { id: 'fixture', label: 'Fixture timetable', url: null, isMock: true },
   isFixture: true,
   stations,
   services: [
@@ -67,4 +71,3 @@ describe('searchUpcomingTrains', () => {
     expect(results.map((result) => result.service.id)).toEqual(['wrong-way'])
   })
 })
-

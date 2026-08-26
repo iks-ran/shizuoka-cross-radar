@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "project": "Shizuoka Cross-Seat Radar",
+  "last_updated": "2026-08-26",
+  "rules": {
+    "single_active_feature": true,
+    "passing_requires_evidence": true
+  },
+  "status_legend": {
+    "not_started": "Work has not begun.",
+    "in_progress": "This is the one active feature.",
+    "blocked": "A documented dependency prevents progress.",
+    "passing": "Required verification passed and evidence is recorded."
+  },
+  "features": [
+    {
+      "id": "RADAR-001",
+      "priority": 1,
+      "title": "Static cross-seat search MVP",
+      "behavior": "A passenger can query the generated static timetable in Japanese, English, or Simplified Chinese and see conservative seat classifications and freshness.",
+      "depends_on": [],
+      "in_scope": [
+        "Station and departure-time search",
+        "Formation-at-boarding classification",
+        "Static GitHub Pages production build"
+      ],
+      "out_of_scope": [
+        "A traditional backend",
+        "Browser-side calls to railway data sources"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "All Python and frontend checks pass, the site builds, and the preview serves its assets and three JSON files."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 3a40637",
+          "command": "npm run verify",
+          "result": "Passed: 9 Python tests, static-data validation, 18 frontend tests, production build, and preview checks for built assets plus all three JSON files."
+        }
+      ],
+      "notes": "The UI discloses fixture mode and withholds a live timetable from the wrong Tokyo service date."
+    },
+    {
+      "id": "DATA-001",
+      "priority": 2,
+      "title": "Server-side Yulog formation snapshot",
+      "behavior": "Python can normalize Yulog's current-day diagram assignments into static latest.json without browser-side source requests.",
+      "depends_on": [
+        "RADAR-001"
+      ],
+      "in_scope": [
+        "Read-only Yulog adapter",
+        "Atomic validation and last-good-file preservation",
+        "Unknown status for unverified formations"
+      ],
+      "out_of_scope": [
+        "Reporting or POST requests to Yulog",
+        "Yulog as a station timetable source"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "python3 -m unittest discover -s tests -p 'test_*.py' && python3 -m scripts.validation",
+          "expected": "Adapter tests pass and the checked-in generated JSON is valid."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "3a40637",
+          "command": "GitHub Pages deployment 32927193299",
+          "result": "Deployed latest.json identified Yulog with isMock=false."
+        }
+      ],
+      "notes": "Repository Actions variable FORMATION_SOURCE is configured externally as yulog."
+    },
+    {
+      "id": "DATA-002",
+      "priority": 3,
+      "title": "Permissioned real timetable",
+      "behavior": "Passengers see reliable station-by-station train times instead of fixture services while formations continue to join by operating diagram.",
+      "depends_on": [
+        "DATA-001"
+      ],
+      "in_scope": [
+        "Permissioned timetable source adapter",
+        "Operation-segment mapping including attach and detach cases",
+        "Removal of the fixture flag only after end-to-end verification"
+      ],
+      "out_of_scope": [
+        "HTML scraping in the user's browser",
+        "Invented times or operation mappings"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "All checks pass against a non-fixture timetable and the search smoke journey returns verified services."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-08-26",
+          "repository_state": "working tree based on 3a40637",
+          "command": "python3 -m scripts.update_data --source yulog --operation-revision 202603 && npm run verify",
+          "result": "Passed: generated 433 JR Central services over 43 stations, mapped 409 services to published diagrams, split 10 attach/detach services, then passed 13 Python tests, validation, 19 frontend tests, build, and production smoke."
+        }
+      ],
+      "notes": "Yulog mode refreshes the JR Central timetable and Yulog formations together; unmapped diagrams remain unknown."
+    }
+  ]
+}

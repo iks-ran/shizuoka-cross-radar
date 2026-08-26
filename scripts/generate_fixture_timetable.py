@@ -59,6 +59,7 @@ def _create_service(
         "id": service_id,
         "trainNumber": f"DEMO-{prefix}{clock.replace(':', '')}-{sequence:02d}",
         "destinationStationId": stations[end_index]["id"],
+        "destinationName": dict(stations[end_index]["name"]),
         "direction": direction,
         "serviceDays": ["all"],
         "stops": stops,
@@ -111,6 +112,14 @@ def generate(source: dict[str, Any]) -> dict[str, Any]:
     result = {
         "schemaVersion": 1,
         "timeZone": "Asia/Tokyo",
+        "serviceDate": None,
+        "updatedAt": None,
+        "source": {
+            "id": "fixture",
+            "label": "Fixture timetable",
+            "url": None,
+            "isMock": True,
+        },
         "isFixture": True,
         "stations": stations,
         "services": services,
@@ -147,4 +156,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

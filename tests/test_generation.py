@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 from scripts.generate_fixture_timetable import generate
-from scripts.update_data import write_latest_atomically
+from scripts.update_data import write_latest_atomically, write_timetable_atomically
 from scripts.validation import ValidationError, validate_formations, validate_latest, validate_timetable
 
 
@@ -38,6 +38,14 @@ class AtomicWriteTests(unittest.TestCase):
             invalid = {"schemaVersion": 1}
             with self.assertRaises(ValidationError):
                 write_latest_atomically(invalid, target)
+            self.assertEqual(target.read_text(encoding="utf-8"), '{"last":"good"}\n')
+
+    def test_invalid_timetable_update_preserves_last_good_file(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / "timetable.json"
+            target.write_text('{"last":"good"}\n', encoding="utf-8")
+            with self.assertRaises(ValidationError):
+                write_timetable_atomically({"schemaVersion": 1}, target)
             self.assertEqual(target.read_text(encoding="utf-8"), '{"last":"good"}\n')
 
 
