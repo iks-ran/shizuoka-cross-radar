@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-08-26",
-  "updatedAt": "2026-08-26T17:07:46+09:00",
+  "updatedAt": "2026-08-26T19:05:25+09:00",
   "source": {
     "id": "yulog",
     "label": "Yulog – Shizuoka Operation Status",
@@ -10,6 +10,14 @@
     "isMock": false
   },
   "assignments": [
+    {
+      "diagramId": "A144",
+      "rawFormation": "L5",
+      "currentUnits": [
+        "L5"
+      ],
+      "parseStatus": "parsed"
+    },
     {
       "diagramId": "A146",
       "rawFormation": "V5",
@@ -31,6 +39,14 @@
       "rawFormation": "V13",
       "currentUnits": [
         "V13"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A149",
+      "rawFormation": "V10",
+      "currentUnits": [
+        "V10"
       ],
       "parseStatus": "parsed"
     },
@@ -71,6 +87,22 @@
       "rawFormation": "N10",
       "currentUnits": [
         "N10"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A27",
+      "rawFormation": "T12",
+      "currentUnits": [
+        "T12"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A28",
+      "rawFormation": "T10",
+      "currentUnits": [
+        "T10"
       ],
       "parseStatus": "parsed"
     },
@@ -159,6 +191,14 @@
       "rawFormation": "T16",
       "currentUnits": [
         "T16"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A41",
+      "rawFormation": "T4",
+      "currentUnits": [
+        "T4"
       ],
       "parseStatus": "parsed"
     },
@@ -255,6 +295,14 @@
       "rawFormation": "F3",
       "currentUnits": [
         "F3"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A705",
+      "rawFormation": "F7",
+      "currentUnits": [
+        "F7"
       ],
       "parseStatus": "parsed"
     },
