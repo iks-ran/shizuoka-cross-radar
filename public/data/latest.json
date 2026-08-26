@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-08-26",
-  "updatedAt": "2026-08-26T16:01:42+09:00",
+  "updatedAt": "2026-08-26T17:07:46+09:00",
   "source": {
     "id": "yulog",
     "label": "Yulog – Shizuoka Operation Status",
@@ -159,6 +159,14 @@
       "rawFormation": "T16",
       "currentUnits": [
         "T16"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A51",
+      "rawFormation": "N2",
+      "currentUnits": [
+        "N2"
       ],
       "parseStatus": "parsed"
     },
