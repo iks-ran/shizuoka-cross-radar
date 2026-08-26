@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-08-26",
-  "updatedAt": "2026-08-26T14:05:14+09:00",
+  "updatedAt": "2026-08-26T14:59:36+09:00",
   "source": {
     "id": "yulog",
     "label": "Yulog – Shizuoka Operation Status",
@@ -31,6 +31,14 @@
       "rawFormation": "V13",
       "currentUnits": [
         "V13"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A21",
+      "rawFormation": "S3",
+      "currentUnits": [
+        "S3"
       ],
       "parseStatus": "parsed"
     },
@@ -163,6 +171,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A55",
+      "rawFormation": "S5",
+      "currentUnits": [
+        "S5"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A56",
       "rawFormation": "S1",
       "currentUnits": [
@@ -175,6 +191,14 @@
       "rawFormation": "N3",
       "currentUnits": [
         "N3"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A58",
+      "rawFormation": "S4",
+      "currentUnits": [
+        "S4"
       ],
       "parseStatus": "parsed"
     },
