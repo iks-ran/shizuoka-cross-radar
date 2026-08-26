@@ -17,20 +17,35 @@ describe('checked-in fixture data', () => {
     expect(results.every((result) => result.originStop.stationId === 'hamamatsu')).toBe(true)
   })
 
-  it('exercises all known seat status groups', () => {
-    const statuses = new Set(
-      timetable.services.map((service) =>
-        formationAtStation(
-          service,
-          service.stops[0].stationId,
-          timetable.stations,
-          latest,
-          formations.formations,
-        ).status,
+  it('classifies every service in the changing daily snapshot', () => {
+    const validStatuses = new Set([
+      'full_convertible',
+      'partial_cross',
+      'box_fixed',
+      'all_longitudinal',
+      'unknown',
+    ])
+    const summaries = timetable.services.map((service) =>
+      formationAtStation(
+        service,
+        service.stops[0].stationId,
+        timetable.stations,
+        latest,
+        formations.formations,
       ),
     )
-    expect(statuses).toEqual(
-      new Set(['full_convertible', 'partial_cross', 'box_fixed', 'all_longitudinal']),
-    )
+
+    expect(summaries.some((summary) => summary.status !== 'unknown')).toBe(true)
+    for (const summary of summaries) {
+      expect(validStatuses.has(summary.status)).toBe(true)
+      if (summary.status === 'unknown') {
+        expect(summary.crossSeatCarCount).toBeNull()
+        expect(summary.totalCarCount).toBeNull()
+      } else {
+        expect(summary.crossSeatCarCount).not.toBeNull()
+        expect(summary.totalCarCount).not.toBeNull()
+        expect(summary.crossSeatCarCount ?? 0).toBeLessThanOrEqual(summary.totalCarCount ?? 0)
+      }
+    }
   })
 })
