@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-08-27",
-  "updatedAt": "2026-08-27T09:26:41+09:00",
+  "updatedAt": "2026-08-27T19:08:25+09:00",
   "source": {
     "id": "jr-central",
     "label": "JR Central conventional-line train information",
@@ -45723,6 +45723,49 @@
       ]
     },
     {
+      "id": "jrcentral-2026082710122641203400-2264m",
+      "trainNumber": "2264M",
+      "destinationStationId": "mishima",
+      "destinationName": {
+        "ja": "三島",
+        "en": "Mishima",
+        "zhCN": "Mishima"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "numazu",
+          "arrival": null,
+          "departure": "19:44",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "19:50",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "numazu",
+          "toStationId": "mishima",
+          "diagramIds": [
+            "A72"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A72",
+              "family": "U"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026082710140131203540-4013m",
       "trainNumber": "4013M",
       "destinationStationId": "fuji",
@@ -46662,13 +46705,13 @@
       ]
     },
     {
-      "id": "jrcentral-2026082710125721203400-2259m",
+      "id": "jrcentral-2026082710122591203390-2259m",
       "trainNumber": "2259M",
       "destinationStationId": "numazu",
       "destinationName": {
-        "ja": "国府津",
-        "en": "Kozu",
-        "zhCN": "Kozu"
+        "ja": "沼津",
+        "en": "Numazu",
+        "zhCN": "Numazu"
       },
       "direction": "westbound",
       "serviceDays": [
@@ -46684,7 +46727,7 @@
         {
           "stationId": "numazu",
           "arrival": "20:15",
-          "departure": "20:20",
+          "departure": null,
           "dayOffset": 0
         }
       ],
