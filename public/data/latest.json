@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-01",
-  "updatedAt": "2026-09-01T14:24:15+09:00",
+  "updatedAt": "2026-09-01T20:00:01+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -10,6 +10,14 @@
     "isMock": false
   },
   "assignments": [
+    {
+      "diagramId": "A144",
+      "rawFormation": "V1",
+      "currentUnits": [
+        "V1"
+      ],
+      "parseStatus": "parsed"
+    },
     {
       "diagramId": "A145",
       "rawFormation": "V3",
@@ -23,6 +31,14 @@
       "rawFormation": "V9",
       "currentUnits": [
         "V9"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A147",
+      "rawFormation": "L6",
+      "currentUnits": [
+        "L6"
       ],
       "parseStatus": "parsed"
     },
@@ -75,6 +91,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A27",
+      "rawFormation": "T14",
+      "currentUnits": [
+        "T14"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A29",
       "rawFormation": "T17",
       "currentUnits": [
@@ -87,6 +111,14 @@
       "rawFormation": "S6",
       "currentUnits": [
         "S6"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A31",
+      "rawFormation": "T11",
+      "currentUnits": [
+        "T11"
       ],
       "parseStatus": "parsed"
     },
@@ -135,6 +167,14 @@
       "rawFormation": "T1",
       "currentUnits": [
         "T1"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A41",
+      "rawFormation": "T13",
+      "currentUnits": [
+        "T13"
       ],
       "parseStatus": "parsed"
     },
@@ -203,10 +243,26 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A64",
+      "rawFormation": "U1",
+      "currentUnits": [
+        "U1"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A68",
       "rawFormation": "U13",
       "currentUnits": [
         "U13"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A69",
+      "rawFormation": "U5",
+      "currentUnits": [
+        "U5"
       ],
       "parseStatus": "parsed"
     },
