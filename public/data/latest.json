@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-04",
-  "updatedAt": "2026-09-04T14:00:01+09:00",
+  "updatedAt": "2026-09-04T19:00:02+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -47,6 +47,14 @@
       "rawFormation": "V9",
       "currentUnits": [
         "V9"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A150",
+      "rawFormation": "L6",
+      "currentUnits": [
+        "L6"
       ],
       "parseStatus": "parsed"
     },
@@ -243,6 +251,22 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A53",
+      "rawFormation": "N8",
+      "currentUnits": [
+        "N8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A54",
+      "rawFormation": "N6",
+      "currentUnits": [
+        "N6"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A55",
       "rawFormation": "S5",
       "currentUnits": [
@@ -324,7 +348,7 @@
     },
     {
       "diagramId": "A68",
-      "rawFormation": "W9/W3",
+      "rawFormation": "U2→W9/W3",
       "currentUnits": [
         "W9",
         "W3"
@@ -333,10 +357,9 @@
     },
     {
       "diagramId": "A69",
-      "rawFormation": "W9/W3",
+      "rawFormation": "W9/W3→U2",
       "currentUnits": [
-        "W9",
-        "W3"
+        "U2"
       ],
       "parseStatus": "parsed"
     },
@@ -434,6 +457,15 @@
       "currentUnits": [
         "K7",
         "K11"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A83",
+      "rawFormation": "W1/K6",
+      "currentUnits": [
+        "W1",
+        "K6"
       ],
       "parseStatus": "parsed"
     },
