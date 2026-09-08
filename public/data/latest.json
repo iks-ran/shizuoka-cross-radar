@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-08",
-  "updatedAt": "2026-09-08T19:33:48+09:00",
+  "updatedAt": "2026-09-08T23:45:40+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -108,9 +108,9 @@
     },
     {
       "diagramId": "A24",
-      "rawFormation": "N2",
+      "rawFormation": "N2→T10",
       "currentUnits": [
-        "N2"
+        "T10"
       ],
       "parseStatus": "parsed"
     },
@@ -148,9 +148,9 @@
     },
     {
       "diagramId": "A29",
-      "rawFormation": "T2",
+      "rawFormation": "T5",
       "currentUnits": [
-        "T2"
+        "T5"
       ],
       "parseStatus": "parsed"
     },
@@ -220,9 +220,9 @@
     },
     {
       "diagramId": "A38",
-      "rawFormation": "N10",
+      "rawFormation": "N10→T2",
       "currentUnits": [
-        "N10"
+        "T2"
       ],
       "parseStatus": "parsed"
     },
@@ -316,9 +316,9 @@
     },
     {
       "diagramId": "A59",
-      "rawFormation": "T10",
+      "rawFormation": "T10→N2",
       "currentUnits": [
-        "T10"
+        "N2"
       ],
       "parseStatus": "parsed"
     },
@@ -419,6 +419,22 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A704",
+      "rawFormation": "F3",
+      "currentUnits": [
+        "F3"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A705",
+      "rawFormation": "F5",
+      "currentUnits": [
+        "F5"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A706",
       "rawFormation": "F13",
       "currentUnits": [
@@ -431,6 +447,14 @@
       "rawFormation": "F14",
       "currentUnits": [
         "F14"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A709",
+      "rawFormation": "F11",
+      "currentUnits": [
+        "F11"
       ],
       "parseStatus": "parsed"
     },
@@ -460,9 +484,9 @@
     },
     {
       "diagramId": "A712",
-      "rawFormation": "F9",
+      "rawFormation": "F2",
       "currentUnits": [
-        "F9"
+        "F2"
       ],
       "parseStatus": "parsed"
     },
