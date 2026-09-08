@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-08",
-  "updatedAt": "2026-09-08T14:49:36+09:00",
+  "updatedAt": "2026-09-08T19:35:08+09:00",
   "source": {
     "id": "jr-central",
     "label": "JR Central conventional-line train information",
@@ -39269,9 +39269,9 @@
       "trainNumber": "4011M",
       "destinationStationId": "fuji",
       "destinationName": {
-        "ja": "甲府",
-        "en": "Kofu",
-        "zhCN": "Kofu"
+        "ja": "富士宮",
+        "en": "Fujinomiya",
+        "zhCN": "Fujinomiya"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -45714,97 +45714,6 @@
             {
               "diagramId": "A64",
               "family": "U"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026090810140131203540-4013m",
-      "trainNumber": "4013M",
-      "destinationStationId": "fuji",
-      "destinationName": {
-        "ja": "甲府",
-        "en": "Kofu",
-        "zhCN": "Kofu"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shizuoka",
-          "arrival": null,
-          "departure": "19:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": null,
-          "departure": null,
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": null,
-          "departure": null,
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "19:54",
-          "departure": "19:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": null,
-          "departure": null,
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": null,
-          "departure": null,
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": null,
-          "departure": null,
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": null,
-          "departure": null,
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": null,
-          "departure": null,
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "20:12",
-          "departure": "20:15",
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shizuoka",
-          "toStationId": "fuji",
-          "diagramIds": [
-            "A704"
-          ],
-          "plannedFormations": [
-            {
-              "diagramId": "A704",
-              "family": "F"
             }
           ]
         }
