@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -36,17 +38,21 @@ jobs:
           --source "$FORMATION_SOURCE"
           --operation-revision "$OPERATION_REVISION"
 
+      - name: Backfill missing historical snapshots
+        if: env.FORMATION_SOURCE != 'fixture'
+        run: python -m scripts.backfill_history
+
       - name: Validate generated data
         run: python -m scripts.validation
 
       - name: Commit valid changes
         run: |
-          if git diff --quiet -- public/data/timetable.json public/data/latest.json; then
+          if [ -z "$(git status --porcelain -- public/data)" ]; then
             echo "No generated-data changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/timetable.json public/data/latest.json
+          git add public/data
           git commit -m "data: update current train snapshots"
           git push

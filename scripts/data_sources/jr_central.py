@@ -334,6 +334,9 @@ class JrCentralTimetableSource:
         operation: dict[str, Any],
         holidays: set[date],
     ) -> dict[str, Any]:
+        return self.parse_checked(self.fetch_payload(), service_date, corridor_stations, operation, holidays)
+
+    def fetch_payload(self) -> dict[str, Any]:
         request = urllib.request.Request(
             JR_CENTRAL_TIMETABLE_URL,
             headers={
@@ -347,28 +350,22 @@ class JrCentralTimetableSource:
             try:
                 with self._opener(request, timeout=30) as response:
                     payload = json.loads(response.read().decode("utf-8-sig"))
-                result = self.parse_response(
-                    payload,
-                    service_date,
-                    corridor_stations,
-                    operation,
-                    holidays,
-                )
-                if len(result["services"]) < 100:
-                    raise SourceError("JR Central corridor timetable coverage is unexpectedly small")
-                mapped = sum(
-                    bool(segment["diagramIds"])
-                    for service in result["services"]
-                    for segment in service["operationSegments"][:1]
-                )
-                if mapped / len(result["services"]) < 0.75:
-                    raise SourceError("Operation-diagram mapping coverage is unexpectedly low")
-                return result
+                return payload
             except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError, SourceError) as exc:
                 last_error = exc
                 if attempt < 2:
                     self._sleeper(float(attempt + 1))
         raise SourceError(f"JR Central timetable read failed after retries: {last_error}")
+
+    @classmethod
+    def parse_checked(cls, payload, service_date, corridor_stations, operation, holidays):
+        result = cls.parse_response(payload, service_date, corridor_stations, operation, holidays)
+        if len(result["services"]) < 100:
+            raise SourceError("JR Central corridor timetable coverage is unexpectedly small")
+        mapped = sum(bool(service["operationSegments"][0]["diagramIds"]) for service in result["services"])
+        if mapped / len(result["services"]) < 0.75:
+            raise SourceError("Operation-diagram mapping coverage is unexpectedly low")
+        return result
 
     @staticmethod
     def parse_response(

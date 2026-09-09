@@ -52,4 +52,6 @@ for data_file in timetable formations latest; do
     | python3 -m json.tool >/dev/null
 done
 
+python3 -m scripts.smoke_history "$smoke_url"
+
 printf 'Smoke passed: built assets and all static JSON load from %s.\n' "$smoke_url"

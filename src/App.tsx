@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { loadStaticData, type StaticData } from './data'
+import { loadStaticData, loadHistoryIndex, loadHistoricalData, type HistoryIndex, type StaticData } from './data'
 import {
   DEFAULT_RESULT_VISIBILITY,
   formationAtStation,
@@ -14,6 +14,8 @@ import {
   getTokyoTime,
   isLatestStale,
   isTokyoWeekend,
+  shiftServiceDate,
+  nextScheduledCheck,
 } from './domain/time'
 import { detectLocale, intlLocale, translate, type MessageKey } from './i18n'
 import type {
@@ -63,6 +65,7 @@ interface TrainCardProps {
   locale: Locale
   data: StaticData
   stale: boolean
+  historical: boolean
   journey: ScheduledJourney | null
   journeyLegSummaries: FormationSummary[]
 }
@@ -74,6 +77,7 @@ function TrainCard({
   locale,
   data,
   stale,
+  historical,
   journey,
   journeyLegSummaries,
 }: TrainCardProps) {
@@ -201,6 +205,7 @@ function TrainCard({
             : t('updated', { time: data.latest ? formatUpdatedAt(data.latest.updatedAt, intlLocale(locale)) : '—' })}
         </span>
         {data.latest?.source.isMock && <span className="mini-badge">{t('fixture')}</span>}
+        {historical && summary.basis !== 'planned' && <span className="mini-badge">{t('historicalObservation')}</span>}
         {summary.basis !== 'planned' && stale && <span className="stale-badge">{t('stale')}</span>}
       </div>
     </article>
@@ -210,6 +215,11 @@ function TrainCard({
 export default function App() {
   const [locale, setLocale] = useState<Locale>(initialLocale)
   const [data, setData] = useState<StaticData | null>(null)
+  const [baseData, setBaseData] = useState<StaticData | null>(null)
+  const [history, setHistory] = useState<HistoryIndex | null>(null)
+  const [chosenDate, setChosenDate] = useState<string | null>(null)
+  const [historyLoading, setHistoryLoading] = useState(false)
+  const [historyError, setHistoryError] = useState(false)
   const [loadError, setLoadError] = useState(false)
   const [origin, setOrigin] = useState('hamamatsu')
   const [destination, setDestination] = useState('shizuoka')
@@ -223,9 +233,13 @@ export default function App() {
 
   useEffect(() => {
     let active = true
-    loadStaticData()
-      .then((loaded) => {
-        if (active) setData(loaded)
+    Promise.all([loadStaticData(), loadHistoryIndex()])
+      .then(([loaded, index]) => {
+        if (active) {
+          setData(loaded)
+          setBaseData(loaded)
+          setHistory(index)
+        }
       })
       .catch(() => {
         if (active) setLoadError(true)
@@ -234,6 +248,41 @@ export default function App() {
       active = false
     }
   }, [])
+
+  const today = getTokyoDate(nowTick)
+  const cutoff = shiftServiceDate(today, -29)
+  const availableDates = [...new Set([
+    ...(history?.dates.map((entry) => entry.serviceDate) ?? []),
+    ...(!baseData?.timetable.isFixture && baseData?.timetable.serviceDate ? [baseData.timetable.serviceDate] : []),
+  ])].filter((day) => day >= cutoff && day <= today).sort().reverse()
+  const selectedDate = chosenDate ?? availableDates[0] ?? today
+  const calendarDates = Array.from({ length: 30 }, (_, offset) => shiftServiceDate(today, -offset))
+  const historical = !baseData?.timetable.isFixture && selectedDate < today
+  const todayUnavailable = !baseData?.timetable.isFixture && !availableDates.includes(today)
+  const yesterdayRelease = history?.dates.find((entry) => entry.serviceDate === shiftServiceDate(today, -1))?.firstObservedAt
+  const availability = yesterdayRelease
+    ? t('releaseEstimate', { time: getTokyoTime(new Date(yesterdayRelease)) })
+    : t('nextCheck', { time: nextScheduledCheck(nowTick) })
+
+  useEffect(() => {
+    if (!baseData) return
+    let active = true
+    setHistoryError(false)
+    setHistoryLoading(false)
+    if (baseData.timetable.isFixture || baseData.timetable.serviceDate === selectedDate) {
+      setData(baseData)
+    } else {
+      const entry = history?.dates.find((item) => item.serviceDate === selectedDate)
+      if (entry) {
+        setHistoryLoading(true)
+        loadHistoricalData(entry, baseData.formations)
+          .then((loaded) => { if (active) setData(loaded) })
+          .catch(() => { if (active) setHistoryError(true) })
+          .finally(() => { if (active) setHistoryLoading(false) })
+      }
+    }
+    return () => { active = false }
+  }, [baseData, history, selectedDate])
 
   useEffect(() => {
     localStorage.setItem(LANGUAGE_STORAGE_KEY, locale)
@@ -248,25 +297,26 @@ export default function App() {
 
   useEffect(
     () => setVisibleCount(5),
-    [origin, destination, departureTime, resultVisibility],
+    [origin, destination, departureTime, resultVisibility, selectedDate],
   )
 
   const sameStation = origin === destination
-  const timetableStale = !data?.timetable.isFixture && data?.timetable.serviceDate !== getTokyoDate(nowTick)
+  const timetableStale = !data?.timetable.isFixture && (data?.timetable.serviceDate !== selectedDate || selectedDate < cutoff || selectedDate > today)
+  const selectedWeekend = isTokyoWeekend(new Date(`${selectedDate}T12:00:00+09:00`))
   const alignedLatest =
     data && (data.timetable.isFixture || data.latest?.serviceDate === data.timetable.serviceDate)
       ? data.latest
       : null
   const results = useMemo(
     () => {
-      if (!data || sameStation || timetableStale) return []
-      const journeyPlanner = createScheduledJourneyPlanner(data.timetable, isTokyoWeekend(nowTick))
+      if (!data || sameStation || timetableStale || historyLoading || historyError) return []
+      const journeyPlanner = createScheduledJourneyPlanner(data.timetable, selectedWeekend)
       return searchUpcomingTrains(
         data.timetable,
         origin,
         destination,
         departureTime,
-        isTokyoWeekend(nowTick),
+        selectedWeekend,
       )
         .map((result) => {
           const summary = formationAtStation(
@@ -335,11 +385,14 @@ export default function App() {
       sameStation,
       nowTick,
       timetableStale,
+      selectedWeekend,
+      historyLoading,
+      historyError,
       alignedLatest,
       resultVisibility,
     ],
   )
-  const stale = isLatestStale(data?.latest ?? null, nowTick)
+  const stale = !historical && isLatestStale(data?.latest ?? null, nowTick)
 
   const swapStations = () => {
     setOrigin(destination)
@@ -407,6 +460,18 @@ export default function App() {
         )}
 
         <section className="search-panel" aria-label={t('upcoming')}>
+          <div className="history-date">
+            <label htmlFor="schedule-date">{t('serviceDate')}</label>
+            <select id="schedule-date" aria-describedby={!baseData?.timetable.isFixture ? 'history-coverage' : undefined} value={selectedDate} onChange={(event) => setChosenDate(event.target.value)}>
+              <option value={today}>{today} · {t('today')}</option>
+              {calendarDates.slice(1).map((day) => (
+                <option key={day} value={day} disabled={!availableDates.includes(day)}>
+                  {day}{availableDates.includes(day) ? '' : ` · ${t('historyMissing')}`}
+                </option>
+              ))}
+            </select>
+            {!baseData?.timetable.isFixture && <small id="history-coverage">{t('historyCoverage', { count: availableDates.length })}</small>}
+          </div>
           <div className="station-fields">
             <label>
               <span>{t('departureStation')}</span>
@@ -511,15 +576,21 @@ export default function App() {
         </section>
 
         {data.latestLoadFailed && <p className="inline-warning" role="alert">{t('latestError')}</p>}
+        {todayUnavailable && <aside className="inline-warning" role="status"><p>{t('timetableStale')}</p><p>{availability}</p></aside>}
+        {historical && <aside className="inline-warning" role="note">{t('historyBanner', { date: selectedDate })}</aside>}
 
         <section className="results" aria-labelledby="results-title" aria-live="polite">
           <div className="results-heading">
-            <h2 id="results-title">{t('upcoming')}</h2>
+            <h2 id="results-title">{t(historical ? 'historicalTrains' : 'upcoming')}</h2>
             {!sameStation && <span>{t('count', { count: results.length })}</span>}
           </div>
 
-          {timetableStale ? (
-            <div className="empty-state">{t('timetableStale')}</div>
+          {historyError ? (
+            <div className="empty-state" role="alert">{t('historyError')}</div>
+          ) : historyLoading ? (
+            <div className="empty-state">{t('loading')}</div>
+          ) : timetableStale ? (
+            <div className="empty-state">{t('dateUnavailable')}</div>
           ) : sameStation ? (
             <div className="empty-state">{t('sameStation')}</div>
           ) : results.length === 0 ? (
@@ -535,6 +606,7 @@ export default function App() {
                   locale={locale}
                   data={data}
                   stale={stale}
+                  historical={historical}
                   journey={journey}
                   journeyLegSummaries={journeyLegSummaries}
                 />

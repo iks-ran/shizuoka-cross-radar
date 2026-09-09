@@ -926,3 +926,5 @@ a:focus-visible {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+/* Keep the date separate from the station pair on narrow screens. */
+.history-date { display: grid; gap: 0.4rem; margin-bottom: 1rem; max-width: 22rem; }

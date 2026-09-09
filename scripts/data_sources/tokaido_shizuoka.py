@@ -40,6 +40,9 @@ class TokaidoShizuokaFormationSource:
             if service_date
             else datetime.now(TOKYO).date()
         )
+        return self.parse_response(self.fetch_payload(), target_date)
+
+    def fetch_payload(self) -> dict[str, Any]:
         request = urllib.request.Request(
             CURRENT_ASSIGNMENTS_URL,
             headers={
@@ -54,7 +57,7 @@ class TokaidoShizuokaFormationSource:
             try:
                 with self._opener(request, timeout=20) as response:
                     payload = json.loads(response.read().decode("utf-8"))
-                return self.parse_response(payload, target_date)
+                return payload
             except (OSError, urllib.error.URLError, json.JSONDecodeError, SourceError) as exc:
                 last_error = exc
                 if attempt < 2:

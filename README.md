@@ -2,7 +2,7 @@
 
 A mobile-first static website for finding trains with transverse seating on the JR Tokaido Main Line between Toyohashi and Atami.
 
-The current release combines JR Central's current-day individual-train timetable with the current formation assignments displayed by Tokaido Line Shizuoka Area Operation Information. Both are normalized server-side into checked-in static JSON; the browser never contacts either source.
+The current release combines JR Central's individual-train timetable with dated formation assignments displayed by Tokaido Line Shizuoka Area Operation Information. Both are normalized server-side into checked-in static JSON, with historical pairs retained for 30 days; the browser never contacts either source.
 
 ## Features
 
@@ -15,6 +15,7 @@ The current release combines JR Central's current-day individual-train timetable
 - Formation-at-boarding display and conservative cross-seat classification
 - Japanese, English, and Simplified Chinese UI
 - Asia/Tokyo date, time, and freshness logic
+- Date selection across a rolling 30-day archive, automatic historical fallback, and publication estimates
 - Static JSON data with no browser-side requests to source websites
 - Atomic Python generation that preserves the last good snapshot on failure
 - GitHub Actions workflows for periodic data updates and GitHub Pages deployment
@@ -36,8 +37,22 @@ The browser reads only:
 - `public/data/timetable.json`
 - `public/data/formations.json`
 - `public/data/latest.json`
+- `public/data/history-index.json`
+- The selected `public/data/history/YYYY-MM-DD-<content-hash>.json` bundle
 
 `timetable.json` contains station calls and optional operating-diagram segments. `latest.json` maps operating diagrams to current units, and `formations.json` describes the seating layout of each verified formation family.
+
+### History and midnight availability
+
+The date selector defaults to today when available, otherwise to the most recent available date within the last 30 JST calendar days. Historical searches use the selected day's timetable and formations with the entered clock time, and are explicitly labeled as past-day reference information. They do not predict today's assignments or automatically interpret 00:30 as yesterday's overnight continuation. Manual date selection remains in place until changed or the page is reloaded.
+
+The updater fetches each existing feed once, normalizes matching dates that pass the existing coverage checks, and retains a paired immutable bundle per day. The index is published after all referenced bundles are validated and written; obsolete previously indexed bundles are removed afterward. Failed reads or validation preserve published data. The browser loads only the selected bundle. Current snapshot files remain available for compatibility.
+
+The index records `firstObservedAt` only when an updater first obtains a valid pair for that same JST date, and preserves it across later updates. Imported past dates have no fabricated release time. When today is missing, the page estimates availability from yesterday's first observation if recorded; otherwise it displays the next half-hour scheduled check using separate wording. Neither message guarantees source publication or GitHub Actions completion. Reload the page to pick up newly published data.
+
+The updater also backfills missing dates from validated timetable/formation pairs in Git history, using a full checkout. It reads both files from the same commit, takes the newest valid collected pair for each missing service date, and preserves existing archive entries and release observations. No new source is required. To recover from a fetched remote history locally, run `git fetch origin main`, then `python3 -m scripts.backfill_history --ref origin/main`. This changes only the archive, not the compatibility snapshots. Imported pairs have no fabricated first-release time.
+
+The selector shows all 30 calendar dates with unrecorded dates disabled and an explicit coverage count. The archive currently covers every date from August 26 through September 9 (15 dates); collection began August 26, so earlier dates cannot be recovered from this repository. Dates with only formation data and no matching official timetable remain unavailable. To seed just the saved pair without reading Git history, run `python3 -m scripts.update_data --seed-history`. Older snapshots are not relabeled to fill gaps.
 
 ## Run locally
 
@@ -108,7 +123,7 @@ The data workflow runs every 30 minutes and on manual dispatch. Its default `FOR
 
 ## Data status
 
-The checked-in `timetable.json` contains 43-station current-day services from JR Central and identifies itself with `source.id=jr-central` and `isFixture=false`. The checked-in `latest.json` identifies Tokaido Shizuoka with `source.id=tokaido-shizuoka` and `isMock=false`. A live timetable is used only on its matching Tokyo service date; an old snapshot is withheld until the updater publishes the new day.
+The checked-in `timetable.json` contains 43-station services from JR Central and identifies itself with `source.id=jr-central` and `isFixture=false`. The checked-in `latest.json` identifies Tokaido Shizuoka with `source.id=tokaido-shizuoka` and `isMock=false`. A timetable is used only for its matching selected Tokyo service date; a previous-day snapshot is explicitly historical. The archive includes September 9 from the live feeds, August 26 from the saved pair, and August 27–September 8 recovered from remote Git history. First-release observations remain unset for historical imports.
 
 Passenger services that cannot be joined to a published operating diagram remain visible with an unknown formation. Attach and detach stations split operation segments so the formation shown at boarding reflects the applicable part of the trip.
 

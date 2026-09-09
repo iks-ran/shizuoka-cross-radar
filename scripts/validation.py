@@ -198,6 +198,8 @@ def main() -> None:
     validate_file(args.timetable, validate_timetable)
     validate_file(args.formations, validate_formations)
     validate_file(args.latest, validate_latest)
+    from .history import validate_archive
+    validate_archive(args.timetable.parent)
     print("Static data validation passed")
 
 

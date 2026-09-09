@@ -25,6 +25,14 @@ export const getTokyoDate = (value = new Date()): string => {
   return `${parts.year}-${parts.month}-${parts.day}`
 }
 
+export const shiftServiceDate = (day: string, offset: number): string => {
+  const value = new Date(`${day}T12:00:00+09:00`)
+  return getTokyoDate(new Date(value.getTime() + offset * 86_400_000))
+}
+
+export const nextScheduledCheck = (now = new Date()): string =>
+  getTokyoTime(new Date((Math.floor(now.getTime() / 1_800_000) + 1) * 1_800_000))
+
 export const parseClockMinutes = (clock: string): number => {
   const match = /^(\d{2}):(\d{2})$/.exec(clock)
   if (!match) return Number.NaN
@@ -67,4 +75,3 @@ export const formatUpdatedAt = (iso: string, locale: string): string => {
     hourCycle: 'h23',
   }).format(value)
 }
-

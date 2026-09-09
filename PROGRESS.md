@@ -2,12 +2,12 @@
 
 ## Current Verified State
 
-- Repository state: `main` change set rebased onto `8d50a60` with verified source consolidation, responsive complete indirect-route planning, robust route ranking, per-leg seating, result filters, and JR Central-inspired passenger theme
+- Repository state: historical schedules and availability estimates rebased onto `e24ee78`
 - Standard bootstrap: `scripts/bootstrap.sh`
 - Standard start: `npm run dev`
 - Standard verification: `npm run verify`
-- Baseline result: `npm run verify` passed on 2026-08-26 with 16 Python tests, data validation, 55 frontend tests, build, and production smoke
-- Active feature: none; `RADAR-008` passed verification
+- Baseline result: `npm run verify` passed on 2026-09-10 with 27 Python tests, archive/data validation, 64 frontend tests, build, and production smoke for 15 daily bundles
+- Active feature: none; `RADAR-009` passed verification
 - Current blocker: none
 - Next best action: rename the external Actions source variable when operationally convenient; deployment remains approval-gated
 
@@ -27,13 +27,16 @@
 | `RADAR-006` | `npm run verify` passed with the exact 763M latest-feeder regression, exhaustive indirect-route consistency, adversarial tie-breaking, reverse-direction, overnight, build, and smoke coverage | working tree based on `27844c7` |
 | `RADAR-007` | `npm run verify` passed with cached feeder/onward profiles, pre-planning formation filtering, a 1.5-second regression budget, build, and smoke; the 202-candidate 06:00 audit measured about 0.33 seconds | working tree based on `27844c7` |
 | `RADAR-008` | `npm run verify` passed with one localized Tokaido corridor identifier, no duplicate subtitle, independent-service disclosure, all 55 frontend tests, build, and smoke; headless Firefox covered mobile, desktop, direct, and four-leg indirect layouts | working tree based on `27844c7` |
+| `RADAR-009` | `npm run verify` passed with 27 Python tests, 64 frontend tests, archive validation, build, and production smoke for 15 dated bundles; Git backfill recovered August 27–September 8 | working tree based on `25fbadf`; recovered records from `origin/main` at `e24ee78` |
 
 ## Known Failures and Risks
 
 - External-source availability, reuse permission, attribution, request frequency, and the configured `OPERATION_REVISION` remain operational dependencies.
 - The Tokaido Shizuoka current-assignment JSON mirrors Yulog-provided data; the mirror removes a direct API dependency but does not remove upstream provenance or permission concerns.
 - JR Central can publish some services without a matching community operation record; these remain visible with an unknown formation.
-- A previous-day live timetable is intentionally withheld until the next successful Tokyo-date update.
+- The rolling 30-day archive contains every date from August 26 through September 9. Collection began August 26; earlier dates have no recoverable pair in repository history. The UI explicitly marks unrecorded dates unavailable.
+- Source publication time is not guaranteed. Release estimates use yesterday's first successful same-day collection, when recorded; imported historical data has no first-release observation, so the UI initially shows the next half-hour scheduled check.
+- Subsequent investigation confirmed dated formation archives at `https://tokaido-unyo-shizuoka.com/json/unyo/2026/unyo-data-20260812.json` (including August 12 assignments). Direct formation-archive backfill is not implemented; historical JR Central station-by-station timetable availability remains unverified. The shipped archive therefore contains the 15 recovered complete pairs, not 30 populated dates.
 - Complete-route calculations use scheduled times only. Platform movement, delays, and guaranteed connections are unavailable, so a departure at the same minute as arrival is considered schedulable but is not guaranteed physically feasible.
 
 ## Decisions
@@ -41,6 +44,10 @@
 - The browser reads only generated static JSON; Python adapters own all source-site access.
 - Unknown or unverified formations remain `unknown` rather than receiving inferred seating.
 - Failed data generation must leave the last valid JSON intact.
+- Historical timetable/formation pairs use immutable content-addressed bundles. The validated index is published last, and obsolete previously indexed files are pruned afterward. The archive retains today and the preceding 29 JST dates.
+- User preference: always maintain the rolling last-30-calendar-day window. Scheduled updates use full Git history to backfill missing recorded dates. Recovery validates same-commit pairs, preserves existing archived dates and first observations, rejects shallow history, and does not relabel or invent missing data.
+- The browser defaults to today if available, otherwise the newest archived date; manual date selection is retained until changed or reloaded. Historical searches apply the entered clock time to the selected date, without treating it as an overnight continuation.
+- The updater fetches each existing feed once per successful refresh and parses matching available dates with existing coverage checks. Missing today's data does not prevent a valid historical refresh. No new external source is enabled.
 - Tokaido Shizuoka mode refreshes and validates both `timetable.json` and `latest.json` before replacing either last-good snapshot.
 - The legacy source selector `yulog` resolves to the Tokaido Shizuoka adapter during rollout so the existing external Actions variable cannot break scheduled updates.
 - JR Central is authoritative for every displayed station time; operation-table times are not imported into the static timetable.
@@ -58,10 +65,12 @@
 
 ## Latest Session
 
-- Date: 2026-08-26
-- Goal: align the passenger interface with JR Central's visual language
-- Changed: replaced the teal civic-service treatment with an orange, white, and charcoal hierarchy; added a CSS-rendered CA line identifier and localized Tokaido corridor label; removed the redundant corridor subtitle below the title; tightened timetable cards and journey legs; preserved accessible seat-category colors; removed the misleading `JR CENTRAL` masthead copy; and added a localized independent-service disclosure
-- Verification run: `npm run verify` passed after rebasing over the latest remote data snapshots, with 16 Python tests, static-data validation, 55 frontend tests, production build, and preview smoke; headless Firefox inspection covered a 500 px mobile layout, a 1280 px desktop layout, direct results, and an Atami-to-Toyohashi four-leg indirect itinerary
-- Artifacts: `.tmp/theme-mobile-rendered.png`, `.tmp/theme-desktop-rendered.png`, `.tmp/theme-indirect-rendered.png`, and `.tmp/preview-smoke.log` are ignored local verification artifacts
-- Unverified: no external deployment was run; deployment requires user approval
-- Next action: renaming the external Actions source variable and deployment remain approval-gated
+- Date: 2026-09-10
+- Goal: resolve the midnight data gap with historical date selection and useful availability information
+- Changed: added immutable paired daily archives, index validation and workflow retention, a localized date selector with automatic fallback, historical observation labels, and separate yesterday-based estimate / next scheduled check messages. Added offline archive seeding, Git-history backfill, full-depth workflow checkout, explicit 30-date coverage display, and extended production smoke coverage.
+- Live evidence: the existing formation feed exposed September 5–9, but matching official corridor coverage passed only for September 9. September 10 assignments were still unpublished. Archived September 9 and the saved August 26 pair; refreshed compatibility snapshots to September 9. First-release observations remain null for these historical imports.
+- Backfill evidence: fetched `origin/main` at `e24ee78` and recovered 13 missing dates (August 27–September 8). All 15 days from August 26 through September 9 now have validated pairs. A repeated backfill recovered zero dates and preserved existing records. Before the user-requested push, rebased the implementation onto `e24ee78`, resolving only the two compatibility snapshot timestamps in favor of the newer validated data.
+- Verification run: `npm run verify` passed with 27 Python tests, static/archive validation, 64 frontend tests, production build, and preview smoke serving the index and all 15 bundles. Regressions additionally cover newest valid Git pairs, mismatched/fixture rejection, shallow-history rejection, idempotent recovery, and disabled unrecorded dates.
+- Artifacts: `.tmp/preview-smoke.log` and build/test caches are ignored verification artifacts.
+- Publication: user requested commit and push to `main`, which triggers the existing Pages workflow. Local verification does not establish deployment success.
+- Next action: check Pages workflow results after push; scheduled updates will retain the rolling archive and collect first-release observations automatically.

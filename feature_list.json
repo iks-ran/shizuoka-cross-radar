@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Shizuoka Cross-Seat Radar",
-  "last_updated": "2026-08-26",
+  "last_updated": "2026-09-10",
   "rules": {
     "single_active_feature": true,
     "passing_requires_evidence": true
@@ -13,6 +13,16 @@
     "passing": "Required verification passed and evidence is recorded."
   },
   "features": [
+    {
+      "id": "RADAR-009",
+      "priority": 13,
+      "title": "Historical schedules and availability estimates",
+      "behavior": "Passengers can browse 30 days of available snapshots, automatically view the latest past date, and see yesterday-based release estimates or the next scheduled check.",
+      "depends_on": ["RADAR-008"],
+      "status": "passing",
+      "verification": [{"command": "npm run verify", "expected": "History publication, date selection, availability messages, existing routing, build, and static archive smoke pass."}],
+      "evidence": [{"date": "2026-09-10", "repository_state": "working tree based on 25fbadf; backfill from origin/main at e24ee78", "command": "npm run verify", "result": "Passed 27 Python tests, archive and static-data validation, 64 frontend tests, production build, and preview smoke for all 15 daily bundles. Recovered August 27–September 8 from validated same-commit pairs in remote history, preserving existing archives. Repeated backfill recovered zero dates. The selector exposes the full 30-day window and labels unavailable dates; scheduled updates retain the rolling window and backfill missing recorded dates."}]
+    },
     {
       "id": "RADAR-001",
       "priority": 1,
