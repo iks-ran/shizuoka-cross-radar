@@ -3,6 +3,11 @@
   "timeZone": "Asia/Tokyo",
   "dates": [
     {
+      "serviceDate": "2026-09-12",
+      "path": "history/2026-09-12-e616c299fdd4b69d.json",
+      "firstObservedAt": "2026-09-12T08:27:38.193318+09:00"
+    },
+    {
       "serviceDate": "2026-09-11",
       "path": "history/2026-09-11-6f3a1c44dc017d8a.json",
       "firstObservedAt": "2026-09-11T07:43:07.391222+09:00"
