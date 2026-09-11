@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-09-11",
-    "updatedAt": "2026-09-11T07:42:44+09:00",
+    "updatedAt": "2026-09-11T09:49:26+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -53515,7 +53515,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-09-11",
-    "updatedAt": "2026-09-11T07:40:55+09:00",
+    "updatedAt": "2026-09-11T09:46:48+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -53572,6 +53572,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A24",
+        "rawFormation": "T8",
+        "currentUnits": [
+          "T8"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A25",
         "rawFormation": "T15",
         "currentUnits": [
@@ -53596,6 +53604,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A33",
+        "rawFormation": "N1",
+        "currentUnits": [
+          "N1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A34",
+        "rawFormation": "T13",
+        "currentUnits": [
+          "T13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A36",
         "rawFormation": "T14",
         "currentUnits": [
@@ -53608,6 +53632,14 @@
         "rawFormation": "T7",
         "currentUnits": [
           "T7"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A38",
+        "rawFormation": "T6",
+        "currentUnits": [
+          "T6"
         ],
         "parseStatus": "parsed"
       },
@@ -53644,6 +53676,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A56",
+        "rawFormation": "N3",
+        "currentUnits": [
+          "N3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A57",
+        "rawFormation": "N7",
+        "currentUnits": [
+          "N7"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A59",
         "rawFormation": "S4",
         "currentUnits": [
@@ -53664,6 +53712,14 @@
         "rawFormation": "U16",
         "currentUnits": [
           "U16"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A64",
+        "rawFormation": "U15",
+        "currentUnits": [
+          "U15"
         ],
         "parseStatus": "parsed"
       },
@@ -53693,9 +53749,9 @@
       },
       {
         "diagramId": "A706",
-        "rawFormation": "F8",
+        "rawFormation": "F6",
         "currentUnits": [
-          "F8"
+          "F6"
         ],
         "parseStatus": "parsed"
       },
@@ -53752,6 +53808,15 @@
         "rawFormation": "U1",
         "currentUnits": [
           "U1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A82",
+        "rawFormation": "K9/K1",
+        "currentUnits": [
+          "K9",
+          "K1"
         ],
         "parseStatus": "parsed"
       },
