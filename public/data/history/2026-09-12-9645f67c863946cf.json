@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-09-12",
-    "updatedAt": "2026-09-12T08:26:57+09:00",
+    "updatedAt": "2026-09-12T10:24:26+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -51196,7 +51196,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-09-12",
-    "updatedAt": "2026-09-12T08:00:01+09:00",
+    "updatedAt": "2026-09-12T10:21:08+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -51209,6 +51209,22 @@
         "rawFormation": "V4",
         "currentUnits": [
           "V4"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A150",
+        "rawFormation": "V13",
+        "currentUnits": [
+          "V13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A151",
+        "rawFormation": "V10",
+        "currentUnits": [
+          "V10"
         ],
         "parseStatus": "parsed"
       },
@@ -51289,6 +51305,14 @@
         "rawFormation": "U13",
         "currentUnits": [
           "U13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A703",
+        "rawFormation": "F13",
+        "currentUnits": [
+          "F13"
         ],
         "parseStatus": "parsed"
       },
