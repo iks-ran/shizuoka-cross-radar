@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-14",
-  "updatedAt": "2026-09-14T14:00:02+09:00",
+  "updatedAt": "2026-09-14T19:22:06+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -15,6 +15,14 @@
       "rawFormation": "V1",
       "currentUnits": [
         "V1"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A144",
+      "rawFormation": "V9",
+      "currentUnits": [
+        "V9"
       ],
       "parseStatus": "parsed"
     },
@@ -51,10 +59,26 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A149",
+      "rawFormation": "V14",
+      "currentUnits": [
+        "V14"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A150",
       "rawFormation": "V7",
       "currentUnits": [
         "V7"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A155",
+      "rawFormation": "V2",
+      "currentUnits": [
+        "V2"
       ],
       "parseStatus": "parsed"
     },
@@ -251,6 +275,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A54",
+      "rawFormation": "N8",
+      "currentUnits": [
+        "N8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A55",
       "rawFormation": "N2",
       "currentUnits": [
@@ -299,6 +331,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A64",
+      "rawFormation": "U2",
+      "currentUnits": [
+        "U2"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A65",
       "rawFormation": "U16",
       "currentUnits": [
@@ -308,9 +348,9 @@
     },
     {
       "diagramId": "A68",
-      "rawFormation": "U12",
+      "rawFormation": "U12→U11",
       "currentUnits": [
-        "U12"
+        "U11"
       ],
       "parseStatus": "parsed"
     },
@@ -343,6 +383,14 @@
       "rawFormation": "F11",
       "currentUnits": [
         "F11"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A704",
+      "rawFormation": "F14",
+      "currentUnits": [
+        "F14"
       ],
       "parseStatus": "parsed"
     },
@@ -399,6 +447,14 @@
       "rawFormation": "F2",
       "currentUnits": [
         "F2"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A712",
+      "rawFormation": "F8",
+      "currentUnits": [
+        "F8"
       ],
       "parseStatus": "parsed"
     },
