@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-09-16",
-    "updatedAt": "2026-09-16T18:24:31+09:00",
+    "updatedAt": "2026-09-16T23:17:18+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -52915,7 +52915,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-09-16",
-    "updatedAt": "2026-09-16T18:00:02+09:00",
+    "updatedAt": "2026-09-16T23:00:01+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -52923,6 +52923,14 @@
       "isMock": false
     },
     "assignments": [
+      {
+        "diagramId": "A141",
+        "rawFormation": "L2",
+        "currentUnits": [
+          "L2"
+        ],
+        "parseStatus": "parsed"
+      },
       {
         "diagramId": "A142",
         "rawFormation": "V2",
@@ -52996,6 +53004,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A151",
+        "rawFormation": "V14",
+        "currentUnits": [
+          "V14"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A153",
+        "rawFormation": "V11",
+        "currentUnits": [
+          "V11"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A155",
         "rawFormation": "V10",
         "currentUnits": [
@@ -53024,6 +53048,14 @@
         "rawFormation": "N6",
         "currentUnits": [
           "N6"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A24",
+        "rawFormation": "N7",
+        "currentUnits": [
+          "N7"
         ],
         "parseStatus": "parsed"
       },
@@ -53132,6 +53164,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A38",
+        "rawFormation": "N1",
+        "currentUnits": [
+          "N1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A39",
         "rawFormation": "T13",
         "currentUnits": [
@@ -53168,6 +53208,14 @@
         "rawFormation": "N5",
         "currentUnits": [
           "N5"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A53",
+        "rawFormation": "S6",
+        "currentUnits": [
+          "S6"
         ],
         "parseStatus": "parsed"
       },
@@ -53260,6 +53308,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A66",
+        "rawFormation": "U2",
+        "currentUnits": [
+          "U2"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A67",
         "rawFormation": "U16",
         "currentUnits": [
@@ -53269,7 +53325,7 @@
       },
       {
         "diagramId": "A68",
-        "rawFormation": "U15",
+        "rawFormation": "U4→U15",
         "currentUnits": [
           "U15"
         ],
@@ -53277,9 +53333,17 @@
       },
       {
         "diagramId": "A69",
-        "rawFormation": "U8",
+        "rawFormation": "U15→U8",
         "currentUnits": [
           "U8"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A70",
+        "rawFormation": "U11",
+        "currentUnits": [
+          "U11"
         ],
         "parseStatus": "parsed"
       },
@@ -53296,6 +53360,22 @@
         "rawFormation": "F3",
         "currentUnits": [
           "F3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A704",
+        "rawFormation": "F5",
+        "currentUnits": [
+          "F5"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A705",
+        "rawFormation": "F2",
+        "currentUnits": [
+          "F2"
         ],
         "parseStatus": "parsed"
       },
@@ -53349,6 +53429,14 @@
       },
       {
         "diagramId": "A711",
+        "rawFormation": "F10",
+        "currentUnits": [
+          "F10"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A712",
         "rawFormation": "F10",
         "currentUnits": [
           "F10"
