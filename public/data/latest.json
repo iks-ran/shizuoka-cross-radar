@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-16",
-  "updatedAt": "2026-09-16T08:39:59+09:00",
+  "updatedAt": "2026-09-16T13:11:31+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -10,6 +10,14 @@
     "isMock": false
   },
   "assignments": [
+    {
+      "diagramId": "A144",
+      "rawFormation": "V1",
+      "currentUnits": [
+        "V1"
+      ],
+      "parseStatus": "parsed"
+    },
     {
       "diagramId": "A145",
       "rawFormation": "V12",
@@ -23,6 +31,14 @@
       "rawFormation": "V9",
       "currentUnits": [
         "V9"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A147",
+      "rawFormation": "L5",
+      "currentUnits": [
+        "L5"
       ],
       "parseStatus": "parsed"
     },
@@ -91,10 +107,26 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A32",
+      "rawFormation": "T10",
+      "currentUnits": [
+        "T10"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A33",
       "rawFormation": "T4",
       "currentUnits": [
         "T4"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A35",
+      "rawFormation": "S2",
+      "currentUnits": [
+        "S2"
       ],
       "parseStatus": "parsed"
     },
@@ -183,6 +215,14 @@
       "rawFormation": "U6",
       "currentUnits": [
         "U6"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A63",
+      "rawFormation": "U12",
+      "currentUnits": [
+        "U12"
       ],
       "parseStatus": "parsed"
     },
@@ -311,6 +351,24 @@
       "rawFormation": "U13",
       "currentUnits": [
         "U13"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A82",
+      "rawFormation": "K8/K5",
+      "currentUnits": [
+        "K8",
+        "K5"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A83",
+      "rawFormation": "K6/K11",
+      "currentUnits": [
+        "K6",
+        "K11"
       ],
       "parseStatus": "parsed"
     },
