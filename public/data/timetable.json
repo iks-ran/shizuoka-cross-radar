@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-21",
-  "updatedAt": "2026-09-21T14:54:05+09:00",
+  "updatedAt": "2026-09-21T21:00:46+09:00",
   "source": {
     "id": "jr-central",
     "label": "JR Central conventional-line train information",
@@ -37262,54 +37262,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026092110103251203360-325m",
-      "trainNumber": "325M",
-      "destinationStationId": "numazu",
-      "destinationName": {
-        "ja": "沼津",
-        "en": "Numazu",
-        "zhCN": "Numazu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "atami",
-          "arrival": null,
-          "departure": "17:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "17:30",
-          "departure": "17:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "17:36",
-          "departure": "17:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "17:42",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "atami",
-          "toStationId": "numazu",
-          "diagramIds": [],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026092110109961200100-996m",
       "trainNumber": "996M",
       "destinationStationId": "kakegawa",
@@ -39568,54 +39520,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026092110114381203400-1438m",
-      "trainNumber": "1438M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "numazu",
-          "arrival": null,
-          "departure": "18:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "18:16",
-          "departure": "18:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "18:23",
-          "departure": "18:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "18:32",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "numazu",
-          "toStationId": "atami",
-          "diagramIds": [],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026092110157891203540-5789m",
       "trainNumber": "5789M",
       "destinationStationId": "hamamatsu",
@@ -40472,54 +40376,6 @@
           "diagramIds": [
             "A88"
           ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026092110114331203360-1433m",
-      "trainNumber": "1433M",
-      "destinationStationId": "numazu",
-      "destinationName": {
-        "ja": "沼津",
-        "en": "Numazu",
-        "zhCN": "Numazu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "atami",
-          "arrival": null,
-          "departure": "18:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "18:46",
-          "departure": "18:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "18:52",
-          "departure": "18:52",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "18:58",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "atami",
-          "toStationId": "numazu",
-          "diagramIds": [],
           "plannedFormations": []
         }
       ]
@@ -42039,54 +41895,6 @@
               "family": "U"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026092110114401203400-1440m",
-      "trainNumber": "1440M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "numazu",
-          "arrival": null,
-          "departure": "19:03",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "19:08",
-          "departure": "19:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "19:13",
-          "departure": "19:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "19:22",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "numazu",
-          "toStationId": "atami",
-          "diagramIds": [],
-          "plannedFormations": []
         }
       ]
     },
