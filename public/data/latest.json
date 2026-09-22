@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-09-22",
-  "updatedAt": "2026-09-22T07:00:01+09:00",
+  "updatedAt": "2026-09-22T10:00:01+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -27,6 +27,22 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A23",
+      "rawFormation": "N10",
+      "currentUnits": [
+        "N10"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A24",
+      "rawFormation": "T13",
+      "currentUnits": [
+        "T13"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A25",
       "rawFormation": "T5",
       "currentUnits": [
@@ -47,6 +63,14 @@
       "rawFormation": "T6",
       "currentUnits": [
         "T6"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A30",
+      "rawFormation": "N7",
+      "currentUnits": [
+        "N7"
       ],
       "parseStatus": "parsed"
     },
@@ -87,6 +111,30 @@
       "rawFormation": "T12",
       "currentUnits": [
         "T12"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A37",
+      "rawFormation": "T16",
+      "currentUnits": [
+        "T16"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A38",
+      "rawFormation": "T10",
+      "currentUnits": [
+        "T10"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A39",
+      "rawFormation": "T4",
+      "currentUnits": [
+        "T4"
       ],
       "parseStatus": "parsed"
     },
@@ -147,6 +195,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A705",
+      "rawFormation": "F2",
+      "currentUnits": [
+        "F2"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A75",
       "rawFormation": "U8",
       "currentUnits": [
@@ -160,6 +216,15 @@
       "currentUnits": [
         "W7",
         "L4"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A87",
+      "rawFormation": "W6/L3",
+      "currentUnits": [
+        "W6",
+        "L3"
       ],
       "parseStatus": "parsed"
     },
