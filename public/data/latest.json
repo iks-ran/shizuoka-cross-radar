@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
-  "serviceDate": "2026-09-27",
-  "updatedAt": "2026-09-28T00:00:01+09:00",
+  "serviceDate": "2026-09-28",
+  "updatedAt": "2026-09-28T08:00:14+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -11,15 +11,7 @@
   },
   "assignments": [
     {
-      "diagramId": "A141",
-      "rawFormation": "V12",
-      "currentUnits": [
-        "V12"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A142",
+      "diagramId": "A143",
       "rawFormation": "V9",
       "currentUnits": [
         "V9"
@@ -27,15 +19,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A143",
-      "rawFormation": "V3",
-      "currentUnits": [
-        "V3"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A144",
+      "diagramId": "A145",
       "rawFormation": "V8",
       "currentUnits": [
         "V8"
@@ -43,7 +27,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A145",
+      "diagramId": "A146",
       "rawFormation": "V4",
       "currentUnits": [
         "V4"
@@ -51,79 +35,31 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A149",
-      "rawFormation": "V11",
+      "diagramId": "A147",
+      "rawFormation": "L1",
       "currentUnits": [
-        "V11"
+        "L1"
       ],
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A150",
-      "rawFormation": "V13",
+      "diagramId": "A148",
+      "rawFormation": "V14",
       "currentUnits": [
-        "V13"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A151",
-      "rawFormation": "V10",
-      "currentUnits": [
-        "V10"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A152",
-      "rawFormation": "V6",
-      "currentUnits": [
-        "V6"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A153",
-      "rawFormation": "V2",
-      "currentUnits": [
-        "V2"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A154",
-      "rawFormation": "L2",
-      "currentUnits": [
-        "L2"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A155",
-      "rawFormation": "V1",
-      "currentUnits": [
-        "V1"
+        "V14"
       ],
       "parseStatus": "parsed"
     },
     {
       "diagramId": "A22",
-      "rawFormation": "T10",
+      "rawFormation": "T16",
       "currentUnits": [
-        "T10"
+        "T16"
       ],
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A23",
-      "rawFormation": "T4",
-      "currentUnits": [
-        "T4"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A24",
+      "diagramId": "A25",
       "rawFormation": "T1",
       "currentUnits": [
         "T1"
@@ -131,7 +67,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A25",
+      "diagramId": "A26",
       "rawFormation": "S2",
       "currentUnits": [
         "S2"
@@ -139,7 +75,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A26",
+      "diagramId": "A27",
       "rawFormation": "T9",
       "currentUnits": [
         "T9"
@@ -147,23 +83,15 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A27",
-      "rawFormation": "N4",
-      "currentUnits": [
-        "N4"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
       "diagramId": "A29",
-      "rawFormation": "T13",
+      "rawFormation": "N10",
       "currentUnits": [
-        "T13"
+        "N10"
       ],
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A30",
+      "diagramId": "A31",
       "rawFormation": "T5",
       "currentUnits": [
         "T5"
@@ -171,15 +99,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A31",
-      "rawFormation": "T14",
-      "currentUnits": [
-        "T14"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A32",
+      "diagramId": "A33",
       "rawFormation": "T7",
       "currentUnits": [
         "T7"
@@ -187,7 +107,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A33",
+      "diagramId": "A34",
       "rawFormation": "T6",
       "currentUnits": [
         "T6"
@@ -195,15 +115,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A34",
-      "rawFormation": "N6",
-      "currentUnits": [
-        "N6"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A35",
+      "diagramId": "A36",
       "rawFormation": "N7",
       "currentUnits": [
         "N7"
@@ -211,23 +123,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A36",
-      "rawFormation": "T2",
-      "currentUnits": [
-        "T2"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A37",
-      "rawFormation": "T17",
-      "currentUnits": [
-        "T17"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A38",
+      "diagramId": "A39",
       "rawFormation": "T3",
       "currentUnits": [
         "T3"
@@ -235,7 +131,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A39",
+      "diagramId": "A40",
       "rawFormation": "T15",
       "currentUnits": [
         "T15"
@@ -243,7 +139,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A40",
+      "diagramId": "A41",
       "rawFormation": "T8",
       "currentUnits": [
         "T8"
@@ -251,15 +147,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A41",
-      "rawFormation": "T12",
-      "currentUnits": [
-        "T12"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A51",
+      "diagramId": "A52",
       "rawFormation": "S5",
       "currentUnits": [
         "S5"
@@ -267,23 +155,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A52",
-      "rawFormation": "N9",
-      "currentUnits": [
-        "N9"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A53",
-      "rawFormation": "N1",
-      "currentUnits": [
-        "N1"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A55",
+      "diagramId": "A56",
       "rawFormation": "S6",
       "currentUnits": [
         "S6"
@@ -291,7 +163,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A56",
+      "diagramId": "A57",
       "rawFormation": "S3",
       "currentUnits": [
         "S3"
@@ -299,15 +171,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A57",
-      "rawFormation": "S4",
-      "currentUnits": [
-        "S4"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A58",
+      "diagramId": "A59",
       "rawFormation": "N8",
       "currentUnits": [
         "N8"
@@ -315,15 +179,23 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A59",
-      "rawFormation": "N2",
+      "diagramId": "A61",
+      "rawFormation": "U12",
       "currentUnits": [
-        "N2"
+        "U12"
       ],
       "parseStatus": "parsed"
     },
     {
       "diagramId": "A62",
+      "rawFormation": "U14",
+      "currentUnits": [
+        "U14"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A63",
       "rawFormation": "U2",
       "currentUnits": [
         "U2"
@@ -331,31 +203,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A63",
-      "rawFormation": "U5",
-      "currentUnits": [
-        "U5"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A64",
-      "rawFormation": "U16",
-      "currentUnits": [
-        "U16"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A65",
-      "rawFormation": "U8",
-      "currentUnits": [
-        "U8"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A66",
+      "diagramId": "A67",
       "rawFormation": "U11",
       "currentUnits": [
         "U11"
@@ -363,7 +211,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A67",
+      "diagramId": "A68",
       "rawFormation": "U7",
       "currentUnits": [
         "U7"
@@ -371,7 +219,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A68",
+      "diagramId": "A69",
       "rawFormation": "U1",
       "currentUnits": [
         "U1"
@@ -379,23 +227,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A69",
-      "rawFormation": "U9",
-      "currentUnits": [
-        "U9"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A70",
-      "rawFormation": "U13",
-      "currentUnits": [
-        "U13"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A702",
+      "diagramId": "A703",
       "rawFormation": "F11",
       "currentUnits": [
         "F11"
@@ -403,23 +235,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A703",
-      "rawFormation": "F4",
-      "currentUnits": [
-        "F4"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A704",
-      "rawFormation": "F2",
-      "currentUnits": [
-        "F2"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A705",
+      "diagramId": "A706",
       "rawFormation": "F10",
       "currentUnits": [
         "F10"
@@ -428,6 +244,14 @@
     },
     {
       "diagramId": "A707",
+      "rawFormation": "F8",
+      "currentUnits": [
+        "F8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A708",
       "rawFormation": "F14",
       "currentUnits": [
         "F14"
@@ -435,23 +259,31 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A71",
-      "rawFormation": "U15",
+      "diagramId": "A709",
+      "rawFormation": "F9",
       "currentUnits": [
-        "U15"
+        "F9"
       ],
       "parseStatus": "parsed"
     },
     {
       "diagramId": "A710",
-      "rawFormation": "F4",
+      "rawFormation": "F13",
       "currentUnits": [
-        "F4"
+        "F13"
       ],
       "parseStatus": "parsed"
     },
     {
       "diagramId": "A711",
+      "rawFormation": "F6",
+      "currentUnits": [
+        "F6"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A712",
       "rawFormation": "F1",
       "currentUnits": [
         "F1"
@@ -459,83 +291,15 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A712",
-      "rawFormation": "F12",
-      "currentUnits": [
-        "F12"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
       "diagramId": "A72",
-      "rawFormation": "U4",
+      "rawFormation": "U15",
       "currentUnits": [
-        "U4"
+        "U15"
       ],
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A73",
-      "rawFormation": "U6",
-      "currentUnits": [
-        "U6"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A74",
-      "rawFormation": "U10",
-      "currentUnits": [
-        "U10"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A75",
-      "rawFormation": "U12",
-      "currentUnits": [
-        "U12"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A82",
-      "rawFormation": "K8/K5",
-      "currentUnits": [
-        "K8",
-        "K5"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A83",
-      "rawFormation": "K6/K11",
-      "currentUnits": [
-        "K6",
-        "K11"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A84",
-      "rawFormation": "W1/L8",
-      "currentUnits": [
-        "W1",
-        "L8"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A85",
-      "rawFormation": "K7/L6→K4/L6",
-      "currentUnits": [
-        "K4",
-        "L6"
-      ],
-      "parseStatus": "parsed"
-    },
-    {
-      "diagramId": "A86",
+      "diagramId": "A87",
       "rawFormation": "K2/W2",
       "currentUnits": [
         "K2",
@@ -544,7 +308,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A87",
+      "diagramId": "A88",
       "rawFormation": "K9/K1",
       "currentUnits": [
         "K9",
@@ -553,7 +317,7 @@
       "parseStatus": "parsed"
     },
     {
-      "diagramId": "A88",
+      "diagramId": "A89",
       "rawFormation": "K10/W4",
       "currentUnits": [
         "K10",
@@ -563,19 +327,19 @@
     },
     {
       "diagramId": "A90",
-      "rawFormation": "W7/L4",
+      "rawFormation": "W8/W3",
       "currentUnits": [
-        "W7",
-        "L4"
+        "W8",
+        "W3"
       ],
       "parseStatus": "parsed"
     },
     {
       "diagramId": "A91",
-      "rawFormation": "W9/L7",
+      "rawFormation": "W7/L4",
       "currentUnits": [
-        "W9",
-        "L7"
+        "W7",
+        "L4"
       ],
       "parseStatus": "parsed"
     }
