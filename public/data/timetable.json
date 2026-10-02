@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-02",
-  "updatedAt": "2026-10-02T08:40:22+09:00",
+  "updatedAt": "2026-10-02T13:05:31+09:00",
   "source": {
     "id": "jr-central",
     "label": "JR Central conventional-line train information",
@@ -9774,11 +9774,11 @@
     {
       "id": "jrcentral-2026100210104291203360-429m",
       "trainNumber": "429M",
-      "destinationStationId": "hamamatsu",
+      "destinationStationId": "kikugawa",
       "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
+        "ja": "菊川",
+        "en": "Kikugawa",
+        "zhCN": "Kikugawa"
       },
       "direction": "westbound",
       "serviceDays": [
@@ -9944,54 +9944,6 @@
         {
           "stationId": "kikugawa",
           "arrival": "10:02",
-          "departure": "10:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "10:08",
-          "departure": "10:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "10:12",
-          "departure": "10:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "10:16",
-          "departure": "10:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "10:20",
-          "departure": "10:20",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "10:23",
-          "departure": "10:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "10:26",
-          "departure": "10:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "10:30",
-          "departure": "10:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "10:35",
           "departure": null,
           "dayOffset": 0
         }
@@ -9999,7 +9951,7 @@
       "operationSegments": [
         {
           "fromStationId": "atami",
-          "toStationId": "hamamatsu",
+          "toStationId": "kikugawa",
           "diagramIds": [
             "A89"
           ],
@@ -10090,11 +10042,11 @@
     {
       "id": "jrcentral-2026100210107451203500-745m",
       "trainNumber": "745M",
-      "destinationStationId": "hamamatsu",
+      "destinationStationId": "kikugawa",
       "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
+        "ja": "菊川",
+        "en": "Kikugawa",
+        "zhCN": "Kikugawa"
       },
       "direction": "westbound",
       "serviceDays": [
@@ -10182,54 +10134,6 @@
         {
           "stationId": "kikugawa",
           "arrival": "09:09",
-          "departure": "09:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "09:15",
-          "departure": "09:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "09:19",
-          "departure": "09:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "09:22",
-          "departure": "09:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "09:27",
-          "departure": "09:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "09:30",
-          "departure": "09:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "09:33",
-          "departure": "09:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "09:36",
-          "departure": "09:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "09:41",
           "departure": null,
           "dayOffset": 0
         }
@@ -10237,7 +10141,7 @@
       "operationSegments": [
         {
           "fromStationId": "okitsu",
-          "toStationId": "hamamatsu",
+          "toStationId": "kikugawa",
           "diagramIds": [
             "A25",
             "A39"
@@ -12241,11 +12145,11 @@
     {
       "id": "jrcentral-2026100210104401200010-440m",
       "trainNumber": "440M",
-      "destinationStationId": "atami",
+      "destinationStationId": "shizuoka",
       "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -12357,108 +12261,6 @@
         {
           "stationId": "shizuoka",
           "arrival": "10:02",
-          "departure": "10:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "10:07",
-          "departure": "10:07",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "10:10",
-          "departure": "10:11",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "10:15",
-          "departure": "10:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "10:20",
-          "departure": "10:20",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "10:26",
-          "departure": "10:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "10:35",
-          "departure": "10:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "10:38",
-          "departure": "10:38",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "10:41",
-          "departure": "10:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "10:45",
-          "departure": "10:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "10:50",
-          "departure": "10:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "10:53",
-          "departure": "10:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "10:58",
-          "departure": "10:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "11:01",
-          "departure": "11:01",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "11:05",
-          "departure": "11:07",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "11:11",
-          "departure": "11:11",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "11:16",
-          "departure": "11:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "11:25",
           "departure": null,
           "dayOffset": 0
         }
@@ -12466,7 +12268,7 @@
       "operationSegments": [
         {
           "fromStationId": "hamamatsu",
-          "toStationId": "atami",
+          "toStationId": "shizuoka",
           "diagramIds": [
             "A32"
           ],
@@ -12856,87 +12658,13 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210107441200010-744m",
-      "trainNumber": "744M",
-      "destinationStationId": "kakegawa",
-      "destinationName": {
-        "ja": "掛川",
-        "en": "Kakegawa",
-        "zhCN": "Kakegawa"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "09:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "09:06",
-          "departure": "09:06",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "09:09",
-          "departure": "09:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "09:13",
-          "departure": "09:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "09:16",
-          "departure": "09:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "09:20",
-          "departure": "09:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "09:24",
-          "departure": "09:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "09:29",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "kakegawa",
-          "diagramIds": [
-            "A52"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210107631203390-763m",
       "trainNumber": "763M",
-      "destinationStationId": "hamamatsu",
+      "destinationStationId": "shizuoka",
       "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
       },
       "direction": "westbound",
       "serviceDays": [
@@ -13036,108 +12764,6 @@
         {
           "stationId": "shizuoka",
           "arrival": "10:09",
-          "departure": "10:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "10:14",
-          "departure": "10:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "10:16",
-          "departure": "10:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "10:22",
-          "departure": "10:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "10:26",
-          "departure": "10:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "10:29",
-          "departure": "10:29",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "10:33",
-          "departure": "10:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "10:36",
-          "departure": "10:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "10:41",
-          "departure": "10:41",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "10:49",
-          "departure": "10:49",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "10:55",
-          "departure": "10:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "10:59",
-          "departure": "10:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "11:02",
-          "departure": "11:03",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "11:07",
-          "departure": "11:07",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "11:10",
-          "departure": "11:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "11:13",
-          "departure": "11:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "11:17",
-          "departure": "11:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "11:21",
           "departure": null,
           "dayOffset": 0
         }
@@ -13145,7 +12771,7 @@
       "operationSegments": [
         {
           "fromStationId": "mishima",
-          "toStationId": "hamamatsu",
+          "toStationId": "shizuoka",
           "diagramIds": [
             "A24",
             "A38"
@@ -13520,242 +13146,6 @@
           "diagramIds": [
             "A33",
             "A56"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210104421200010-442m",
-      "trainNumber": "442M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "09:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "09:12",
-          "departure": "09:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "09:16",
-          "departure": "09:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "09:19",
-          "departure": "09:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "09:23",
-          "departure": "09:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "09:27",
-          "departure": "09:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "09:30",
-          "departure": "09:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "09:34",
-          "departure": "09:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "09:41",
-          "departure": "09:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "09:50",
-          "departure": "09:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "09:54",
-          "departure": "09:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "09:58",
-          "departure": "09:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "10:02",
-          "departure": "10:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "10:05",
-          "departure": "10:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "10:08",
-          "departure": "10:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "10:14",
-          "departure": "10:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "10:17",
-          "departure": "10:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "10:21",
-          "departure": "10:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "10:25",
-          "departure": "10:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "10:29",
-          "departure": "10:29",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "10:34",
-          "departure": "10:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "10:39",
-          "departure": "10:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "10:44",
-          "departure": "10:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "10:48",
-          "departure": "10:48",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "10:51",
-          "departure": "10:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "10:54",
-          "departure": "10:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "10:58",
-          "departure": "10:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "11:02",
-          "departure": "11:03",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "11:06",
-          "departure": "11:06",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "11:10",
-          "departure": "11:11",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "11:13",
-          "departure": "11:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "11:18",
-          "departure": "11:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "11:27",
-          "departure": "11:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "11:32",
-          "departure": "11:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "11:41",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "atami",
-          "diagramIds": [
-            "A87"
           ],
           "plannedFormations": []
         }
@@ -14195,242 +13585,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210104441200010-444m",
-      "trainNumber": "444M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "09:29",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "09:34",
-          "departure": "09:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "09:37",
-          "departure": "09:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "09:40",
-          "departure": "09:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "09:43",
-          "departure": "09:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "09:47",
-          "departure": "09:48",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "09:51",
-          "departure": "09:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "09:55",
-          "departure": "09:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "10:02",
-          "departure": "10:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "10:10",
-          "departure": "10:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "10:14",
-          "departure": "10:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "10:18",
-          "departure": "10:18",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "10:22",
-          "departure": "10:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "10:25",
-          "departure": "10:25",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "10:28",
-          "departure": "10:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "10:34",
-          "departure": "10:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "10:36",
-          "departure": "10:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "10:41",
-          "departure": "10:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "10:45",
-          "departure": "10:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "10:49",
-          "departure": "10:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "10:54",
-          "departure": "10:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "10:59",
-          "departure": "10:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "11:04",
-          "departure": "11:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "11:08",
-          "departure": "11:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "11:11",
-          "departure": "11:11",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "11:14",
-          "departure": "11:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "11:18",
-          "departure": "11:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "11:23",
-          "departure": "11:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "11:27",
-          "departure": "11:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "11:31",
-          "departure": "11:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "11:34",
-          "departure": "11:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "11:39",
-          "departure": "11:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "11:45",
-          "departure": "11:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "11:50",
-          "departure": "11:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "11:59",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "atami",
-          "diagramIds": [
-            "A90"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210101281203540-128m",
       "trainNumber": "128M",
       "destinationStationId": "okitsu",
@@ -14809,87 +13963,13 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210107531203640-753m",
-      "trainNumber": "753M",
-      "destinationStationId": "hamamatsu",
+      "id": "jrcentral-2026100210104421200010-442m",
+      "trainNumber": "442M",
+      "destinationStationId": "atami",
       "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "kakegawa",
-          "arrival": null,
-          "departure": "09:38",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "09:43",
-          "departure": "09:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "09:46",
-          "departure": "09:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "09:50",
-          "departure": "09:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "09:53",
-          "departure": "09:53",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "09:56",
-          "departure": "09:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "10:00",
-          "departure": "10:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "10:05",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "kakegawa",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A52"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210107461200010-746m",
-      "trainNumber": "746M",
-      "destinationStationId": "kakegawa",
-      "destinationName": {
-        "ja": "掛川",
-        "en": "Kakegawa",
-        "zhCN": "Kakegawa"
+        "ja": "熱海",
+        "en": "Atami",
+        "zhCN": "Atami"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -14897,60 +13977,174 @@
       ],
       "stops": [
         {
-          "stationId": "hamamatsu",
+          "stationId": "kikugawa",
           "arrival": null,
-          "departure": "09:39",
+          "departure": "09:42",
           "dayOffset": 0
         },
         {
-          "stationId": "tenryugawa",
-          "arrival": "09:43",
-          "departure": "09:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "09:47",
-          "departure": "09:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
+          "stationId": "kanaya",
           "arrival": "09:50",
           "departure": "09:50",
           "dayOffset": 0
         },
         {
-          "stationId": "mikuriya",
-          "arrival": "09:53",
-          "departure": "09:54",
+          "stationId": "shimada",
+          "arrival": "09:54",
+          "departure": "09:55",
           "dayOffset": 0
         },
         {
-          "stationId": "fukuroi",
-          "arrival": "09:57",
+          "stationId": "rokugo",
+          "arrival": "09:58",
           "departure": "09:58",
           "dayOffset": 0
         },
         {
-          "stationId": "aino",
-          "arrival": "10:01",
-          "departure": "10:01",
+          "stationId": "fujieda",
+          "arrival": "10:02",
+          "departure": "10:02",
           "dayOffset": 0
         },
         {
-          "stationId": "kakegawa",
-          "arrival": "10:06",
+          "stationId": "nishiyaizu",
+          "arrival": "10:05",
+          "departure": "10:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yaizu",
+          "arrival": "10:08",
+          "departure": "10:09",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mochimune",
+          "arrival": "10:14",
+          "departure": "10:14",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "abekawa",
+          "arrival": "10:17",
+          "departure": "10:17",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shizuoka",
+          "arrival": "10:21",
+          "departure": "10:23",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "10:25",
+          "departure": "10:26",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "10:29",
+          "departure": "10:29",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "10:34",
+          "departure": "10:34",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "okitsu",
+          "arrival": "10:39",
+          "departure": "10:39",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yui",
+          "arrival": "10:44",
+          "departure": "10:44",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kambara",
+          "arrival": "10:48",
+          "departure": "10:48",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinkambara",
+          "arrival": "10:51",
+          "departure": "10:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujikawa",
+          "arrival": "10:54",
+          "departure": "10:54",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fuji",
+          "arrival": "10:58",
+          "departure": "10:58",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "11:02",
+          "departure": "11:03",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "11:06",
+          "departure": "11:06",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "11:10",
+          "departure": "11:11",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "11:13",
+          "departure": "11:14",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "11:18",
+          "departure": "11:22",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "11:27",
+          "departure": "11:27",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kannami",
+          "arrival": "11:32",
+          "departure": "11:33",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "atami",
+          "arrival": "11:41",
           "departure": null,
           "dayOffset": 0
         }
       ],
       "operationSegments": [
         {
-          "fromStationId": "hamamatsu",
-          "toStationId": "kakegawa",
+          "fromStationId": "kikugawa",
+          "toStationId": "atami",
           "diagramIds": [
-            "A91"
+            "A87"
           ],
           "plannedFormations": []
         }
@@ -15329,7 +14523,7 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210107481200010-946m",
+      "id": "jrcentral-2026100210109461200100-946m",
       "trainNumber": "946M",
       "destinationStationId": "hamamatsu",
       "destinationName": {
@@ -15393,7 +14587,7 @@
         {
           "stationId": "hamamatsu",
           "arrival": "10:23",
-          "departure": "10:37",
+          "departure": null,
           "dayOffset": 0
         }
       ],
@@ -15403,299 +14597,6 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A82"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210104461200010-446m",
-      "trainNumber": "446M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "09:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "09:54",
-          "departure": "09:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "09:58",
-          "departure": "09:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "10:01",
-          "departure": "10:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "10:05",
-          "departure": "10:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "10:09",
-          "departure": "10:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "10:13",
-          "departure": "10:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "10:18",
-          "departure": "10:18",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "10:24",
-          "departure": "10:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "10:32",
-          "departure": "10:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "10:37",
-          "departure": "10:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "10:40",
-          "departure": "10:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "10:44",
-          "departure": "10:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "10:48",
-          "departure": "10:48",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "10:51",
-          "departure": "10:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "10:57",
-          "departure": "10:57",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "10:59",
-          "departure": "11:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "11:04",
-          "departure": "11:06",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "11:08",
-          "departure": "11:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "11:12",
-          "departure": "11:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "11:17",
-          "departure": "11:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "11:22",
-          "departure": "11:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "11:27",
-          "departure": "11:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "11:31",
-          "departure": "11:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "11:33",
-          "departure": "11:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "11:37",
-          "departure": "11:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "11:40",
-          "departure": "11:41",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "11:45",
-          "departure": "11:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "11:49",
-          "departure": "11:49",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "11:53",
-          "departure": "11:53",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "11:56",
-          "departure": "11:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "12:00",
-          "departure": "12:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "12:06",
-          "departure": "12:06",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "12:11",
-          "departure": "12:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "12:20",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "atami",
-          "diagramIds": [
-            "A25",
-            "A39"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210101321203540-132m",
-      "trainNumber": "132M",
-      "destinationStationId": "okitsu",
-      "destinationName": {
-        "ja": "興津",
-        "en": "Okitsu",
-        "zhCN": "Okitsu"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shizuoka",
-          "arrival": null,
-          "departure": "09:52",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "09:55",
-          "departure": "09:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "09:59",
-          "departure": "09:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "10:04",
-          "departure": "10:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "10:09",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shizuoka",
-          "toStationId": "okitsu",
-          "diagramIds": [
-            "A30"
           ],
           "plannedFormations": []
         }
@@ -16170,6 +15071,92 @@
       ]
     },
     {
+      "id": "jrcentral-2026100210104441200010-444m",
+      "trainNumber": "444M",
+      "destinationStationId": "shizuoka",
+      "destinationName": {
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "kikugawa",
+          "arrival": null,
+          "departure": "10:02",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kanaya",
+          "arrival": "10:10",
+          "departure": "10:10",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimada",
+          "arrival": "10:14",
+          "departure": "10:15",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "rokugo",
+          "arrival": "10:18",
+          "departure": "10:18",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujieda",
+          "arrival": "10:22",
+          "departure": "10:22",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "nishiyaizu",
+          "arrival": "10:25",
+          "departure": "10:25",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yaizu",
+          "arrival": "10:28",
+          "departure": "10:28",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mochimune",
+          "arrival": "10:34",
+          "departure": "10:34",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "abekawa",
+          "arrival": "10:36",
+          "departure": "10:37",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shizuoka",
+          "arrival": "10:41",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "kikugawa",
+          "toStationId": "shizuoka",
+          "diagramIds": [
+            "A90"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026100210101361203610-136m",
       "trainNumber": "136M",
       "destinationStationId": "okitsu",
@@ -16273,6 +15260,138 @@
       ]
     },
     {
+      "id": "jrcentral-2026100219004401203540-440m",
+      "trainNumber": "特440M",
+      "destinationStationId": "atami",
+      "destinationName": {
+        "ja": "熱海",
+        "en": "Atami",
+        "zhCN": "Atami"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "10:04",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "10:07",
+          "departure": "10:07",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "10:10",
+          "departure": "10:11",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "10:15",
+          "departure": "10:15",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "okitsu",
+          "arrival": "10:20",
+          "departure": "10:20",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yui",
+          "arrival": "10:26",
+          "departure": "10:31",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kambara",
+          "arrival": "10:35",
+          "departure": "10:35",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinkambara",
+          "arrival": "10:38",
+          "departure": "10:38",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujikawa",
+          "arrival": "10:41",
+          "departure": "10:42",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fuji",
+          "arrival": "10:45",
+          "departure": "10:46",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "10:50",
+          "departure": "10:50",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "10:53",
+          "departure": "10:54",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "10:58",
+          "departure": "10:58",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "11:01",
+          "departure": "11:01",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "11:05",
+          "departure": "11:07",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "11:11",
+          "departure": "11:11",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kannami",
+          "arrival": "11:16",
+          "departure": "11:16",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "atami",
+          "arrival": "11:25",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "atami",
+          "diagramIds": [],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026100210109481200100-948m",
       "trainNumber": "948M",
       "destinationStationId": "hamamatsu",
@@ -16360,11 +15479,11 @@
     {
       "id": "jrcentral-2026100210104481200010-448m",
       "trainNumber": "448M",
-      "destinationStationId": "atami",
+      "destinationStationId": "shizuoka",
       "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -16476,108 +15595,6 @@
         {
           "stationId": "shizuoka",
           "arrival": "11:21",
-          "departure": "11:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "11:26",
-          "departure": "11:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "11:30",
-          "departure": "11:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "11:35",
-          "departure": "11:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "11:40",
-          "departure": "11:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "11:45",
-          "departure": "11:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "11:48",
-          "departure": "11:49",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "11:51",
-          "departure": "11:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "11:54",
-          "departure": "11:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "11:58",
-          "departure": "12:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "12:04",
-          "departure": "12:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "12:07",
-          "departure": "12:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "12:12",
-          "departure": "12:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "12:15",
-          "departure": "12:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "12:19",
-          "departure": "12:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "12:25",
-          "departure": "12:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "12:31",
-          "departure": "12:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "12:40",
           "departure": null,
           "dayOffset": 0
         }
@@ -16585,7 +15602,7 @@
       "operationSegments": [
         {
           "fromStationId": "hamamatsu",
-          "toStationId": "atami",
+          "toStationId": "shizuoka",
           "diagramIds": [
             "A58"
           ],
@@ -16633,80 +15650,6 @@
               "family": "U"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210107571203640-757m",
-      "trainNumber": "757M",
-      "destinationStationId": "hamamatsu",
-      "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "kakegawa",
-          "arrival": null,
-          "departure": "10:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "10:18",
-          "departure": "10:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "10:22",
-          "departure": "10:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "10:26",
-          "departure": "10:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "10:29",
-          "departure": "10:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "10:33",
-          "departure": "10:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "10:37",
-          "departure": "10:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "10:42",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "kakegawa",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A91"
-          ],
-          "plannedFormations": []
         }
       ]
     },
@@ -17305,111 +16248,13 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210101451203500-145m",
-      "trainNumber": "145M",
-      "destinationStationId": "shimada",
-      "destinationName": {
-        "ja": "島田",
-        "en": "Shimada",
-        "zhCN": "Shimada"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "okitsu",
-          "arrival": null,
-          "departure": "10:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "10:30",
-          "departure": "10:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "10:35",
-          "departure": "10:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "10:38",
-          "departure": "10:38",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "10:41",
-          "departure": "10:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "10:47",
-          "departure": "10:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "10:49",
-          "departure": "10:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "10:55",
-          "departure": "10:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "10:59",
-          "departure": "10:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "11:02",
-          "departure": "11:03",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "11:07",
-          "departure": "11:07",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "11:11",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "okitsu",
-          "toStationId": "shimada",
-          "diagramIds": [
-            "A30"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210104501200010-450m",
       "trainNumber": "450M",
-      "destinationStationId": "atami",
+      "destinationStationId": "shizuoka",
       "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -17521,108 +16366,6 @@
         {
           "stationId": "shizuoka",
           "arrival": "11:37",
-          "departure": "11:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "11:42",
-          "departure": "11:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "11:45",
-          "departure": "11:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "11:50",
-          "departure": "11:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "11:54",
-          "departure": "11:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "12:00",
-          "departure": "12:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "12:09",
-          "departure": "12:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "12:11",
-          "departure": "12:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "12:15",
-          "departure": "12:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "12:19",
-          "departure": "12:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "12:23",
-          "departure": "12:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "12:27",
-          "departure": "12:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "12:31",
-          "departure": "12:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "12:34",
-          "departure": "12:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "12:38",
-          "departure": "12:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "12:49",
-          "departure": "12:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "12:55",
-          "departure": "12:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "13:04",
           "departure": null,
           "dayOffset": 0
         }
@@ -17630,7 +16373,7 @@
       "operationSegments": [
         {
           "fromStationId": "hamamatsu",
-          "toStationId": "atami",
+          "toStationId": "shizuoka",
           "diagramIds": [
             "A35"
           ],
@@ -17937,74 +16680,6 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210107481200010-748m",
-      "trainNumber": "748M",
-      "destinationStationId": "kakegawa",
-      "destinationName": {
-        "ja": "掛川",
-        "en": "Kakegawa",
-        "zhCN": "Kakegawa"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "tenryugawa",
-          "arrival": "10:41",
-          "departure": "10:41",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "10:44",
-          "departure": "10:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "10:48",
-          "departure": "10:48",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "10:51",
-          "departure": "10:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "10:55",
-          "departure": "10:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "10:58",
-          "departure": "10:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "11:04",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "tenryugawa",
-          "toStationId": "kakegawa",
-          "diagramIds": [
-            "A82"
           ],
           "plannedFormations": []
         }
@@ -18355,11 +17030,11 @@
     {
       "id": "jrcentral-2026100210104521200010-452m",
       "trainNumber": "452M",
-      "destinationStationId": "atami",
+      "destinationStationId": "mishima",
       "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
+        "ja": "三島",
+        "en": "Mishima",
+        "zhCN": "Mishima"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -18561,18 +17236,6 @@
         {
           "stationId": "mishima",
           "arrival": "13:10",
-          "departure": "13:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "13:15",
-          "departure": "13:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "13:25",
           "departure": null,
           "dayOffset": 0
         }
@@ -18580,7 +17243,7 @@
       "operationSegments": [
         {
           "fromStationId": "hamamatsu",
-          "toStationId": "atami",
+          "toStationId": "mishima",
           "diagramIds": [
             "A91"
           ],
@@ -19202,6 +17865,141 @@
       ]
     },
     {
+      "id": "jrcentral-2026100210104461200010-446m",
+      "trainNumber": "446M",
+      "destinationStationId": "atami",
+      "destinationName": {
+        "ja": "熱海",
+        "en": "Atami",
+        "zhCN": "Atami"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "11:06",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "11:08",
+          "departure": "11:09",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "11:12",
+          "departure": "11:12",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "11:17",
+          "departure": "11:17",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "okitsu",
+          "arrival": "11:22",
+          "departure": "11:22",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yui",
+          "arrival": "11:27",
+          "departure": "11:27",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kambara",
+          "arrival": "11:31",
+          "departure": "11:31",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinkambara",
+          "arrival": "11:33",
+          "departure": "11:34",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujikawa",
+          "arrival": "11:37",
+          "departure": "11:37",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fuji",
+          "arrival": "11:40",
+          "departure": "11:41",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "11:45",
+          "departure": "11:45",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "11:49",
+          "departure": "11:49",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "11:53",
+          "departure": "11:53",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "11:56",
+          "departure": "11:56",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "12:00",
+          "departure": "12:02",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "12:06",
+          "departure": "12:06",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kannami",
+          "arrival": "12:11",
+          "departure": "12:12",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "atami",
+          "arrival": "12:20",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "atami",
+          "diagramIds": [
+            "A25",
+            "A39"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026100210109561200100-956m",
       "trainNumber": "956M",
       "destinationStationId": "hamamatsu",
@@ -19284,11 +18082,11 @@
     {
       "id": "jrcentral-2026100210104541200010-454m",
       "trainNumber": "454M",
-      "destinationStationId": "atami",
+      "destinationStationId": "mishima",
       "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
+        "ja": "三島",
+        "en": "Mishima",
+        "zhCN": "Mishima"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -19490,18 +18288,6 @@
         {
           "stationId": "mishima",
           "arrival": "13:28",
-          "departure": "13:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "13:33",
-          "departure": "13:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "13:43",
           "departure": null,
           "dayOffset": 0
         }
@@ -19509,7 +18295,7 @@
       "operationSegments": [
         {
           "fromStationId": "hamamatsu",
-          "toStationId": "atami",
+          "toStationId": "mishima",
           "diagramIds": [
             "A55"
           ],
@@ -19858,80 +18644,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210101461203610-146m",
-      "trainNumber": "146M",
-      "destinationStationId": "shizuoka",
-      "destinationName": {
-        "ja": "静岡",
-        "en": "Shizuoka",
-        "zhCN": "Shizuoka"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shimada",
-          "arrival": null,
-          "departure": "11:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "11:27",
-          "departure": "11:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "11:31",
-          "departure": "11:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "11:35",
-          "departure": "11:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "11:38",
-          "departure": "11:38",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "11:44",
-          "departure": "11:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "11:47",
-          "departure": "11:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "11:52",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shimada",
-          "toStationId": "shizuoka",
-          "diagramIds": [
-            "A30"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210101511203500-151m",
       "trainNumber": "151M",
       "destinationStationId": "shimada",
@@ -20238,394 +18950,9 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210104561200010-456m",
-      "trainNumber": "456M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "11:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "11:32",
-          "departure": "11:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "11:35",
-          "departure": "11:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "11:39",
-          "departure": "11:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "11:42",
-          "departure": "11:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "11:46",
-          "departure": "11:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "11:50",
-          "departure": "11:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "11:54",
-          "departure": "11:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "12:01",
-          "departure": "12:01",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "12:09",
-          "departure": "12:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "12:14",
-          "departure": "12:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "12:17",
-          "departure": "12:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "12:21",
-          "departure": "12:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "12:25",
-          "departure": "12:25",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "12:28",
-          "departure": "12:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "12:34",
-          "departure": "12:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "12:37",
-          "departure": "12:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "12:41",
-          "departure": "12:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "12:47",
-          "departure": "12:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "12:50",
-          "departure": "12:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "12:55",
-          "departure": "12:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "13:00",
-          "departure": "13:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "13:05",
-          "departure": "13:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "13:09",
-          "departure": "13:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "13:12",
-          "departure": "13:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "13:15",
-          "departure": "13:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "13:19",
-          "departure": "13:20",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "13:24",
-          "departure": "13:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "13:28",
-          "departure": "13:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "13:32",
-          "departure": "13:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "13:35",
-          "departure": "13:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "13:40",
-          "departure": "13:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "13:49",
-          "departure": "13:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "13:56",
-          "departure": "13:57",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "14:05",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "atami",
-          "diagramIds": [
-            "A24",
-            "A38"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210107651203640-765m",
-      "trainNumber": "765M",
-      "destinationStationId": "hamamatsu",
-      "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "kakegawa",
-          "arrival": null,
-          "departure": "11:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "11:31",
-          "departure": "11:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "11:35",
-          "departure": "11:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "11:39",
-          "departure": "11:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "11:42",
-          "departure": "11:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "11:45",
-          "departure": "11:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "11:49",
-          "departure": "11:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "11:54",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "kakegawa",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A82"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210107501200010-750m",
-      "trainNumber": "750M",
-      "destinationStationId": "kakegawa",
-      "destinationName": {
-        "ja": "掛川",
-        "en": "Kakegawa",
-        "zhCN": "Kakegawa"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "11:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "11:40",
-          "departure": "11:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "11:44",
-          "departure": "11:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "11:47",
-          "departure": "11:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "11:51",
-          "departure": "11:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "11:55",
-          "departure": "11:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "11:58",
-          "departure": "11:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "12:03",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "kakegawa",
-          "diagramIds": [
-            "A52"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210104451203360-445m",
       "trainNumber": "445M",
-      "destinationStationId": "hamamatsu",
+      "destinationStationId": "shizuoka",
       "destinationName": {
         "ja": "浜松",
         "en": "Hamamatsu",
@@ -20741,108 +19068,6 @@
         {
           "stationId": "shizuoka",
           "arrival": "12:52",
-          "departure": "12:53",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "12:57",
-          "departure": "12:57",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "12:59",
-          "departure": "13:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "13:05",
-          "departure": "13:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "13:08",
-          "departure": "13:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "13:12",
-          "departure": "13:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "13:16",
-          "departure": "13:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "13:19",
-          "departure": "13:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "13:23",
-          "departure": "13:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "13:31",
-          "departure": "13:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "13:37",
-          "departure": "13:38",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "13:42",
-          "departure": "13:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "13:46",
-          "departure": "13:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "13:50",
-          "departure": "13:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "13:53",
-          "departure": "13:53",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "13:56",
-          "departure": "13:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "14:00",
-          "departure": "14:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "14:04",
           "departure": null,
           "dayOffset": 0
         }
@@ -20850,7 +19075,7 @@
       "operationSegments": [
         {
           "fromStationId": "atami",
-          "toStationId": "hamamatsu",
+          "toStationId": "shizuoka",
           "diagramIds": [
             "A32"
           ],
@@ -20892,6 +19117,138 @@
           "diagramIds": [
             "A34"
           ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
+      "id": "jrcentral-2026100219004501203540-450m",
+      "trainNumber": "特450M",
+      "destinationStationId": "atami",
+      "destinationName": {
+        "ja": "熱海",
+        "en": "Atami",
+        "zhCN": "Atami"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "11:39",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "11:42",
+          "departure": "11:42",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "11:45",
+          "departure": "11:45",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "11:50",
+          "departure": "11:50",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "okitsu",
+          "arrival": "11:54",
+          "departure": "11:54",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yui",
+          "arrival": "12:00",
+          "departure": "12:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kambara",
+          "arrival": "12:09",
+          "departure": "12:09",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinkambara",
+          "arrival": "12:11",
+          "departure": "12:12",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujikawa",
+          "arrival": "12:15",
+          "departure": "12:15",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fuji",
+          "arrival": "12:19",
+          "departure": "12:19",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "12:23",
+          "departure": "12:23",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "12:27",
+          "departure": "12:27",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "12:31",
+          "departure": "12:31",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "12:34",
+          "departure": "12:34",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "12:38",
+          "departure": "12:44",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "12:49",
+          "departure": "12:50",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kannami",
+          "arrival": "12:55",
+          "departure": "12:55",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "atami",
+          "arrival": "13:04",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "atami",
+          "diagramIds": [],
           "plannedFormations": []
         }
       ]
@@ -21491,11 +19848,11 @@
     {
       "id": "jrcentral-2026100210104471203360-447m",
       "trainNumber": "447M",
-      "destinationStationId": "hamamatsu",
+      "destinationStationId": "shizuoka",
       "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
       },
       "direction": "westbound",
       "serviceDays": [
@@ -21607,108 +19964,6 @@
         {
           "stationId": "shizuoka",
           "arrival": "13:13",
-          "departure": "13:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "13:18",
-          "departure": "13:18",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "13:20",
-          "departure": "13:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "13:26",
-          "departure": "13:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "13:29",
-          "departure": "13:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "13:33",
-          "departure": "13:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "13:37",
-          "departure": "13:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "13:40",
-          "departure": "13:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "13:45",
-          "departure": "13:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "13:52",
-          "departure": "13:53",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "13:58",
-          "departure": "13:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "14:03",
-          "departure": "14:03",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "14:06",
-          "departure": "14:06",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "14:10",
-          "departure": "14:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "14:13",
-          "departure": "14:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "14:16",
-          "departure": "14:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "14:20",
-          "departure": "14:20",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "14:25",
           "departure": null,
           "dayOffset": 0
         }
@@ -21716,7 +19971,7 @@
       "operationSegments": [
         {
           "fromStationId": "atami",
-          "toStationId": "hamamatsu",
+          "toStationId": "shizuoka",
           "diagramIds": [
             "A87"
           ],
@@ -21757,62 +20012,6 @@
           "toStationId": "mishima",
           "diagramIds": [
             "A34"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210101481203540-148m",
-      "trainNumber": "148M",
-      "destinationStationId": "okitsu",
-      "destinationName": {
-        "ja": "興津",
-        "en": "Okitsu",
-        "zhCN": "Okitsu"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shizuoka",
-          "arrival": null,
-          "departure": "11:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "11:56",
-          "departure": "11:57",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "12:00",
-          "departure": "12:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "12:05",
-          "departure": "12:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "12:10",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shizuoka",
-          "toStationId": "okitsu",
-          "diagramIds": [
-            "A29"
           ],
           "plannedFormations": []
         }
@@ -21924,11 +20123,11 @@
     {
       "id": "jrcentral-2026100210101521203610-152m",
       "trainNumber": "152M",
-      "destinationStationId": "okitsu",
+      "destinationStationId": "shizuoka",
       "destinationName": {
-        "ja": "興津",
-        "en": "Okitsu",
-        "zhCN": "Okitsu"
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -21980,30 +20179,6 @@
         {
           "stationId": "shizuoka",
           "arrival": "12:31",
-          "departure": "12:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "12:35",
-          "departure": "12:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "12:39",
-          "departure": "12:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "12:44",
-          "departure": "12:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "12:49",
           "departure": null,
           "dayOffset": 0
         }
@@ -22011,7 +20186,7 @@
       "operationSegments": [
         {
           "fromStationId": "shimada",
-          "toStationId": "okitsu",
+          "toStationId": "shizuoka",
           "diagramIds": [
             "A64"
           ],
@@ -22227,242 +20402,6 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A34"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210104491203360-449m",
-      "trainNumber": "449M",
-      "destinationStationId": "hamamatsu",
-      "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "atami",
-          "arrival": null,
-          "departure": "12:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "12:15",
-          "departure": "12:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "12:21",
-          "departure": "12:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "12:26",
-          "departure": "12:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "12:37",
-          "departure": "12:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "12:40",
-          "departure": "12:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "12:45",
-          "departure": "12:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "12:50",
-          "departure": "12:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "12:54",
-          "departure": "12:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "12:58",
-          "departure": "12:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "13:01",
-          "departure": "13:01",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "13:04",
-          "departure": "13:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "13:08",
-          "departure": "13:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "13:13",
-          "departure": "13:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "13:18",
-          "departure": "13:18",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "13:22",
-          "departure": "13:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "13:26",
-          "departure": "13:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "13:29",
-          "departure": "13:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "13:35",
-          "departure": "13:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "13:37",
-          "departure": "13:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "13:43",
-          "departure": "13:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "13:46",
-          "departure": "13:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "13:50",
-          "departure": "13:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "13:54",
-          "departure": "13:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "13:57",
-          "departure": "13:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "14:02",
-          "departure": "14:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "14:10",
-          "departure": "14:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "14:16",
-          "departure": "14:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "14:21",
-          "departure": "14:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "14:24",
-          "departure": "14:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "14:28",
-          "departure": "14:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "14:31",
-          "departure": "14:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "14:35",
-          "departure": "14:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "14:38",
-          "departure": "14:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "14:43",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "atami",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A90"
           ],
           "plannedFormations": []
         }
@@ -23040,104 +20979,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210101571203500-157m",
-      "trainNumber": "157M",
-      "destinationStationId": "shimada",
-      "destinationName": {
-        "ja": "島田",
-        "en": "Shimada",
-        "zhCN": "Shimada"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "okitsu",
-          "arrival": null,
-          "departure": "12:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "12:29",
-          "departure": "12:29",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "12:33",
-          "departure": "12:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "12:37",
-          "departure": "12:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "12:41",
-          "departure": "12:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "12:46",
-          "departure": "12:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "12:48",
-          "departure": "12:49",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "12:54",
-          "departure": "12:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "12:58",
-          "departure": "12:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "13:01",
-          "departure": "13:01",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "13:05",
-          "departure": "13:06",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "13:09",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "okitsu",
-          "toStationId": "shimada",
-          "diagramIds": [
-            "A29"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210109641200100-964m",
       "trainNumber": "964M",
       "destinationStationId": "hamamatsu",
@@ -23299,80 +21140,6 @@
               "family": "U"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210107671203640-767m",
-      "trainNumber": "767M",
-      "destinationStationId": "hamamatsu",
-      "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "kakegawa",
-          "arrival": null,
-          "departure": "12:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "12:31",
-          "departure": "12:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "12:35",
-          "departure": "12:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "12:39",
-          "departure": "12:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "12:43",
-          "departure": "12:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "12:46",
-          "departure": "12:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "12:50",
-          "departure": "12:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "12:55",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "kakegawa",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A52"
-          ],
-          "plannedFormations": []
         }
       ]
     },
@@ -23966,6 +21733,141 @@
       ]
     },
     {
+      "id": "jrcentral-2026100210104561200010-456m",
+      "trainNumber": "456M",
+      "destinationStationId": "atami",
+      "destinationName": {
+        "ja": "熱海",
+        "en": "Atami",
+        "zhCN": "Atami"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "12:44",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "12:47",
+          "departure": "12:47",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "12:50",
+          "departure": "12:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "12:55",
+          "departure": "12:55",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "okitsu",
+          "arrival": "13:00",
+          "departure": "13:00",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yui",
+          "arrival": "13:05",
+          "departure": "13:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kambara",
+          "arrival": "13:09",
+          "departure": "13:09",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinkambara",
+          "arrival": "13:12",
+          "departure": "13:12",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujikawa",
+          "arrival": "13:15",
+          "departure": "13:15",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fuji",
+          "arrival": "13:19",
+          "departure": "13:20",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "13:24",
+          "departure": "13:24",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "13:28",
+          "departure": "13:28",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "13:32",
+          "departure": "13:32",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "13:35",
+          "departure": "13:35",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "13:40",
+          "departure": "13:44",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "13:49",
+          "departure": "13:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kannami",
+          "arrival": "13:56",
+          "departure": "13:57",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "atami",
+          "arrival": "14:05",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "atami",
+          "diagramIds": [
+            "A24",
+            "A38"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026100210109661200100-966m",
       "trainNumber": "966M",
       "destinationStationId": "hamamatsu",
@@ -24174,242 +22076,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210104641200010-464m",
-      "trainNumber": "464M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "12:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "12:55",
-          "departure": "12:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "12:58",
-          "departure": "12:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "13:01",
-          "departure": "13:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "13:05",
-          "departure": "13:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "13:09",
-          "departure": "13:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "13:12",
-          "departure": "13:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "13:17",
-          "departure": "13:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "13:23",
-          "departure": "13:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "13:31",
-          "departure": "13:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "13:36",
-          "departure": "13:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "13:39",
-          "departure": "13:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "13:43",
-          "departure": "13:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "13:46",
-          "departure": "13:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "13:50",
-          "departure": "13:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "13:55",
-          "departure": "13:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "13:58",
-          "departure": "13:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "14:03",
-          "departure": "14:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "14:07",
-          "departure": "14:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "14:11",
-          "departure": "14:11",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "14:16",
-          "departure": "14:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "14:21",
-          "departure": "14:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "14:26",
-          "departure": "14:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "14:30",
-          "departure": "14:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "14:32",
-          "departure": "14:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "14:36",
-          "departure": "14:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "14:40",
-          "departure": "14:41",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "14:45",
-          "departure": "14:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "14:48",
-          "departure": "14:49",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "14:53",
-          "departure": "14:53",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "14:56",
-          "departure": "14:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "15:00",
-          "departure": "15:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "15:18",
-          "departure": "15:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "15:24",
-          "departure": "15:25",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "15:33",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "atami",
-          "diagramIds": [
-            "A89"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210140061204230-4006m",
       "trainNumber": "4006M",
       "destinationStationId": "shizuoka",
@@ -24495,8 +22161,8 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210104531203360-453m",
-      "trainNumber": "453M",
+      "id": "jrcentral-2026100219004451203540-445m",
+      "trainNumber": "特445M",
       "destinationStationId": "hamamatsu",
       "destinationName": {
         "ja": "浜松",
@@ -24509,232 +22175,119 @@
       ],
       "stops": [
         {
-          "stationId": "atami",
+          "stationId": "shizuoka",
           "arrival": null,
-          "departure": "12:56",
+          "departure": "12:53",
           "dayOffset": 0
         },
         {
-          "stationId": "kannami",
-          "arrival": "13:04",
-          "departure": "13:04",
+          "stationId": "abekawa",
+          "arrival": "12:57",
+          "departure": "12:57",
           "dayOffset": 0
         },
         {
-          "stationId": "mishima",
-          "arrival": "13:09",
+          "stationId": "mochimune",
+          "arrival": "12:59",
+          "departure": "13:00",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yaizu",
+          "arrival": "13:05",
+          "departure": "13:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "nishiyaizu",
+          "arrival": "13:08",
           "departure": "13:09",
           "dayOffset": 0
         },
         {
-          "stationId": "numazu",
-          "arrival": "13:14",
+          "stationId": "fujieda",
+          "arrival": "13:12",
+          "departure": "13:12",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "rokugo",
+          "arrival": "13:16",
           "departure": "13:16",
           "dayOffset": 0
         },
         {
-          "stationId": "katahama",
-          "arrival": "13:20",
-          "departure": "13:20",
+          "stationId": "shimada",
+          "arrival": "13:19",
+          "departure": "13:19",
           "dayOffset": 0
         },
         {
-          "stationId": "hara",
-          "arrival": "13:22",
-          "departure": "13:23",
+          "stationId": "kanaya",
+          "arrival": "13:23",
+          "departure": "13:24",
           "dayOffset": 0
         },
         {
-          "stationId": "higashitagonoura",
-          "arrival": "13:28",
-          "departure": "13:28",
+          "stationId": "kikugawa",
+          "arrival": "13:31",
+          "departure": "13:31",
           "dayOffset": 0
         },
         {
-          "stationId": "yoshiwara",
-          "arrival": "13:32",
-          "departure": "13:32",
+          "stationId": "kakegawa",
+          "arrival": "13:37",
+          "departure": "13:38",
           "dayOffset": 0
         },
         {
-          "stationId": "fuji",
-          "arrival": "13:36",
-          "departure": "13:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "13:40",
-          "departure": "13:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "13:43",
+          "stationId": "aino",
+          "arrival": "13:42",
           "departure": "13:43",
           "dayOffset": 0
         },
         {
-          "stationId": "kambara",
+          "stationId": "fukuroi",
           "arrival": "13:46",
           "departure": "13:46",
           "dayOffset": 0
         },
         {
-          "stationId": "yui",
-          "arrival": "13:49",
-          "departure": "13:49",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "13:54",
-          "departure": "13:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "13:59",
-          "departure": "13:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "14:04",
-          "departure": "14:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "14:08",
-          "departure": "14:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "14:12",
-          "departure": "14:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "14:27",
-          "departure": "14:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "14:29",
-          "departure": "14:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "14:35",
-          "departure": "14:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "14:39",
-          "departure": "14:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "14:42",
-          "departure": "14:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "14:46",
-          "departure": "14:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "14:49",
-          "departure": "14:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "14:54",
-          "departure": "14:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "15:02",
-          "departure": "15:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "15:08",
-          "departure": "15:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "15:12",
-          "departure": "15:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "15:16",
-          "departure": "15:16",
-          "dayOffset": 0
-        },
-        {
           "stationId": "mikuriya",
-          "arrival": "15:20",
-          "departure": "15:20",
+          "arrival": "13:50",
+          "departure": "13:50",
           "dayOffset": 0
         },
         {
           "stationId": "iwata",
-          "arrival": "15:23",
-          "departure": "15:23",
+          "arrival": "13:53",
+          "departure": "13:53",
           "dayOffset": 0
         },
         {
           "stationId": "toyodacho",
-          "arrival": "15:26",
-          "departure": "15:26",
+          "arrival": "13:56",
+          "departure": "13:56",
           "dayOffset": 0
         },
         {
           "stationId": "tenryugawa",
-          "arrival": "15:29",
-          "departure": "15:30",
+          "arrival": "14:00",
+          "departure": "14:00",
           "dayOffset": 0
         },
         {
           "stationId": "hamamatsu",
-          "arrival": "15:34",
+          "arrival": "14:04",
           "departure": null,
           "dayOffset": 0
         }
       ],
       "operationSegments": [
         {
-          "fromStationId": "atami",
-          "toStationId": "higashishizuoka",
-          "diagramIds": [
-            "A58"
-          ],
-          "plannedFormations": []
-        },
-        {
           "fromStationId": "shizuoka",
           "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A30",
-            "A58"
-          ],
+          "diagramIds": [],
           "plannedFormations": []
         }
       ]
@@ -24802,140 +22355,6 @@
           "toStationId": "fuji",
           "diagramIds": [
             "A34"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210114341203540-1434m",
-      "trainNumber": "1434M",
-      "destinationStationId": "atami",
-      "destinationName": {
-        "ja": "熱海",
-        "en": "Atami",
-        "zhCN": "Atami"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shizuoka",
-          "arrival": null,
-          "departure": "13:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "13:05",
-          "departure": "13:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "13:09",
-          "departure": "13:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "13:14",
-          "departure": "13:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "13:18",
-          "departure": "13:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "13:24",
-          "departure": "13:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "13:27",
-          "departure": "13:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "13:30",
-          "departure": "13:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "13:34",
-          "departure": "13:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "13:38",
-          "departure": "13:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "13:43",
-          "departure": "13:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "13:46",
-          "departure": "13:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "13:51",
-          "departure": "13:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "13:54",
-          "departure": "13:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "13:58",
-          "departure": "14:03",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "14:08",
-          "departure": "14:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "14:14",
-          "departure": "14:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "atami",
-          "arrival": "14:23",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shizuoka",
-          "toStationId": "atami",
-          "diagramIds": [
-            "A85"
           ],
           "plannedFormations": []
         }
@@ -25118,109 +22537,6 @@
           "plannedFormations": [
             {
               "diagramId": "A74",
-              "family": "U"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210101611203500-161m",
-      "trainNumber": "161M",
-      "destinationStationId": "shimada",
-      "destinationName": {
-        "ja": "島田",
-        "en": "Shimada",
-        "zhCN": "Shimada"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "okitsu",
-          "arrival": null,
-          "departure": "13:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "13:09",
-          "departure": "13:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "13:13",
-          "departure": "13:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "13:17",
-          "departure": "13:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "13:20",
-          "departure": "13:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "13:27",
-          "departure": "13:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "13:29",
-          "departure": "13:29",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "13:35",
-          "departure": "13:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "13:38",
-          "departure": "13:38",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "13:41",
-          "departure": "13:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "13:46",
-          "departure": "13:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "13:50",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "okitsu",
-          "toStationId": "shimada",
-          "diagramIds": [
-            "A64"
-          ],
-          "plannedFormations": [
-            {
-              "diagramId": "A64",
               "family": "U"
             }
           ]
@@ -25593,11 +22909,11 @@
     {
       "id": "jrcentral-2026100210102461203450-246m",
       "trainNumber": "246M",
-      "destinationStationId": "mishima",
+      "destinationStationId": "numazu",
       "destinationName": {
-        "ja": "三島",
-        "en": "Mishima",
-        "zhCN": "Mishima"
+        "ja": "沼津",
+        "en": "Numazu",
+        "zhCN": "Numazu"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -25637,12 +22953,6 @@
         {
           "stationId": "numazu",
           "arrival": "13:31",
-          "departure": "13:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "13:38",
           "departure": null,
           "dayOffset": 0
         }
@@ -25650,7 +22960,7 @@
       "operationSegments": [
         {
           "fromStationId": "fuji",
-          "toStationId": "mishima",
+          "toStationId": "numazu",
           "diagramIds": [
             "A54"
           ],
@@ -25889,104 +23199,6 @@
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A35"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210101661203610-166m",
-      "trainNumber": "166M",
-      "destinationStationId": "okitsu",
-      "destinationName": {
-        "ja": "興津",
-        "en": "Okitsu",
-        "zhCN": "Okitsu"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shimada",
-          "arrival": null,
-          "departure": "13:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "13:26",
-          "departure": "13:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "13:30",
-          "departure": "13:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "13:34",
-          "departure": "13:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "13:37",
-          "departure": "13:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "13:43",
-          "departure": "13:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "13:46",
-          "departure": "13:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "13:50",
-          "departure": "13:52",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "13:55",
-          "departure": "13:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "13:59",
-          "departure": "13:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "14:04",
-          "departure": "14:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "14:09",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shimada",
-          "toStationId": "okitsu",
-          "diagramIds": [
-            "A29"
           ],
           "plannedFormations": []
         }
@@ -26623,6 +23835,161 @@
       ]
     },
     {
+      "id": "jrcentral-2026100210107561200010-756m",
+      "trainNumber": "756M",
+      "destinationStationId": "kakegawa",
+      "destinationName": {
+        "ja": "掛川",
+        "en": "Kakegawa",
+        "zhCN": "Kakegawa"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "hamamatsu",
+          "arrival": null,
+          "departure": "13:36",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "tenryugawa",
+          "arrival": "13:41",
+          "departure": "13:41",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "toyodacho",
+          "arrival": "13:44",
+          "departure": "13:45",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "iwata",
+          "arrival": "13:48",
+          "departure": "13:48",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mikuriya",
+          "arrival": "13:51",
+          "departure": "13:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fukuroi",
+          "arrival": "13:55",
+          "departure": "13:56",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "aino",
+          "arrival": "13:59",
+          "departure": "13:59",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kakegawa",
+          "arrival": "14:04",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "hamamatsu",
+          "toStationId": "kakegawa",
+          "diagramIds": [
+            "A23",
+            "A37"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
+      "id": "jrcentral-2026100210109741200100-974m",
+      "trainNumber": "974M",
+      "destinationStationId": "hamamatsu",
+      "destinationName": {
+        "ja": "浜松",
+        "en": "Hamamatsu",
+        "zhCN": "Hamamatsu"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "toyohashi",
+          "arrival": null,
+          "departure": "13:42",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "futagawa",
+          "arrival": "13:47",
+          "departure": "13:47",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinjohara",
+          "arrival": "13:51",
+          "departure": "13:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "washizu",
+          "arrival": "13:56",
+          "departure": "13:56",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "araimachi",
+          "arrival": "14:00",
+          "departure": "14:00",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "bentenjima",
+          "arrival": "14:03",
+          "departure": "14:04",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "maisaka",
+          "arrival": "14:06",
+          "departure": "14:06",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "takatsuka",
+          "arrival": "14:11",
+          "departure": "14:11",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hamamatsu",
+          "arrival": "14:16",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "toyohashi",
+          "toStationId": "hamamatsu",
+          "diagramIds": [
+            "A83"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026100210104571203360-457m",
       "trainNumber": "457M",
       "destinationStationId": "hamamatsu",
@@ -26637,20 +24004,8 @@
       ],
       "stops": [
         {
-          "stationId": "atami",
-          "arrival": null,
-          "departure": "13:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "13:38",
-          "departure": "13:38",
-          "dayOffset": 0
-        },
-        {
           "stationId": "mishima",
-          "arrival": "13:43",
+          "arrival": null,
           "departure": "13:43",
           "dayOffset": 0
         },
@@ -26849,165 +24204,10 @@
       ],
       "operationSegments": [
         {
-          "fromStationId": "atami",
+          "fromStationId": "mishima",
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A91"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210107561200010-756m",
-      "trainNumber": "756M",
-      "destinationStationId": "kakegawa",
-      "destinationName": {
-        "ja": "掛川",
-        "en": "Kakegawa",
-        "zhCN": "Kakegawa"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "13:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "13:41",
-          "departure": "13:41",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "13:44",
-          "departure": "13:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "13:48",
-          "departure": "13:48",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "13:51",
-          "departure": "13:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "13:55",
-          "departure": "13:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "13:59",
-          "departure": "13:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "14:04",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "kakegawa",
-          "diagramIds": [
-            "A23",
-            "A37"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210109741200100-974m",
-      "trainNumber": "974M",
-      "destinationStationId": "hamamatsu",
-      "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "toyohashi",
-          "arrival": null,
-          "departure": "13:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "futagawa",
-          "arrival": "13:47",
-          "departure": "13:47",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinjohara",
-          "arrival": "13:51",
-          "departure": "13:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "washizu",
-          "arrival": "13:56",
-          "departure": "13:56",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "araimachi",
-          "arrival": "14:00",
-          "departure": "14:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "bentenjima",
-          "arrival": "14:03",
-          "departure": "14:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "maisaka",
-          "arrival": "14:06",
-          "departure": "14:06",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "takatsuka",
-          "arrival": "14:11",
-          "departure": "14:11",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "14:16",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "toyohashi",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A83"
           ],
           "plannedFormations": []
         }
@@ -27614,6 +24814,311 @@
       ]
     },
     {
+      "id": "jrcentral-2026100210101671203500-167m",
+      "trainNumber": "167M",
+      "destinationStationId": "shimada",
+      "destinationName": {
+        "ja": "島田",
+        "en": "Shimada",
+        "zhCN": "Shimada"
+      },
+      "direction": "westbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "okitsu",
+          "arrival": null,
+          "departure": "14:00",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "14:05",
+          "departure": "14:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "14:09",
+          "departure": "14:10",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "14:13",
+          "departure": "14:13",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shizuoka",
+          "arrival": "14:16",
+          "departure": "14:18",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "abekawa",
+          "arrival": "14:22",
+          "departure": "14:22",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mochimune",
+          "arrival": "14:24",
+          "departure": "14:25",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yaizu",
+          "arrival": "14:30",
+          "departure": "14:30",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "nishiyaizu",
+          "arrival": "14:34",
+          "departure": "14:34",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujieda",
+          "arrival": "14:37",
+          "departure": "14:37",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "rokugo",
+          "arrival": "14:41",
+          "departure": "14:42",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimada",
+          "arrival": "14:45",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "okitsu",
+          "toStationId": "shimada",
+          "diagramIds": [
+            "A74"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A74",
+              "family": "U"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jrcentral-2026100210102501203450-250m",
+      "trainNumber": "250M",
+      "destinationStationId": "mishima",
+      "destinationName": {
+        "ja": "三島",
+        "en": "Mishima",
+        "zhCN": "Mishima"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "fuji",
+          "arrival": null,
+          "departure": "14:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "14:12",
+          "departure": "14:12",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "14:15",
+          "departure": "14:15",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "14:19",
+          "departure": "14:19",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "14:22",
+          "departure": "14:22",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "14:27",
+          "departure": "14:41",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "14:46",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "fuji",
+          "toStationId": "mishima",
+          "diagramIds": [
+            "A34"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
+      "id": "jrcentral-2026100210104641200010-464m",
+      "trainNumber": "464M",
+      "destinationStationId": "atami",
+      "destinationName": {
+        "ja": "熱海",
+        "en": "Atami",
+        "zhCN": "Atami"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "14:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "14:07",
+          "departure": "14:08",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "14:11",
+          "departure": "14:11",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "14:16",
+          "departure": "14:16",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "okitsu",
+          "arrival": "14:21",
+          "departure": "14:21",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yui",
+          "arrival": "14:26",
+          "departure": "14:26",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kambara",
+          "arrival": "14:30",
+          "departure": "14:30",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinkambara",
+          "arrival": "14:32",
+          "departure": "14:33",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujikawa",
+          "arrival": "14:36",
+          "departure": "14:36",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fuji",
+          "arrival": "14:40",
+          "departure": "14:41",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "14:45",
+          "departure": "14:45",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "14:48",
+          "departure": "14:49",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "14:53",
+          "departure": "14:53",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "14:56",
+          "departure": "14:56",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "15:00",
+          "departure": "15:13",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "15:18",
+          "departure": "15:19",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kannami",
+          "arrival": "15:24",
+          "departure": "15:25",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "atami",
+          "arrival": "15:33",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "atami",
+          "diagramIds": [
+            "A89"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026100210104591203360-459m",
       "trainNumber": "459M",
       "destinationStationId": "hamamatsu",
@@ -27628,20 +25133,8 @@
       ],
       "stops": [
         {
-          "stationId": "atami",
-          "arrival": null,
-          "departure": "13:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "14:01",
-          "departure": "14:01",
-          "dayOffset": 0
-        },
-        {
           "stationId": "mishima",
-          "arrival": "14:06",
+          "arrival": null,
           "departure": "14:06",
           "dayOffset": 0
         },
@@ -27840,322 +25333,10 @@
       ],
       "operationSegments": [
         {
-          "fromStationId": "atami",
+          "fromStationId": "mishima",
           "toStationId": "hamamatsu",
           "diagramIds": [
             "A55"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210101671203500-167m",
-      "trainNumber": "167M",
-      "destinationStationId": "shimada",
-      "destinationName": {
-        "ja": "島田",
-        "en": "Shimada",
-        "zhCN": "Shimada"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "okitsu",
-          "arrival": null,
-          "departure": "14:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "14:05",
-          "departure": "14:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "14:09",
-          "departure": "14:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "14:13",
-          "departure": "14:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "14:16",
-          "departure": "14:18",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "14:22",
-          "departure": "14:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "14:24",
-          "departure": "14:25",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "14:30",
-          "departure": "14:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "14:34",
-          "departure": "14:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "14:37",
-          "departure": "14:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "14:41",
-          "departure": "14:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "14:45",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "okitsu",
-          "toStationId": "shimada",
-          "diagramIds": [
-            "A74"
-          ],
-          "plannedFormations": [
-            {
-              "diagramId": "A74",
-              "family": "U"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210102471203390-247m",
-      "trainNumber": "247M",
-      "destinationStationId": "numazu",
-      "destinationName": {
-        "ja": "沼津",
-        "en": "Numazu",
-        "zhCN": "Numazu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "mishima",
-          "arrival": null,
-          "departure": "14:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "14:06",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "mishima",
-          "toStationId": "numazu",
-          "diagramIds": [
-            "A54"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210101701203610-170m",
-      "trainNumber": "170M",
-      "destinationStationId": "okitsu",
-      "destinationName": {
-        "ja": "興津",
-        "en": "Okitsu",
-        "zhCN": "Okitsu"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shimada",
-          "arrival": null,
-          "departure": "14:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "14:07",
-          "departure": "14:08",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "14:12",
-          "departure": "14:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "14:15",
-          "departure": "14:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "14:19",
-          "departure": "14:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "14:24",
-          "departure": "14:25",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "14:27",
-          "departure": "14:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "14:32",
-          "departure": "14:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "14:36",
-          "departure": "14:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "14:40",
-          "departure": "14:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "14:44",
-          "departure": "14:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "14:50",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shimada",
-          "toStationId": "okitsu",
-          "diagramIds": [
-            "A64"
-          ],
-          "plannedFormations": [
-            {
-              "diagramId": "A64",
-              "family": "U"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210102501203450-250m",
-      "trainNumber": "250M",
-      "destinationStationId": "mishima",
-      "destinationName": {
-        "ja": "三島",
-        "en": "Mishima",
-        "zhCN": "Mishima"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "fuji",
-          "arrival": null,
-          "departure": "14:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "14:12",
-          "departure": "14:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "14:15",
-          "departure": "14:15",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "14:19",
-          "departure": "14:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "14:22",
-          "departure": "14:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "14:27",
-          "departure": "14:41",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "14:46",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "fuji",
-          "toStationId": "mishima",
-          "diagramIds": [
-            "A34"
           ],
           "plannedFormations": []
         }
@@ -28840,13 +26021,13 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210101691203500-169m",
-      "trainNumber": "169M",
-      "destinationStationId": "shimada",
+      "id": "jrcentral-2026100210104531203360-453m",
+      "trainNumber": "453M",
+      "destinationStationId": "hamamatsu",
       "destinationName": {
-        "ja": "島田",
-        "en": "Shimada",
-        "zhCN": "Shimada"
+        "ja": "浜松",
+        "en": "Hamamatsu",
+        "zhCN": "Hamamatsu"
       },
       "direction": "westbound",
       "serviceDays": [
@@ -28854,84 +26035,121 @@
       ],
       "stops": [
         {
-          "stationId": "okitsu",
+          "stationId": "shizuoka",
           "arrival": null,
           "departure": "14:23",
           "dayOffset": 0
         },
         {
-          "stationId": "shimizu",
-          "arrival": "14:28",
-          "departure": "14:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "14:32",
-          "departure": "14:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "14:36",
-          "departure": "14:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "14:39",
-          "departure": "14:41",
-          "dayOffset": 0
-        },
-        {
           "stationId": "abekawa",
-          "arrival": "14:44",
-          "departure": "14:45",
+          "arrival": "14:27",
+          "departure": "14:27",
           "dayOffset": 0
         },
         {
           "stationId": "mochimune",
-          "arrival": "14:47",
-          "departure": "14:47",
+          "arrival": "14:29",
+          "departure": "14:30",
           "dayOffset": 0
         },
         {
           "stationId": "yaizu",
-          "arrival": "14:52",
-          "departure": "14:53",
+          "arrival": "14:35",
+          "departure": "14:35",
           "dayOffset": 0
         },
         {
           "stationId": "nishiyaizu",
-          "arrival": "14:56",
-          "departure": "14:56",
+          "arrival": "14:39",
+          "departure": "14:39",
           "dayOffset": 0
         },
         {
           "stationId": "fujieda",
-          "arrival": "14:59",
-          "departure": "14:59",
+          "arrival": "14:42",
+          "departure": "14:42",
           "dayOffset": 0
         },
         {
           "stationId": "rokugo",
-          "arrival": "15:03",
-          "departure": "15:03",
+          "arrival": "14:46",
+          "departure": "14:47",
           "dayOffset": 0
         },
         {
           "stationId": "shimada",
-          "arrival": "15:07",
+          "arrival": "14:49",
+          "departure": "14:50",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kanaya",
+          "arrival": "14:54",
+          "departure": "14:54",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kikugawa",
+          "arrival": "15:02",
+          "departure": "15:02",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kakegawa",
+          "arrival": "15:08",
+          "departure": "15:08",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "aino",
+          "arrival": "15:12",
+          "departure": "15:13",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fukuroi",
+          "arrival": "15:16",
+          "departure": "15:16",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mikuriya",
+          "arrival": "15:20",
+          "departure": "15:20",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "iwata",
+          "arrival": "15:23",
+          "departure": "15:23",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "toyodacho",
+          "arrival": "15:26",
+          "departure": "15:26",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "tenryugawa",
+          "arrival": "15:29",
+          "departure": "15:30",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hamamatsu",
+          "arrival": "15:34",
           "departure": null,
           "dayOffset": 0
         }
       ],
       "operationSegments": [
         {
-          "fromStationId": "okitsu",
-          "toStationId": "shimada",
+          "fromStationId": "shizuoka",
+          "toStationId": "hamamatsu",
           "diagramIds": [
-            "A29"
+            "A30",
+            "A58"
           ],
           "plannedFormations": []
         }
@@ -29372,242 +26590,6 @@
           "toStationId": "numazu",
           "diagramIds": [
             "A54"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
-      "id": "jrcentral-2026100210104611203360-461m",
-      "trainNumber": "461M",
-      "destinationStationId": "hamamatsu",
-      "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "atami",
-          "arrival": null,
-          "departure": "14:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kannami",
-          "arrival": "14:45",
-          "departure": "14:45",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "14:50",
-          "departure": "14:50",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "14:56",
-          "departure": "14:57",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "15:01",
-          "departure": "15:01",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "15:04",
-          "departure": "15:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "15:10",
-          "departure": "15:10",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "15:14",
-          "departure": "15:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "15:18",
-          "departure": "15:19",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "15:23",
-          "departure": "15:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "15:26",
-          "departure": "15:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "15:29",
-          "departure": "15:30",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "15:33",
-          "departure": "15:33",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "15:39",
-          "departure": "15:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "15:43",
-          "departure": "15:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "15:48",
-          "departure": "15:49",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "15:53",
-          "departure": "15:53",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "15:57",
-          "departure": "16:00",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "16:04",
-          "departure": "16:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "16:06",
-          "departure": "16:07",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "16:12",
-          "departure": "16:13",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "16:16",
-          "departure": "16:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "16:19",
-          "departure": "16:20",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "16:24",
-          "departure": "16:24",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "16:27",
-          "departure": "16:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "16:32",
-          "departure": "16:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "16:40",
-          "departure": "16:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "16:46",
-          "departure": "16:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "16:50",
-          "departure": "16:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "16:54",
-          "departure": "16:54",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "16:58",
-          "departure": "16:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "17:02",
-          "departure": "17:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "17:05",
-          "departure": "17:05",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "17:09",
-          "departure": "17:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "17:14",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "atami",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A85"
           ],
           "plannedFormations": []
         }
@@ -30749,169 +27731,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210107751203500-775m",
-      "trainNumber": "775M",
-      "destinationStationId": "hamamatsu",
-      "destinationName": {
-        "ja": "浜松",
-        "en": "Hamamatsu",
-        "zhCN": "Hamamatsu"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "okitsu",
-          "arrival": null,
-          "departure": "15:02",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "15:07",
-          "departure": "15:07",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "15:12",
-          "departure": "15:12",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "15:15",
-          "departure": "15:16",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "15:19",
-          "departure": "15:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "15:36",
-          "departure": "15:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "15:38",
-          "departure": "15:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "15:44",
-          "departure": "15:44",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "15:47",
-          "departure": "15:48",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "15:51",
-          "departure": "15:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "15:55",
-          "departure": "15:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimada",
-          "arrival": "15:58",
-          "departure": "15:58",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kanaya",
-          "arrival": "16:03",
-          "departure": "16:03",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kikugawa",
-          "arrival": "16:10",
-          "departure": "16:11",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kakegawa",
-          "arrival": "16:17",
-          "departure": "16:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "aino",
-          "arrival": "16:21",
-          "departure": "16:21",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fukuroi",
-          "arrival": "16:24",
-          "departure": "16:25",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mikuriya",
-          "arrival": "16:29",
-          "departure": "16:29",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "iwata",
-          "arrival": "16:32",
-          "departure": "16:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyodacho",
-          "arrival": "16:35",
-          "departure": "16:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "tenryugawa",
-          "arrival": "16:39",
-          "departure": "16:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "16:44",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "okitsu",
-          "toStationId": "hamamatsu",
-          "diagramIds": [
-            "A64"
-          ],
-          "plannedFormations": [
-            {
-              "diagramId": "A64",
-              "family": "U"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210109791200010-979m",
       "trainNumber": "979M",
       "destinationStationId": "toyohashi",
@@ -31727,170 +28546,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026100210107621203610-762m",
-      "trainNumber": "762M",
-      "destinationStationId": "mishima",
-      "destinationName": {
-        "ja": "三島",
-        "en": "Mishima",
-        "zhCN": "Mishima"
-      },
-      "direction": "eastbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "shimada",
-          "arrival": null,
-          "departure": "15:22",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "rokugo",
-          "arrival": "15:26",
-          "departure": "15:26",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujieda",
-          "arrival": "15:30",
-          "departure": "15:31",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "nishiyaizu",
-          "arrival": "15:34",
-          "departure": "15:34",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yaizu",
-          "arrival": "15:37",
-          "departure": "15:38",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mochimune",
-          "arrival": "15:43",
-          "departure": "15:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "abekawa",
-          "arrival": "15:46",
-          "departure": "15:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shizuoka",
-          "arrival": "15:50",
-          "departure": "15:52",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashishizuoka",
-          "arrival": "15:55",
-          "departure": "15:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kusanagi",
-          "arrival": "15:59",
-          "departure": "15:59",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shimizu",
-          "arrival": "16:04",
-          "departure": "16:04",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "okitsu",
-          "arrival": "16:08",
-          "departure": "16:09",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yui",
-          "arrival": "16:14",
-          "departure": "16:14",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "kambara",
-          "arrival": "16:17",
-          "departure": "16:17",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinkambara",
-          "arrival": "16:20",
-          "departure": "16:20",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fujikawa",
-          "arrival": "16:23",
-          "departure": "16:23",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "fuji",
-          "arrival": "16:27",
-          "departure": "16:28",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "yoshiwara",
-          "arrival": "16:32",
-          "departure": "16:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "higashitagonoura",
-          "arrival": "16:35",
-          "departure": "16:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hara",
-          "arrival": "16:39",
-          "departure": "16:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "katahama",
-          "arrival": "16:42",
-          "departure": "16:42",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "numazu",
-          "arrival": "16:46",
-          "departure": "16:48",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "16:53",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "shimada",
-          "toStationId": "mishima",
-          "diagramIds": [
-            "A29"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026100210101731203540-173m",
       "trainNumber": "173M",
       "destinationStationId": "shimada",
@@ -32666,6 +29321,145 @@
             "A31"
           ],
           "plannedFormations": []
+        }
+      ]
+    },
+    {
+      "id": "jrcentral-2026100210107751203500-775m",
+      "trainNumber": "775M",
+      "destinationStationId": "hamamatsu",
+      "destinationName": {
+        "ja": "浜松",
+        "en": "Hamamatsu",
+        "zhCN": "Hamamatsu"
+      },
+      "direction": "westbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "15:32",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "abekawa",
+          "arrival": "15:36",
+          "departure": "15:36",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mochimune",
+          "arrival": "15:38",
+          "departure": "15:39",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yaizu",
+          "arrival": "15:44",
+          "departure": "15:44",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "nishiyaizu",
+          "arrival": "15:47",
+          "departure": "15:48",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujieda",
+          "arrival": "15:51",
+          "departure": "15:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "rokugo",
+          "arrival": "15:55",
+          "departure": "15:55",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimada",
+          "arrival": "15:58",
+          "departure": "15:58",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kanaya",
+          "arrival": "16:03",
+          "departure": "16:03",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kikugawa",
+          "arrival": "16:10",
+          "departure": "16:11",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kakegawa",
+          "arrival": "16:17",
+          "departure": "16:17",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "aino",
+          "arrival": "16:21",
+          "departure": "16:21",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fukuroi",
+          "arrival": "16:24",
+          "departure": "16:25",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mikuriya",
+          "arrival": "16:29",
+          "departure": "16:29",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "iwata",
+          "arrival": "16:32",
+          "departure": "16:32",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "toyodacho",
+          "arrival": "16:35",
+          "departure": "16:35",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "tenryugawa",
+          "arrival": "16:39",
+          "departure": "16:39",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hamamatsu",
+          "arrival": "16:44",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "hamamatsu",
+          "diagramIds": [
+            "A64"
+          ],
+          "plannedFormations": [
+            {
+              "diagramId": "A64",
+              "family": "U"
+            }
+          ]
         }
       ]
     },
@@ -33516,6 +30310,128 @@
       ]
     },
     {
+      "id": "jrcentral-2026100210107621203610-762m",
+      "trainNumber": "762M",
+      "destinationStationId": "mishima",
+      "destinationName": {
+        "ja": "三島",
+        "en": "Mishima",
+        "zhCN": "Mishima"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "15:52",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashishizuoka",
+          "arrival": "15:55",
+          "departure": "15:55",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kusanagi",
+          "arrival": "15:59",
+          "departure": "15:59",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimizu",
+          "arrival": "16:04",
+          "departure": "16:04",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "okitsu",
+          "arrival": "16:08",
+          "departure": "16:09",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yui",
+          "arrival": "16:14",
+          "departure": "16:14",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kambara",
+          "arrival": "16:17",
+          "departure": "16:17",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shinkambara",
+          "arrival": "16:20",
+          "departure": "16:20",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujikawa",
+          "arrival": "16:23",
+          "departure": "16:23",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fuji",
+          "arrival": "16:27",
+          "departure": "16:28",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yoshiwara",
+          "arrival": "16:32",
+          "departure": "16:32",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "higashitagonoura",
+          "arrival": "16:35",
+          "departure": "16:35",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hara",
+          "arrival": "16:39",
+          "departure": "16:39",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "katahama",
+          "arrival": "16:42",
+          "departure": "16:42",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "numazu",
+          "arrival": "16:46",
+          "departure": "16:48",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "16:53",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "mishima",
+          "diagramIds": [
+            "A29"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026100210104691203360-469m",
       "trainNumber": "469M",
       "destinationStationId": "shimada",
@@ -33686,6 +30602,140 @@
           "toStationId": "shimada",
           "diagramIds": [
             "A84"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
+      "id": "jrcentral-2026100210104611203360-461m",
+      "trainNumber": "461M",
+      "destinationStationId": "hamamatsu",
+      "destinationName": {
+        "ja": "浜松",
+        "en": "Hamamatsu",
+        "zhCN": "Hamamatsu"
+      },
+      "direction": "westbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shizuoka",
+          "arrival": null,
+          "departure": "16:00",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "abekawa",
+          "arrival": "16:04",
+          "departure": "16:04",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mochimune",
+          "arrival": "16:06",
+          "departure": "16:07",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yaizu",
+          "arrival": "16:12",
+          "departure": "16:13",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "nishiyaizu",
+          "arrival": "16:16",
+          "departure": "16:16",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujieda",
+          "arrival": "16:19",
+          "departure": "16:20",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "rokugo",
+          "arrival": "16:24",
+          "departure": "16:24",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shimada",
+          "arrival": "16:27",
+          "departure": "16:27",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kanaya",
+          "arrival": "16:32",
+          "departure": "16:32",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kikugawa",
+          "arrival": "16:40",
+          "departure": "16:40",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "kakegawa",
+          "arrival": "16:46",
+          "departure": "16:46",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "aino",
+          "arrival": "16:50",
+          "departure": "16:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fukuroi",
+          "arrival": "16:54",
+          "departure": "16:54",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mikuriya",
+          "arrival": "16:58",
+          "departure": "16:58",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "iwata",
+          "arrival": "17:02",
+          "departure": "17:02",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "toyodacho",
+          "arrival": "17:05",
+          "departure": "17:05",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "tenryugawa",
+          "arrival": "17:09",
+          "departure": "17:09",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "hamamatsu",
+          "arrival": "17:14",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shizuoka",
+          "toStationId": "hamamatsu",
+          "diagramIds": [
+            "A85"
           ],
           "plannedFormations": []
         }
