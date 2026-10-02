@@ -18,20 +18,54 @@
       "priority": 14,
       "title": "Reliable automated data refresh and deployment checks",
       "behavior": "Scheduled refreshes preserve validated snapshots when source dates are unpublished, retry temporary network and push failures, and verify routing without assuming a changing daily itinerary is fixed.",
-      "depends_on": ["RADAR-009"],
+      "depends_on": [
+        "RADAR-009"
+      ],
       "status": "passing",
-      "verification": [{"command": "npm run verify", "expected": "Unavailable-source preservation, bounded retries, immutable route regression, the unchanged 1.5-second performance budget, archive validation, build, and production smoke pass."}],
-      "evidence": [{"date": "2026-10-02", "repository_state": "working tree based on 518928e", "command": "npm run verify", "result": "Passed 50 Python tests, static/archive validation, 64 frontend tests, production build, and preview smoke for all 30 daily bundles. Preserved every saved JSON byte for unpublished dates, rejected malformed/partial current data and exhausted retries, tested push retries and unchanged-data deployment gating, preserved the exact 763M regression on four immutable September 9 services, and kept the 1.5-second bulk-planning budget including planner construction. Parsed both workflow YAML files and checked job dependencies. An isolated live October 2 refresh validated 416 JR Central services and 61 formation assignments without changing public/data."}]
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Unavailable-source preservation, bounded retries, immutable route regression, the unchanged 1.5-second performance budget, archive validation, build, and production smoke pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-10-02",
+          "repository_state": "working tree based on 518928e",
+          "command": "npm run verify",
+          "result": "Passed 50 Python tests, static/archive validation, 64 frontend tests, production build, and preview smoke for all 30 daily bundles. Preserved every saved JSON byte for unpublished dates, rejected malformed/partial current data and exhausted retries, tested push retries and unchanged-data deployment gating, preserved the exact 763M regression on four immutable September 9 services, and kept the 1.5-second bulk-planning budget including planner construction. Parsed both workflow YAML files and checked job dependencies. An isolated live October 2 refresh validated 416 JR Central services and 61 formation assignments without changing public/data."
+        },
+        {
+          "date": "2026-10-02",
+          "repository_state": "fix 296a510; collected snapshot fb21dfa",
+          "command": "GitHub Actions Pages 37006529446/37006717296 and updater 37006657728",
+          "result": "Both Pages workflows passed 50 Python tests, static/archive validation, 64 frontend tests, production build, smoke for 30 daily bundles, and deployment. The live manually dispatched updater passed every step and pushed validated October 2 data with 416 services and 65 assignments, preserving the archive. The changed-data workflow gate correctly allowed the follow-up deployment."
+        }
+      ]
     },
     {
       "id": "RADAR-009",
       "priority": 13,
       "title": "Historical schedules and availability estimates",
       "behavior": "Passengers can browse 30 days of available snapshots, automatically view the latest past date, and see yesterday-based release estimates or the next scheduled check.",
-      "depends_on": ["RADAR-008"],
+      "depends_on": [
+        "RADAR-008"
+      ],
       "status": "passing",
-      "verification": [{"command": "npm run verify", "expected": "History publication, date selection, availability messages, existing routing, build, and static archive smoke pass."}],
-      "evidence": [{"date": "2026-09-10", "repository_state": "working tree based on 25fbadf; backfill from origin/main at e24ee78", "command": "npm run verify", "result": "Passed 27 Python tests, archive and static-data validation, 64 frontend tests, production build, and preview smoke for all 15 daily bundles. Recovered August 27–September 8 from validated same-commit pairs in remote history, preserving existing archives. Repeated backfill recovered zero dates. The selector exposes the full 30-day window and labels unavailable dates; scheduled updates retain the rolling window and backfill missing recorded dates."}]
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "History publication, date selection, availability messages, existing routing, build, and static archive smoke pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-09-10",
+          "repository_state": "working tree based on 25fbadf; backfill from origin/main at e24ee78",
+          "command": "npm run verify",
+          "result": "Passed 27 Python tests, archive and static-data validation, 64 frontend tests, production build, and preview smoke for all 15 daily bundles. Recovered August 27–September 8 from validated same-commit pairs in remote history, preserving existing archives. Repeated backfill recovered zero dates. The selector exposes the full 30-day window and labels unavailable dates; scheduled updates retain the rolling window and backfill missing recorded dates."
+        }
+      ]
     },
     {
       "id": "RADAR-001",

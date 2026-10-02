@@ -2,14 +2,14 @@
 
 ## Current Verified State
 
-- Repository state: automated refresh reliability fixes rebased onto `518928e`; local checkout includes the latest collected October 2 data
+- Repository state: reliability fix `296a510` published to `main`; updater collected snapshot `fb21dfa` and the resulting Pages deployment passed
 - Standard bootstrap: `scripts/bootstrap.sh`
 - Standard start: `npm run dev`
 - Standard verification: `npm run verify`
 - Baseline result: `npm run verify` passed on 2026-10-02 with 50 Python tests, archive/data validation, 64 frontend tests, build, and production smoke for all 30 daily bundles
-- Active feature: none; `REPO-002` passed local verification
+- Active feature: none; `REPO-002` passed local and GitHub Actions verification
 - Current blocker: none
-- Next best action: publish the locally verified fixes under the user's October 2 approval, then inspect the Pages run and subsequent scheduled refresh outcomes
+- Next best action: monitor subsequent scheduled runs, especially unpublished early-morning source dates; the updated workflows are deployed
 
 ## Verified Behavior
 
@@ -28,7 +28,7 @@
 | `RADAR-007` | `npm run verify` passed with cached feeder/onward profiles, pre-planning formation filtering, a 1.5-second regression budget, build, and smoke; the 202-candidate 06:00 audit measured about 0.33 seconds | working tree based on `27844c7` |
 | `RADAR-008` | `npm run verify` passed with one localized Tokaido corridor identifier, no duplicate subtitle, independent-service disclosure, all 55 frontend tests, build, and smoke; headless Firefox covered mobile, desktop, direct, and four-leg indirect layouts | working tree based on `27844c7` |
 | `RADAR-009` | `npm run verify` passed with 27 Python tests, 64 frontend tests, archive validation, build, and production smoke for 15 dated bundles; Git backfill recovered August 27–September 8 | working tree based on `25fbadf`; recovered records from `origin/main` at `e24ee78` |
-| `REPO-002` | `npm run verify` passed with 50 Python tests, 64 frontend tests, archive validation, build, and smoke for 30 bundles; workflow YAML/dependencies parsed; an isolated live October 2 refresh validated 416 services and 61 assignments | working tree based on `518928e`; publication approved October 2 |
+| `REPO-002` | Local and hosted full verification passed with 50 Python tests, 64 frontend tests, build, and smoke for 30 bundles; Pages runs `37006529446`/`37006717296` and live updater `37006657728` passed | fix `296a510`; updater snapshot `fb21dfa` |
 
 ## Known Failures and Risks
 
@@ -40,7 +40,7 @@
 - Subsequent investigation confirmed dated formation archives at `https://tokaido-unyo-shizuoka.com/json/unyo/2026/unyo-data-20260812.json` (including August 12 assignments). Direct formation-archive backfill is not implemented; historical JR Central station-by-station timetable availability remains unverified. Scheduled collection has since populated all 30 dates in the current rolling window.
 - GitHub's observed trigger frequency is much lower than the half-hour cron: the latest seven-day inspection contained 35 updater runs, with a median gap of about 4 hours 45 minutes. Delayed/dropped triggers are outside these repository fixes; the half-hour schedule and UI check estimates remain unchanged.
 - Source outages can still exhaust bounded retries and fail visibly. A successful no-update result means only that source dates are unpublished and the existing real snapshot pair/archive passed validation; it does not relabel old data as fresh.
-- The prepared workflow changes have passed local validation. The user approved committing, pushing, and the resulting Pages deployment on October 2; GitHub execution must still be checked after publication.
+- Updated workflows have passed hosted full verification, a live manual data refresh, and Pages deployment. The no-update path is covered by offline real-parser regressions; its next naturally unpublished scheduled run remains to be observed.
 - Complete-route calculations use scheduled times only. Platform movement, delays, and guaranteed connections are unavailable, so a departure at the same minute as arrival is considered schedulable but is not guaranteed physically feasible.
 
 ## Decisions
@@ -81,8 +81,10 @@
 - Changed: added typed source unavailability, opt-in validated no-update handling and an Actions summary; centralized bounded read retries for the existing feeds; added same-commit push retries and unchanged-data deployment gating; moved the exact feeder regression to a fixed four-service fixture and cached parsed stop times in the planner.
 - Verification: `npm run verify` passed with 50 Python tests, 64 frontend tests, static/archive validation, production build, and production-preview smoke for all 30 indexed daily bundles. Regression coverage includes real-parser unpublished feed responses, byte-preserving fallback, malformed/partial-source rejection, retry recovery/exhaustion, push retry limits, and deployment output decisions. Both workflow YAML files parsed and job dependencies resolved.
 - Live evidence: generated into `.tmp/ci-refresh/data` from the already-enabled sources and validated October 2 with 416 official services and 61 assignments. Historical date gaps were reported as unavailable; no files under `public/data` changed.
-- Publication: the user approved committing and pushing these fixes to `main` on October 2, including the automatically triggered Pages deployment. Deployment results will be checked after the push.
-- Next action: inspect the resulting Pages run plus later scheduled no-update/update runs. Upstream publication timing and GitHub schedule delays remain external limits.
+- Publication: under the user's October 2 approval, committed/pushed fix `296a510`. [Pages run `37006529446`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006529446) passed full verification and deployed successfully.
+- Hosted updater: dispatched [data run `37006657728`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006657728) once to verify the revised workflow. All steps passed, preserving the existing archive and pushing snapshot `fb21dfa` with 416 services and 65 assignments. Fast-forwarded the local checkout to that collected snapshot.
+- Follow-up deployment: [Pages run `37006717296`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006717296) detected the changed data, passed 50 Python tests, 64 frontend tests, production build and smoke for all 30 bundles, then deployed successfully.
+- Next action: monitor later scheduled no-update/update runs. Upstream publication timing and GitHub schedule delays remain external limits.
 
 ## Previous Session
 
