@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import formationsJson from '../../public/data/formations.json'
 import latestJson from '../../public/data/latest.json'
 import timetableJson from '../../public/data/timetable.json'
+import journeyRegressionJson from '../../data/fixtures/journey-763m.sample.json'
 import type { FormationsData, LatestData, TimetableData } from '../types'
 import { formationAtStation } from './classification'
 import { createScheduledJourneyPlanner } from './journey'
@@ -105,7 +106,8 @@ describe('checked-in static data', () => {
   })
 
   it('uses the latest practical feeder for 763M from Atami to Toyohashi', () => {
-    const featured = timetable.services.find(
+    const regressionTimetable = journeyRegressionJson.timetable as TimetableData
+    const featured = regressionTimetable.services.find(
       (service) =>
         service.trainNumber === '763M' &&
         service.stops.some(
@@ -114,7 +116,7 @@ describe('checked-in static data', () => {
     )
     expect(featured).toBeDefined()
 
-    const journey = createScheduledJourneyPlanner(timetable, false).findFastestIncluding(
+    const journey = createScheduledJourneyPlanner(regressionTimetable, false).findFastestIncluding(
       'atami',
       'toyohashi',
       '06:00',
@@ -141,8 +143,8 @@ describe('checked-in static data', () => {
       '06:00',
       false,
     ).filter((result) => result.matchType !== 'direct')
-    const planner = createScheduledJourneyPlanner(timetable, false)
     const planningStartedAt = performance.now()
+    const planner = createScheduledJourneyPlanner(timetable, false)
     const planned = indirectResults
       .map((result) => ({
         result,

@@ -18,8 +18,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  changes:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      required: ${{ steps.changes.outputs.required }}
+    steps:
+      - name: Check out default branch with update history
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Check whether published data changed
+        id: changes
+        run: python3 -m scripts.deployment_changes
+
+  build:
+    needs: changes
+    if: needs.changes.outputs.required == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out default branch

@@ -1,5 +1,6 @@
 import copy
 import json
+import os
 import tempfile
 import unittest
 from contextlib import ExitStack, redirect_stderr, redirect_stdout
@@ -12,7 +13,7 @@ from zoneinfo import ZoneInfo
 from scripts.history import publish_history, validate_archive, validate_bundle
 from scripts.update_data import write_json_atomically
 from scripts.validation import ValidationError
-from scripts.data_sources.base import SourceError
+from scripts.data_sources.base import SourceError, SourceUnavailable
 from scripts.update_data import main
 from scripts.backfill_history import recover_pairs
 
@@ -88,28 +89,34 @@ class HistoryTests(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             validate_archive(self.root)
 
-    def run_update(self, available=True):
+    def run_update(self, available=True, allow_unavailable=False, source_error=None, timetable_error=None):
         pair = self.pair("2026-09-09")
         def formation_for_date(payload, day):
+            if source_error is not None:
+                raise source_error
             if available and day.isoformat() == "2026-09-09":
                 return pair[1]
-            raise SourceError("Date not published")
+            raise SourceUnavailable("Date not published")
         with ExitStack() as stack:
-            stack.enter_context(patch("sys.argv", ["update", "--source", "tokaido-shizuoka", "--service-date", "2026-09-10",
-                "--output", str(self.root / "latest.json"), "--timetable-output", str(self.root / "timetable.json")]))
+            argv = ["update", "--source", "tokaido-shizuoka", "--service-date", "2026-09-10",
+                "--output", str(self.root / "latest.json"), "--timetable-output", str(self.root / "timetable.json")]
+            if allow_unavailable:
+                argv.append("--allow-unavailable")
+            stack.enter_context(patch("sys.argv", argv))
             formation_fetch = stack.enter_context(patch("scripts.update_data.TokaidoShizuokaFormationSource.fetch_payload", return_value={}))
             timetable_fetch = stack.enter_context(patch("scripts.update_data.JrCentralTimetableSource.fetch_payload", return_value={}))
             stack.enter_context(patch("scripts.update_data.TokaidoShizuokaFormationSource.parse_response", side_effect=formation_for_date))
-            stack.enter_context(patch("scripts.update_data.JrCentralTimetableSource.parse_checked", return_value=pair[0]))
+            stack.enter_context(patch("scripts.update_data.JrCentralTimetableSource.parse_checked", return_value=pair[0], side_effect=timetable_error))
             stack.enter_context(patch("scripts.update_data.OperationDiagramSource.fetch", return_value={}))
             stack.enter_context(patch("scripts.update_data.CabinetOfficeHolidaySource.fetch", return_value=set()))
             clock = stack.enter_context(patch("scripts.update_data.datetime"))
             clock.now.return_value = self.now
             stack.enter_context(redirect_stderr(StringIO()))
-            stack.enter_context(redirect_stdout(StringIO()))
+            output = stack.enter_context(redirect_stdout(StringIO()))
             main()
             formation_fetch.assert_called_once()
             timetable_fetch.assert_called_once()
+            return output.getvalue()
 
     def test_updater_publishes_yesterday_when_today_is_missing_with_one_read_per_feed(self):
         self.run_update()
@@ -124,6 +131,71 @@ class HistoryTests(unittest.TestCase):
         before = {p: p.read_bytes() for p in self.root.rglob("*.json")}
         with self.assertRaises(SourceError):
             self.run_update(available=False)
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
+
+    def test_scheduled_unpublished_dates_succeed_without_changing_any_snapshot(self):
+        self.run_update()
+        before = {p: p.read_bytes() for p in self.root.rglob("*.json")}
+        summary = self.root / "summary.md"
+        with patch.dict(os.environ, {"GITHUB_STEP_SUMMARY": str(summary)}):
+            output = self.run_update(available=False, allow_unavailable=True)
+        self.assertIn("No update available for 2026-09-10", output)
+        self.assertIn("Preserving validated snapshots for 2026-09-09", summary.read_text())
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
+        validate_archive(self.root)
+
+    def test_scheduled_no_update_requires_a_real_valid_saved_pair(self):
+        with self.assertRaisesRegex(SourceError, "No validated real snapshot pair"):
+            self.run_update(available=False, allow_unavailable=True)
+        self.run_update()
+        latest_path = self.root / "latest.json"
+        invalid = json.loads(latest_path.read_text())
+        invalid["schemaVersion"] = 999
+        latest_path.write_text(json.dumps(invalid))
+        before = {p: p.read_bytes() for p in self.root.rglob("*.json")}
+        with self.assertRaises(ValidationError):
+            self.run_update(available=False, allow_unavailable=True)
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
+
+    def test_scheduled_network_and_malformed_source_errors_still_fail_and_preserve_snapshots(self):
+        self.run_update()
+        before = {p: p.read_bytes() for p in self.root.rglob("*.json")}
+        for error in ("Unable to read assignments after 3 attempts: timeout", "Malformed assignment map"):
+            with self.subTest(error=error):
+                with self.assertRaisesRegex(SourceError, error):
+                    self.run_update(allow_unavailable=True, source_error=SourceError(error))
+                self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
+        with self.assertRaisesRegex(SourceError, "mapping coverage"):
+            self.run_update(allow_unavailable=True, timetable_error=SourceError("Low mapping coverage"))
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
+
+    def test_scheduled_unpublished_timetable_preserves_the_saved_pair(self):
+        self.run_update()
+        before = {p: p.read_bytes() for p in self.root.rglob("*.json")}
+        self.run_update(allow_unavailable=True, timetable_error=SourceUnavailable("Timetable not yet published"))
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
+
+    def test_unpublished_response_with_real_parsers_preserves_saved_snapshots(self):
+        self.run_update()
+        before = {p: p.read_bytes() for p in self.root.rglob("*.json")}
+        formations = {
+            "time": "2026/09/10_04:32:00",
+            "0": {"year": "26", "date": "9-9", "train": {"A84": "K8/L4"}},
+            "1": {"year": "26", "date": "9-10", "train": {}},
+        }
+        timetable = {"update_flg": "1", "create_time": "20260910043200", "train_info": []}
+        with ExitStack() as stack:
+            stack.enter_context(patch("sys.argv", ["update", "--source", "tokaido-shizuoka", "--allow-unavailable",
+                "--service-date", "2026-09-10", "--output", str(self.root / "latest.json"),
+                "--timetable-output", str(self.root / "timetable.json")]))
+            stack.enter_context(patch("scripts.update_data.TokaidoShizuokaFormationSource.fetch_payload", return_value=formations))
+            stack.enter_context(patch("scripts.update_data.JrCentralTimetableSource.fetch_payload", return_value=timetable))
+            stack.enter_context(patch("scripts.update_data.OperationDiagramSource.fetch", return_value={"records": [], "trains": []}))
+            stack.enter_context(patch("scripts.update_data.CabinetOfficeHolidaySource.fetch", return_value=set()))
+            stack.enter_context(redirect_stderr(StringIO()))
+            output = stack.enter_context(redirect_stdout(StringIO()))
+            main()
+        self.assertIn("No update available", output.getvalue())
         self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
 
     def git_reader(self, records, shallow=False):

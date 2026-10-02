@@ -2,14 +2,14 @@
 
 ## Current Verified State
 
-- Repository state: historical schedules and availability estimates rebased onto `e24ee78`
+- Repository state: automated refresh reliability fixes rebased onto `518928e`; local checkout includes the latest collected October 2 data
 - Standard bootstrap: `scripts/bootstrap.sh`
 - Standard start: `npm run dev`
 - Standard verification: `npm run verify`
-- Baseline result: `npm run verify` passed on 2026-09-10 with 27 Python tests, archive/data validation, 64 frontend tests, build, and production smoke for 15 daily bundles
-- Active feature: none; `RADAR-009` passed verification
+- Baseline result: `npm run verify` passed on 2026-10-02 with 50 Python tests, archive/data validation, 64 frontend tests, build, and production smoke for all 30 daily bundles
+- Active feature: none; `REPO-002` passed local verification
 - Current blocker: none
-- Next best action: rename the external Actions source variable when operationally convenient; deployment remains approval-gated
+- Next best action: publish the locally verified fixes under the user's October 2 approval, then inspect the Pages run and subsequent scheduled refresh outcomes
 
 ## Verified Behavior
 
@@ -28,15 +28,19 @@
 | `RADAR-007` | `npm run verify` passed with cached feeder/onward profiles, pre-planning formation filtering, a 1.5-second regression budget, build, and smoke; the 202-candidate 06:00 audit measured about 0.33 seconds | working tree based on `27844c7` |
 | `RADAR-008` | `npm run verify` passed with one localized Tokaido corridor identifier, no duplicate subtitle, independent-service disclosure, all 55 frontend tests, build, and smoke; headless Firefox covered mobile, desktop, direct, and four-leg indirect layouts | working tree based on `27844c7` |
 | `RADAR-009` | `npm run verify` passed with 27 Python tests, 64 frontend tests, archive validation, build, and production smoke for 15 dated bundles; Git backfill recovered August 27–September 8 | working tree based on `25fbadf`; recovered records from `origin/main` at `e24ee78` |
+| `REPO-002` | `npm run verify` passed with 50 Python tests, 64 frontend tests, archive validation, build, and smoke for 30 bundles; workflow YAML/dependencies parsed; an isolated live October 2 refresh validated 416 services and 61 assignments | working tree based on `518928e`; publication approved October 2 |
 
 ## Known Failures and Risks
 
 - External-source availability, reuse permission, attribution, request frequency, and the configured `OPERATION_REVISION` remain operational dependencies.
 - The Tokaido Shizuoka current-assignment JSON mirrors Yulog-provided data; the mirror removes a direct API dependency but does not remove upstream provenance or permission concerns.
 - JR Central can publish some services without a matching community operation record; these remain visible with an unknown formation.
-- The rolling 30-day archive contains every date from August 26 through September 9. Collection began August 26; earlier dates have no recoverable pair in repository history. The UI explicitly marks unrecorded dates unavailable.
+- The current collected 30-day archive contains every date from September 3 through October 2. Collection began August 26; the archive retains the rolling window and the UI explicitly marks unrecorded dates unavailable.
 - Source publication time is not guaranteed. Release estimates use yesterday's first successful same-day collection, when recorded; imported historical data has no first-release observation, so the UI initially shows the next half-hour scheduled check.
-- Subsequent investigation confirmed dated formation archives at `https://tokaido-unyo-shizuoka.com/json/unyo/2026/unyo-data-20260812.json` (including August 12 assignments). Direct formation-archive backfill is not implemented; historical JR Central station-by-station timetable availability remains unverified. The shipped archive therefore contains the 15 recovered complete pairs, not 30 populated dates.
+- Subsequent investigation confirmed dated formation archives at `https://tokaido-unyo-shizuoka.com/json/unyo/2026/unyo-data-20260812.json` (including August 12 assignments). Direct formation-archive backfill is not implemented; historical JR Central station-by-station timetable availability remains unverified. Scheduled collection has since populated all 30 dates in the current rolling window.
+- GitHub's observed trigger frequency is much lower than the half-hour cron: the latest seven-day inspection contained 35 updater runs, with a median gap of about 4 hours 45 minutes. Delayed/dropped triggers are outside these repository fixes; the half-hour schedule and UI check estimates remain unchanged.
+- Source outages can still exhaust bounded retries and fail visibly. A successful no-update result means only that source dates are unpublished and the existing real snapshot pair/archive passed validation; it does not relabel old data as fresh.
+- The prepared workflow changes have passed local validation. The user approved committing, pushing, and the resulting Pages deployment on October 2; GitHub execution must still be checked after publication.
 - Complete-route calculations use scheduled times only. Platform movement, delays, and guaranteed connections are unavailable, so a departure at the same minute as arrival is considered schedulable but is not guaranteed physically feasible.
 
 ## Decisions
@@ -48,6 +52,10 @@
 - User preference: always maintain the rolling last-30-calendar-day window. Scheduled updates use full Git history to backfill missing recorded dates. Recovery validates same-commit pairs, preserves existing archived dates and first observations, rejects shallow history, and does not relabel or invent missing data.
 - The browser defaults to today if available, otherwise the newest archived date; manual date selection is retained until changed or reloaded. Historical searches apply the entered clock time to the selected date, without treating it as an overnight continuation.
 - The updater fetches each existing feed once per successful refresh and parses matching available dates with existing coverage checks. Missing today's data does not prevent a valid historical refresh. No new external source is enabled.
+- The Actions updater passes `--allow-unavailable`: missing/empty assignments, unpublished timetables, and incomplete past dates preserve a validated saved real pair and report waiting for publication. CLI calls without the flag remain strict. Schema errors, partial current-day coverage, low mapping coverage, invalid saved data, and exhausted transport retries remain failures.
+- Existing source requests use a 30-second timeout, at most three attempts for transient transport/HTTP failures, 5/15-second backoff, and bounded numeric `Retry-After` support. Permanent HTTP errors and malformed JSON fail immediately. Generated-data pushes retry the same commit at most three times without rebasing or force-pushing.
+- Successful data refreshes only build/deploy Pages when `public/data` differs from the triggering updater's starting revision. Main-branch pushes and manual Pages dispatches still run full verification and build.
+- Exact itinerary assertions use an immutable four-service September 9 fixture with recorded Git provenance. Changing daily data remains covered by full itinerary consistency checks. Stop times are parsed once per planner; the unchanged 1.5-second bulk-query limit now includes planner construction.
 - Tokaido Shizuoka mode refreshes and validates both `timetable.json` and `latest.json` before replacing either last-good snapshot.
 - The legacy source selector `yulog` resolves to the Tokaido Shizuoka adapter during rollout so the existing external Actions variable cannot break scheduled updates.
 - JR Central is authoritative for every displayed station time; operation-table times are not imported into the static timetable.
@@ -64,6 +72,19 @@
 - The passenger theme uses JR Central's published orange-and-white corporate color pairing and railway-information geometry without reproducing its logo; the interface identifies itself as an independent, unofficial guide.
 
 ## Latest Session
+
+- Date: 2026-10-02
+- Goal: inspect and fix recurring GitHub Actions failures
+- Inspection: all 467 available runs (August 26–October 2) included 54 updater failures and eight Pages failures. Updater failures comprised 42 unpublished/empty/mismatched-date cases, 11 source timeouts, and one GitHub `commit_refs` rejection. Pages failures comprised five fixed-route mismatches, one 1.5-second performance-budget failure, and two historical seat-category assertion failures.
+- Baseline: fast-forwarded the clean checkout from `4cde975` to `d7d97d2`; reproduced the latest Pages failure locally (`1425M → 763M → 431M → 959M` instead of the fixed September route).
+- Before publication: rebased the prepared fix onto the newer bot data commit `518928e`, then reran `npm run verify` successfully with the same 50 Python tests, 64 frontend tests, build, and smoke for all 30 bundles.
+- Changed: added typed source unavailability, opt-in validated no-update handling and an Actions summary; centralized bounded read retries for the existing feeds; added same-commit push retries and unchanged-data deployment gating; moved the exact feeder regression to a fixed four-service fixture and cached parsed stop times in the planner.
+- Verification: `npm run verify` passed with 50 Python tests, 64 frontend tests, static/archive validation, production build, and production-preview smoke for all 30 indexed daily bundles. Regression coverage includes real-parser unpublished feed responses, byte-preserving fallback, malformed/partial-source rejection, retry recovery/exhaustion, push retry limits, and deployment output decisions. Both workflow YAML files parsed and job dependencies resolved.
+- Live evidence: generated into `.tmp/ci-refresh/data` from the already-enabled sources and validated October 2 with 416 official services and 61 assignments. Historical date gaps were reported as unavailable; no files under `public/data` changed.
+- Publication: the user approved committing and pushing these fixes to `main` on October 2, including the automatically triggered Pages deployment. Deployment results will be checked after the push.
+- Next action: inspect the resulting Pages run plus later scheduled no-update/update runs. Upstream publication timing and GitHub schedule delays remain external limits.
+
+## Previous Session
 
 - Date: 2026-09-10
 - Goal: resolve the midnight data gap with historical date selection and useful availability information

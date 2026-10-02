@@ -111,6 +111,10 @@ python3 -m scripts.validation
 
 Generation validates the entire payload before atomically replacing an existing output. A failed update leaves the last successful JSON untouched.
 
+The Actions updater passes `--allow-unavailable`. A valid response with no published formation assignments or matching timetable date leaves a validated saved real pair unchanged and reports "waiting for publication" in the run summary. The regular CLI remains strict unless this flag is supplied. Malformed responses, insufficient current-day timetable or operation-mapping coverage, exhausted network retries, and invalid saved snapshots fail the update. Empty or incomplete historical timetable dates are unavailable rather than invented.
+
+Requests to the existing feeds use a 30-second timeout and at most three attempts for temporary network errors, HTTP 408/429, or selected HTTP 5xx responses. Retry delays are 5 and 15 seconds; a numeric `Retry-After` can extend a delay up to 60 seconds. Permanent HTTP errors and malformed JSON fail immediately. No additional source is enabled.
+
 ## Deploy to GitHub Pages
 
 1. Push this project to a GitHub repository whose default branch is `main`.
@@ -119,11 +123,15 @@ Generation validates the entire payload before atomically replacing an existing 
 
 The Vite build uses relative asset and data paths, so no repository name needs to be hardcoded. The deployment workflow runs Python tests, JSON validation, frontend tests, and `npm run build` before publishing `dist/`.
 
-The data workflow runs every 30 minutes and on manual dispatch. Its default `FORMATION_SOURCE` is `fixture`, so it is idempotent and performs no source-site network request. When `FORMATION_SOURCE=tokaido-shizuoka`, the same validated update refreshes `timetable.json` from JR Central and `latest.json` from the Tokaido Shizuoka current-assignment JSON, joined through the configured `OPERATION_REVISION`. The legacy value `yulog` is accepted temporarily as a rollout alias but resolves to the Tokaido Shizuoka endpoint; the updater makes no direct Yulog request. If either source or validation fails, neither last-good snapshot is replaced. Valid changes are committed by `github-actions[bot]`. The Pages workflow also listens for successful completion of the updater because commits pushed with `GITHUB_TOKEN` do not trigger another push workflow.
+The data workflow is scheduled every 30 minutes and supports manual dispatch. GitHub may delay or drop scheduled triggers, so this is an intended interval rather than a completion guarantee. Its default `FORMATION_SOURCE` is `fixture`, so it is idempotent and performs no source-site network request. When `FORMATION_SOURCE=tokaido-shizuoka`, the same validated update refreshes `timetable.json` from JR Central and `latest.json` from the Tokaido Shizuoka current-assignment JSON, joined through the configured `OPERATION_REVISION`. The legacy value `yulog` is accepted temporarily as a rollout alias but resolves to the Tokaido Shizuoka endpoint; the updater makes no direct Yulog request. If either source or validation fails, neither last-good snapshot is replaced. Valid changes are committed by `github-actions[bot]`; the same commit can be pushed up to three times with 5/15-second delays, and exhausted retries fail without rebasing or force-pushing.
+
+The Pages workflow listens for successful completion of the updater because commits pushed with `GITHUB_TOKEN` do not trigger another push workflow. It compares `public/data` against the updater's starting revision and skips the build and deployment when published data did not change. Pushes to `main` and manual Pages runs always run full verification and build.
 
 ## Data status
 
-The checked-in `timetable.json` contains 43-station services from JR Central and identifies itself with `source.id=jr-central` and `isFixture=false`. The checked-in `latest.json` identifies Tokaido Shizuoka with `source.id=tokaido-shizuoka` and `isMock=false`. A timetable is used only for its matching selected Tokyo service date; a previous-day snapshot is explicitly historical. The archive includes September 9 from the live feeds, August 26 from the saved pair, and August 27–September 8 recovered from remote Git history. First-release observations remain unset for historical imports.
+The checked-in `timetable.json` contains 43-station services from JR Central and identifies itself with `source.id=jr-central` and `isFixture=false`. The checked-in `latest.json` identifies Tokaido Shizuoka with `source.id=tokaido-shizuoka` and `isMock=false`. A timetable is used only for its matching selected Tokyo service date; a previous-day snapshot is explicitly historical. The archive rolls forward with validated collected pairs; inspect `public/data/history-index.json` for its current recorded dates. First-release observations remain unset for historical imports.
+
+The exact 763M feeder regression uses four unchanged services from the September 9 snapshot at commit `4cde975`, saved in `data/fixtures/journey-763m.sample.json`. Daily integration checks still verify the changing published timetable and every planned indirect itinerary. The 1.5-second performance limit includes planner construction and full bulk planning; parsed stop times are reused within each planner.
 
 Passenger services that cannot be joined to a published operating diagram remain visible with an unknown formation. Attach and detach stations split operation segments so the formation shown at boarding reflects the applicable part of the trip.
 

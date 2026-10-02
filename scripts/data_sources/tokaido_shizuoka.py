@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import json
 import time
-import urllib.error
 import urllib.request
 from datetime import date, datetime
 from typing import Any, Callable
 from zoneinfo import ZoneInfo
 
-from .base import SourceError, build_latest_snapshot
+from .base import SourceError, SourceUnavailable, build_latest_snapshot
+from .http import read_bytes
 
 
 CURRENT_ASSIGNMENTS_URL = (
@@ -52,51 +52,19 @@ class TokaidoShizuokaFormationSource:
             method="GET",
         )
 
-        last_error: Exception | None = None
-        for attempt in range(3):
-            try:
-                with self._opener(request, timeout=20) as response:
-                    payload = json.loads(response.read().decode("utf-8"))
-                return payload
-            except (OSError, urllib.error.URLError, json.JSONDecodeError, SourceError) as exc:
-                last_error = exc
-                if attempt < 2:
-                    self._sleeper(float(attempt + 1))
-        raise SourceError(
-            f"Tokaido Shizuoka assignment read failed after retries: {last_error}"
-        )
+        raw = read_bytes(request, "Tokaido Shizuoka assignments", opener=self._opener, sleeper=self._sleeper)
+        try:
+            payload = json.loads(raw.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise SourceError(f"Invalid Tokaido Shizuoka assignment JSON: {exc}") from exc
+        if not isinstance(payload, dict):
+            raise SourceError("Tokaido Shizuoka assignment response must be an object")
+        return payload
 
     @staticmethod
     def parse_response(payload: Any, target_date: date) -> dict[str, Any]:
         if not isinstance(payload, dict):
             raise SourceError("Tokaido Shizuoka assignment response must be an object")
-
-        matching_day: dict[str, Any] | None = None
-        for key, candidate in payload.items():
-            if key == "time" or not isinstance(candidate, dict):
-                continue
-            try:
-                year = 2000 + int(candidate["year"])
-                month, day = (int(part) for part in candidate["date"].split("-", 1))
-                candidate_date = date(year, month, day)
-            except (KeyError, TypeError, ValueError):
-                continue
-            if candidate_date == target_date:
-                matching_day = candidate
-                break
-
-        if matching_day is None:
-            raise SourceError(
-                f"No Tokaido Shizuoka assignment map for {target_date.isoformat()}"
-            )
-        assignments = matching_day.get("train")
-        if not isinstance(assignments, dict) or not assignments:
-            raise SourceError("Tokaido Shizuoka current-day assignment map is empty")
-        if any(
-            not isinstance(key, str) or not isinstance(value, str)
-            for key, value in assignments.items()
-        ):
-            raise SourceError("Tokaido Shizuoka assignment map contains non-string values")
 
         raw_time = payload.get("time")
         if not isinstance(raw_time, str):
@@ -105,6 +73,37 @@ class TokaidoShizuokaFormationSource:
             observed = datetime.strptime(raw_time, "%Y/%m/%d_%H:%M:%S").replace(tzinfo=TOKYO)
         except ValueError as exc:
             raise SourceError("Tokaido Shizuoka update time is invalid") from exc
+
+        matching_day: dict[str, Any] | None = None
+        for key, candidate in payload.items():
+            if key == "time":
+                continue
+            if not isinstance(candidate, dict):
+                raise SourceError("Tokaido Shizuoka dated assignment record must be an object")
+            try:
+                year = 2000 + int(candidate["year"])
+                month, day = (int(part) for part in candidate["date"].split("-", 1))
+                candidate_date = date(year, month, day)
+            except (KeyError, TypeError, ValueError) as exc:
+                raise SourceError("Tokaido Shizuoka assignment service date is invalid") from exc
+            if candidate_date == target_date:
+                matching_day = candidate
+                break
+
+        if matching_day is None:
+            raise SourceUnavailable(
+                f"No Tokaido Shizuoka assignment map for {target_date.isoformat()}"
+            )
+        assignments = matching_day.get("train")
+        if not isinstance(assignments, dict):
+            raise SourceError("Tokaido Shizuoka assignment map must be an object")
+        if not assignments:
+            raise SourceUnavailable("Tokaido Shizuoka current-day assignment map is empty")
+        if any(
+            not isinstance(key, str) or not isinstance(value, str)
+            for key, value in assignments.items()
+        ):
+            raise SourceError("Tokaido Shizuoka assignment map contains non-string values")
 
         return build_latest_snapshot(
             service_date=target_date.isoformat(),

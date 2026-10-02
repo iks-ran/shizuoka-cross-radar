@@ -19,8 +19,8 @@ from .data_sources import (
 )
 from .generate_fixture_timetable import generate as generate_fixture_timetable
 from .validation import validate_latest, validate_timetable
-from .data_sources.base import SourceError
-from .history import publish_history, saved_pair
+from .data_sources.base import SourceError, SourceUnavailable
+from .history import publish_history, saved_pair, validate_archive, validate_bundle
 
 
 TOKYO = ZoneInfo("Asia/Tokyo")
@@ -55,6 +55,55 @@ def write_timetable_atomically(payload: dict[str, Any], output: Path) -> None:
     write_json_atomically(payload, output, validate_timetable)
 
 
+def collect_live_pairs(target_date: date, corridor: dict[str, Any], revision: str):
+    formation_source = TokaidoShizuokaFormationSource()
+    timetable_source = JrCentralTimetableSource()
+    formation_payload = formation_source.fetch_payload()
+    timetable_payload = timetable_source.fetch_payload()
+    operation = OperationDiagramSource(revision).fetch()
+    holidays = CabinetOfficeHolidaySource().fetch()
+    pairs = []
+    for offset in range(30):
+        candidate = target_date - timedelta(days=offset)
+        try:
+            candidate_latest = formation_source.parse_response(formation_payload, candidate)
+            candidate_timetable = timetable_source.parse_checked(
+                timetable_payload, candidate, corridor["stations"], operation, holidays,
+            )
+        except SourceUnavailable as exc:
+            print(f"Unavailable {candidate}: {exc}", file=sys.stderr)
+            continue
+        validate_latest(candidate_latest)
+        validate_timetable(candidate_timetable)
+        pairs.append((candidate_timetable, candidate_latest))
+    if not pairs:
+        raise SourceUnavailable("No matching valid source dates; preserving published snapshots")
+    return pairs
+
+
+def preserve_unavailable(args, target_date: date, error: SourceUnavailable) -> None:
+    if not args.timetable_output.exists() or not args.output.exists():
+        raise SourceError("No validated real snapshot pair to preserve") from error
+    pairs = saved_pair(args.output.parent, args.timetable_output, args.output)
+    if not pairs:
+        raise SourceError("No validated real snapshot pair to preserve") from error
+    timetable, latest = pairs[0]
+    validate_bundle({
+        "schemaVersion": 1, "timeZone": "Asia/Tokyo", "timetable": timetable, "latest": latest,
+    })
+    validate_archive(args.output.parent)
+    message = (
+        f"No update available for {target_date}: {error}. "
+        f"Preserving validated snapshots for {timetable['serviceDate']}; "
+        "the next scheduled refresh will check again."
+    )
+    print(message)
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as handle:
+            handle.write(f"### Data refresh: waiting for publication\n\n{message}\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Update paired static train snapshots")
     parser.add_argument(
@@ -80,6 +129,10 @@ def main() -> None:
     parser.add_argument("--service-date", help="ISO date override, mainly for source verification")
     parser.add_argument("--operation-revision", default="202603", help="Operation source revision in YYYYMM")
     parser.add_argument("--seed-history", action="store_true", help="Archive the saved real pair without network requests")
+    parser.add_argument(
+        "--allow-unavailable", action="store_true",
+        help="Keep a validated saved pair and succeed when source dates are not published",
+    )
     args = parser.parse_args()
 
     now = datetime.now(TOKYO)
@@ -106,28 +159,13 @@ def main() -> None:
         fixture_timetable = json.loads(args.fixture_timetable.read_text(encoding="utf-8"))
         timetable = generate_fixture_timetable(fixture_timetable)
     else:
-        formation_source = TokaidoShizuokaFormationSource()
-        timetable_source = JrCentralTimetableSource()
-        formation_payload = formation_source.fetch_payload()
-        timetable_payload = timetable_source.fetch_payload()
-        operation = OperationDiagramSource(args.operation_revision).fetch()
-        holidays = CabinetOfficeHolidaySource().fetch()
-        pairs = []
-        for offset in range(30):
-            candidate = target_date - timedelta(days=offset)
-            try:
-                candidate_latest = formation_source.parse_response(formation_payload, candidate)
-                candidate_timetable = timetable_source.parse_checked(
-                    timetable_payload, candidate, corridor["stations"], operation, holidays,
-                )
-            except SourceError as exc:
-                print(f"Unavailable {candidate}: {exc}", file=sys.stderr)
-                continue
-            validate_latest(candidate_latest)
-            validate_timetable(candidate_timetable)
-            pairs.append((candidate_timetable, candidate_latest))
-        if not pairs:
-            raise SourceError("No matching valid source dates; preserving published snapshots")
+        try:
+            pairs = collect_live_pairs(target_date, corridor, args.operation_revision)
+        except SourceUnavailable as exc:
+            if not args.allow_unavailable:
+                raise
+            preserve_unavailable(args, target_date, exc)
+            return
         seed = saved_pair(args.output.parent, args.timetable_output, args.output) if args.output.exists() and args.timetable_output.exists() else []
         publish_history(
             args.output.parent, seed + pairs, datetime.now(TOKYO), write_json_atomically,

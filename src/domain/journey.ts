@@ -219,17 +219,23 @@ export const createScheduledJourneyPlanner = (
   const serviceById = new Map(timetable.services.map((service) => [service.id, service]))
   const boardingsByStation = new Map<string, Boarding[]>()
   const arrivalsByStation = new Map<string, Arrival[]>()
+  const timesByService = new Map<string, Array<{ arrival: number; departure: number }>>()
 
   for (const service of timetable.services) {
     if (!serviceRunsToday(service, weekend)) continue
+    const times = service.stops.map((stop) => ({
+      arrival: stopMinutes(stop, 'arrival'),
+      departure: stopMinutes(stop, 'departure'),
+    }))
+    timesByService.set(service.id, times)
     service.stops.forEach((stop, stopIndex) => {
-      const departureMinutes = stopMinutes(stop, 'departure')
+      const departureMinutes = times[stopIndex].departure
       if (!Number.isNaN(departureMinutes)) {
         const boardings = boardingsByStation.get(stop.stationId) ?? []
         boardings.push({ service, stopIndex, departureMinutes })
         boardingsByStation.set(stop.stationId, boardings)
       }
-      const arrivalMinutes = stopMinutes(stop, 'arrival')
+      const arrivalMinutes = times[stopIndex].arrival
       if (!Number.isNaN(arrivalMinutes)) {
         const arrivals = arrivalsByStation.get(stop.stationId) ?? []
         arrivals.push({ service, stopIndex, arrivalMinutes })
@@ -275,6 +281,7 @@ export const createScheduledJourneyPlanner = (
           continue
         }
 
+        const times = timesByService.get(boarding.service.id)!
         for (
           let stopIndex = boarding.stopIndex + 1;
           stopIndex < boarding.service.stops.length;
@@ -284,7 +291,7 @@ export const createScheduledJourneyPlanner = (
           const toOrder = stationOrder.get(toStop.stationId)
           if (toOrder === undefined) continue
           if ((toOrder - boundaryOrder) * desiredStep > 0) break
-          const arrivalMinutes = stopMinutes(toStop, 'arrival')
+          const arrivalMinutes = times[stopIndex].arrival
           if (Number.isNaN(arrivalMinutes) || arrivalMinutes < boarding.departureMinutes) continue
           addParetoLabel(
             labelsByStation,
@@ -353,6 +360,7 @@ export const createScheduledJourneyPlanner = (
       const continuations = profile.get(stationId) ?? []
       for (const arrival of arrivalsByStation.get(stationId) ?? []) {
         if (arrival.service.direction !== desiredDirection) continue
+        const times = timesByService.get(arrival.service.id)!
         const toStop = arrival.service.stops[arrival.stopIndex]
         const matchingContinuations = stationId === destinationStationId
           ? [null]
@@ -367,7 +375,7 @@ export const createScheduledJourneyPlanner = (
             const fromOrder = stationOrder.get(fromStop.stationId)
             if (fromOrder === undefined) continue
             if ((fromOrder - originOrder) * desiredStep < 0) break
-            const departureMinutes = stopMinutes(fromStop, 'departure')
+            const departureMinutes = times[stopIndex].departure
             if (
               Number.isNaN(departureMinutes) ||
               departureMinutes > arrival.arrivalMinutes
@@ -439,10 +447,11 @@ export const createScheduledJourneyPlanner = (
         (stop) => stop.stationId === featuredBoardStationId,
       )
       if (featuredBoardIndex < 0) return null
+      const featuredTimes = timesByService.get(featuredService.id)!
       const featuredBoarding: Boarding = {
         service: featuredService,
         stopIndex: featuredBoardIndex,
-        departureMinutes: stopMinutes(featuredService.stops[featuredBoardIndex], 'departure'),
+        departureMinutes: featuredTimes[featuredBoardIndex].departure,
       }
       if (Number.isNaN(featuredBoarding.departureMinutes)) return null
 
@@ -509,7 +518,7 @@ export const createScheduledJourneyPlanner = (
         const toOrder = stationOrder.get(toStop.stationId)
         if (toOrder === undefined) continue
         if ((toOrder - destinationOrder) * desiredStep > 0) break
-        const arrivalMinutes = stopMinutes(toStop, 'arrival')
+        const arrivalMinutes = featuredTimes[stopIndex].arrival
         if (
           Number.isNaN(arrivalMinutes) ||
           arrivalMinutes < featuredBoarding.departureMinutes

@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import csv
 import io
-import urllib.error
+import time
 import urllib.request
 from dataclasses import asdict, dataclass
 from typing import Any, Callable
 
 from .base import SourceError
+from .http import read_bytes
 
 
 OPERATION_BASE_URL = "https://tokaido-unyo-shizuoka.com/csv/unyo"
@@ -123,11 +124,13 @@ class OperationDiagramSource:
         self,
         revision: str = "202603",
         opener: Callable[..., Any] = urllib.request.urlopen,
+        sleeper: Callable[[float], None] = time.sleep,
     ) -> None:
         if not revision.isdigit() or len(revision) != 6:
             raise ValueError("Operation revision must be YYYYMM")
         self.revision = revision
         self._opener = opener
+        self._sleeper = sleeper
 
     def _read(self, url: str) -> str:
         request = urllib.request.Request(
@@ -139,10 +142,11 @@ class OperationDiagramSource:
             method="GET",
         )
         try:
-            with self._opener(request, timeout=20) as response:
-                return response.read().decode("utf-8-sig")
-        except (OSError, urllib.error.URLError, UnicodeDecodeError) as exc:
-            raise SourceError(f"Unable to read operation CSV {url}: {exc}") from exc
+            return read_bytes(
+                request, f"operation CSV {url}", opener=self._opener, sleeper=self._sleeper,
+            ).decode("utf-8-sig")
+        except UnicodeDecodeError as exc:
+            raise SourceError(f"Invalid operation CSV encoding {url}: {exc}") from exc
 
     def fetch(self, families: tuple[str, ...] = DEFAULT_FAMILIES) -> dict[str, Any]:
         records: list[OperationRecord] = []

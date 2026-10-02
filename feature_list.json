@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Shizuoka Cross-Seat Radar",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-10-02",
   "rules": {
     "single_active_feature": true,
     "passing_requires_evidence": true
@@ -13,6 +13,16 @@
     "passing": "Required verification passed and evidence is recorded."
   },
   "features": [
+    {
+      "id": "REPO-002",
+      "priority": 14,
+      "title": "Reliable automated data refresh and deployment checks",
+      "behavior": "Scheduled refreshes preserve validated snapshots when source dates are unpublished, retry temporary network and push failures, and verify routing without assuming a changing daily itinerary is fixed.",
+      "depends_on": ["RADAR-009"],
+      "status": "passing",
+      "verification": [{"command": "npm run verify", "expected": "Unavailable-source preservation, bounded retries, immutable route regression, the unchanged 1.5-second performance budget, archive validation, build, and production smoke pass."}],
+      "evidence": [{"date": "2026-10-02", "repository_state": "working tree based on 518928e", "command": "npm run verify", "result": "Passed 50 Python tests, static/archive validation, 64 frontend tests, production build, and preview smoke for all 30 daily bundles. Preserved every saved JSON byte for unpublished dates, rejected malformed/partial current data and exhausted retries, tested push retries and unchanged-data deployment gating, preserved the exact 763M regression on four immutable September 9 services, and kept the 1.5-second bulk-planning budget including planner construction. Parsed both workflow YAML files and checked job dependencies. An isolated live October 2 refresh validated 416 JR Central services and 61 formation assignments without changing public/data."}]
+    },
     {
       "id": "RADAR-009",
       "priority": 13,

@@ -12,6 +12,10 @@ class SourceError(RuntimeError):
     """Raised when a source cannot return a trustworthy snapshot."""
 
 
+class SourceUnavailable(SourceError):
+    """A valid source response has no published data for the requested date."""
+
+
 class FormationSource(Protocol):
     def fetch(self, service_date: str | None = None) -> dict[str, Any]: ...
 
@@ -65,4 +69,3 @@ def build_latest_snapshot(
         },
         "assignments": normalized,
     }
-

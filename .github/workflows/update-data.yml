@@ -37,6 +37,7 @@ jobs:
           python -m scripts.update_data
           --source "$FORMATION_SOURCE"
           --operation-revision "$OPERATION_REVISION"
+          --allow-unavailable
 
       - name: Backfill missing historical snapshots
         if: env.FORMATION_SOURCE != 'fixture'
@@ -46,13 +47,4 @@ jobs:
         run: python -m scripts.validation
 
       - name: Commit valid changes
-        run: |
-          if [ -z "$(git status --porcelain -- public/data)" ]; then
-            echo "No generated-data changes"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data
-          git commit -m "data: update current train snapshots"
-          git push
+        run: python -m scripts.commit_data

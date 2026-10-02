@@ -5,14 +5,14 @@ import io
 import json
 import re
 import time
-import urllib.error
 import urllib.request
 from collections.abc import Iterable
 from datetime import date, datetime, timedelta
 from typing import Any, Callable
 from zoneinfo import ZoneInfo
 
-from .base import SourceError
+from .base import SourceError, SourceUnavailable
+from .http import read_bytes
 
 
 JR_CENTRAL_TIMETABLE_URL = (
@@ -94,8 +94,13 @@ def operation_day_matches(day_code: int | None, value: date, holidays: set[date]
 
 
 class CabinetOfficeHolidaySource:
-    def __init__(self, opener: Callable[..., Any] = urllib.request.urlopen) -> None:
+    def __init__(
+        self,
+        opener: Callable[..., Any] = urllib.request.urlopen,
+        sleeper: Callable[[float], None] = time.sleep,
+    ) -> None:
         self._opener = opener
+        self._sleeper = sleeper
 
     def fetch(self) -> set[date]:
         request = urllib.request.Request(
@@ -106,11 +111,9 @@ class CabinetOfficeHolidaySource:
             },
             method="GET",
         )
-        try:
-            with self._opener(request, timeout=20) as response:
-                return parse_holiday_csv(response.read())
-        except (OSError, urllib.error.URLError) as exc:
-            raise SourceError(f"Unable to read Cabinet Office holiday CSV: {exc}") from exc
+        return parse_holiday_csv(read_bytes(
+            request, "Cabinet Office holiday CSV", opener=self._opener, sleeper=self._sleeper,
+        ))
 
 
 def _localized_name(values: Any) -> dict[str, str] | None:
@@ -345,22 +348,28 @@ class JrCentralTimetableSource:
             },
             method="GET",
         )
-        last_error: Exception | None = None
-        for attempt in range(3):
-            try:
-                with self._opener(request, timeout=30) as response:
-                    payload = json.loads(response.read().decode("utf-8-sig"))
-                return payload
-            except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError, SourceError) as exc:
-                last_error = exc
-                if attempt < 2:
-                    self._sleeper(float(attempt + 1))
-        raise SourceError(f"JR Central timetable read failed after retries: {last_error}")
+        raw = read_bytes(request, "JR Central timetable", opener=self._opener, sleeper=self._sleeper)
+        try:
+            payload = json.loads(raw.decode("utf-8-sig"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise SourceError(f"Invalid JR Central timetable JSON: {exc}") from exc
+        if not isinstance(payload, dict):
+            raise SourceError("JR Central timetable response must be an object")
+        return payload
 
     @classmethod
     def parse_checked(cls, payload, service_date, corridor_stations, operation, holidays):
         result = cls.parse_response(payload, service_date, corridor_stations, operation, holidays)
         if len(result["services"]) < 100:
+            published_date = datetime.strptime(payload["create_time"], "%Y%m%d%H%M%S").date()
+            has_date = any(
+                isinstance(service, dict)
+                and isinstance(service.get("train_identification_key"), str)
+                and service["train_identification_key"].startswith(service_date.strftime("%Y%m%d"))
+                for service in payload["train_info"]
+            )
+            if not has_date or service_date < published_date:
+                raise SourceUnavailable(f"No complete JR Central corridor timetable for {service_date}")
             raise SourceError("JR Central corridor timetable coverage is unexpectedly small")
         mapped = sum(bool(service["operationSegments"][0]["diagramIds"]) for service in result["services"])
         if mapped / len(result["services"]) < 0.75:
@@ -375,6 +384,8 @@ class JrCentralTimetableSource:
         operation: dict[str, Any],
         holidays: set[date],
     ) -> dict[str, Any]:
+        if isinstance(payload, dict) and str(payload.get("update_flg")) == "0":
+            raise SourceUnavailable("JR Central timetable is not currently published")
         if not isinstance(payload, dict) or str(payload.get("update_flg")) != "1":
             raise SourceError("JR Central timetable is unavailable")
         raw_updated_at = payload.get("create_time")
