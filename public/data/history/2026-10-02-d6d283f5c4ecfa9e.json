@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-02",
-    "updatedAt": "2026-10-02T19:38:12+09:00",
+    "updatedAt": "2026-10-02T21:25:45+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -50147,7 +50147,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-02",
-    "updatedAt": "2026-10-02T19:00:01+09:00",
+    "updatedAt": "2026-10-02T21:00:02+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -50160,6 +50160,14 @@
         "rawFormation": "V2",
         "currentUnits": [
           "V2"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A144",
+        "rawFormation": "V5",
+        "currentUnits": [
+          "V5"
         ],
         "parseStatus": "parsed"
       },
@@ -50229,9 +50237,9 @@
       },
       {
         "diagramId": "A24",
-        "rawFormation": "U10",
+        "rawFormation": "T8",
         "currentUnits": [
-          "U10"
+          "T8"
         ],
         "parseStatus": "parsed"
       },
@@ -50317,9 +50325,9 @@
       },
       {
         "diagramId": "A38",
-        "rawFormation": "U10",
+        "rawFormation": "T6",
         "currentUnits": [
-          "U10"
+          "T6"
         ],
         "parseStatus": "parsed"
       },
@@ -50468,6 +50476,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A701",
+        "rawFormation": "F9",
+        "currentUnits": [
+          "F9"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A702",
+        "rawFormation": "F13",
+        "currentUnits": [
+          "F13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A703",
         "rawFormation": "F10",
         "currentUnits": [
@@ -50480,6 +50504,14 @@
         "rawFormation": "F12",
         "currentUnits": [
           "F12"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A705",
+        "rawFormation": "F5",
+        "currentUnits": [
+          "F5"
         ],
         "parseStatus": "parsed"
       },
