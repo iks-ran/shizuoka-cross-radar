@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-03",
-  "updatedAt": "2026-10-03T14:34:04+09:00",
+  "updatedAt": "2026-10-03T20:00:02+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -10,6 +10,14 @@
     "isMock": false
   },
   "assignments": [
+    {
+      "diagramId": "A144",
+      "rawFormation": "V2",
+      "currentUnits": [
+        "V2"
+      ],
+      "parseStatus": "parsed"
+    },
     {
       "diagramId": "A145",
       "rawFormation": "V5",
@@ -23,6 +31,22 @@
       "rawFormation": "V12",
       "currentUnits": [
         "V12"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A150",
+      "rawFormation": "V8",
+      "currentUnits": [
+        "V8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A151",
+      "rawFormation": "V4",
+      "currentUnits": [
+        "V4"
       ],
       "parseStatus": "parsed"
     },
@@ -79,6 +103,22 @@
       "rawFormation": "N4",
       "currentUnits": [
         "N4"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A34",
+      "rawFormation": "N10",
+      "currentUnits": [
+        "N10"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A35",
+      "rawFormation": "T13",
+      "currentUnits": [
+        "T13"
       ],
       "parseStatus": "parsed"
     },
@@ -211,6 +251,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A69",
+      "rawFormation": "U5",
+      "currentUnits": [
+        "U5"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A70",
       "rawFormation": "U16",
       "currentUnits": [
@@ -259,6 +307,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A74",
+      "rawFormation": "U1",
+      "currentUnits": [
+        "U1"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A75",
       "rawFormation": "U7",
       "currentUnits": [
@@ -272,6 +328,15 @@
       "currentUnits": [
         "K9",
         "K1"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A83",
+      "rawFormation": "K10/W6",
+      "currentUnits": [
+        "K10",
+        "W6"
       ],
       "parseStatus": "parsed"
     },
