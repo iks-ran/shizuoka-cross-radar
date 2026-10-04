@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-04",
-  "updatedAt": "2026-10-04T21:31:26+09:00",
+  "updatedAt": "2026-10-05T00:00:02+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -351,6 +351,22 @@
       "rawFormation": "F8",
       "currentUnits": [
         "F8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A702",
+      "rawFormation": "F14",
+      "currentUnits": [
+        "F14"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A703",
+      "rawFormation": "F9",
+      "currentUnits": [
+        "F9"
       ],
       "parseStatus": "parsed"
     },
