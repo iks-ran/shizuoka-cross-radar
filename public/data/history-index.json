@@ -146,11 +146,6 @@
       "serviceDate": "2026-09-08",
       "path": "history/2026-09-08-6695b6b33fe4fa79.json",
       "firstObservedAt": null
-    },
-    {
-      "serviceDate": "2026-09-07",
-      "path": "history/2026-09-07-2bbb9e2a9f7d282e.json",
-      "firstObservedAt": null
     }
   ]
 }
