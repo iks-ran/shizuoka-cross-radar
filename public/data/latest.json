@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-08",
-  "updatedAt": "2026-10-08T11:03:33+09:00",
+  "updatedAt": "2026-10-08T18:56:09+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -35,6 +35,22 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A149",
+      "rawFormation": "V2",
+      "currentUnits": [
+        "V2"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A152",
+      "rawFormation": "V12",
+      "currentUnits": [
+        "V12"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A155",
       "rawFormation": "V8",
       "currentUnits": [
@@ -55,6 +71,22 @@
       "rawFormation": "T6",
       "currentUnits": [
         "T6"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A24",
+      "rawFormation": "T17→T8",
+      "currentUnits": [
+        "T8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A25",
+      "rawFormation": "N7",
+      "currentUnits": [
+        "N7"
       ],
       "parseStatus": "parsed"
     },
@@ -84,9 +116,17 @@
     },
     {
       "diagramId": "A30",
-      "rawFormation": "T8",
+      "rawFormation": "S4",
       "currentUnits": [
-        "T8"
+        "S4"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A31",
+      "rawFormation": "T12",
+      "currentUnits": [
+        "T12"
       ],
       "parseStatus": "parsed"
     },
@@ -95,6 +135,14 @@
       "rawFormation": "T16",
       "currentUnits": [
         "T16"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A33",
+      "rawFormation": "T10",
+      "currentUnits": [
+        "T10"
       ],
       "parseStatus": "parsed"
     },
@@ -127,6 +175,22 @@
       "rawFormation": "T9",
       "currentUnits": [
         "T9"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A38",
+      "rawFormation": "N4",
+      "currentUnits": [
+        "N4"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A39",
+      "rawFormation": "N1",
+      "currentUnits": [
+        "N1"
       ],
       "parseStatus": "parsed"
     },
@@ -167,6 +231,14 @@
       "rawFormation": "N10",
       "currentUnits": [
         "N10"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A56",
+      "rawFormation": "N5",
+      "currentUnits": [
+        "N5"
       ],
       "parseStatus": "parsed"
     },
@@ -220,9 +292,9 @@
     },
     {
       "diagramId": "A69",
-      "rawFormation": "U11",
+      "rawFormation": "U11→U4",
       "currentUnits": [
-        "U11"
+        "U4"
       ],
       "parseStatus": "parsed"
     },
@@ -231,6 +303,22 @@
       "rawFormation": "F11",
       "currentUnits": [
         "F11"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A702",
+      "rawFormation": "F4",
+      "currentUnits": [
+        "F4"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A704",
+      "rawFormation": "F1",
+      "currentUnits": [
+        "F1"
       ],
       "parseStatus": "parsed"
     },
@@ -251,6 +339,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A709",
+      "rawFormation": "F2",
+      "currentUnits": [
+        "F2"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A710",
       "rawFormation": "F12",
       "currentUnits": [
@@ -263,6 +359,14 @@
       "rawFormation": "F5",
       "currentUnits": [
         "F5"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A712",
+      "rawFormation": "F6",
+      "currentUnits": [
+        "F6"
       ],
       "parseStatus": "parsed"
     },
@@ -306,6 +410,15 @@
       "currentUnits": [
         "W1",
         "L8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A85",
+      "rawFormation": "K4/L6",
+      "currentUnits": [
+        "K4",
+        "L6"
       ],
       "parseStatus": "parsed"
     },
