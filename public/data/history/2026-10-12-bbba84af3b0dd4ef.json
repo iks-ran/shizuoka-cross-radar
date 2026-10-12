@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-12",
-    "updatedAt": "2026-10-12T08:02:16+09:00",
+    "updatedAt": "2026-10-12T11:33:25+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -51244,7 +51244,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-12",
-    "updatedAt": "2026-10-12T08:00:02+09:00",
+    "updatedAt": "2026-10-12T11:00:02+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -51252,6 +51252,14 @@
       "isMock": false
     },
     "assignments": [
+      {
+        "diagramId": "A144",
+        "rawFormation": "V8",
+        "currentUnits": [
+          "V8"
+        ],
+        "parseStatus": "parsed"
+      },
       {
         "diagramId": "A146",
         "rawFormation": "L1",
@@ -51389,10 +51397,36 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A710",
+        "rawFormation": "F8",
+        "currentUnits": [
+          "F8"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A72",
         "rawFormation": "U11",
         "currentUnits": [
           "U11"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A82",
+        "rawFormation": "W8/W3",
+        "currentUnits": [
+          "W8",
+          "W3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A83",
+        "rawFormation": "W7/L4",
+        "currentUnits": [
+          "W7",
+          "L4"
         ],
         "parseStatus": "parsed"
       },
@@ -51402,6 +51436,15 @@
         "currentUnits": [
           "W9",
           "L7"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A88",
+        "rawFormation": "W1/L8",
+        "currentUnits": [
+          "W1",
+          "L8"
         ],
         "parseStatus": "parsed"
       },
