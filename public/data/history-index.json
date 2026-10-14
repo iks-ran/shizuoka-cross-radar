@@ -4,7 +4,7 @@
   "dates": [
     {
       "serviceDate": "2026-10-14",
-      "path": "history/2026-10-14-834a95ac369e4144.json",
+      "path": "history/2026-10-14-577c9d41c2b85db9.json",
       "firstObservedAt": "2026-10-14T06:43:27.510716+09:00"
     },
     {
@@ -146,11 +146,6 @@
       "serviceDate": "2026-09-16",
       "path": "history/2026-09-16-c184fe2b1c681ba7.json",
       "firstObservedAt": "2026-09-16T06:37:15.720953+09:00"
-    },
-    {
-      "serviceDate": "2026-09-15",
-      "path": "history/2026-09-15-a1d59e5ed5f63696.json",
-      "firstObservedAt": "2026-09-15T08:41:23.716105+09:00"
     }
   ]
 }
