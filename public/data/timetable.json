@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-17",
-  "updatedAt": "2026-10-17T19:09:51+09:00",
+  "updatedAt": "2026-10-17T22:49:59+09:00",
   "source": {
     "id": "jr-central",
     "label": "JR Central conventional-line train information",
@@ -50243,8 +50243,8 @@
       ]
     },
     {
-      "id": "jrcentral-2026101710155220700500-5522f",
-      "trainNumber": "5522F",
+      "id": "jrcentral-2026101719055220700500-5522f",
+      "trainNumber": "特5522F",
       "destinationStationId": "hamamatsu",
       "destinationName": {
         "ja": "浜松",
