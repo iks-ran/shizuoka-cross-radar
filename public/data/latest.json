@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-17",
-  "updatedAt": "2026-10-17T08:00:31+09:00",
+  "updatedAt": "2026-10-17T10:05:18+09:00",
   "source": {
     "id": "tokaido-shizuoka",
     "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -75,6 +75,14 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A30",
+      "rawFormation": "T14",
+      "currentUnits": [
+        "T14"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A31",
       "rawFormation": "T7",
       "currentUnits": [
@@ -107,10 +115,26 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A39",
+      "rawFormation": "T10",
+      "currentUnits": [
+        "T10"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A40",
       "rawFormation": "T12",
       "currentUnits": [
         "T12"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A51",
+      "rawFormation": "N8",
+      "currentUnits": [
+        "N8"
       ],
       "parseStatus": "parsed"
     },
@@ -135,6 +159,14 @@
       "rawFormation": "S6",
       "currentUnits": [
         "S6"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A58",
+      "rawFormation": "S3",
+      "currentUnits": [
+        "S3"
       ],
       "parseStatus": "parsed"
     },
@@ -187,6 +219,22 @@
       "parseStatus": "parsed"
     },
     {
+      "diagramId": "A703",
+      "rawFormation": "F8",
+      "currentUnits": [
+        "F8"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A705",
+      "rawFormation": "F3",
+      "currentUnits": [
+        "F3"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
       "diagramId": "A708",
       "rawFormation": "F6",
       "currentUnits": [
@@ -199,6 +247,14 @@
       "rawFormation": "F14",
       "currentUnits": [
         "F14"
+      ],
+      "parseStatus": "parsed"
+    },
+    {
+      "diagramId": "A710",
+      "rawFormation": "F10",
+      "currentUnits": [
+        "F10"
       ],
       "parseStatus": "parsed"
     },
