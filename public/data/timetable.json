@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-18",
-  "updatedAt": "2026-10-18T21:42:28+09:00",
+  "updatedAt": "2026-10-19T01:20:32+09:00",
   "source": {
     "id": "jr-central",
     "label": "JR Central conventional-line train information",
@@ -45516,11 +45516,11 @@
     {
       "id": "jrcentral-2026101810119361200100-1936m",
       "trainNumber": "1936M",
-      "destinationStationId": "mishima",
+      "destinationStationId": "numazu",
       "destinationName": {
-        "ja": "三島",
-        "en": "Mishima",
-        "zhCN": "Mishima"
+        "ja": "沼津",
+        "en": "Numazu",
+        "zhCN": "Numazu"
       },
       "direction": "eastbound",
       "serviceDays": [
@@ -45764,12 +45764,6 @@
         {
           "stationId": "numazu",
           "arrival": "23:35",
-          "departure": "23:36",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "mishima",
-          "arrival": "23:41",
           "departure": null,
           "dayOffset": 0
         }
@@ -45777,7 +45771,7 @@
       "operationSegments": [
         {
           "fromStationId": "toyohashi",
-          "toStationId": "mishima",
+          "toStationId": "numazu",
           "diagramIds": [
             "A86"
           ],
@@ -48612,6 +48606,78 @@
       ]
     },
     {
+      "id": "jrcentral-2026101810198221203610-9822m",
+      "trainNumber": "9822M",
+      "destinationStationId": "shizuoka",
+      "destinationName": {
+        "ja": "静岡",
+        "en": "Shizuoka",
+        "zhCN": "Shizuoka"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shimada",
+          "arrival": null,
+          "departure": "22:26",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "rokugo",
+          "arrival": "22:28",
+          "departure": "22:29",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "fujieda",
+          "arrival": "22:32",
+          "departure": "22:33",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "nishiyaizu",
+          "arrival": "22:36",
+          "departure": "22:36",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "yaizu",
+          "arrival": "22:39",
+          "departure": "22:39",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mochimune",
+          "arrival": "22:45",
+          "departure": "22:45",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "abekawa",
+          "arrival": "22:47",
+          "departure": "22:48",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "shizuoka",
+          "arrival": "22:52",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shimada",
+          "toStationId": "shizuoka",
+          "diagramIds": [],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026101810158301200010-5830m",
       "trainNumber": "5830M",
       "destinationStationId": "shizuoka",
@@ -50336,6 +50402,42 @@
               "family": "U"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "jrcentral-2026101819019361203400-1936m",
+      "trainNumber": "特1936M",
+      "destinationStationId": "mishima",
+      "destinationName": {
+        "ja": "三島",
+        "en": "Mishima",
+        "zhCN": "Mishima"
+      },
+      "direction": "eastbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "numazu",
+          "arrival": null,
+          "departure": "23:36",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "mishima",
+          "arrival": "23:41",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "numazu",
+          "toStationId": "mishima",
+          "diagramIds": [],
+          "plannedFormations": []
         }
       ]
     },

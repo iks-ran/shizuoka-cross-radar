@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-18",
-    "updatedAt": "2026-10-18T21:42:28+09:00",
+    "updatedAt": "2026-10-19T01:20:32+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -45519,11 +45519,11 @@
       {
         "id": "jrcentral-2026101810119361200100-1936m",
         "trainNumber": "1936M",
-        "destinationStationId": "mishima",
+        "destinationStationId": "numazu",
         "destinationName": {
-          "ja": "三島",
-          "en": "Mishima",
-          "zhCN": "Mishima"
+          "ja": "沼津",
+          "en": "Numazu",
+          "zhCN": "Numazu"
         },
         "direction": "eastbound",
         "serviceDays": [
@@ -45767,12 +45767,6 @@
           {
             "stationId": "numazu",
             "arrival": "23:35",
-            "departure": "23:36",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "mishima",
-            "arrival": "23:41",
             "departure": null,
             "dayOffset": 0
           }
@@ -45780,7 +45774,7 @@
         "operationSegments": [
           {
             "fromStationId": "toyohashi",
-            "toStationId": "mishima",
+            "toStationId": "numazu",
             "diagramIds": [
               "A86"
             ],
@@ -48615,6 +48609,78 @@
         ]
       },
       {
+        "id": "jrcentral-2026101810198221203610-9822m",
+        "trainNumber": "9822M",
+        "destinationStationId": "shizuoka",
+        "destinationName": {
+          "ja": "静岡",
+          "en": "Shizuoka",
+          "zhCN": "Shizuoka"
+        },
+        "direction": "eastbound",
+        "serviceDays": [
+          "all"
+        ],
+        "stops": [
+          {
+            "stationId": "shimada",
+            "arrival": null,
+            "departure": "22:26",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "rokugo",
+            "arrival": "22:28",
+            "departure": "22:29",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "fujieda",
+            "arrival": "22:32",
+            "departure": "22:33",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "nishiyaizu",
+            "arrival": "22:36",
+            "departure": "22:36",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "yaizu",
+            "arrival": "22:39",
+            "departure": "22:39",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "mochimune",
+            "arrival": "22:45",
+            "departure": "22:45",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "abekawa",
+            "arrival": "22:47",
+            "departure": "22:48",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "shizuoka",
+            "arrival": "22:52",
+            "departure": null,
+            "dayOffset": 0
+          }
+        ],
+        "operationSegments": [
+          {
+            "fromStationId": "shimada",
+            "toStationId": "shizuoka",
+            "diagramIds": [],
+            "plannedFormations": []
+          }
+        ]
+      },
+      {
         "id": "jrcentral-2026101810158301200010-5830m",
         "trainNumber": "5830M",
         "destinationStationId": "shizuoka",
@@ -50343,6 +50409,42 @@
         ]
       },
       {
+        "id": "jrcentral-2026101819019361203400-1936m",
+        "trainNumber": "特1936M",
+        "destinationStationId": "mishima",
+        "destinationName": {
+          "ja": "三島",
+          "en": "Mishima",
+          "zhCN": "Mishima"
+        },
+        "direction": "eastbound",
+        "serviceDays": [
+          "all"
+        ],
+        "stops": [
+          {
+            "stationId": "numazu",
+            "arrival": null,
+            "departure": "23:36",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "mishima",
+            "arrival": "23:41",
+            "departure": null,
+            "dayOffset": 0
+          }
+        ],
+        "operationSegments": [
+          {
+            "fromStationId": "numazu",
+            "toStationId": "mishima",
+            "diagramIds": [],
+            "plannedFormations": []
+          }
+        ]
+      },
+      {
         "id": "jrcentral-2026101810108311203540-831m",
         "trainNumber": "831M",
         "destinationStationId": "kikugawa",
@@ -50669,7 +50771,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-18",
-    "updatedAt": "2026-10-18T21:36:11+09:00",
+    "updatedAt": "2026-10-19T00:00:02+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -50770,6 +50872,14 @@
         "rawFormation": "V7",
         "currentUnits": [
           "V7"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A155",
+        "rawFormation": "V11",
+        "currentUnits": [
+          "V11"
         ],
         "parseStatus": "parsed"
       },
@@ -50990,6 +51100,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A57",
+        "rawFormation": "N3",
+        "currentUnits": [
+          "N3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A58",
         "rawFormation": "S6",
         "currentUnits": [
@@ -51046,6 +51164,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A66",
+        "rawFormation": "U9",
+        "currentUnits": [
+          "U9"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A67",
         "rawFormation": "U14",
         "currentUnits": [
@@ -51066,6 +51192,14 @@
         "rawFormation": "U5",
         "currentUnits": [
           "U5"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A70",
+        "rawFormation": "U16",
+        "currentUnits": [
+          "U16"
         ],
         "parseStatus": "parsed"
       },
@@ -51098,6 +51232,14 @@
         "rawFormation": "F11",
         "currentUnits": [
           "F11"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A71",
+        "rawFormation": "U6",
+        "currentUnits": [
+          "U6"
         ],
         "parseStatus": "parsed"
       },
@@ -51226,6 +51368,15 @@
         "currentUnits": [
           "W7",
           "L4"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A90",
+        "rawFormation": "W9/L7",
+        "currentUnits": [
+          "W9",
+          "L7"
         ],
         "parseStatus": "parsed"
       },
