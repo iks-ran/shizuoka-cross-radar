@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
   "serviceDate": "2026-10-23",
-  "updatedAt": "2026-10-23T14:43:49+09:00",
+  "updatedAt": "2026-10-23T20:00:58+09:00",
   "source": {
     "id": "jr-central",
     "label": "JR Central conventional-line train information",
@@ -44844,86 +44844,6 @@
       ]
     },
     {
-      "id": "jrcentral-2026102310119251200010-1925m",
-      "trainNumber": "1925M",
-      "destinationStationId": "toyohashi",
-      "destinationName": {
-        "ja": "豊橋",
-        "en": "Toyohashi",
-        "zhCN": "Toyohashi"
-      },
-      "direction": "westbound",
-      "serviceDays": [
-        "all"
-      ],
-      "stops": [
-        {
-          "stationId": "hamamatsu",
-          "arrival": null,
-          "departure": "19:27",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "takatsuka",
-          "arrival": "19:32",
-          "departure": "19:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "maisaka",
-          "arrival": "19:36",
-          "departure": "19:37",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "bentenjima",
-          "arrival": "19:39",
-          "departure": "19:39",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "araimachi",
-          "arrival": "19:42",
-          "departure": "19:43",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "washizu",
-          "arrival": "19:46",
-          "departure": "19:46",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "shinjohara",
-          "arrival": "19:51",
-          "departure": "19:51",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "futagawa",
-          "arrival": "19:54",
-          "departure": "19:55",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "toyohashi",
-          "arrival": "20:01",
-          "departure": null,
-          "dayOffset": 0
-        }
-      ],
-      "operationSegments": [
-        {
-          "fromStationId": "hamamatsu",
-          "toStationId": "toyohashi",
-          "diagramIds": [
-            "A83"
-          ],
-          "plannedFormations": []
-        }
-      ]
-    },
-    {
       "id": "jrcentral-2026102310119301200100-1930m",
       "trainNumber": "1930M",
       "destinationStationId": "hamamatsu",
@@ -46029,6 +45949,50 @@
       ]
     },
     {
+      "id": "jrcentral-2026102310119251200010-1925m",
+      "trainNumber": "1925M",
+      "destinationStationId": "toyohashi",
+      "destinationName": {
+        "ja": "豊橋",
+        "en": "Toyohashi",
+        "zhCN": "Toyohashi"
+      },
+      "direction": "westbound",
+      "serviceDays": [
+        "all"
+      ],
+      "stops": [
+        {
+          "stationId": "shinjohara",
+          "arrival": null,
+          "departure": "19:51",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "futagawa",
+          "arrival": "19:54",
+          "departure": "19:55",
+          "dayOffset": 0
+        },
+        {
+          "stationId": "toyohashi",
+          "arrival": "20:01",
+          "departure": null,
+          "dayOffset": 0
+        }
+      ],
+      "operationSegments": [
+        {
+          "fromStationId": "shinjohara",
+          "toStationId": "toyohashi",
+          "diagramIds": [
+            "A83"
+          ],
+          "plannedFormations": []
+        }
+      ]
+    },
+    {
       "id": "jrcentral-2026102310119321200100-1932m",
       "trainNumber": "1932M",
       "destinationStationId": "hamamatsu",
@@ -46707,7 +46671,7 @@
     {
       "id": "jrcentral-2026102310119341200100-1934m",
       "trainNumber": "1934M",
-      "destinationStationId": "hamamatsu",
+      "destinationStationId": "shinjohara",
       "destinationName": {
         "ja": "浜松",
         "en": "Hamamatsu",
@@ -46733,42 +46697,6 @@
         {
           "stationId": "shinjohara",
           "arrival": "20:20",
-          "departure": "20:20",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "washizu",
-          "arrival": "20:25",
-          "departure": "20:25",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "araimachi",
-          "arrival": "20:29",
-          "departure": "20:29",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "bentenjima",
-          "arrival": "20:32",
-          "departure": "20:32",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "maisaka",
-          "arrival": "20:35",
-          "departure": "20:35",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "takatsuka",
-          "arrival": "20:40",
-          "departure": "20:40",
-          "dayOffset": 0
-        },
-        {
-          "stationId": "hamamatsu",
-          "arrival": "20:46",
           "departure": null,
           "dayOffset": 0
         }
@@ -46776,7 +46704,7 @@
       "operationSegments": [
         {
           "fromStationId": "toyohashi",
-          "toStationId": "hamamatsu",
+          "toStationId": "shinjohara",
           "diagramIds": [
             "A83"
           ],

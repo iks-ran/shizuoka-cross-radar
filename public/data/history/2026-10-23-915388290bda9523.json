@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-23",
-    "updatedAt": "2026-10-23T14:43:49+09:00",
+    "updatedAt": "2026-10-23T20:00:58+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -44847,86 +44847,6 @@
         ]
       },
       {
-        "id": "jrcentral-2026102310119251200010-1925m",
-        "trainNumber": "1925M",
-        "destinationStationId": "toyohashi",
-        "destinationName": {
-          "ja": "豊橋",
-          "en": "Toyohashi",
-          "zhCN": "Toyohashi"
-        },
-        "direction": "westbound",
-        "serviceDays": [
-          "all"
-        ],
-        "stops": [
-          {
-            "stationId": "hamamatsu",
-            "arrival": null,
-            "departure": "19:27",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "takatsuka",
-            "arrival": "19:32",
-            "departure": "19:32",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "maisaka",
-            "arrival": "19:36",
-            "departure": "19:37",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "bentenjima",
-            "arrival": "19:39",
-            "departure": "19:39",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "araimachi",
-            "arrival": "19:42",
-            "departure": "19:43",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "washizu",
-            "arrival": "19:46",
-            "departure": "19:46",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "shinjohara",
-            "arrival": "19:51",
-            "departure": "19:51",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "futagawa",
-            "arrival": "19:54",
-            "departure": "19:55",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "toyohashi",
-            "arrival": "20:01",
-            "departure": null,
-            "dayOffset": 0
-          }
-        ],
-        "operationSegments": [
-          {
-            "fromStationId": "hamamatsu",
-            "toStationId": "toyohashi",
-            "diagramIds": [
-              "A83"
-            ],
-            "plannedFormations": []
-          }
-        ]
-      },
-      {
         "id": "jrcentral-2026102310119301200100-1930m",
         "trainNumber": "1930M",
         "destinationStationId": "hamamatsu",
@@ -46032,6 +45952,50 @@
         ]
       },
       {
+        "id": "jrcentral-2026102310119251200010-1925m",
+        "trainNumber": "1925M",
+        "destinationStationId": "toyohashi",
+        "destinationName": {
+          "ja": "豊橋",
+          "en": "Toyohashi",
+          "zhCN": "Toyohashi"
+        },
+        "direction": "westbound",
+        "serviceDays": [
+          "all"
+        ],
+        "stops": [
+          {
+            "stationId": "shinjohara",
+            "arrival": null,
+            "departure": "19:51",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "futagawa",
+            "arrival": "19:54",
+            "departure": "19:55",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "toyohashi",
+            "arrival": "20:01",
+            "departure": null,
+            "dayOffset": 0
+          }
+        ],
+        "operationSegments": [
+          {
+            "fromStationId": "shinjohara",
+            "toStationId": "toyohashi",
+            "diagramIds": [
+              "A83"
+            ],
+            "plannedFormations": []
+          }
+        ]
+      },
+      {
         "id": "jrcentral-2026102310119321200100-1932m",
         "trainNumber": "1932M",
         "destinationStationId": "hamamatsu",
@@ -46710,7 +46674,7 @@
       {
         "id": "jrcentral-2026102310119341200100-1934m",
         "trainNumber": "1934M",
-        "destinationStationId": "hamamatsu",
+        "destinationStationId": "shinjohara",
         "destinationName": {
           "ja": "浜松",
           "en": "Hamamatsu",
@@ -46736,42 +46700,6 @@
           {
             "stationId": "shinjohara",
             "arrival": "20:20",
-            "departure": "20:20",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "washizu",
-            "arrival": "20:25",
-            "departure": "20:25",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "araimachi",
-            "arrival": "20:29",
-            "departure": "20:29",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "bentenjima",
-            "arrival": "20:32",
-            "departure": "20:32",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "maisaka",
-            "arrival": "20:35",
-            "departure": "20:35",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "takatsuka",
-            "arrival": "20:40",
-            "departure": "20:40",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "hamamatsu",
-            "arrival": "20:46",
             "departure": null,
             "dayOffset": 0
           }
@@ -46779,7 +46707,7 @@
         "operationSegments": [
           {
             "fromStationId": "toyohashi",
-            "toStationId": "hamamatsu",
+            "toStationId": "shinjohara",
             "diagramIds": [
               "A83"
             ],
@@ -53515,7 +53443,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-23",
-    "updatedAt": "2026-10-23T14:00:02+09:00",
+    "updatedAt": "2026-10-23T20:00:02+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -53523,6 +53451,22 @@
       "isMock": false
     },
     "assignments": [
+      {
+        "diagramId": "A142",
+        "rawFormation": "L1",
+        "currentUnits": [
+          "L1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A143",
+        "rawFormation": "L2",
+        "currentUnits": [
+          "L2"
+        ],
+        "parseStatus": "parsed"
+      },
       {
         "diagramId": "A145",
         "rawFormation": "V11",
@@ -53564,10 +53508,42 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A150",
+        "rawFormation": "V5",
+        "currentUnits": [
+          "V5"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A155",
+        "rawFormation": "V8",
+        "currentUnits": [
+          "V8"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A22",
+        "rawFormation": "T3",
+        "currentUnits": [
+          "T3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A23",
         "rawFormation": "S1",
         "currentUnits": [
           "S1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A24",
+        "rawFormation": "T10",
+        "currentUnits": [
+          "T10"
         ],
         "parseStatus": "parsed"
       },
@@ -53644,6 +53620,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A35",
+        "rawFormation": "T13",
+        "currentUnits": [
+          "T13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A36",
+        "rawFormation": "T14",
+        "currentUnits": [
+          "T14"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A37",
         "rawFormation": "T7",
         "currentUnits": [
@@ -53700,6 +53692,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A53",
+        "rawFormation": "N2",
+        "currentUnits": [
+          "N2"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A54",
+        "rawFormation": "S6",
+        "currentUnits": [
+          "S6"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A56",
         "rawFormation": "N5",
         "currentUnits": [
@@ -53740,6 +53748,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A63",
+        "rawFormation": "U7",
+        "currentUnits": [
+          "U7"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A64",
         "rawFormation": "U15",
         "currentUnits": [
@@ -53756,10 +53772,74 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A67",
+        "rawFormation": "U12",
+        "currentUnits": [
+          "U12"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A68",
+        "rawFormation": "U11",
+        "currentUnits": [
+          "U11"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A69",
+        "rawFormation": "U10",
+        "currentUnits": [
+          "U10"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A701",
+        "rawFormation": "F13",
+        "currentUnits": [
+          "F13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A702",
+        "rawFormation": "F6",
+        "currentUnits": [
+          "F6"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A703",
         "rawFormation": "F14",
         "currentUnits": [
           "F14"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A705",
+        "rawFormation": "F4",
+        "currentUnits": [
+          "F4"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A706",
+        "rawFormation": "F12",
+        "currentUnits": [
+          "F12"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A707",
+        "rawFormation": "F1",
+        "currentUnits": [
+          "F1"
         ],
         "parseStatus": "parsed"
       },
@@ -53788,6 +53868,38 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A710",
+        "rawFormation": "F9",
+        "currentUnits": [
+          "F9"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A711",
+        "rawFormation": "F3",
+        "currentUnits": [
+          "F3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A712",
+        "rawFormation": "F11",
+        "currentUnits": [
+          "F11"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A72",
+        "rawFormation": "U14",
+        "currentUnits": [
+          "U14"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A73",
         "rawFormation": "U2",
         "currentUnits": [
@@ -53796,10 +53908,27 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A74",
+        "rawFormation": "U5",
+        "currentUnits": [
+          "U5"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A75",
         "rawFormation": "U16",
         "currentUnits": [
           "U16"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A82",
+        "rawFormation": "W8/L8",
+        "currentUnits": [
+          "W8",
+          "L8"
         ],
         "parseStatus": "parsed"
       },
@@ -53872,6 +54001,15 @@
         "currentUnits": [
           "K8",
           "W2"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A91",
+        "rawFormation": "K9/K1",
+        "currentUnits": [
+          "K9",
+          "K1"
         ],
         "parseStatus": "parsed"
       }
