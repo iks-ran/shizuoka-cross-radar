@@ -42,9 +42,15 @@
       "evidence": [
         {
           "date": "2026-10-27",
-          "repository_state": "working tree based on 0e6405e",
+          "repository_state": "c7561f1",
           "command": "npm run verify",
           "result": "Passed 57 Python tests, static/archive validation with an exact archive-consistency check of formation-model.json, 74 frontend tests, production build, and preview smoke for all 30 daily bundles plus the model. A rolling Git-history backtest (63 dates, 12067 known segment-days) scored 87.6% cross/no-cross accuracy with Brier 0.088; likely-cross labels were cross 92% of the time and likely-longitudinal 7%. Headless Chromium showed labeled live estimates on mobile cards and itinerary legs."
+        },
+        {
+          "date": "2026-10-27",
+          "repository_state": "c7561f1",
+          "command": "GitHub Actions Pages 40468467206",
+          "result": "The push-triggered Pages workflow passed change detection, full verification, build, and deployment. The deployed data/formation-model.json matched the committed model (30 training dates, 83 diagrams)."
         }
       ]
     },
