@@ -146,6 +146,26 @@ it('labels an unknown formation with an archive estimate without changing its st
   expect(screen.queryByText('123M')).not.toBeInTheDocument()
 })
 
+it('labels surcharge trains and explains that routes avoid them as connections', async () => {
+  const fetcher = mockData(null, '2026-09-10')
+  const original = fetcher.getMockImplementation()!
+  fetcher.mockImplementation(async (input) => {
+    if (!String(input).endsWith('timetable.json')) return original(input)
+    const base = bundle('2026-09-10', '4001M').timetable
+    base.services[0] = {
+      ...base.services[0],
+      trainType: { code: 'limited_express', name: { ja: '特急', en: 'Ltd. Exp.', zhCN: 'Ltd. Exp.' } },
+    } as typeof base.services[0]
+    return response(base)
+  })
+  render(<App />)
+  expect(await screen.findByText('4001M')).toBeInTheDocument()
+  expect(screen.getByText('Ltd. Exp. · limited express ticket required')).toBeInTheDocument()
+  expect(screen.getByText(/complete routes never use them as connecting trains/)).toBeInTheDocument()
+  fireEvent.click(screen.getByRole('button', { name: '日本語' }))
+  expect(screen.getByText('特急・特急券が必要です')).toBeInTheDocument()
+})
+
 it('shows no estimate when the model cannot be loaded', async () => {
   mockData(null, '2026-09-10')
   render(<App />)

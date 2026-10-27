@@ -17,6 +17,7 @@ from scripts.data_sources.jr_central import (
     operation_day_matches,
     parse_holiday_csv,
 )
+from scripts.validation import validate_timetable
 from scripts.data_sources.operation_diagram import OperationDiagramSource, parse_operation_csv, parse_train_metadata_csv
 from scripts.data_sources.tokaido_shizuoka import (
     CURRENT_ASSIGNMENTS_URL,
@@ -234,6 +235,7 @@ class JrCentralTests(unittest.TestCase):
                 {
                     "train_identification_key": "2026082610104271203360",
                     "trainnumber": "427M",
+                    "traintype": localized("ＨＬ", "Home Liner", "Home Liner"),
                     "terminalStation": localized("浜松", "Hamamatsu", "滨松"),
                     "timetable": [
                         {
@@ -305,6 +307,20 @@ class JrCentralTests(unittest.TestCase):
         self.assertEqual(result["serviceDate"], "2026-08-26")
         service = result["services"][0]
         self.assertEqual(service["destinationName"]["en"], "Hamamatsu")
+        self.assertEqual(service["trainType"], {
+            "code": "home_liner",
+            "name": {"ja": "ＨＬ", "en": "Home Liner", "zhCN": "Home Liner"},
+        })
+        validate_timetable(result)
+
+        # Train types are recorded as published; unknown names are never assumed surcharge-free locals.
+        for ja, code in (("普通", "local"), ("新快速", "rapid"), ("特急", "limited_express"), ("急行", "other")):
+            payload["train_info"][0]["traintype"] = localized(ja, "Name", "Name")
+            parsed = JrCentralTimetableSource.parse_response(payload, date(2026, 8, 26), corridor, operation, set())
+            self.assertEqual(parsed["services"][0]["trainType"]["code"], code)
+        payload["train_info"][0]["traintype"] = [{"lang": "ja", "name": "特急"}]
+        parsed = JrCentralTimetableSource.parse_response(payload, date(2026, 8, 26), corridor, operation, set())
+        self.assertNotIn("trainType", parsed["services"][0])
         self.assertEqual(
             service["operationSegments"],
             [

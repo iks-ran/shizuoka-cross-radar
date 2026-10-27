@@ -29,6 +29,11 @@ export interface OperationSegment {
   }>
 }
 
+export interface TrainType {
+  code: 'local' | 'rapid' | 'limited_express' | 'home_liner' | 'other'
+  name: LocalizedName
+}
+
 export interface TrainService {
   id: string
   trainNumber: string
@@ -38,6 +43,8 @@ export interface TrainService {
   serviceDays: Array<'all' | 'weekday' | 'weekend'>
   stops: Stop[]
   operationSegments: OperationSegment[]
+  /** JR Central train type; absent in archived bundles collected before it was recorded. */
+  trainType?: TrainType
 }
 
 export interface TimetableData {
@@ -58,9 +65,10 @@ export interface DataSource {
   isMock: boolean
 }
 
-export type SeatLayout = 'convertible' | 'box_fixed' | 'longitudinal' | 'unknown'
+export type SeatLayout = 'convertible' | 'reclining' | 'box_fixed' | 'longitudinal' | 'unknown'
 export type SeatStatus =
   | 'full_convertible'
+  | 'reclining'
   | 'partial_cross'
   | 'box_fixed'
   | 'all_longitudinal'

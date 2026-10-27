@@ -14,6 +14,7 @@ The current release combines JR Central's individual-train timetable with dated 
 - Result filters for direct longitudinal, direct unknown, indirect unknown, and minimum featured-train ride time
 - Formation-at-boarding display and conservative cross-seat classification
 - Separately labeled cross-seat probabilities for unknown formations, learned from the 30-day archive
+- Limited express and Home Liner labels with an extra-ticket notice; complete routes never use them as connecting trains
 - Japanese, English, and Simplified Chinese UI
 - Asia/Tokyo date, time, and freshness logic
 - Date selection across a rolling 30-day archive, automatic historical fallback, and publication estimates
@@ -42,7 +43,7 @@ The browser reads only:
 - `public/data/formation-model.json` (optional; prediction counts derived from the archive)
 - The selected `public/data/history/YYYY-MM-DD-<content-hash>.json` bundle
 
-`timetable.json` contains station calls and optional operating-diagram segments. `latest.json` maps operating diagrams to current units, and `formations.json` describes the seating layout of each verified formation family. `formation-model.json` counts, for each operating diagram, how many archived days it ran with each formation family.
+`timetable.json` contains station calls, JR Central's train type, and optional operating-diagram segments. `latest.json` maps operating diagrams to current units, and `formations.json` describes the seating layout of each verified formation family. `formation-model.json` counts, for each operating diagram, how many archived days it ran with each formation family.
 
 ### History and midnight availability
 
@@ -147,7 +148,13 @@ For every displayed indirect train, the browser computes the earliest-arrival it
 
 Every itinerary leg is classified independently using the formation at that leg's boarding station. The result controls can hide confirmed longitudinal direct trains, unknown direct trains, or unknown indirect trains. A fourth optional control requires a user-entered minimum number of scheduled minutes aboard the featured indirect train; waiting and time aboard its feeder or onward trains do not count. The three visibility controls default on and the duration requirement defaults off.
 
-Verified formation metadata currently classifies K/L/S as convertible cross seating, V as semi/box cross seating, and W/T/N/U as longitudinal. Unrecognized families, including F in this MVP, stay unknown.
+Verified formation metadata currently classifies K/L/S as convertible cross seating, F (373 series, 3 cars) as rotating reclining seating, V as semi/box cross seating, and W/T/N/U as longitudinal, all from the Tokaido Shizuoka formation list (`train_form_list_202603.js`). Rotating reclining cars count as cross-seat cars; coupled with longitudinal units they form partial cross seating. Unrecognized families stay unknown.
+
+### Train types and surcharges
+
+The JR Central adapter records each service's published train type as `trainType` (`local`, `rapid`, `limited_express`, `home_liner`, or `other` for an unrecognized name, plus the localized name). Limited expresses (特急) and Home Liners (ＨＬ) need a ticket in addition to the fare, so their cards and itinerary legs carry an extra-ticket label. They remain visible as direct, first-leg, or intermediate-overlap results, and can be the featured train of a complete route, but the planner never uses them as feeder or onward connections. Per-section Home Liner boarding rules and fares are not modeled. An `other` type gets no label and is not assumed to need a surcharge.
+
+`trainType` is optional: archived bundles collected before October 27, 2026 lack it, so those dates show no surcharge labels and their route planning can still use surcharge trains as connections until they leave the 30-day window.
 
 ### Predictions for unknown formations
 
@@ -157,7 +164,7 @@ The card states the probability, the number of recorded days and their date rang
 
 `publish_history` rebuilds `formation-model.json` after every archive publication, so it follows the rolling 30-day window, and `python3 -m scripts.validation` fails if the published model differs from what the published archive produces. To rebuild it manually, run `python3 -m scripts.formation_model`. No additional source is used.
 
-A rolling backtest on Git-history snapshots from September 25 to October 27, 2026 (training on the 30 preceding days and hiding each known segment's assignment) scored 87.6% cross/no-cross accuracy with a Brier score of 0.088. "Likely cross" segments actually had cross seats 92% of the time, "likely longitudinal" 7%, and "uncertain" 46%. In the September 28 – October 27 archive, about 15% of unknown segment-days (roughly ten per day) qualify. The rest are services without an operating diagram (JR East through trains, Odoriko, Sunrise, and Ogaki-depot services), which have no training data, and F (373 series) assignments, whose seating metadata is unverified.
+A rolling backtest on Git-history snapshots from September 25 to October 27, 2026 (training on the 30 preceding days and hiding each known segment's assignment) scored 87.6% cross/no-cross accuracy with a Brier score of 0.088. "Likely cross" segments actually had cross seats 92% of the time, "likely longitudinal" 7%, and "uncertain" 46%. In the September 28 – October 27 archive, about 15% of unknown segment-days (roughly ten per day) qualify. The rest were services without an operating diagram (JR East through trains, Odoriko, Sunrise, and Ogaki-depot services), which have no training data, and F (373 series) assignments, which have been classified directly as rotating reclining seating since October 27.
 
 ## Real source adapters
 

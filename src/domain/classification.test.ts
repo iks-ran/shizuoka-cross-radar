@@ -342,6 +342,49 @@ describe('formationAtStation', () => {
   })
 })
 
+describe('rotating reclining formations', () => {
+  const reclining: FormationDefinition[] = definitions.map((definition) =>
+    definition.family === 'F'
+      ? { ...definition, carCount: 3, crossSeatCarCount: 3, layout: 'reclining', verified: true }
+      : definition,
+  )
+
+  it('classifies verified 373-series units as rotating reclining seats', () => {
+    expect(classifyFormation(['F4'], reclining)).toMatchObject({
+      status: 'reclining',
+      crossSeatCarCount: 3,
+      totalCarCount: 3,
+    })
+    expect(classifyFormation(['F1', 'F2'], reclining).status).toBe('reclining')
+  })
+
+  it('counts reclining cars as cross seats when coupled to longitudinal units', () => {
+    expect(classifyFormation(['F1', 'U3'], reclining)).toMatchObject({
+      status: 'partial_cross',
+      crossSeatCarCount: 3,
+      totalCarCount: 7,
+    })
+  })
+
+  it('treats reclining outcomes as cross seats in predictions and filters', () => {
+    const prediction = predictSegmentFormation(
+      { fromStationId: 'numazu', toStationId: 'atami', diagramIds: ['A701'] },
+      null,
+      reclining,
+      {
+        schemaVersion: 1,
+        timeZone: 'Asia/Tokyo',
+        method: 'diagram-frequency',
+        minimumObservedDays: 3,
+        trainingDates: ['2026-10-25', '2026-10-26', '2026-10-27'],
+        diagrams: [{ diagramId: 'A701', observedDays: 3, outcomes: [{ families: ['F'], days: 3 }] }],
+      },
+    )
+    expect(prediction?.crossSeatProbability).toBe(1)
+    expect(shouldDisplayRouteResult('first_leg', classifyFormation(['F1'], reclining))).toBe(true)
+  })
+})
+
 describe('archive formation predictions', () => {
   const model = (diagrams: FormationModelData['diagrams']): FormationModelData => ({
     schemaVersion: 1,

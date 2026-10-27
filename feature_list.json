@@ -14,6 +14,40 @@
   },
   "features": [
     {
+      "id": "RADAR-011",
+      "priority": 16,
+      "title": "Verified 373 seating and surcharge-train handling",
+      "behavior": "373-series (F) formations are classified as rotating reclining seats using the cited Tokaido Shizuoka formation list. Services carry JR Central's train type; limited expresses and Home Liners are labeled as needing an extra ticket on cards and featured legs, and complete-route planning never uses them as feeder or onward trains.",
+      "depends_on": [
+        "RADAR-010"
+      ],
+      "in_scope": [
+        "Evidence-backed F formation metadata with a distinct rotating-reclining category",
+        "Optional trainType parsed from the existing JR Central feed and validated",
+        "Localized surcharge labels and connection-planning exclusion"
+      ],
+      "out_of_scope": [
+        "Any new external data source",
+        "Fare calculation or per-section Home Liner boarding rules",
+        "Rewriting immutable archived bundles that predate trainType"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Adapter, validation, classification, planner exclusion, localized UI, build, and smoke pass; an isolated live refresh emits trainType for corridor services."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-10-27",
+          "repository_state": "working tree based on e89011e",
+          "command": "npm run verify",
+          "result": "Passed 59 Python tests, static/archive/model validation, 79 frontend tests, production build, and preview smoke for 30 daily bundles plus the formation model. The planner-exclusion regression failed when the exclusion was disabled. An isolated live refresh from the existing sources validated 434 October 27 services with train types (397 local, 20 limited express, 15 Home Liner, 2 rapid), and headless Chromium showed a labeled Home Liner with rotating reclining seats."
+        }
+      ]
+    },
+    {
       "id": "RADAR-010",
       "priority": 15,
       "title": "Archive-based predictions for unknown formations",

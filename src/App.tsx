@@ -26,6 +26,7 @@ import type {
   ScheduledJourney,
   SearchResult,
   Station,
+  TrainService,
 } from './types'
 
 const LANGUAGE_STORAGE_KEY = 'shizuoka-cross-seat-radar-language'
@@ -37,6 +38,7 @@ const initialLocale = (): Locale => {
 
 const seatMessage: Record<FormationSummary['status'], MessageKey> = {
   full_convertible: 'fullConvertible',
+  reclining: 'reclining',
   partial_cross: 'partialCross',
   box_fixed: 'boxFixed',
   all_longitudinal: 'allLongitudinal',
@@ -48,6 +50,13 @@ const routeMessage: Record<RouteMatchType, MessageKey> = {
   first_leg: 'routeFirstLeg',
   intermediate_overlap: 'routeIntermediateOverlap',
 }
+
+const surchargeMessage = (service: TrainService): MessageKey | null =>
+  service.trainType?.code === 'limited_express'
+    ? 'limitedExpressNotice'
+    : service.trainType?.code === 'home_liner'
+      ? 'homeLinerNotice'
+      : null
 
 const stopTime = (clock: string | null, dayOffset: number): string =>
   clock === null ? '—' : `${clock}${dayOffset > 0 ? ` (+${dayOffset})` : ''}`
@@ -120,6 +129,7 @@ function TrainCard({
   const segmentEndStation = stationName(stations, result.segmentEndStop.stationId, locale)
   const displayedFormation = formationLabel(summary)
   const statusText = t(seatMessage[summary.status])
+  const surcharge = surchargeMessage(result.service)
 
   return (
     <article className="train-card">
@@ -139,6 +149,7 @@ function TrainCard({
         <strong>{result.service.trainNumber}</strong>
         <span aria-hidden="true">·</span>
         <span>{t('forDestination', { station: trainDestination })}</span>
+        {surcharge && <span className="surcharge-badge">{t(surcharge)}</span>}
       </div>
 
       <p className="segment-note">
@@ -161,6 +172,7 @@ function TrainCard({
                   const legSummary = journeyLegSummaries[index]
                   const legStatus = legSummary?.status ?? 'unknown'
                   const legFormation = legSummary ? formationLabel(legSummary) : '—'
+                  const legSurcharge = surchargeMessage(leg.service)
                   return (
                     <li className={featured ? 'featured-leg' : ''} key={`${leg.service.id}-${leg.fromStop.stationId}-${leg.toStop.stationId}-${index}`}>
                       <div className="journey-times">
@@ -172,6 +184,7 @@ function TrainCard({
                         <strong>{fromStation} → {toStation}</strong>
                         <span>{leg.service.trainNumber}</span>
                         {featured && <span className="featured-train-badge">{t('thisTrain')}</span>}
+                        {legSurcharge && <span className="surcharge-badge">{t(legSurcharge)}</span>}
                         {featured && (
                           <span>{t('rideMinutes', { minutes: journey.featuredDurationMinutes })}</span>
                         )}
@@ -666,6 +679,7 @@ export default function App() {
           <p className="independent-note">{t('independentNotice')}</p>
           <p>{t('firstLegNote')}</p>
           {data.formationModel && !data.timetable.isFixture && <p>{t('predictionNote')}</p>}
+          {data.timetable.services.some((service) => service.trainType) && <p>{t('surchargeNote')}</p>}
           <p>
             {data.timetable.source.url ? (
               <a href={data.timetable.source.url} target="_blank" rel="noreferrer">

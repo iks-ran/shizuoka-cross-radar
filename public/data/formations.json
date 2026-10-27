@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timeZone": "Asia/Tokyo",
-  "verifiedAt": "2026-08-26",
+  "verifiedAt": "2026-10-27",
   "formations": [
     {
       "family": "K",
@@ -78,11 +78,11 @@
     {
       "family": "F",
       "series": "373",
-      "carCount": null,
-      "crossSeatCarCount": null,
-      "layout": "unknown",
-      "verified": false,
-      "evidenceUrl": null
+      "carCount": 3,
+      "crossSeatCarCount": 3,
+      "layout": "reclining",
+      "verified": true,
+      "evidenceUrl": "https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js"
     }
   ]
 }

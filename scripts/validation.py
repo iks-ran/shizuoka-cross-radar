@@ -12,6 +12,7 @@ ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*$")
 UNIT_PATTERN = re.compile(r"^[A-Z]{1,4}\d{1,3}$")
 DIAGRAM_PATTERN = re.compile(r"^A\d{1,3}$")
 TIME_PATTERN = re.compile(r"^(?:[01]\d|2[0-3]):[0-5]\d$")
+TRAIN_TYPE_CODES = {"local", "rapid", "limited_express", "home_liner", "other"}
 
 
 class ValidationError(ValueError):
@@ -74,7 +75,7 @@ def validate_formations(data: Any) -> None:
         _require(isinstance(family, str) and re.fullmatch(r"[A-Z]+", family) is not None, "invalid formation family")
         _require(family not in seen, f"duplicate formation family {family}")
         seen.add(family)
-        _require(definition.get("layout") in {"convertible", "box_fixed", "longitudinal", "unknown"}, "invalid layout")
+        _require(definition.get("layout") in {"convertible", "reclining", "box_fixed", "longitudinal", "unknown"}, "invalid layout")
         _require(isinstance(definition.get("verified"), bool), "verified must be boolean")
         for key in ("carCount", "crossSeatCarCount"):
             value = definition.get(key)
@@ -141,6 +142,16 @@ def validate_timetable(data: Any) -> None:
             ),
             "service destination name is incomplete",
         )
+        if "trainType" in service:
+            # Optional: archived bundles collected before train types were recorded omit it.
+            train_type = service["trainType"]
+            _require(isinstance(train_type, dict) and train_type.get("code") in TRAIN_TYPE_CODES, "invalid train type")
+            type_name = train_type.get("name")
+            _require(
+                isinstance(type_name, dict)
+                and all(isinstance(type_name.get(locale), str) and type_name[locale] for locale in ("ja", "en", "zhCN")),
+                "train type name is incomplete",
+            )
         stops = service.get("stops")
         _require(isinstance(stops, list) and len(stops) >= 2, "service needs at least two stops")
         previous_order: int | None = None

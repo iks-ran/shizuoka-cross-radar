@@ -29,6 +29,17 @@ TOKYO = ZoneInfo("Asia/Tokyo")
 DIAGRAM_PREFIX_PATTERN = re.compile(r"^(A\d+)")
 TIMESTAMP_PATTERN = re.compile(r"^\d{14}$")
 TIME_PATTERN = re.compile(r"^(?:[01]\d|2[0-3])[0-5]\d$")
+# JR Central's Japanese train-type names; anything else is kept as "other".
+TRAIN_TYPE_CODES = {
+    "普通": "local",
+    "快速": "rapid",
+    "区間快速": "rapid",
+    "新快速": "rapid",
+    "特別快速": "rapid",
+    "特急": "limited_express",
+    "ＨＬ": "home_liner",
+    "ホームライナー": "home_liner",
+}
 
 
 def parse_holiday_csv(raw: bytes) -> set[date]:
@@ -127,6 +138,13 @@ def _localized_name(values: Any) -> dict[str, str] | None:
     if not all(locale in names for locale in ("ja", "en", "zh-CN")):
         return None
     return {"ja": names["ja"], "en": names["en"], "zhCN": names["zh-CN"]}
+
+
+def _train_type(values: Any) -> dict[str, Any] | None:
+    name = _localized_name(values)
+    if name is None:
+        return None
+    return {"code": TRAIN_TYPE_CODES.get(name["ja"].strip(), "other"), "name": name}
 
 
 def _clock(value: Any) -> str | None:
@@ -431,7 +449,7 @@ class JrCentralTimetableSource:
                 terminal_station = next(station for station in stations if station["id"] == stops[-1]["stationId"])
                 terminal_name = dict(terminal_station["name"])
             safe_train_number = re.sub(r"[^a-z0-9]+", "-", train_number.lower()).strip("-")
-            service = {
+            service: dict[str, Any] = {
                 "id": f"jrcentral-{train_key}-{safe_train_number}",
                 "trainNumber": train_number,
                 "destinationStationId": stops[-1]["stationId"],
@@ -448,6 +466,9 @@ class JrCentralTimetableSource:
                     holidays,
                 ),
             }
+            train_type = _train_type(raw_service.get("traintype"))
+            if train_type is not None:
+                service["trainType"] = train_type
             previous = service_by_id.get(service["id"])
             if previous is not None:
                 if previous != service:

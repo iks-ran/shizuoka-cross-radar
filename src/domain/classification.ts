@@ -93,6 +93,7 @@ export const classifyFormation = (
   const layouts = known.map((definition) => definition.layout)
   let status: FormationSummary['status']
   if (layouts.every((layout) => layout === 'convertible')) status = 'full_convertible'
+  else if (layouts.every((layout) => layout === 'reclining')) status = 'reclining'
   else if (layouts.every((layout) => layout === 'box_fixed')) status = 'box_fixed'
   else if (layouts.every((layout) => layout === 'longitudinal')) status = 'all_longitudinal'
   else status = crossSeatCarCount > 0 ? 'partial_cross' : 'all_longitudinal'
@@ -156,7 +157,7 @@ const formationForSegment = (
   )
 }
 
-const CROSS_SEAT_STATUSES = new Set<SeatStatus>(['full_convertible', 'partial_cross', 'box_fixed'])
+const CROSS_SEAT_STATUSES = new Set<SeatStatus>(['full_convertible', 'reclining', 'partial_cross', 'box_fixed'])
 
 const familyOf = (code: string): string => /^([A-Z]+)/.exec(code)?.[1] ?? code
 

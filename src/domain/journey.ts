@@ -4,7 +4,7 @@ import type {
   TimetableData,
   TrainService,
 } from '../types'
-import { serviceRunsToday } from './search'
+import { requiresSurcharge, serviceRunsToday } from './search'
 import { parseClockMinutes, stopMinutes } from './time'
 
 interface Boarding {
@@ -228,6 +228,8 @@ export const createScheduledJourneyPlanner = (
       departure: stopMinutes(stop, 'departure'),
     }))
     timesByService.set(service.id, times)
+    // Surcharge trains may be featured, but never become feeder or onward connections.
+    if (requiresSurcharge(service)) continue
     service.stops.forEach((stop, stopIndex) => {
       const departureMinutes = times[stopIndex].departure
       if (!Number.isNaN(departureMinutes)) {

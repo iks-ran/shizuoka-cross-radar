@@ -35,6 +35,7 @@ describe('checked-in static data', () => {
   it('classifies every service in the changing daily snapshot', () => {
     const validStatuses = new Set([
       'full_convertible',
+      'reclining',
       'partial_cross',
       'box_fixed',
       'all_longitudinal',

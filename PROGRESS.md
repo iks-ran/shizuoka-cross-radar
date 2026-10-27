@@ -2,14 +2,14 @@
 
 ## Current Verified State
 
-- Repository state: local `main` fast-forwarded from `5e27be9` to updater snapshot `0e6405e` (119 bot data commits); `RADAR-010` committed as `c7561f1` and pushed with user approval on 2026-10-27; Pages run `40468467206` passed and deployed it
+- Repository state: local `main` fast-forwarded from `5e27be9` to updater snapshot `0e6405e` (119 bot data commits); `RADAR-010` committed as `c7561f1` and deployed by Pages run `40468467206`; `RADAR-011` committed on top of `e89011e` and pushed with user approval on 2026-10-27
 - Standard bootstrap: `scripts/bootstrap.sh`
 - Standard start: `npm run dev`
 - Standard verification: `npm run verify`
-- Baseline result: `npm run verify` passed on 2026-10-27 with 57 Python tests, archive/data/formation-model validation, 74 frontend tests, build, and production smoke for all 30 daily bundles plus `formation-model.json`
-- Active feature: none; `RADAR-010` passed local and hosted verification
+- Baseline result: `npm run verify` passed on 2026-10-27 with 59 Python tests, archive/data/formation-model validation, 79 frontend tests, build, and production smoke for all 30 daily bundles plus `formation-model.json`
+- Active feature: none; `RADAR-011` passed local full verification and was pushed; hosted Pages verification is the remaining check
 - Current blocker: none
-- Next best action: confirm the next updater run regenerates `formation-model.json` and Pages deploys. The largest remaining unknown source is F (373 series), which needs evidence-backed seating metadata rather than prediction
+- Next best action: confirm the Pages run for the `RADAR-011` push, then confirm the next updater run adds `trainType` to today's snapshot, regenerates `formation-model.json`, and Pages deploys
 
 ## Verified Behavior
 
@@ -44,7 +44,8 @@
 - Updated workflows have passed hosted full verification, a live manual data refresh, and Pages deployment. The no-update path is covered by offline real-parser regressions; its next naturally unpublished scheduled run remains to be observed.
 - Formation predictions assume each diagram ID keeps its meaning. Snapshots do not record `OPERATION_REVISION`, so for up to 30 days after a revision change the model would mix old and new diagram histories; reset or split the archive-derived model when changing the revision.
 - Predictions treat coupled diagrams as independent and ignore unit rotation and weekday/holiday differences (a day-class split did not improve the backtest). The backtest hid assignments of known segments; diagrams that are actually unreported may differ, for example during substitutions.
-- About 85% of unknown segment-days still have no estimate: services without an operating diagram (JR East through trains, Odoriko, Sunrise, Ogaki-depot services; about 26 per day) have no training labels, and F (373 series; about 31 per day) has unverified seating metadata.
+- Services without an operating diagram (JR East through trains, Odoriko, Sunrise, Ogaki-depot services; about 26 segments per day) remain unknown without estimates because no assignment labels exist. F (373 series; about 31 per day) has been classified directly since `RADAR-011`.
+- Archived bundles collected before 2026-10-27 have no `trainType`: they show no surcharge labels, and their route planning can still use limited expresses and Home Liners as connections until they leave the 30-day window. Home Liner sections and fares are not modeled; the label applies to the whole train.
 - Complete-route calculations use scheduled times only. Platform movement, delays, and guaranteed connections are unavailable, so a departure at the same minute as arrival is considered schedulable but is not guaranteed physically feasible.
 
 ## Decisions
@@ -65,7 +66,8 @@
 - The legacy source selector `yulog` resolves to the Tokaido Shizuoka adapter during rollout so the existing external Actions variable cannot break scheduled updates.
 - JR Central is authoritative for every displayed station time; operation-table times are not imported into the static timetable.
 - Complete current assignments override planned data. Planned fallback is allowed only when no current record exists for the segment and every diagram has one exact family (`U` or `F`); partial, malformed, or mixed-family coverage remains unknown.
-- Planned formations are visibly disclosed. Unverified families such as `F` may be named but keep unknown seat status and car counts.
+- Planned formations are visibly disclosed. Unverified families may be named but keep unknown seat status and car counts. On 2026-10-27, F (373 series) was verified as three rotating reclining cars from the already-cited Tokaido Shizuoka formation list; it has its own `reclining` status and counts as cross seating.
+- User decision 2026-10-27: services keep JR Central's train type. Limited expresses and Home Liners stay visible and may be featured, carry an extra-ticket label, and are never used as feeder or onward connections. Unrecognized types are recorded as `other` without a surcharge assumption. No new source is used.
 - Search includes same-direction trains sharing at least one full segment with the selected corridor; a one-station touch is excluded.
 - Intermediate-overlap times and formation are shown at the start of the shared segment, with no claim that a connection is feasible.
 - Direct trains remain visible regardless of seating. First-leg and intermediate-overlap trains are hidden only when the formation at the displayed overlap start is confirmed all-longitudinal; unknown formations remain as possible cross-seat results.
@@ -78,6 +80,16 @@
 
 ## Latest Session
 
+- Date: 2026-10-27 (continued)
+- Goal: classify the 373 series (F), using only the two sources already listed on the page
+- Evidence: the already-cited `https://tokaido-unyo-shizuoka.com/ja/unyo/202603/train_form_list_202603.js` lists 373系 F as three cars (`■■■`, conversion-table count 3) with 回転リクライニング seating and end-of-car semi-compartments. The same table supplies the existing K/L/S, V, and W/T/N/U seat types.
+- Finding: of the 37 train numbers F units ran in the archive, 14 are Limited Express Fujikawa (4001M–4014M) and 15 are Home Liners (4371M–4388M). JR Central's existing feed publishes `traintype`, which the adapter had discarded; today's corridor had 20 limited expresses and 15 Home Liners shown as ordinary trains, and the planner could use them as connections. The user chose labeling plus exclusion from connections.
+- Changed: verified F as `reclining` (3/3 cross-seat cars) with a new localized status and color; parsed and validated optional `trainType`; added localized extra-ticket labels for cards and itinerary legs plus a footer note; excluded surcharge trains from feeder/onward planning indexes while still allowing them as featured trains.
+- Verification: `npm run verify` passed with 59 Python tests, static/archive/model validation, 79 frontend tests, production build, and smoke for 30 bundles plus the model. Disabling the planner exclusion made its regression test fail. An isolated live refresh into `.tmp/live-refresh` (existing sources only, removed afterward) validated October 27 with 434 services: 397 local, 20 limited express, 15 Home Liner, 2 rapid. Headless Chromium against that data showed 4386M labeled "Home Liner · liner ticket required" with rotating reclining seats.
+- Publication: the user approved commit and push to `main`, which triggers the Pages workflow; `public/data/timetable.json` gains `trainType` on the next updater run.
+
+## Previous Session
+
 - Date: 2026-10-27
 - Goal: user requested a simple model that predicts unknown formations, using the data stored on GitHub
 - Baseline: fetched `origin/main` (SSH fetch ran outside the command sandbox because `~/.ssh` is sandbox-protected) and fast-forwarded the clean checkout from `5e27be9` to `0e6405e`; `scripts/bootstrap.sh` passed with 50 Python and 64 frontend tests.
@@ -87,18 +99,3 @@
 - Coverage: the checked-in model covers 83 diagrams over 30 dates; about 15% of archived unknown segment-days (roughly ten per day) receive an estimate.
 - Verification: `npm run verify` passed with 57 Python tests, static/archive/model validation, 74 frontend tests, production build, and preview smoke for 30 bundles plus the model. Headless Chromium against the production preview showed live estimates (for example 770M, 47%, and an itinerary-leg badge) at mobile width.
 - Publication: with user approval, committed `c7561f1` and pushed to `main` (no new bot commits had arrived). [Pages run `40468467206`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/40468467206) passed full verification and deployed; the live `data/formation-model.json` equals the committed file (30 dates, 83 diagrams). No workflow change was needed; the existing updater regenerates the model through `publish_history`.
-
-## Previous Session
-
-- Date: 2026-10-02
-- Goal: inspect and fix recurring GitHub Actions failures
-- Inspection: all 467 available runs (August 26–October 2) included 54 updater failures and eight Pages failures. Updater failures comprised 42 unpublished/empty/mismatched-date cases, 11 source timeouts, and one GitHub `commit_refs` rejection. Pages failures comprised five fixed-route mismatches, one 1.5-second performance-budget failure, and two historical seat-category assertion failures.
-- Baseline: fast-forwarded the clean checkout from `4cde975` to `d7d97d2`; reproduced the latest Pages failure locally (`1425M → 763M → 431M → 959M` instead of the fixed September route).
-- Before publication: rebased the prepared fix onto the newer bot data commit `518928e`, then reran `npm run verify` successfully with the same 50 Python tests, 64 frontend tests, build, and smoke for all 30 bundles.
-- Changed: added typed source unavailability, opt-in validated no-update handling and an Actions summary; centralized bounded read retries for the existing feeds; added same-commit push retries and unchanged-data deployment gating; moved the exact feeder regression to a fixed four-service fixture and cached parsed stop times in the planner.
-- Verification: `npm run verify` passed with 50 Python tests, 64 frontend tests, static/archive validation, production build, and production-preview smoke for all 30 indexed daily bundles. Regression coverage includes real-parser unpublished feed responses, byte-preserving fallback, malformed/partial-source rejection, retry recovery/exhaustion, push retry limits, and deployment output decisions. Both workflow YAML files parsed and job dependencies resolved.
-- Live evidence: generated into `.tmp/ci-refresh/data` from the already-enabled sources and validated October 2 with 416 official services and 61 assignments. Historical date gaps were reported as unavailable; no files under `public/data` changed.
-- Publication: under the user's October 2 approval, committed/pushed fix `296a510`. [Pages run `37006529446`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006529446) passed full verification and deployed successfully.
-- Hosted updater: dispatched [data run `37006657728`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006657728) once to verify the revised workflow. All steps passed, preserving the existing archive and pushing snapshot `fb21dfa` with 416 services and 65 assignments. Fast-forwarded the local checkout to that collected snapshot.
-- Follow-up deployment: [Pages run `37006717296`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006717296) detected the changed data, passed 50 Python tests, 64 frontend tests, production build and smoke for all 30 bundles, then deployed successfully.
-- Next action: monitor later scheduled no-update/update runs. Upstream publication timing and GitHub schedule delays remain external limits.

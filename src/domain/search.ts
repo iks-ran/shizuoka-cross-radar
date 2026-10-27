@@ -5,6 +5,9 @@ export const serviceRunsToday = (service: TrainService, weekend: boolean): boole
   service.serviceDays.includes('all') ||
   (weekend ? service.serviceDays.includes('weekend') : service.serviceDays.includes('weekday'))
 
+export const requiresSurcharge = (service: TrainService): boolean =>
+  service.trainType?.code === 'limited_express' || service.trainType?.code === 'home_liner'
+
 export const searchUpcomingTrains = (
   timetable: TimetableData,
   originStationId: string,

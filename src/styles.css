@@ -567,6 +567,19 @@ a:focus-visible {
   color: #5d3f72;
 }
 
+.status-reclining {
+  background: #e8f1fb;
+  border-left-color: var(--blue);
+}
+
+.status-reclining .status-mark {
+  background: var(--blue);
+}
+
+.status-reclining h3 {
+  color: #0b4a8a;
+}
+
 .status-all_longitudinal,
 .status-unknown {
   background: #f0f2f2;
@@ -754,6 +767,15 @@ a:focus-visible {
   color: #5d3f72;
 }
 
+.journey-seat-reclining {
+  background: #e8f1fb;
+  color: #0b4a8a;
+}
+
+.journey-seat-reclining .journey-seat-mark {
+  background: var(--blue);
+}
+
 .journey-seat-all_longitudinal,
 .journey-seat-unknown {
   background: #f0f2f2;
@@ -784,6 +806,16 @@ a:focus-visible {
 
 .journey-detail strong {
   color: var(--ink);
+}
+
+.surcharge-badge {
+  background: #fdecea;
+  border: 1px solid #d9827d;
+  border-radius: 2px;
+  color: var(--red);
+  font-size: 0.7rem;
+  font-weight: 750;
+  padding: 0.08rem 0.4rem;
 }
 
 .featured-train-badge {

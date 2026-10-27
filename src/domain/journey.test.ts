@@ -333,6 +333,41 @@ describe('createScheduledJourneyPlanner', () => {
     expect(journey).toBeNull()
   })
 
+  it('features surcharge trains but never uses them as feeder or onward connections', () => {
+    const surcharge = (train: TrainService, code: 'limited_express' | 'home_liner'): TrainService => ({
+      ...train,
+      trainType: { code, name: { ja: code, en: code, zhCN: code } },
+    })
+    const fastFeeder = surcharge(service('express-feeder', [
+      ['a', null, '10:05'],
+      ['b', '10:10', null],
+    ]), 'limited_express')
+    const localFeeder = service('local-feeder', [
+      ['a', null, '09:55'],
+      ['b', '10:15', null],
+    ])
+    const featured = surcharge(service('liner', [
+      ['b', null, '10:20'],
+      ['c', '10:40', null],
+    ]), 'home_liner')
+    const fastOnward = surcharge(service('express-onward', [
+      ['c', null, '10:42'],
+      ['e', '10:55', null],
+    ]), 'limited_express')
+    const localOnward = service('local-onward', [
+      ['c', null, '10:45'],
+      ['e', '11:20', null],
+    ])
+
+    const journey = createScheduledJourneyPlanner(
+      timetable([fastFeeder, localFeeder, featured, fastOnward, localOnward]),
+      false,
+    ).findFastestIncluding('a', 'e', '09:50', featured.id, 'b')
+
+    expect(journey?.legs.map((leg) => leg.service.id)).toEqual(['local-feeder', 'liner', 'local-onward'])
+    expect(journey?.arrivalMinutes).toBe(11 * 60 + 20)
+  })
+
   it('returns null when the featured train cannot connect to the destination', () => {
     const featured = service('dead-end-featured', [
       ['a', null, '10:00'],
