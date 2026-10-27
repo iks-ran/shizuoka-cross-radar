@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-27",
-    "updatedAt": "2026-10-27T12:44:43+09:00",
+    "updatedAt": "2026-10-27T18:36:22+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -599,7 +599,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107271203400-727m",
@@ -715,7 +723,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114201203400-1420m",
@@ -770,7 +786,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107211203540-721m",
@@ -905,7 +929,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107201203540-720m",
@@ -1026,7 +1058,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114221203400-1422m",
@@ -1077,7 +1117,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107221203610-722m",
@@ -1241,7 +1289,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114241203540-1424m",
@@ -1375,7 +1431,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109231203540-923m",
@@ -1562,7 +1626,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104211203360-421m",
@@ -1803,7 +1875,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107351203390-735m",
@@ -2028,7 +2108,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107261200010-726m",
@@ -2186,7 +2274,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109201200100-920m",
@@ -2271,7 +2367,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104201203610-420m",
@@ -2447,7 +2551,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103201203400-320m",
@@ -2495,7 +2607,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107291203540-729m",
@@ -2630,7 +2750,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107251203640-725m",
@@ -2705,7 +2833,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107301200010-730m",
@@ -2840,7 +2976,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107241203630-724m",
@@ -3016,7 +3160,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710123030700010-2303f",
@@ -3094,7 +3246,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "rapid",
+          "name": {
+            "ja": "新快速",
+            "en": "New Rapid",
+            "zhCN": "New Rapid"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103221203400-322m",
@@ -3142,7 +3302,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109221200100-922m",
@@ -3232,7 +3400,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107321200010-732m",
@@ -3451,7 +3627,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102231203390-223m",
@@ -3489,7 +3673,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104231203360-423m",
@@ -3666,7 +3858,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107311203540-731m",
@@ -3801,7 +4001,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109241200100-924m",
@@ -3988,7 +4196,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109211200010-921m",
@@ -4073,7 +4289,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107341200010-734m",
@@ -4232,7 +4456,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107391203400-739m",
@@ -4451,7 +4683,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103241203400-324m",
@@ -4499,7 +4739,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107281203610-728m",
@@ -4664,7 +4912,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107331203540-733m",
@@ -4799,7 +5055,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143821200010-4382m",
@@ -4938,7 +5202,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104261200010-426m",
@@ -5183,7 +5455,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710125321203400-2225m",
@@ -5221,7 +5501,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109261200100-926m",
@@ -5432,7 +5720,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109271203630-927m",
@@ -5560,7 +5856,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114261203400-1426m",
@@ -5608,7 +5912,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104281200010-428m",
@@ -5845,7 +6157,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107411203400-741m",
@@ -6063,7 +6383,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710122261203450-2226m",
@@ -6130,7 +6458,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104251203360-425m",
@@ -6366,7 +6702,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107371203500-737m",
@@ -6524,7 +6868,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143711203400-4371m",
@@ -6650,7 +7002,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114281203400-1428m",
@@ -6701,7 +7061,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143841200010-4384m",
@@ -6845,7 +7213,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143721203540-4372m",
@@ -6971,7 +7347,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104241203610-424m",
@@ -7148,7 +7532,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109251200010-925m",
@@ -7238,7 +7630,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103211203360-321m",
@@ -7286,7 +7686,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109281200100-928m",
@@ -7371,7 +7779,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104301200010-430m",
@@ -7608,7 +8024,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107431203390-743m",
@@ -7832,7 +8256,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101271203540-127m",
@@ -7907,7 +8339,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101311203450-131m",
@@ -7998,7 +8438,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107361203610-736m",
@@ -8163,7 +8611,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104271203360-427m",
@@ -8408,7 +8864,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109301200100-930m",
@@ -8493,7 +8957,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107471203390-747m",
@@ -8620,7 +9092,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101291203500-129m",
@@ -8718,7 +9198,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103261203400-326m",
@@ -8766,7 +9254,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109291200010-929m",
@@ -8846,7 +9342,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710142221203920-4222m",
@@ -8925,7 +9429,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103231203360-323m",
@@ -8973,7 +9485,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107381200010-738m",
@@ -9108,7 +9628,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109321200100-932m",
@@ -9198,7 +9726,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114301203400-1430m",
@@ -9258,7 +9794,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107491203390-749m",
@@ -9430,7 +9974,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101261203610-126m",
@@ -9529,7 +10081,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109311200010-931m",
@@ -9614,7 +10174,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107401200010-740m",
@@ -9772,7 +10340,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104291203360-429m",
@@ -10008,7 +10584,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109341200100-934m",
@@ -10088,7 +10672,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107451203500-745m",
@@ -10247,7 +10839,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104361200010-436m",
@@ -10484,7 +11084,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109331200010-933m",
@@ -10569,7 +11177,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710127511203690-2751m",
@@ -10684,7 +11300,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140011203540-4001m",
@@ -10775,7 +11399,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104321203610-432m",
@@ -10952,7 +11584,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109361200100-936m",
@@ -11032,7 +11672,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104381200010-438m",
@@ -11273,7 +11921,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114231203360-1423m",
@@ -11328,7 +11984,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107591203390-759m",
@@ -11561,7 +12225,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103281203400-328m",
@@ -11609,7 +12281,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109371200010-937m",
@@ -11699,7 +12379,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140021204230-4002m",
@@ -11784,7 +12472,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107421200010-742m",
@@ -11918,7 +12614,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104341203610-434m",
@@ -12094,7 +12798,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109381200100-938m",
@@ -12179,7 +12891,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114251203360-1425m",
@@ -12239,7 +12959,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104401200010-440m",
@@ -12475,7 +13203,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109391200010-939m",
@@ -12555,7 +13291,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109401200100-940m",
@@ -12640,7 +13384,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101331203500-133m",
@@ -12697,7 +13449,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107611203400-761m",
@@ -12856,7 +13616,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107441200010-744m",
@@ -12930,7 +13698,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107631203390-763m",
@@ -13155,7 +13931,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107551203540-755m",
@@ -13289,7 +14073,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104311203360-431m",
@@ -13526,7 +14318,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104421200010-442m",
@@ -13762,7 +14562,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109411200010-941m",
@@ -13842,7 +14650,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101371203500-137m",
@@ -13945,7 +14761,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109421200100-942m",
@@ -14030,7 +14854,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109431200010-943m",
@@ -14115,7 +14947,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114271203360-1427m",
@@ -14195,7 +15035,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104441200010-444m",
@@ -14431,7 +15279,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101281203540-128m",
@@ -14492,7 +15348,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109441200100-944m",
@@ -14572,7 +15436,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104331203360-433m",
@@ -14809,7 +15681,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107531203640-753m",
@@ -14883,7 +15763,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107461200010-746m",
@@ -14957,7 +15845,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101391203500-139m",
@@ -15055,7 +15951,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109451200010-945m",
@@ -15140,7 +16044,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101341203610-134m",
@@ -15238,7 +16150,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140031203540-4003m",
@@ -15329,7 +16249,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107481200010-946m",
@@ -15409,7 +16337,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104461200010-446m",
@@ -15646,7 +16582,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101321203540-132m",
@@ -15702,7 +16646,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102291203390-229m",
@@ -15745,7 +16697,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104351203360-435m",
@@ -15982,7 +16942,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109471200010-947m",
@@ -16067,7 +17035,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101411203500-141m",
@@ -16170,7 +17146,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101361203610-136m",
@@ -16273,7 +17257,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109481200100-948m",
@@ -16358,7 +17350,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104481200010-448m",
@@ -16594,7 +17594,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102341203400-234m",
@@ -16637,7 +17645,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107571203640-757m",
@@ -16711,7 +17727,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104371203360-437m",
@@ -16948,7 +17972,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102311203390-231m",
@@ -16991,7 +18023,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109501200100-950m",
@@ -17076,7 +18116,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101381203610-138m",
@@ -17183,7 +18231,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109511200010-951m",
@@ -17263,7 +18319,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140211203360-4021m",
@@ -17305,7 +18369,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101451203500-145m",
@@ -17403,7 +18475,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104501200010-450m",
@@ -17639,7 +18719,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104391203360-439m",
@@ -17875,7 +18963,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102361203450-236m",
@@ -17943,7 +19039,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107481200010-748m",
@@ -18011,7 +19115,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101471203500-147m",
@@ -18109,7 +19221,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101401203610-140m",
@@ -18183,7 +19303,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109521200100-952m",
@@ -18268,7 +19396,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109531200010-953m",
@@ -18353,7 +19489,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104521200010-452m",
@@ -18589,7 +19733,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104411203360-441m",
@@ -18826,7 +19978,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140041204230-4004m",
@@ -18911,7 +20071,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101441203610-144m",
@@ -19014,7 +20182,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109551200010-955m",
@@ -19099,7 +20275,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101491203500-149m",
@@ -19202,7 +20386,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109561200100-956m",
@@ -19282,7 +20474,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104541200010-454m",
@@ -19518,7 +20718,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101421203540-142m",
@@ -19579,7 +20787,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102331203390-233m",
@@ -19617,7 +20833,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104431203360-443m",
@@ -19858,7 +21082,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101461203610-146m",
@@ -19932,7 +21164,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101511203500-151m",
@@ -20030,7 +21270,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109581200100-958m",
@@ -20115,7 +21363,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109571200010-957m",
@@ -20200,7 +21456,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102381203400-238m",
@@ -20238,7 +21502,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104561200010-456m",
@@ -20373,7 +21645,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107651203640-765m",
@@ -20447,7 +21727,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107501200010-750m",
@@ -20521,7 +21809,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104451203360-445m",
@@ -20757,7 +22053,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102351203390-235m",
@@ -20795,7 +22099,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101531203500-153m",
@@ -20898,7 +22210,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109601200100-960m",
@@ -20983,7 +22303,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101501203610-150m",
@@ -21081,7 +22409,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109591200010-959m",
@@ -21161,7 +22497,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140051203540-4005m",
@@ -21252,7 +22596,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107521200010-752m",
@@ -21387,7 +22739,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104471203360-447m",
@@ -21623,7 +22983,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102401203400-240m",
@@ -21661,7 +23029,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101481203540-148m",
@@ -21717,7 +23093,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101551203500-155m",
@@ -21820,7 +23204,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101521203610-152m",
@@ -21923,7 +23315,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109611200010-961m",
@@ -22008,7 +23408,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109621200100-962m",
@@ -22093,7 +23501,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102371203390-237m",
@@ -22131,7 +23547,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104491203360-449m",
@@ -22367,7 +23791,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104581200010-458m",
@@ -22604,7 +24036,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104621200010-462m",
@@ -22840,7 +24280,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101541203610-154m",
@@ -22938,7 +24386,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101571203500-157m",
@@ -23036,7 +24492,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109641200100-964m",
@@ -23116,7 +24580,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109631200010-963m",
@@ -23201,7 +24673,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107671203640-767m",
@@ -23275,7 +24755,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102421203400-242m",
@@ -23313,7 +24801,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104511203360-451m",
@@ -23550,7 +25046,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107541200010-754m",
@@ -23625,7 +25129,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102411203390-241m",
@@ -23663,7 +25175,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101591203500-159m",
@@ -23761,7 +25281,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101561203610-156m",
@@ -23864,7 +25392,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109661200100-966m",
@@ -23949,7 +25485,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102719004561203540-456m",
@@ -24081,7 +25625,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109651200010-965m",
@@ -24166,7 +25718,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102441203400-244m",
@@ -24204,7 +25764,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104641200010-464m",
@@ -24440,7 +26008,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140061204230-4006m",
@@ -24525,7 +26101,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104531203360-453m",
@@ -24770,7 +26354,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102431203390-243m",
@@ -24838,7 +26430,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114341203540-1434m",
@@ -24972,7 +26572,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109671200010-967m",
@@ -25052,7 +26660,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101601203610-160m",
@@ -25155,7 +26771,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101611203500-161m",
@@ -25258,7 +26882,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140241203390-4024m",
@@ -25300,7 +26932,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109701200100-970m",
@@ -25385,7 +27025,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104661200010-466m",
@@ -25621,7 +27269,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102461203450-246m",
@@ -25689,7 +27345,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104551203360-455m",
@@ -25925,7 +27589,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101661203610-166m",
@@ -26023,7 +27695,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101631203500-163m",
@@ -26121,7 +27801,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109721200100-972m",
@@ -26206,7 +27894,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109691200010-969m",
@@ -26291,7 +27987,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140291203360-4029m",
@@ -26333,7 +28037,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104681200010-468m",
@@ -26578,7 +28290,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107691203640-769m",
@@ -26653,7 +28373,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104571203360-457m",
@@ -26889,7 +28617,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107561200010-756m",
@@ -26964,7 +28700,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109741200100-974m",
@@ -27044,7 +28788,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101681203610-168m",
@@ -27142,7 +28894,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101651203500-165m",
@@ -27245,7 +29005,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140071203540-4007m",
@@ -27336,7 +29104,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109711200010-971m",
@@ -27421,7 +29197,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107581200010-758m",
@@ -27644,7 +29428,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104591203360-459m",
@@ -27880,7 +29672,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101671203500-167m",
@@ -27983,7 +29783,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102471203390-247m",
@@ -28021,7 +29829,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101701203610-170m",
@@ -28124,7 +29940,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102501203450-250m",
@@ -28192,7 +30016,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109731200010-973m",
@@ -28277,7 +30109,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109761200100-976m",
@@ -28362,7 +30202,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104701200010-470m",
@@ -28599,7 +30447,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102481203400-248m",
@@ -28637,7 +30493,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114291203360-1429m",
@@ -28772,7 +30636,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101721203610-172m",
@@ -28870,7 +30742,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101691203500-169m",
@@ -28968,7 +30848,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104721200010-472m",
@@ -29205,7 +31093,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109781200100-978m",
@@ -29290,7 +31186,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109751200010-975m",
@@ -29370,7 +31274,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102491203390-249m",
@@ -29408,7 +31320,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104611203360-461m",
@@ -29644,7 +31564,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107601200010-760m",
@@ -29718,7 +31646,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101741203610-174m",
@@ -29797,7 +31733,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109801200100-980m",
@@ -29882,7 +31826,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101711203500-171m",
@@ -29980,7 +31932,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140081204230-4008m",
@@ -30065,7 +32025,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109771200010-977m",
@@ -30150,7 +32118,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104741200010-474m",
@@ -30386,7 +32362,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104631203360-463m",
@@ -30563,7 +32547,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107711203640-771m",
@@ -30638,7 +32630,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102511203390-251m",
@@ -30676,7 +32676,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101761203610-176m",
@@ -30779,7 +32787,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107751203500-775m",
@@ -30942,7 +32958,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109791200010-979m",
@@ -31027,7 +33051,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102521203400-252m",
@@ -31065,7 +33097,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109821200100-982m",
@@ -31145,7 +33185,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104761200010-476m",
@@ -31382,7 +33430,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114361203540-1436m",
@@ -31521,7 +33577,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104651203360-465m",
@@ -31757,7 +33821,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107621203610-762m",
@@ -31921,7 +33993,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101731203540-173m",
@@ -32000,7 +34080,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107811203390-781m",
@@ -32122,7 +34210,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109811200010-981m",
@@ -32207,7 +34303,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109841200100-984m",
@@ -32292,7 +34396,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107731203640-773m",
@@ -32366,7 +34478,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104781200010-478m",
@@ -32602,7 +34722,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101771203500-177m",
@@ -32700,7 +34828,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104671203360-467m",
@@ -32936,7 +35072,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102541203400-254m",
@@ -32974,7 +35118,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101781203610-178m",
@@ -33072,7 +35224,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109861200100-986m",
@@ -33157,7 +35317,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109831200010-983m",
@@ -33237,7 +35405,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140091203540-4009m",
@@ -33328,7 +35504,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107641200010-764m",
@@ -33546,7 +35730,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104691203360-469m",
@@ -33722,7 +35914,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107661200010-766m",
@@ -33796,7 +35996,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102531203390-253m",
@@ -33834,7 +36042,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109881200100-988m",
@@ -33919,7 +36135,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107791203500-779m",
@@ -34082,7 +36306,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101801203610-180m",
@@ -34185,7 +36417,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109851200010-985m",
@@ -34270,7 +36510,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140301203390-4030m",
@@ -34312,7 +36560,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104821200010-482m",
@@ -34548,7 +36804,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107771203540-777m",
@@ -34683,7 +36947,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104711203360-471m",
@@ -34920,7 +37192,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104841200010-484m",
@@ -35157,7 +37437,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109871200010-987m",
@@ -35242,7 +37530,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104801203610-480m",
@@ -35427,7 +37723,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109901200100-990m",
@@ -35549,7 +37853,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102561203400-256m",
@@ -35592,7 +37904,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109911203640-991m",
@@ -35714,7 +38034,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104731203360-473m",
@@ -35895,7 +38223,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104861200010-486m",
@@ -36132,7 +38468,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109891200010-989m",
@@ -36217,7 +38561,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107871203390-787m",
@@ -36446,7 +38798,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109921200100-992m",
@@ -36531,7 +38891,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107831203500-783m",
@@ -36689,7 +39057,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140101204230-4010m",
@@ -36774,7 +39150,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104881200010-488m",
@@ -37015,7 +39399,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104751203360-475m",
@@ -37252,7 +39644,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102551203390-255m",
@@ -37290,7 +39690,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107851203500-785m",
@@ -37453,7 +39861,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109941200100-994m",
@@ -37538,7 +39954,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107701200010-770m",
@@ -37673,7 +40097,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104771203360-477m",
@@ -37910,7 +40342,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101821203610-182m",
@@ -37985,7 +40425,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102581203400-258m",
@@ -38023,7 +40471,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104901200010-490m",
@@ -38259,7 +40715,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103251203360-325m",
@@ -38307,7 +40771,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109961200100-996m",
@@ -38434,7 +40906,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109931200010-993m",
@@ -38519,7 +40999,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104921200010-492m",
@@ -38756,7 +41244,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107911203390-791m",
@@ -38920,7 +41416,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104791203360-479m",
@@ -39096,7 +41600,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109971203640-997m",
@@ -39218,7 +41730,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109981200100-998m",
@@ -39298,7 +41818,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140111203540-4011m",
@@ -39389,7 +41917,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109951200010-995m",
@@ -39474,7 +42010,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107681203610-768m",
@@ -39632,7 +42176,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104811203360-481m",
@@ -39869,7 +42421,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107721200010-772m",
@@ -40008,7 +42568,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143741203540-4374m",
@@ -40129,7 +42697,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107891203540-789m",
@@ -40264,7 +42840,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119201200100-1920m",
@@ -40349,7 +42933,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104831203360-483m",
@@ -40585,7 +43177,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104941200010-494m",
@@ -40821,7 +43421,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114381203400-1438m",
@@ -40869,7 +43477,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143811203540-4381m",
@@ -41008,7 +43624,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114311203360-1431m",
@@ -41059,7 +43683,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107951203400-795m",
@@ -41175,7 +43807,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107781200010-778m",
@@ -41333,7 +43973,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710109991200010-999m",
@@ -41413,7 +44061,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143831203400-4383m",
@@ -41641,7 +44297,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119221200100-1922m",
@@ -41726,7 +44390,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104961200010-496m",
@@ -41962,7 +44634,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114331203360-1433m",
@@ -42010,7 +44690,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119231203640-1923m",
@@ -42137,7 +44825,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101841203610-184m",
@@ -42216,7 +44912,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119211200010-1921m",
@@ -42301,7 +45005,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140121204230-4012m",
@@ -42386,7 +45098,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107931203540-793m",
@@ -42521,7 +45241,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119241200100-1924m",
@@ -42601,7 +45329,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107801200010-780m",
@@ -42740,7 +45476,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107991203400-799m",
@@ -42857,7 +45601,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104851203360-485m",
@@ -43093,7 +45845,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143761203540-4376m",
@@ -43214,7 +45974,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107821200010-782m",
@@ -43447,7 +46215,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108231203400-823m",
@@ -43606,7 +46382,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710125701203400-2257m",
@@ -43649,7 +46433,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114401203400-1440m",
@@ -43697,7 +46489,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107741203540-774m",
@@ -43819,7 +46619,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119281200100-1928m",
@@ -43899,7 +46707,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114351203360-1435m",
@@ -44034,7 +46850,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104981200010-498m",
@@ -44275,7 +47099,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143851203400-4385m",
@@ -44498,7 +47330,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104871203360-487m",
@@ -44735,7 +47575,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107971203540-797m",
@@ -44874,7 +47722,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119251200010-1925m",
@@ -44954,7 +47810,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119301200100-1930m",
@@ -45039,7 +47903,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143861200010-4386m",
@@ -45178,7 +48050,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107761203540-776m",
@@ -45305,7 +48185,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107841200010-784m",
@@ -45464,7 +48352,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114371203360-1437m",
@@ -45512,7 +48408,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104891203360-489m",
@@ -45753,7 +48657,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140131203540-4013m",
@@ -45844,7 +48756,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119271200010-1927m",
@@ -45924,7 +48844,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108211203540-821m",
@@ -46059,7 +48987,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119321200100-1932m",
@@ -46144,7 +49080,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107881200010-788m",
@@ -46279,7 +49223,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107901200010-790m",
@@ -46358,7 +49310,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104911203360-491m",
@@ -46534,7 +49494,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108251203500-825m",
@@ -46692,7 +49660,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710125721203400-2259m",
@@ -46735,7 +49711,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119341200100-1934m",
@@ -46815,7 +49799,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119291200010-1929m",
@@ -46900,7 +49892,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107921200010-792m",
@@ -47125,7 +50125,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143781203540-4378m",
@@ -47246,7 +50254,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104931203360-493m",
@@ -47483,7 +50499,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119361200100-1936m",
@@ -47755,7 +50779,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102611203390-261m",
@@ -47793,7 +50825,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107941200010-794m",
@@ -47928,7 +50968,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114421203400-1442m",
@@ -47976,7 +51024,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119331200010-1933m",
@@ -48071,7 +51127,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143731203400-4373m",
@@ -48192,7 +51256,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710104951203360-495m",
@@ -48428,7 +51500,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119371203640-1937m",
@@ -48555,7 +51635,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710140141204230-4014m",
@@ -48640,7 +51728,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107861203540-786m",
@@ -48767,7 +51863,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107981200010-798m",
@@ -48996,7 +52100,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710125741203400-2263m",
@@ -49039,7 +52151,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119381200100-1938m",
@@ -49124,7 +52244,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101791203540-179m",
@@ -49199,7 +52327,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103271203360-327m",
@@ -49247,7 +52383,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143881200010-4388m",
@@ -49386,7 +52530,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143871203540-4387m",
@@ -49525,7 +52677,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114461203540-1446m",
@@ -49660,7 +52820,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119421200100-1942m",
@@ -49745,7 +52913,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108271203400-827m",
@@ -49972,7 +53148,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114411203360-1441m",
@@ -50106,7 +53290,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102651203390-265m",
@@ -50144,7 +53336,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710143801203540-4380m",
@@ -50265,7 +53465,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "home_liner",
+          "name": {
+            "ja": "ＨＬ",
+            "en": "Home Liner",
+            "zhCN": "Home Liner"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101811203500-181m",
@@ -50364,7 +53572,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119391200010-1939m",
@@ -50449,7 +53665,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108221200010-822m",
@@ -50584,7 +53808,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710107961203540-796m",
@@ -50701,7 +53933,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710121200700430-2120f",
@@ -50773,7 +54013,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "rapid",
+          "name": {
+            "ja": "特別快速",
+            "en": "Sp. Rapid",
+            "zhCN": "Sp. Rapid"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114431203360-1443m",
@@ -50912,7 +54160,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710126301203400-2269m",
@@ -50955,7 +54211,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108261200010-826m",
@@ -51089,7 +54353,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119411200010-1941m",
@@ -51174,7 +54446,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119461200100-1946m",
@@ -51259,7 +54539,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101831203540-183m",
@@ -51334,7 +54622,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101921203540-192m",
@@ -51390,7 +54686,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108301200010-830m",
@@ -51524,7 +54828,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119431200010-1943m",
@@ -51604,7 +54916,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102711203390-271m",
@@ -51647,7 +54967,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710114471203360-1447m",
@@ -51698,7 +55026,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119481200100-1948m",
@@ -51783,7 +55119,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710150311203360-5031m",
@@ -52065,7 +55409,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "limited_express",
+          "name": {
+            "ja": "特急",
+            "en": "Ltd. Exp.",
+            "zhCN": "Ltd. Exp."
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102731203400-273m",
@@ -52127,7 +55479,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108341200010-834m",
@@ -52220,7 +55580,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119451200010-1945m",
@@ -52305,7 +55673,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710101871203540-187m",
@@ -52380,7 +55756,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108331203390-833m",
@@ -52503,7 +55887,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119501200100-1950m",
@@ -52583,7 +55975,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710103291203360-329m",
@@ -52631,7 +56031,15 @@
             "diagramIds": [],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108281203540-828m",
@@ -52748,7 +56156,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108291203540-829m",
@@ -52882,7 +56298,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108361200010-836m",
@@ -52957,7 +56381,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710119471200010-1947m",
@@ -53042,7 +56474,15 @@
               }
             ]
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108311203540-831m",
@@ -53128,7 +56568,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108321203540-832m",
@@ -53245,7 +56693,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710102771203390-277m",
@@ -53283,7 +56739,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       },
       {
         "id": "jrcentral-2026102710108381200010-838m",
@@ -53363,7 +56827,15 @@
             ],
             "plannedFormations": []
           }
-        ]
+        ],
+        "trainType": {
+          "code": "local",
+          "name": {
+            "ja": "普通",
+            "en": "Local",
+            "zhCN": "Local"
+          }
+        }
       }
     ]
   },
@@ -53371,7 +56843,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-27",
-    "updatedAt": "2026-10-27T12:15:50+09:00",
+    "updatedAt": "2026-10-27T18:29:10+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -53379,6 +56851,14 @@
       "isMock": false
     },
     "assignments": [
+      {
+        "diagramId": "A142",
+        "rawFormation": "V12",
+        "currentUnits": [
+          "V12"
+        ],
+        "parseStatus": "parsed"
+      },
       {
         "diagramId": "A145",
         "rawFormation": "V4",
@@ -53408,6 +56888,14 @@
         "rawFormation": "V7",
         "currentUnits": [
           "V7"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A149",
+        "rawFormation": "V11",
+        "currentUnits": [
+          "V11"
         ],
         "parseStatus": "parsed"
       },
@@ -53500,6 +56988,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A32",
+        "rawFormation": "T15",
+        "currentUnits": [
+          "T15"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A33",
         "rawFormation": "T1",
         "currentUnits": [
@@ -53512,6 +57008,14 @@
         "rawFormation": "S2",
         "currentUnits": [
           "S2"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A35",
+        "rawFormation": "T5",
+        "currentUnits": [
+          "T5"
         ],
         "parseStatus": "parsed"
       },
@@ -53592,6 +57096,14 @@
         "rawFormation": "N4",
         "currentUnits": [
           "N4"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A55",
+        "rawFormation": "N9",
+        "currentUnits": [
+          "N9"
         ],
         "parseStatus": "parsed"
       },
@@ -53692,6 +57204,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A704",
+        "rawFormation": "F11",
+        "currentUnits": [
+          "F11"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A705",
+        "rawFormation": "F13",
+        "currentUnits": [
+          "F13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A706",
         "rawFormation": "F6",
         "currentUnits": [
@@ -53736,6 +57264,14 @@
         "rawFormation": "F1",
         "currentUnits": [
           "F1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A712",
+        "rawFormation": "F5",
+        "currentUnits": [
+          "F5"
         ],
         "parseStatus": "parsed"
       },
