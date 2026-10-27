@@ -19,6 +19,7 @@ import {
 } from './domain/time'
 import { detectLocale, intlLocale, translate, type MessageKey } from './i18n'
 import type {
+  FormationPrediction,
   FormationSummary,
   Locale,
   RouteMatchType,
@@ -57,6 +58,36 @@ const formationLabel = (summary: FormationSummary): string =>
     : summary.plannedFamilies.length > 0
       ? summary.plannedFamilies.join(' + ')
       : summary.rawFormation || '—'
+
+const predictionPercent = (prediction: FormationPrediction): number =>
+  Math.round(prediction.crossSeatProbability * 100)
+
+const predictionMessage = (prediction: FormationPrediction): MessageKey =>
+  prediction.crossSeatProbability >= 0.7
+    ? 'predictionLikelyCross'
+    : prediction.crossSeatProbability <= 0.3
+      ? 'predictionLikelyLongitudinal'
+      : 'predictionUncertain'
+
+function PredictionNote({ prediction, locale }: { prediction: FormationPrediction; locale: Locale }) {
+  const t = (key: MessageKey, values?: Record<string, string | number>) => translate(locale, key, values)
+  return (
+    <div className="prediction-note">
+      <p className="prediction-headline">
+        <span className="prediction-badge">{t('predicted')}</span>
+        <strong>{t(predictionMessage(prediction), { percent: predictionPercent(prediction) })}</strong>
+      </p>
+      <p>
+        {t('predictionBasis', {
+          days: prediction.observedDays,
+          from: prediction.trainingFrom,
+          to: prediction.trainingTo,
+          formation: prediction.likelyFamilies.join(' + '),
+        })}
+      </p>
+    </div>
+  )
+}
 
 interface TrainCardProps {
   result: SearchResult
@@ -152,6 +183,11 @@ function TrainCard({
                         {legSummary?.basis === 'planned' && (
                           <span className="journey-planned-badge">{t('planned')}</span>
                         )}
+                        {legSummary?.prediction && (
+                          <span className="journey-prediction-badge">
+                            {t('predictionShort', { percent: predictionPercent(legSummary.prediction) })}
+                          </span>
+                        )}
                       </div>
                     </li>
                   )
@@ -187,6 +223,7 @@ function TrainCard({
               ? t('carCount', { cross: summary.crossSeatCarCount, total: summary.totalCarCount })
               : t('unknown')}
           </p>
+          {summary.prediction && <PredictionNote prediction={summary.prediction} locale={locale} />}
         </div>
       </div>
 
@@ -275,7 +312,7 @@ export default function App() {
       const entry = history?.dates.find((item) => item.serviceDate === selectedDate)
       if (entry) {
         setHistoryLoading(true)
-        loadHistoricalData(entry, baseData.formations)
+        loadHistoricalData(entry, baseData)
           .then((loaded) => { if (active) setData(loaded) })
           .catch(() => { if (active) setHistoryError(true) })
           .finally(() => { if (active) setHistoryLoading(false) })
@@ -310,6 +347,8 @@ export default function App() {
   const results = useMemo(
     () => {
       if (!data || sameStation || timetableStale || historyLoading || historyError) return []
+      // The archive model describes real diagrams, so fixture timetables get no estimate.
+      const formationModel = data.timetable.isFixture ? null : data.formationModel
       const journeyPlanner = createScheduledJourneyPlanner(data.timetable, selectedWeekend)
       return searchUpcomingTrains(
         data.timetable,
@@ -325,6 +364,7 @@ export default function App() {
             data.timetable.stations,
             alignedLatest,
             data.formations.formations,
+            formationModel,
           )
           return { result, summary }
         })
@@ -359,6 +399,7 @@ export default function App() {
               data.timetable.stations,
               alignedLatest,
               data.formations.formations,
+              formationModel,
             ),
           ) ?? []
           return { result, summary, journey, journeyLegSummaries }
@@ -624,6 +665,7 @@ export default function App() {
         <footer className="site-footer">
           <p className="independent-note">{t('independentNotice')}</p>
           <p>{t('firstLegNote')}</p>
+          {data.formationModel && !data.timetable.isFixture && <p>{t('predictionNote')}</p>}
           <p>
             {data.timetable.source.url ? (
               <a href={data.timetable.source.url} target="_blank" rel="noreferrer">

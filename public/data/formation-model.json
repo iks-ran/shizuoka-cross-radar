@@ -1,0 +1,1751 @@
+{
+  "schemaVersion": 1,
+  "timeZone": "Asia/Tokyo",
+  "method": "diagram-frequency",
+  "minimumObservedDays": 3,
+  "trainingDates": [
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25",
+    "2026-10-26",
+    "2026-10-27"
+  ],
+  "diagrams": [
+    {
+      "diagramId": "A21",
+      "observedDays": 15,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 10
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 3
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A22",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 23
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A23",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 23
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 4
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A24",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 23
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 4
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A25",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 23
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A26",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 22
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A27",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A28",
+      "observedDays": 15,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A29",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 4
+        }
+      ]
+    },
+    {
+      "diagramId": "A30",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 5
+        }
+      ]
+    },
+    {
+      "diagramId": "A31",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 5
+        }
+      ]
+    },
+    {
+      "diagramId": "A32",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 4
+        }
+      ]
+    },
+    {
+      "diagramId": "A33",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 4
+        }
+      ]
+    },
+    {
+      "diagramId": "A34",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 4
+        }
+      ]
+    },
+    {
+      "diagramId": "A35",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 4
+        }
+      ]
+    },
+    {
+      "diagramId": "A36",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A37",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 18
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A38",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 21
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A39",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 21
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A40",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 22
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A41",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "T"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A51",
+      "observedDays": 25,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 15
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 10
+        }
+      ]
+    },
+    {
+      "diagramId": "A52",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 18
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 12
+        }
+      ]
+    },
+    {
+      "diagramId": "A53",
+      "observedDays": 21,
+      "outcomes": [
+        {
+          "families": [
+            "S"
+          ],
+          "days": 12
+        },
+        {
+          "families": [
+            "N"
+          ],
+          "days": 9
+        }
+      ]
+    },
+    {
+      "diagramId": "A54",
+      "observedDays": 23,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 13
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 10
+        }
+      ]
+    },
+    {
+      "diagramId": "A55",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 18
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 10
+        }
+      ]
+    },
+    {
+      "diagramId": "A56",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 11
+        }
+      ]
+    },
+    {
+      "diagramId": "A57",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 16
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 12
+        }
+      ]
+    },
+    {
+      "diagramId": "A58",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 17
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 12
+        }
+      ]
+    },
+    {
+      "diagramId": "A59",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "N"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "S"
+          ],
+          "days": 9
+        }
+      ]
+    },
+    {
+      "diagramId": "A61",
+      "observedDays": 18,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 18
+        }
+      ]
+    },
+    {
+      "diagramId": "A62",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 30
+        }
+      ]
+    },
+    {
+      "diagramId": "A63",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 29
+        }
+      ]
+    },
+    {
+      "diagramId": "A64",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 29
+        }
+      ]
+    },
+    {
+      "diagramId": "A65",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 28
+        }
+      ]
+    },
+    {
+      "diagramId": "A66",
+      "observedDays": 16,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 16
+        }
+      ]
+    },
+    {
+      "diagramId": "A67",
+      "observedDays": 21,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 21
+        }
+      ]
+    },
+    {
+      "diagramId": "A68",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 30
+        }
+      ]
+    },
+    {
+      "diagramId": "A69",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 29
+        }
+      ]
+    },
+    {
+      "diagramId": "A70",
+      "observedDays": 19,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 19
+        }
+      ]
+    },
+    {
+      "diagramId": "A71",
+      "observedDays": 18,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 18
+        }
+      ]
+    },
+    {
+      "diagramId": "A72",
+      "observedDays": 26,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 26
+        }
+      ]
+    },
+    {
+      "diagramId": "A73",
+      "observedDays": 22,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 22
+        }
+      ]
+    },
+    {
+      "diagramId": "A74",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 29
+        }
+      ]
+    },
+    {
+      "diagramId": "A75",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "U"
+          ],
+          "days": 30
+        }
+      ]
+    },
+    {
+      "diagramId": "A81",
+      "observedDays": 4,
+      "outcomes": [
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 2
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A82",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 9
+        },
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 4
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 2
+        },
+        {
+          "families": [
+            "L",
+            "L"
+          ],
+          "days": 1
+        }
+      ]
+    },
+    {
+      "diagramId": "A83",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 9
+        },
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 4
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 2
+        },
+        {
+          "families": [
+            "L",
+            "L"
+          ],
+          "days": 1
+        }
+      ]
+    },
+    {
+      "diagramId": "A84",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 9
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 4
+        },
+        {
+          "families": [
+            "L",
+            "L"
+          ],
+          "days": 1
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 1
+        }
+      ]
+    },
+    {
+      "diagramId": "A85",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A86",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A87",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A88",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 6
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A89",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 9
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A90",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 5
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A91",
+      "observedDays": 30,
+      "outcomes": [
+        {
+          "families": [
+            "K",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "K",
+            "K"
+          ],
+          "days": 7
+        },
+        {
+          "families": [
+            "K",
+            "L"
+          ],
+          "days": 4
+        },
+        {
+          "families": [
+            "W",
+            "W"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A141",
+      "observedDays": 25,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 22
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A142",
+      "observedDays": 18,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 16
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A143",
+      "observedDays": 12,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 10
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A144",
+      "observedDays": 23,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A145",
+      "observedDays": 29,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 24
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 5
+        }
+      ]
+    },
+    {
+      "diagramId": "A146",
+      "observedDays": 23,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 18
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 5
+        }
+      ]
+    },
+    {
+      "diagramId": "A147",
+      "observedDays": 26,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 22
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 4
+        }
+      ]
+    },
+    {
+      "diagramId": "A148",
+      "observedDays": 27,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 24
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A149",
+      "observedDays": 22,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 19
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A150",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 25
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A151",
+      "observedDays": 23,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 21
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 2
+        }
+      ]
+    },
+    {
+      "diagramId": "A152",
+      "observedDays": 11,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 8
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A153",
+      "observedDays": 21,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 1
+        }
+      ]
+    },
+    {
+      "diagramId": "A154",
+      "observedDays": 23,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 20
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 3
+        }
+      ]
+    },
+    {
+      "diagramId": "A155",
+      "observedDays": 21,
+      "outcomes": [
+        {
+          "families": [
+            "V"
+          ],
+          "days": 17
+        },
+        {
+          "families": [
+            "L"
+          ],
+          "days": 4
+        }
+      ]
+    },
+    {
+      "diagramId": "A701",
+      "observedDays": 23,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 23
+        }
+      ]
+    },
+    {
+      "diagramId": "A702",
+      "observedDays": 26,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 26
+        }
+      ]
+    },
+    {
+      "diagramId": "A703",
+      "observedDays": 21,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 21
+        }
+      ]
+    },
+    {
+      "diagramId": "A704",
+      "observedDays": 18,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 18
+        }
+      ]
+    },
+    {
+      "diagramId": "A705",
+      "observedDays": 23,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 23
+        }
+      ]
+    },
+    {
+      "diagramId": "A706",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 28
+        }
+      ]
+    },
+    {
+      "diagramId": "A707",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 28
+        }
+      ]
+    },
+    {
+      "diagramId": "A708",
+      "observedDays": 24,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 24
+        }
+      ]
+    },
+    {
+      "diagramId": "A709",
+      "observedDays": 21,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 21
+        }
+      ]
+    },
+    {
+      "diagramId": "A710",
+      "observedDays": 27,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 27
+        }
+      ]
+    },
+    {
+      "diagramId": "A711",
+      "observedDays": 28,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 28
+        }
+      ]
+    },
+    {
+      "diagramId": "A712",
+      "observedDays": 22,
+      "outcomes": [
+        {
+          "families": [
+            "F"
+          ],
+          "days": 22
+        }
+      ]
+    }
+  ]
+}

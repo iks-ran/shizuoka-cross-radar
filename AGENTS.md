@@ -19,7 +19,7 @@ Shizuoka Cross-Seat Radar is a static React site that helps passengers find cros
 - Work on one feature at a time; `feature_list.json` is the canonical feature state.
 - Keep the product static: the browser may read `public/data/*.json` but must not call source websites.
 - Treat Asia/Tokyo as the business timezone in Python, TypeScript, fixtures, and tests.
-- Never guess unverified formations; preserve `unknown` and stale-data behavior.
+- Never present unverified formations as confirmed; preserve `unknown` and stale-data behavior. Archive-based predictions stay separately labeled and never change seat status or filters.
 - Data generation must validate before atomic replacement and preserve the last good snapshot on failure.
 - Do not weaken checks or mark work passing without evidence from the tested tree.
 - Require user approval for deployment, destructive actions, or enabling an external data source.

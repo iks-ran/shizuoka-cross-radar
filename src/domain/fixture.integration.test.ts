@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import formationsJson from '../../public/data/formations.json'
 import latestJson from '../../public/data/latest.json'
+import formationModelJson from '../../public/data/formation-model.json'
+import historyIndexJson from '../../public/data/history-index.json'
 import timetableJson from '../../public/data/timetable.json'
 import journeyRegressionJson from '../../data/fixtures/journey-763m.sample.json'
-import type { FormationsData, LatestData, TimetableData } from '../types'
+import type { FormationModelData, FormationsData, LatestData, TimetableData } from '../types'
 import { formationAtStation } from './classification'
 import { createScheduledJourneyPlanner } from './journey'
 import { searchUpcomingTrains, serviceRunsToday } from './search'
@@ -58,6 +60,25 @@ describe('checked-in static data', () => {
         expect(summary.crossSeatCarCount).not.toBeNull()
         expect(summary.totalCarCount).not.toBeNull()
         expect(summary.crossSeatCarCount ?? 0).toBeLessThanOrEqual(summary.totalCarCount ?? 0)
+      }
+    }
+  })
+
+  it('attaches checked-in archive estimates only to unknown diagrammed segments', () => {
+    const model = formationModelJson as FormationModelData
+    expect(model.trainingDates).toEqual(historyIndexJson.dates.map((entry) => entry.serviceDate).sort())
+    for (const service of timetable.services) {
+      for (const segment of service.operationSegments) {
+        const summary = formationAtStation(
+          service, segment.fromStationId, timetable.stations, latest, formations.formations, model,
+        )
+        if (!summary.prediction) continue
+        expect(summary.status).toBe('unknown')
+        expect(segment.diagramIds.length).toBeGreaterThan(0)
+        expect(summary.prediction.crossSeatProbability).toBeGreaterThanOrEqual(0)
+        expect(summary.prediction.crossSeatProbability).toBeLessThanOrEqual(1)
+        expect(summary.prediction.observedDays).toBeGreaterThanOrEqual(model.minimumObservedDays)
+        expect(summary.prediction.likelyFamilies.length).toBeGreaterThan(0)
       }
     }
   })

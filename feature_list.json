@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Shizuoka Cross-Seat Radar",
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-27",
   "rules": {
     "single_active_feature": true,
     "passing_requires_evidence": true
@@ -13,6 +13,41 @@
     "passing": "Required verification passed and evidence is recorded."
   },
   "features": [
+    {
+      "id": "RADAR-010",
+      "priority": 15,
+      "title": "Archive-based predictions for unknown formations",
+      "behavior": "When a displayed segment's formation is unknown because one or more operating diagrams lack a current assignment, passengers see a separately labeled cross-seat probability estimated from how often each diagram ran with each formation in the 30-day archive. Confirmed seat status, unknown status, and result filters are unchanged.",
+      "depends_on": [
+        "RADAR-009"
+      ],
+      "in_scope": [
+        "Deterministic per-diagram formation-frequency model generated from the validated archive",
+        "Model validation and archive-consistency checks",
+        "Localized prediction display on result cards and itinerary legs"
+      ],
+      "out_of_scope": [
+        "Predicting services with no operating diagram (no training labels exist)",
+        "Classifying unverified families such as F (373 series) without seating evidence",
+        "Using predictions to hide or rank results",
+        "Any new external data source"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "Model generation, validation, archive consistency, prediction logic, localized UI, build, and production smoke including formation-model.json pass."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-10-27",
+          "repository_state": "working tree based on 0e6405e",
+          "command": "npm run verify",
+          "result": "Passed 57 Python tests, static/archive validation with an exact archive-consistency check of formation-model.json, 74 frontend tests, production build, and preview smoke for all 30 daily bundles plus the model. A rolling Git-history backtest (63 dates, 12067 known segment-days) scored 87.6% cross/no-cross accuracy with Brier 0.088; likely-cross labels were cross 92% of the time and likely-longitudinal 7%. Headless Chromium showed labeled live estimates on mobile cards and itinerary legs."
+        }
+      ]
+    },
     {
       "id": "REPO-002",
       "priority": 14,

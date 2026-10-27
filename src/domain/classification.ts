@@ -1,8 +1,12 @@
 import type {
   FormationDefinition,
+  FormationModelData,
+  FormationPrediction,
   FormationSummary,
   LatestData,
+  OperationSegment,
   RouteMatchType,
+  SeatStatus,
   Station,
   TrainService,
 } from '../types'
@@ -96,23 +100,27 @@ export const classifyFormation = (
   return { status, ...basisFields, rawFormation, crossSeatCarCount, totalCarCount }
 }
 
-export const formationAtStation = (
+const segmentAtStation = (
   service: TrainService,
   stationId: string,
   stations: Station[],
-  latest: LatestData | null,
-  definitions: FormationDefinition[],
-): FormationSummary => {
+): OperationSegment | undefined => {
   const stationOrder = new Map(stations.map((station) => [station.id, station.order]))
   const targetOrder = stationOrder.get(stationId)
-  if (targetOrder === undefined) return unknownSummary()
+  if (targetOrder === undefined) return undefined
 
-  const segment = service.operationSegments.find((candidate) => {
+  return service.operationSegments.find((candidate) => {
     const from = stationOrder.get(candidate.fromStationId)
     const to = stationOrder.get(candidate.toStationId)
     return from !== undefined && to !== undefined && targetOrder >= Math.min(from, to) && targetOrder <= Math.max(from, to)
   })
-  if (!segment) return unknownSummary()
+}
+
+const formationForSegment = (
+  segment: OperationSegment,
+  latest: LatestData | null,
+  definitions: FormationDefinition[],
+): FormationSummary => {
   if (segment.diagramIds.length === 0) return unknownSummary()
 
   const assignmentMap = new Map((latest?.assignments ?? []).map((assignment) => [assignment.diagramId, assignment]))
@@ -146,4 +154,87 @@ export const formationAtStation = (
     resolvedPlannedFamilies.join(' + '),
     'planned',
   )
+}
+
+const CROSS_SEAT_STATUSES = new Set<SeatStatus>(['full_convertible', 'partial_cross', 'box_fixed'])
+
+const familyOf = (code: string): string => /^([A-Z]+)/.exec(code)?.[1] ?? code
+
+/**
+ * Estimates the chance of cross seats from how often each unassigned diagram ran
+ * with each formation family in the archive. Diagrams reported today keep their
+ * reported family. Diagrams are treated as independent of one another.
+ */
+export const predictSegmentFormation = (
+  segment: OperationSegment,
+  latest: LatestData | null,
+  definitions: FormationDefinition[],
+  model: FormationModelData,
+): FormationPrediction | null => {
+  if (segment.diagramIds.length === 0 || model.trainingDates.length === 0) return null
+  const assignmentMap = new Map((latest?.assignments ?? []).map((assignment) => [assignment.diagramId, assignment]))
+  const history = new Map(model.diagrams.map((diagram) => [diagram.diagramId, diagram]))
+  const choices: Array<Array<{ families: string[]; probability: number }>> = []
+  let observedDays = Number.POSITIVE_INFINITY
+  for (const diagramId of segment.diagramIds) {
+    const current = assignmentMap.get(diagramId)
+    if (current?.parseStatus === 'parsed') {
+      choices.push([{ families: current.currentUnits.map(familyOf), probability: 1 }])
+      continue
+    }
+    const record = history.get(diagramId)
+    if (!record || record.observedDays < model.minimumObservedDays) return null
+    observedDays = Math.min(observedDays, record.observedDays)
+    choices.push(record.outcomes.map((outcome) => ({
+      families: outcome.families,
+      probability: outcome.days / record.observedDays,
+    })))
+  }
+  // Nothing needed predicting: the segment is fully reported, e.g. with unverified F units.
+  if (!Number.isFinite(observedDays)) return null
+
+  let cross = 0
+  let classified = 0
+  let likely = { families: [] as string[], probability: 0 }
+  const visit = (index: number, families: string[], probability: number): void => {
+    if (index === choices.length) {
+      const { status } = classifyFormation(families, definitions)
+      if (status === 'unknown') return
+      classified += probability
+      if (CROSS_SEAT_STATUSES.has(status)) cross += probability
+      if (probability > likely.probability) likely = { families, probability }
+      return
+    }
+    for (const choice of choices[index]) {
+      visit(index + 1, [...families, ...choice.families], probability * choice.probability)
+    }
+  }
+  visit(0, [], 1)
+  // Mostly unclassifiable history, such as unverified F units, gives no estimate.
+  if (classified <= 0.5) return null
+
+  return {
+    crossSeatProbability: cross / classified,
+    likelyFamilies: likely.families,
+    observedDays,
+    trainingFrom: model.trainingDates[0],
+    trainingTo: model.trainingDates[model.trainingDates.length - 1],
+  }
+}
+
+export const formationAtStation = (
+  service: TrainService,
+  stationId: string,
+  stations: Station[],
+  latest: LatestData | null,
+  definitions: FormationDefinition[],
+  model: FormationModelData | null = null,
+): FormationSummary => {
+  const segment = segmentAtStation(service, stationId, stations)
+  if (!segment) return unknownSummary()
+
+  const summary = formationForSegment(segment, latest, definitions)
+  if (summary.status !== 'unknown' || !model) return summary
+  const prediction = predictSegmentFormation(segment, latest, definitions, model)
+  return prediction ? { ...summary, prediction } : summary
 }

@@ -117,6 +117,43 @@ it('defaults to today on reload when today has become available', async () => {
   expect(screen.queryByText('Historical observation')).not.toBeInTheDocument()
 })
 
+it('labels an unknown formation with an archive estimate without changing its status', async () => {
+  const seating: FormationsData = { ...formations, formations: [
+    { family: 'S', series: '313-8000', carCount: 3, crossSeatCarCount: 3, layout: 'convertible', verified: true, evidenceUrl: null },
+    { family: 'T', series: '313-2500', carCount: 3, crossSeatCarCount: 0, layout: 'longitudinal', verified: true, evidenceUrl: null },
+  ] }
+  const model = {
+    ...root, method: 'diagram-frequency', minimumObservedDays: 3,
+    trainingDates: ['2026-09-06', '2026-09-07', '2026-09-08', '2026-09-09'],
+    diagrams: [{ diagramId: 'A1', observedDays: 4, outcomes: [{ families: ['S'], days: 3 }, { families: ['T'], days: 1 }] }],
+  }
+  const fetcher = mockData(null, '2026-09-10')
+  const original = fetcher.getMockImplementation()!
+  fetcher.mockImplementation(async (input) => {
+    const url = String(input)
+    if (url.endsWith('formation-model.json')) return response(model)
+    if (url.endsWith('formations.json')) return response(seating)
+    return original(input)
+  })
+  render(<App />)
+  expect(await screen.findByText('123M')).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: 'Formation unknown' })).toBeInTheDocument()
+  expect(screen.getByText('Prediction')).toBeInTheDocument()
+  expect(screen.getByText('Likely cross seats · 75%')).toBeInTheDocument()
+  expect(screen.getByText(/Estimated from 4 recorded days \(2026-09-06 – 2026-09-09\); most often S\./)).toBeInTheDocument()
+  expect(screen.getByText(/Predictions for unknown formations count how often/)).toBeInTheDocument()
+  fireEvent.click(screen.getByLabelText('Show direct trains with unknown seating'))
+  expect(screen.queryByText('123M')).not.toBeInTheDocument()
+})
+
+it('shows no estimate when the model cannot be loaded', async () => {
+  mockData(null, '2026-09-10')
+  render(<App />)
+  expect(await screen.findByText('123M')).toBeInTheDocument()
+  expect(screen.queryByText('Prediction')).not.toBeInTheDocument()
+  expect(screen.queryByText(/Predictions for unknown formations/)).not.toBeInTheDocument()
+})
+
 it('searches Friday’s historical weekday schedule on Saturday', async () => {
   vi.setSystemTime(new Date('2026-09-12T00:30:00+09:00'))
   mockData(null, '2026-09-11')
@@ -135,10 +172,10 @@ it('handles an empty archive and an expired last-good timetable', async () => {
 })
 
 it('rejects date-mismatched bundles and unsafe index paths', async () => {
-  await expect(loadHistoricalData(entry('2026-09-09'), formations,
+  await expect(loadHistoricalData(entry('2026-09-09'), { formations, formationModel: null },
     vi.fn(async () => response(bundle('2026-09-08'))))).rejects.toThrow('Invalid historical')
   expect(await loadHistoryIndex(vi.fn(async () => response({ ...root, dates: [{ ...entry('2026-09-09'), path: '../other.json' }] })))).toBeNull()
-  await expect(loadHistoricalData(entry('2026-09-09'), formations,
+  await expect(loadHistoricalData(entry('2026-09-09'), { formations, formationModel: null },
     vi.fn(async () => new Response('{broken')))).rejects.toThrow()
 })
 

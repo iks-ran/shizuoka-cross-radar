@@ -128,6 +128,32 @@ export interface ScheduledJourney {
   featuredDurationMinutes: number
 }
 
+export interface FormationModelDiagram {
+  diagramId: string
+  observedDays: number
+  outcomes: Array<{
+    families: string[]
+    days: number
+  }>
+}
+
+export interface FormationModelData {
+  schemaVersion: 1
+  timeZone: 'Asia/Tokyo'
+  method: 'diagram-frequency'
+  minimumObservedDays: number
+  trainingDates: string[]
+  diagrams: FormationModelDiagram[]
+}
+
+export interface FormationPrediction {
+  crossSeatProbability: number
+  likelyFamilies: string[]
+  observedDays: number
+  trainingFrom: string
+  trainingTo: string
+}
+
 export interface FormationSummary {
   status: SeatStatus
   basis: 'current' | 'planned' | 'unknown'
@@ -136,4 +162,6 @@ export interface FormationSummary {
   rawFormation: string | null
   crossSeatCarCount: number | null
   totalCarCount: number | null
+  /** Archive-based estimate for an unknown segment; never changes status. */
+  prediction?: FormationPrediction
 }

@@ -2,14 +2,14 @@
 
 ## Current Verified State
 
-- Repository state: reliability fix `296a510` published to `main`; updater collected snapshot `fb21dfa` and the resulting Pages deployment passed
+- Repository state: local `main` fast-forwarded from `5e27be9` to updater snapshot `0e6405e` (119 bot data commits); `RADAR-010` committed on top of it and pushed to `main` with user approval on 2026-10-27
 - Standard bootstrap: `scripts/bootstrap.sh`
 - Standard start: `npm run dev`
 - Standard verification: `npm run verify`
-- Baseline result: `npm run verify` passed on 2026-10-02 with 50 Python tests, archive/data validation, 64 frontend tests, build, and production smoke for all 30 daily bundles
-- Active feature: none; `REPO-002` passed local and GitHub Actions verification
+- Baseline result: `npm run verify` passed on 2026-10-27 with 57 Python tests, archive/data/formation-model validation, 74 frontend tests, build, and production smoke for all 30 daily bundles plus `formation-model.json`
+- Active feature: none; `RADAR-010` passed local full verification and was pushed; hosted Pages verification is the remaining check
 - Current blocker: none
-- Next best action: monitor subsequent scheduled runs, especially unpublished early-morning source dates; the updated workflows are deployed
+- Next best action: confirm the Pages run for the `RADAR-010` push and that the next updater run regenerates `formation-model.json` and Pages deploys. The largest remaining unknown source is F (373 series), which needs evidence-backed seating metadata rather than prediction
 
 ## Verified Behavior
 
@@ -29,6 +29,7 @@
 | `RADAR-008` | `npm run verify` passed with one localized Tokaido corridor identifier, no duplicate subtitle, independent-service disclosure, all 55 frontend tests, build, and smoke; headless Firefox covered mobile, desktop, direct, and four-leg indirect layouts | working tree based on `27844c7` |
 | `RADAR-009` | `npm run verify` passed with 27 Python tests, 64 frontend tests, archive validation, build, and production smoke for 15 dated bundles; Git backfill recovered August 27–September 8 | working tree based on `25fbadf`; recovered records from `origin/main` at `e24ee78` |
 | `REPO-002` | Local and hosted full verification passed with 50 Python tests, 64 frontend tests, build, and smoke for 30 bundles; Pages runs `37006529446`/`37006717296` and live updater `37006657728` passed | fix `296a510`; updater snapshot `fb21dfa` |
+| `RADAR-010` | `npm run verify` passed with 57 Python tests, archive-consistent model validation, 74 frontend tests, build, and smoke including `formation-model.json`; rolling Git-history backtest scored 87.6% cross/no-cross accuracy (Brier 0.088); headless Chromium showed live estimates on mobile cards and itinerary legs | working tree based on `0e6405e` |
 
 ## Known Failures and Risks
 
@@ -41,12 +42,16 @@
 - GitHub's observed trigger frequency is much lower than the half-hour cron: the latest seven-day inspection contained 35 updater runs, with a median gap of about 4 hours 45 minutes. Delayed/dropped triggers are outside these repository fixes; the half-hour schedule and UI check estimates remain unchanged.
 - Source outages can still exhaust bounded retries and fail visibly. A successful no-update result means only that source dates are unpublished and the existing real snapshot pair/archive passed validation; it does not relabel old data as fresh.
 - Updated workflows have passed hosted full verification, a live manual data refresh, and Pages deployment. The no-update path is covered by offline real-parser regressions; its next naturally unpublished scheduled run remains to be observed.
+- Formation predictions assume each diagram ID keeps its meaning. Snapshots do not record `OPERATION_REVISION`, so for up to 30 days after a revision change the model would mix old and new diagram histories; reset or split the archive-derived model when changing the revision.
+- Predictions treat coupled diagrams as independent and ignore unit rotation and weekday/holiday differences (a day-class split did not improve the backtest). The backtest hid assignments of known segments; diagrams that are actually unreported may differ, for example during substitutions.
+- About 85% of unknown segment-days still have no estimate: services without an operating diagram (JR East through trains, Odoriko, Sunrise, Ogaki-depot services; about 26 per day) have no training labels, and F (373 series; about 31 per day) has unverified seating metadata.
 - Complete-route calculations use scheduled times only. Platform movement, delays, and guaranteed connections are unavailable, so a departure at the same minute as arrival is considered schedulable but is not guaranteed physically feasible.
 
 ## Decisions
 
 - The browser reads only generated static JSON; Python adapters own all source-site access.
-- Unknown or unverified formations remain `unknown` rather than receiving inferred seating.
+- Unknown or unverified formations remain `unknown`. User decision 2026-10-27: an unknown segment may additionally show a separately labeled archive-frequency estimate; it never changes seat status, car counts, result filters, or indirect-result eligibility.
+- The prediction model is a per-diagram formation-family count over the validated 30-day archive. `publish_history` regenerates `formation-model.json` after every archive publication, validation requires it to equal the model rebuilt from the published archive, and the browser treats it as optional. Estimates require at least three observed days for every unreported diagram, are normalized over verified-seating outcomes, and are withheld when unverified outcomes dominate. Fixture timetables never receive estimates.
 - Failed data generation must leave the last valid JSON intact.
 - Historical timetable/formation pairs use immutable content-addressed bundles. The validated index is published last, and obsolete previously indexed files are pruned afterward. The archive retains today and the preceding 29 JST dates.
 - User preference: always maintain the rolling last-30-calendar-day window. Scheduled updates use full Git history to backfill missing recorded dates. Recovery validates same-commit pairs, preserves existing archived dates and first observations, rejects shallow history, and does not relabel or invent missing data.
@@ -73,6 +78,18 @@
 
 ## Latest Session
 
+- Date: 2026-10-27
+- Goal: user requested a simple model that predicts unknown formations, using the data stored on GitHub
+- Baseline: fetched `origin/main` (SSH fetch ran outside the command sandbox because `~/.ssh` is sandbox-protected) and fast-forwarded the clean checkout from `5e27be9` to `0e6405e`; `scripts/bootstrap.sh` passed with 50 Python and 64 frontend tests.
+- Analysis: in the September 28–October 27 archive, 2042 unknown segment-days split into F (373 series) assignments with unverified seating (940), services without an operating diagram (775), and diagrams without a complete current assignment (327). Only the last group has training labels.
+- Model evaluation: extracted the newest collected pair for each of 63 dates (August 26–October 27) from Git history. A rolling backtest trained on the 30 preceding days and hid each known segment's assignment (12067 segment-days, September 25 onward): cross/no-cross accuracy 87.6%, Brier 0.088. Segments labeled likely cross (≥70%) actually had cross seats 92% of the time, likely longitudinal (≤30%) 7%, and uncertain 46%. Weekday/holiday splitting and all-history training did not improve results, so the production model uses the rolling archive without day classes. The scratch evaluation scripts were not committed.
+- Changed: added `scripts/formation_model.py` (build, validate, archive-consistency check, CLI), regenerated the model from `publish_history`, validated it in `scripts.validation`, served and smoke-checked `formation-model.json`, and added browser loading, segment prediction, and localized card/leg/footer labels. Updated `AGENTS.md` to allow labeled predictions while still forbidding unverified formations being presented as confirmed.
+- Coverage: the checked-in model covers 83 diagrams over 30 dates; about 15% of archived unknown segment-days (roughly ten per day) receive an estimate.
+- Verification: `npm run verify` passed with 57 Python tests, static/archive/model validation, 74 frontend tests, production build, and preview smoke for 30 bundles plus the model. Headless Chromium against the production preview showed live estimates (for example 770M, 47%, and an itinerary-leg badge) at mobile width.
+- Publication: the user approved commit and push to `main`, which triggers the existing Pages workflow. No workflow change was needed; the existing updater regenerates the model through `publish_history`.
+
+## Previous Session
+
 - Date: 2026-10-02
 - Goal: inspect and fix recurring GitHub Actions failures
 - Inspection: all 467 available runs (August 26–October 2) included 54 updater failures and eight Pages failures. Updater failures comprised 42 unpublished/empty/mismatched-date cases, 11 source timeouts, and one GitHub `commit_refs` rejection. Pages failures comprised five fixed-route mismatches, one 1.5-second performance-budget failure, and two historical seat-category assertion failures.
@@ -85,15 +102,3 @@
 - Hosted updater: dispatched [data run `37006657728`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006657728) once to verify the revised workflow. All steps passed, preserving the existing archive and pushing snapshot `fb21dfa` with 416 services and 65 assignments. Fast-forwarded the local checkout to that collected snapshot.
 - Follow-up deployment: [Pages run `37006717296`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/37006717296) detected the changed data, passed 50 Python tests, 64 frontend tests, production build and smoke for all 30 bundles, then deployed successfully.
 - Next action: monitor later scheduled no-update/update runs. Upstream publication timing and GitHub schedule delays remain external limits.
-
-## Previous Session
-
-- Date: 2026-09-10
-- Goal: resolve the midnight data gap with historical date selection and useful availability information
-- Changed: added immutable paired daily archives, index validation and workflow retention, a localized date selector with automatic fallback, historical observation labels, and separate yesterday-based estimate / next scheduled check messages. Added offline archive seeding, Git-history backfill, full-depth workflow checkout, explicit 30-date coverage display, and extended production smoke coverage.
-- Live evidence: the existing formation feed exposed September 5–9, but matching official corridor coverage passed only for September 9. September 10 assignments were still unpublished. Archived September 9 and the saved August 26 pair; refreshed compatibility snapshots to September 9. First-release observations remain null for these historical imports.
-- Backfill evidence: fetched `origin/main` at `e24ee78` and recovered 13 missing dates (August 27–September 8). All 15 days from August 26 through September 9 now have validated pairs. A repeated backfill recovered zero dates and preserved existing records. Before the user-requested push, rebased the implementation onto `e24ee78`, resolving only the two compatibility snapshot timestamps in favor of the newer validated data.
-- Verification run: `npm run verify` passed with 27 Python tests, static/archive validation, 64 frontend tests, production build, and preview smoke serving the index and all 15 bundles. Regressions additionally cover newest valid Git pairs, mismatched/fixture rejection, shallow-history rejection, idempotent recovery, and disabled unrecorded dates.
-- Artifacts: `.tmp/preview-smoke.log` and build/test caches are ignored verification artifacts.
-- Publication: user requested commit and push to `main`, which triggers the existing Pages workflow. Local verification does not establish deployment success.
-- Next action: check Pages workflow results after push; scheduled updates will retain the rolling archive and collect first-release observations automatically.

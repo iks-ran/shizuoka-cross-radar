@@ -1,4 +1,4 @@
-import type { FormationsData, LatestData, TimetableData } from './types'
+import type { FormationModelData, FormationsData, LatestData, TimetableData } from './types'
 import { getTokyoDate } from './domain/time'
 
 export interface StaticData {
@@ -6,6 +6,7 @@ export interface StaticData {
   formations: FormationsData
   latest: LatestData | null
   latestLoadFailed: boolean
+  formationModel: FormationModelData | null
 }
 
 const dataUrl = (filename: string) => `${import.meta.env.BASE_URL}data/${filename}`
@@ -63,7 +64,26 @@ export const loadHistoryIndex = async (fetcher: typeof fetch = fetch): Promise<H
   }
 }
 
-export const loadHistoricalData = async (entry: HistoryEntry, formations: FormationsData, fetcher: typeof fetch = fetch): Promise<StaticData> => {
+const loadFormationModel = async (fetcher: typeof fetch): Promise<FormationModelData | null> => {
+  try {
+    const model = await loadJson<FormationModelData>('formation-model.json', fetcher)
+    validateRoot(model, 'formation-model.json')
+    if (model.method !== 'diagram-frequency' || !Number.isInteger(model.minimumObservedDays) ||
+        !Array.isArray(model.trainingDates) || !Array.isArray(model.diagrams)) {
+      throw new Error('Unsupported formation model')
+    }
+    return model
+  } catch {
+    // Predictions are optional; unknown formations simply stay without an estimate.
+    return null
+  }
+}
+
+export const loadHistoricalData = async (
+  entry: HistoryEntry,
+  shared: Pick<StaticData, 'formations' | 'formationModel'>,
+  fetcher: typeof fetch = fetch,
+): Promise<StaticData> => {
   const bundle = await loadJson<{ timetable: TimetableData; latest: LatestData }>(entry.path, fetcher)
   validateRoot(bundle, entry.path)
   validateRoot(bundle.timetable, entry.path)
@@ -73,13 +93,14 @@ export const loadHistoricalData = async (entry: HistoryEntry, formations: Format
       !Array.isArray(bundle.timetable.stations) || !Array.isArray(bundle.timetable.services) || !Array.isArray(bundle.latest.assignments)) {
     throw new Error('Invalid historical snapshot pair')
   }
-  return { ...bundle, formations, latestLoadFailed: false }
+  return { ...bundle, formations: shared.formations, formationModel: shared.formationModel, latestLoadFailed: false }
 }
 
 export const loadStaticData = async (fetcher: typeof fetch = fetch): Promise<StaticData> => {
-  const [timetable, formations] = await Promise.all([
+  const [timetable, formations, formationModel] = await Promise.all([
     loadJson<TimetableData>('timetable.json', fetcher),
     loadJson<FormationsData>('formations.json', fetcher),
+    loadFormationModel(fetcher),
   ])
   validateRoot(timetable, 'timetable.json')
   validateRoot(formations, 'formations.json')
@@ -87,8 +108,8 @@ export const loadStaticData = async (fetcher: typeof fetch = fetch): Promise<Sta
   try {
     const latest = await loadJson<LatestData>('latest.json', fetcher)
     validateRoot(latest, 'latest.json')
-    return { timetable, formations, latest, latestLoadFailed: false }
+    return { timetable, formations, latest, latestLoadFailed: false, formationModel }
   } catch {
-    return { timetable, formations, latest: null, latestLoadFailed: true }
+    return { timetable, formations, latest: null, latestLoadFailed: true, formationModel }
   }
 }

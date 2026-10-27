@@ -47,7 +47,7 @@ if [[ "$index_html" != *'./assets/'* ]]; then
   exit 1
 fi
 
-for data_file in timetable formations latest; do
+for data_file in timetable formations latest formation-model; do
   curl --fail --silent --show-error "$smoke_url/data/${data_file}.json" \
     | python3 -m json.tool >/dev/null
 done

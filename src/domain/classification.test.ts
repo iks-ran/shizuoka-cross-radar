@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type {
   FormationDefinition,
+  FormationModelData,
   LatestData,
   OperationSegment,
   Station,
@@ -10,6 +11,7 @@ import {
   classifyFormation,
   DEFAULT_RESULT_VISIBILITY,
   formationAtStation,
+  predictSegmentFormation,
   shouldDisplayRouteResult,
 } from './classification'
 
@@ -337,5 +339,121 @@ describe('formationAtStation', () => {
     expect(summary.status).toBe('unknown')
     expect(summary.plannedFamilies).toEqual(['F'])
     expect(summary.totalCarCount).toBeNull()
+  })
+})
+
+describe('archive formation predictions', () => {
+  const model = (diagrams: FormationModelData['diagrams']): FormationModelData => ({
+    schemaVersion: 1,
+    timeZone: 'Asia/Tokyo',
+    method: 'diagram-frequency',
+    minimumObservedDays: 3,
+    trainingDates: ['2026-10-24', '2026-10-25', '2026-10-26', '2026-10-27'],
+    diagrams,
+  })
+  const mixed313 = model([
+    { diagramId: 'A21', observedDays: 4, outcomes: [{ families: ['T'], days: 3 }, { families: ['S'], days: 1 }] },
+    { diagramId: 'A41', observedDays: 4, outcomes: [{ families: ['K'], days: 3 }, { families: ['W'], days: 1 }] },
+    { diagramId: 'A50', observedDays: 2, outcomes: [{ families: ['S'], days: 2 }] },
+    { diagramId: 'A701', observedDays: 4, outcomes: [{ families: ['F'], days: 4 }] },
+    { diagramId: 'A702', observedDays: 4, outcomes: [{ families: ['S'], days: 3 }, { families: ['F'], days: 1 }] },
+    { diagramId: 'A703', observedDays: 4, outcomes: [{ families: ['F'], days: 3 }, { families: ['S'], days: 1 }] },
+  ])
+  const segment = (diagramIds: string[], plannedFormations: OperationSegment['plannedFormations'] = []) => ({
+    fromStationId: 'numazu', toStationId: 'atami', diagramIds, plannedFormations,
+  })
+
+  it('estimates an unassigned diagram from its archived family frequencies', () => {
+    const summary = formationAtStation(service(segment(['A21'])), 'numazu', stations, latest([]), definitions, mixed313)
+
+    expect(summary.status).toBe('unknown')
+    expect(summary.basis).toBe('unknown')
+    expect(summary.prediction).toEqual({
+      crossSeatProbability: 0.25,
+      likelyFamilies: ['T'],
+      observedDays: 4,
+      trainingFrom: '2026-10-24',
+      trainingTo: '2026-10-27',
+    })
+  })
+
+  it('combines a diagram reported today with an estimate for its unreported partner', () => {
+    const summary = formationAtStation(
+      service(segment(['A27', 'A41'])),
+      'numazu',
+      stations,
+      latest([{ diagramId: 'A27', rawFormation: 'T12', currentUnits: ['T12'], parseStatus: 'parsed' }]),
+      definitions,
+      model([...mixed313.diagrams]),
+    )
+
+    // T + K is partial cross seating (3/4); T + W is longitudinal (1/4).
+    expect(summary.status).toBe('unknown')
+    expect(summary.rawFormation).toBe('T12')
+    expect(summary.prediction?.crossSeatProbability).toBe(0.75)
+    expect(summary.prediction?.likelyFamilies).toEqual(['T', 'K'])
+    expect(summary.prediction?.observedDays).toBe(4)
+  })
+
+  it('estimates a diagram whose current report could not be parsed', () => {
+    const prediction = predictSegmentFormation(
+      segment(['A21']),
+      latest([{ diagramId: 'A21', rawFormation: 'T?', currentUnits: [], parseStatus: 'unknown' }]),
+      definitions,
+      mixed313,
+    )
+    expect(prediction?.crossSeatProbability).toBe(0.25)
+  })
+
+  it('withholds an estimate without enough history for every unreported diagram', () => {
+    expect(predictSegmentFormation(segment(['A50']), null, definitions, mixed313)).toBeNull()
+    expect(predictSegmentFormation(segment(['A21', 'A999']), null, definitions, mixed313)).toBeNull()
+    expect(predictSegmentFormation(segment([]), null, definitions, mixed313)).toBeNull()
+    expect(predictSegmentFormation(segment(['A21']), null, definitions, model([]))).toBeNull()
+  })
+
+  it('does not turn unverified families into seating estimates', () => {
+    const reportedF = formationAtStation(
+      service(segment(['A701'])),
+      'numazu',
+      stations,
+      latest([{ diagramId: 'A701', rawFormation: 'F4', currentUnits: ['F4'], parseStatus: 'parsed' }]),
+      definitions,
+      mixed313,
+    )
+    expect(reportedF.status).toBe('unknown')
+    expect(reportedF.prediction).toBeUndefined()
+
+    const plannedF = formationAtStation(
+      service(segment(['A701'], [{ diagramId: 'A701', family: 'F' }])), 'numazu', stations, null, definitions, mixed313,
+    )
+    expect(plannedF.prediction).toBeUndefined()
+    expect(predictSegmentFormation(segment(['A703']), null, definitions, mixed313)).toBeNull()
+    // Classifiable history outweighs the unverified days and is normalized over them.
+    expect(predictSegmentFormation(segment(['A702']), null, definitions, mixed313)?.crossSeatProbability).toBe(1)
+  })
+
+  it('never attaches an estimate to a confirmed current or planned formation', () => {
+    const current = formationAtStation(
+      service(segment(['A21'])),
+      'numazu',
+      stations,
+      latest([{ diagramId: 'A21', rawFormation: 'S1', currentUnits: ['S1'], parseStatus: 'parsed' }]),
+      definitions,
+      mixed313,
+    )
+    const planned = formationAtStation(
+      service(segment(['A21'], [{ diagramId: 'A21', family: 'U' }])), 'numazu', stations, null, definitions, mixed313,
+    )
+    expect(current.status).toBe('full_convertible')
+    expect(current.prediction).toBeUndefined()
+    expect(planned.basis).toBe('planned')
+    expect(planned.prediction).toBeUndefined()
+  })
+
+  it('keeps result filtering on the confirmed status', () => {
+    const summary = formationAtStation(service(segment(['A21'])), 'numazu', stations, latest([]), definitions, mixed313)
+    expect(shouldDisplayRouteResult('first_leg', summary)).toBe(true)
+    expect(shouldDisplayRouteResult('direct', summary, null, { ...DEFAULT_RESULT_VISIBILITY, showDirectUnknown: false })).toBe(false)
   })
 })

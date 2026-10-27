@@ -13,6 +13,7 @@ The current release combines JR Central's individual-train timetable with dated 
 - Formation and seat category at the boarding station of every feeder, featured, and onward itinerary leg
 - Result filters for direct longitudinal, direct unknown, indirect unknown, and minimum featured-train ride time
 - Formation-at-boarding display and conservative cross-seat classification
+- Separately labeled cross-seat probabilities for unknown formations, learned from the 30-day archive
 - Japanese, English, and Simplified Chinese UI
 - Asia/Tokyo date, time, and freshness logic
 - Date selection across a rolling 30-day archive, automatic historical fallback, and publication estimates
@@ -38,13 +39,14 @@ The browser reads only:
 - `public/data/formations.json`
 - `public/data/latest.json`
 - `public/data/history-index.json`
+- `public/data/formation-model.json` (optional; prediction counts derived from the archive)
 - The selected `public/data/history/YYYY-MM-DD-<content-hash>.json` bundle
 
-`timetable.json` contains station calls and optional operating-diagram segments. `latest.json` maps operating diagrams to current units, and `formations.json` describes the seating layout of each verified formation family.
+`timetable.json` contains station calls and optional operating-diagram segments. `latest.json` maps operating diagrams to current units, and `formations.json` describes the seating layout of each verified formation family. `formation-model.json` counts, for each operating diagram, how many archived days it ran with each formation family.
 
 ### History and midnight availability
 
-The date selector defaults to today when available, otherwise to the most recent available date within the last 30 JST calendar days. Historical searches use the selected day's timetable and formations with the entered clock time, and are explicitly labeled as past-day reference information. They do not predict today's assignments or automatically interpret 00:30 as yesterday's overnight continuation. Manual date selection remains in place until changed or the page is reloaded.
+The date selector defaults to today when available, otherwise to the most recent available date within the last 30 JST calendar days. Historical searches use the selected day's timetable and formations with the entered clock time, and are explicitly labeled as past-day reference information. They do not stand in for today's assignments or automatically interpret 00:30 as yesterday's overnight continuation. Manual date selection remains in place until changed or the page is reloaded.
 
 The updater fetches each existing feed once, normalizes matching dates that pass the existing coverage checks, and retains a paired immutable bundle per day. The index is published after all referenced bundles are validated and written; obsolete previously indexed bundles are removed afterward. Failed reads or validation preserve published data. The browser loads only the selected bundle. Current snapshot files remain available for compatibility.
 
@@ -109,7 +111,7 @@ python3 -m scripts.update_data --source tokaido-shizuoka --operation-revision 20
 python3 -m scripts.validation
 ```
 
-Generation validates the entire payload before atomically replacing an existing output. A failed update leaves the last successful JSON untouched.
+Generation validates the entire payload before atomically replacing an existing output. A failed update leaves the last successful JSON untouched. Every archive publication also regenerates `formation-model.json`.
 
 The Actions updater passes `--allow-unavailable`. A valid response with no published formation assignments or matching timetable date leaves a validated saved real pair unchanged and reports "waiting for publication" in the run summary. The regular CLI remains strict unless this flag is supplied. Malformed responses, insufficient current-day timetable or operation-mapping coverage, exhausted network retries, and invalid saved snapshots fail the update. Empty or incomplete historical timetable dates are unavailable rather than invented.
 
@@ -146,6 +148,16 @@ For every displayed indirect train, the browser computes the earliest-arrival it
 Every itinerary leg is classified independently using the formation at that leg's boarding station. The result controls can hide confirmed longitudinal direct trains, unknown direct trains, or unknown indirect trains. A fourth optional control requires a user-entered minimum number of scheduled minutes aboard the featured indirect train; waiting and time aboard its feeder or onward trains do not count. The three visibility controls default on and the duration requirement defaults off.
 
 Verified formation metadata currently classifies K/L/S as convertible cross seating, V as semi/box cross seating, and W/T/N/U as longitudinal. Unrecognized families, including F in this MVP, stay unknown.
+
+### Predictions for unknown formations
+
+When a displayed segment is unknown because one or more of its operating diagrams has no parsed current assignment, the card can show a separately labeled estimate of the chance of cross seats. The model is a per-diagram frequency count: for each diagram it records how many archived days it ran with each formation family (for example `A22`: T 23, N 5, S 2 days). Diagrams reported today keep their reported family; each unreported diagram contributes its archived frequencies, diagrams are treated as independent, and the probability is normalized over outcomes whose seating is verified. Estimates are withheld when any unreported diagram has fewer than three observed days or when most outcomes have unverified seating.
+
+The card states the probability, the number of recorded days and their date range, and the most frequent formation, and labels the estimate as unconfirmed. At least 70% reads "likely cross seats", at most 30% reads "likely longitudinal", and anything between is "uncertain". The seat status stays unknown, so the existing unknown-seating filters and indirect-result rules apply unchanged.
+
+`publish_history` rebuilds `formation-model.json` after every archive publication, so it follows the rolling 30-day window, and `python3 -m scripts.validation` fails if the published model differs from what the published archive produces. To rebuild it manually, run `python3 -m scripts.formation_model`. No additional source is used.
+
+A rolling backtest on Git-history snapshots from September 25 to October 27, 2026 (training on the 30 preceding days and hiding each known segment's assignment) scored 87.6% cross/no-cross accuracy with a Brier score of 0.088. "Likely cross" segments actually had cross seats 92% of the time, "likely longitudinal" 7%, and "uncertain" 46%. In the September 28 – October 27 archive, about 15% of unknown segment-days (roughly ten per day) qualify. The rest are services without an operating diagram (JR East through trains, Odoriko, Sunrise, and Ogaki-depot services), which have no training data, and F (373 series) assignments, whose seating metadata is unverified.
 
 ## Real source adapters
 

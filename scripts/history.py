@@ -7,6 +7,7 @@ import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
+from .formation_model import publish_formation_model
 from .validation import ValidationError, validate_latest, validate_timetable
 
 
@@ -83,6 +84,8 @@ def publish_history(root, pairs, now, writer, observed_dates=()):
     for entry in previous["dates"]:
         if entry["path"] not in referenced:
             (root / entry["path"]).unlink(missing_ok=True)
+    # The prediction model is derived from exactly the published archive.
+    publish_formation_model(root, writer)
 
 
 def saved_pair(root, timetable_path=None, latest_path=None):
