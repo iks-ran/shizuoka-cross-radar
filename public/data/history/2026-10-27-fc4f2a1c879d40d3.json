@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-27",
-    "updatedAt": "2026-10-27T08:34:08+09:00",
+    "updatedAt": "2026-10-27T12:44:43+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -20243,7 +20243,7 @@
       {
         "id": "jrcentral-2026102710104561200010-456m",
         "trainNumber": "456M",
-        "destinationStationId": "atami",
+        "destinationStationId": "shizuoka",
         "destinationName": {
           "ja": "熱海",
           "en": "Atami",
@@ -20359,108 +20359,6 @@
           {
             "stationId": "shizuoka",
             "arrival": "12:41",
-            "departure": "12:44",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "higashishizuoka",
-            "arrival": "12:47",
-            "departure": "12:47",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "kusanagi",
-            "arrival": "12:50",
-            "departure": "12:51",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "shimizu",
-            "arrival": "12:55",
-            "departure": "12:55",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "okitsu",
-            "arrival": "13:00",
-            "departure": "13:00",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "yui",
-            "arrival": "13:05",
-            "departure": "13:05",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "kambara",
-            "arrival": "13:09",
-            "departure": "13:09",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "shinkambara",
-            "arrival": "13:12",
-            "departure": "13:12",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "fujikawa",
-            "arrival": "13:15",
-            "departure": "13:15",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "fuji",
-            "arrival": "13:19",
-            "departure": "13:20",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "yoshiwara",
-            "arrival": "13:24",
-            "departure": "13:24",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "higashitagonoura",
-            "arrival": "13:28",
-            "departure": "13:28",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "hara",
-            "arrival": "13:32",
-            "departure": "13:32",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "katahama",
-            "arrival": "13:35",
-            "departure": "13:35",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "numazu",
-            "arrival": "13:40",
-            "departure": "13:44",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "mishima",
-            "arrival": "13:49",
-            "departure": "13:51",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "kannami",
-            "arrival": "13:56",
-            "departure": "13:57",
-            "dayOffset": 0
-          },
-          {
-            "stationId": "atami",
-            "arrival": "14:05",
             "departure": null,
             "dayOffset": 0
           }
@@ -20468,7 +20366,7 @@
         "operationSegments": [
           {
             "fromStationId": "hamamatsu",
-            "toStationId": "atami",
+            "toStationId": "shizuoka",
             "diagramIds": [
               "A24",
               "A38"
@@ -24050,6 +23948,138 @@
                 "family": "U"
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "jrcentral-2026102719004561203540-456m",
+        "trainNumber": "特456M",
+        "destinationStationId": "atami",
+        "destinationName": {
+          "ja": "熱海",
+          "en": "Atami",
+          "zhCN": "Atami"
+        },
+        "direction": "eastbound",
+        "serviceDays": [
+          "all"
+        ],
+        "stops": [
+          {
+            "stationId": "shizuoka",
+            "arrival": null,
+            "departure": "12:44",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "higashishizuoka",
+            "arrival": "12:47",
+            "departure": "12:47",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "kusanagi",
+            "arrival": "12:50",
+            "departure": "12:51",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "shimizu",
+            "arrival": "12:55",
+            "departure": "12:55",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "okitsu",
+            "arrival": "13:00",
+            "departure": "13:00",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "yui",
+            "arrival": "13:05",
+            "departure": "13:05",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "kambara",
+            "arrival": "13:09",
+            "departure": "13:09",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "shinkambara",
+            "arrival": "13:12",
+            "departure": "13:12",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "fujikawa",
+            "arrival": "13:15",
+            "departure": "13:15",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "fuji",
+            "arrival": "13:19",
+            "departure": "13:20",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "yoshiwara",
+            "arrival": "13:24",
+            "departure": "13:24",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "higashitagonoura",
+            "arrival": "13:28",
+            "departure": "13:28",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "hara",
+            "arrival": "13:32",
+            "departure": "13:32",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "katahama",
+            "arrival": "13:35",
+            "departure": "13:35",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "numazu",
+            "arrival": "13:40",
+            "departure": "13:44",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "mishima",
+            "arrival": "13:49",
+            "departure": "13:51",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "kannami",
+            "arrival": "13:56",
+            "departure": "13:57",
+            "dayOffset": 0
+          },
+          {
+            "stationId": "atami",
+            "arrival": "14:05",
+            "departure": null,
+            "dayOffset": 0
+          }
+        ],
+        "operationSegments": [
+          {
+            "fromStationId": "shizuoka",
+            "toStationId": "atami",
+            "diagramIds": [],
+            "plannedFormations": []
           }
         ]
       },
@@ -53341,7 +53371,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-10-27",
-    "updatedAt": "2026-10-27T08:28:15+09:00",
+    "updatedAt": "2026-10-27T12:15:50+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -53382,6 +53412,22 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A150",
+        "rawFormation": "V9",
+        "currentUnits": [
+          "V9"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A155",
+        "rawFormation": "V1",
+        "currentUnits": [
+          "V1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A22",
         "rawFormation": "T7",
         "currentUnits": [
@@ -53402,6 +53448,22 @@
         "rawFormation": "T2",
         "currentUnits": [
           "T2"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A25",
+        "rawFormation": "T17",
+        "currentUnits": [
+          "T17"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A26",
+        "rawFormation": "T3",
+        "currentUnits": [
+          "T3"
         ],
         "parseStatus": "parsed"
       },
@@ -53455,9 +53517,9 @@
       },
       {
         "diagramId": "A36",
-        "rawFormation": "S5",
+        "rawFormation": "T16",
         "currentUnits": [
-          "S5"
+          "T16"
         ],
         "parseStatus": "parsed"
       },
@@ -53482,6 +53544,14 @@
         "rawFormation": "T13",
         "currentUnits": [
           "T13"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A40",
+        "rawFormation": "T14",
+        "currentUnits": [
+          "T14"
         ],
         "parseStatus": "parsed"
       },
@@ -53570,6 +53640,14 @@
         "rawFormation": "U16",
         "currentUnits": [
           "U16"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A65",
+        "rawFormation": "U6",
+        "currentUnits": [
+          "U6"
         ],
         "parseStatus": "parsed"
       },
@@ -53695,6 +53773,15 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A84",
+        "rawFormation": "K9/K1",
+        "currentUnits": [
+          "K9",
+          "K1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A85",
         "rawFormation": "K10/W6",
         "currentUnits": [
@@ -53709,6 +53796,24 @@
         "currentUnits": [
           "W8",
           "W3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A87",
+        "rawFormation": "W7/L4",
+        "currentUnits": [
+          "W7",
+          "L4"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A88",
+        "rawFormation": "L6/K2",
+        "currentUnits": [
+          "L6",
+          "K2"
         ],
         "parseStatus": "parsed"
       },
