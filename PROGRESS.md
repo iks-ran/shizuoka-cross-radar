@@ -2,14 +2,14 @@
 
 ## Current Verified State
 
-- Repository state: local `main` fast-forwarded from `5e27be9` to updater snapshot `0e6405e` (119 bot data commits); `RADAR-010` committed as `c7561f1` and deployed by Pages run `40468467206`; `RADAR-011` committed on top of `e89011e` and pushed with user approval on 2026-10-27
+- Repository state: local `main` fast-forwarded from `5e27be9` to updater snapshot `0e6405e` (119 bot data commits); `RADAR-010` committed as `c7561f1` and deployed by Pages run `40468467206`; `RADAR-011` committed as `77a9015` and deployed by Pages run `40470035895`
 - Standard bootstrap: `scripts/bootstrap.sh`
 - Standard start: `npm run dev`
 - Standard verification: `npm run verify`
 - Baseline result: `npm run verify` passed on 2026-10-27 with 59 Python tests, archive/data/formation-model validation, 79 frontend tests, build, and production smoke for all 30 daily bundles plus `formation-model.json`
-- Active feature: none; `RADAR-011` passed local full verification and was pushed; hosted Pages verification is the remaining check
+- Active feature: none; `RADAR-011` passed local and hosted verification
 - Current blocker: none
-- Next best action: confirm the Pages run for the `RADAR-011` push, then confirm the next updater run adds `trainType` to today's snapshot, regenerates `formation-model.json`, and Pages deploys
+- Next best action: confirm the next updater run adds `trainType` to today's snapshot, regenerates `formation-model.json`, and Pages deploys
 
 ## Verified Behavior
 
@@ -86,7 +86,7 @@
 - Finding: of the 37 train numbers F units ran in the archive, 14 are Limited Express Fujikawa (4001M–4014M) and 15 are Home Liners (4371M–4388M). JR Central's existing feed publishes `traintype`, which the adapter had discarded; today's corridor had 20 limited expresses and 15 Home Liners shown as ordinary trains, and the planner could use them as connections. The user chose labeling plus exclusion from connections.
 - Changed: verified F as `reclining` (3/3 cross-seat cars) with a new localized status and color; parsed and validated optional `trainType`; added localized extra-ticket labels for cards and itinerary legs plus a footer note; excluded surcharge trains from feeder/onward planning indexes while still allowing them as featured trains.
 - Verification: `npm run verify` passed with 59 Python tests, static/archive/model validation, 79 frontend tests, production build, and smoke for 30 bundles plus the model. Disabling the planner exclusion made its regression test fail. An isolated live refresh into `.tmp/live-refresh` (existing sources only, removed afterward) validated October 27 with 434 services: 397 local, 20 limited express, 15 Home Liner, 2 rapid. Headless Chromium against that data showed 4386M labeled "Home Liner · liner ticket required" with rotating reclining seats.
-- Publication: the user approved commit and push to `main`, which triggers the Pages workflow; `public/data/timetable.json` gains `trainType` on the next updater run.
+- Publication: with user approval, committed `77a9015` and pushed to `main`. [Pages run `40470035895`](https://github.com/iks-ran/shizuoka-cross-radar/actions/runs/40470035895) passed full verification and deployed; the live `data/formations.json` lists F as verified `reclining` with 3 cars. `public/data/timetable.json` gains `trainType` on the next updater run.
 
 ## Previous Session
 

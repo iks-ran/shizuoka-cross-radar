@@ -41,9 +41,15 @@
       "evidence": [
         {
           "date": "2026-10-27",
-          "repository_state": "working tree based on e89011e",
+          "repository_state": "77a9015",
           "command": "npm run verify",
           "result": "Passed 59 Python tests, static/archive/model validation, 79 frontend tests, production build, and preview smoke for 30 daily bundles plus the formation model. The planner-exclusion regression failed when the exclusion was disabled. An isolated live refresh from the existing sources validated 434 October 27 services with train types (397 local, 20 limited express, 15 Home Liner, 2 rapid), and headless Chromium showed a labeled Home Liner with rotating reclining seats."
+        },
+        {
+          "date": "2026-10-27",
+          "repository_state": "77a9015",
+          "command": "GitHub Actions Pages 40470035895",
+          "result": "The push-triggered Pages workflow passed change detection, full verification, build, and deployment. The deployed data/formations.json lists F as verified reclining seating with three cars."
         }
       ]
     },
