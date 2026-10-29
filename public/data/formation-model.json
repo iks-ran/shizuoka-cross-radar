@@ -728,13 +728,13 @@
     },
     {
       "diagramId": "A63",
-      "observedDays": 28,
+      "observedDays": 29,
       "outcomes": [
         {
           "families": [
             "U"
           ],
-          "days": 28
+          "days": 29
         }
       ]
     },
@@ -1212,7 +1212,7 @@
     },
     {
       "diagramId": "A89",
-      "observedDays": 29,
+      "observedDays": 30,
       "outcomes": [
         {
           "families": [
@@ -1226,7 +1226,7 @@
             "L",
             "W"
           ],
-          "days": 7
+          "days": 8
         },
         {
           "families": [
