@@ -32,7 +32,8 @@
     "2026-10-27",
     "2026-10-28",
     "2026-10-29",
-    "2026-10-30"
+    "2026-10-30",
+    "2026-10-31"
   ],
   "diagrams": [
     {
@@ -277,7 +278,7 @@
     },
     {
       "diagramId": "A31",
-      "observedDays": 28,
+      "observedDays": 29,
       "outcomes": [
         {
           "families": [
@@ -289,7 +290,7 @@
           "families": [
             "S"
           ],
-          "days": 5
+          "days": 6
         },
         {
           "families": [
@@ -685,13 +686,13 @@
     },
     {
       "diagramId": "A59",
-      "observedDays": 28,
+      "observedDays": 29,
       "outcomes": [
         {
           "families": [
             "N"
           ],
-          "days": 21
+          "days": 22
         },
         {
           "families": [
@@ -703,13 +704,13 @@
     },
     {
       "diagramId": "A61",
-      "observedDays": 18,
+      "observedDays": 19,
       "outcomes": [
         {
           "families": [
             "U"
           ],
-          "days": 18
+          "days": 19
         }
       ]
     },
@@ -871,13 +872,13 @@
     },
     {
       "diagramId": "A75",
-      "observedDays": 29,
+      "observedDays": 30,
       "outcomes": [
         {
           "families": [
             "U"
           ],
-          "days": 29
+          "days": 30
         }
       ]
     },
@@ -1047,7 +1048,7 @@
     },
     {
       "diagramId": "A85",
-      "observedDays": 29,
+      "observedDays": 30,
       "outcomes": [
         {
           "families": [
@@ -1061,7 +1062,7 @@
             "K",
             "L"
           ],
-          "days": 6
+          "days": 7
         },
         {
           "families": [
@@ -1676,13 +1677,13 @@
     },
     {
       "diagramId": "A707",
-      "observedDays": 27,
+      "observedDays": 28,
       "outcomes": [
         {
           "families": [
             "F"
           ],
-          "days": 27
+          "days": 28
         }
       ]
     },
@@ -1724,13 +1725,13 @@
     },
     {
       "diagramId": "A711",
-      "observedDays": 27,
+      "observedDays": 28,
       "outcomes": [
         {
           "families": [
             "F"
           ],
-          "days": 27
+          "days": 28
         }
       ]
     },
