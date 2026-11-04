@@ -32,7 +32,8 @@
     "2026-11-01",
     "2026-11-02",
     "2026-11-03",
-    "2026-11-04"
+    "2026-11-04",
+    "2026-11-05"
   ],
   "diagrams": [
     {
@@ -715,13 +716,20 @@
     },
     {
       "diagramId": "A62",
-      "observedDays": 29,
+      "observedDays": 30,
       "outcomes": [
         {
           "families": [
             "U"
           ],
           "days": 29
+        },
+        {
+          "families": [
+            "L",
+            "W"
+          ],
+          "days": 1
         }
       ]
     },
@@ -787,13 +795,13 @@
     },
     {
       "diagramId": "A68",
-      "observedDays": 29,
+      "observedDays": 30,
       "outcomes": [
         {
           "families": [
             "U"
           ],
-          "days": 29
+          "days": 30
         }
       ]
     },
@@ -835,13 +843,13 @@
     },
     {
       "diagramId": "A72",
-      "observedDays": 26,
+      "observedDays": 27,
       "outcomes": [
         {
           "families": [
             "U"
           ],
-          "days": 26
+          "days": 27
         }
       ]
     },
