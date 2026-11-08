@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Shizuoka Cross-Seat Radar",
-  "last_updated": "2026-10-27",
+  "last_updated": "2026-11-09",
   "rules": {
     "single_active_feature": true,
     "passing_requires_evidence": true
@@ -13,6 +13,38 @@
     "passing": "Required verification passed and evidence is recorded."
   },
   "features": [
+    {
+      "id": "RADAR-012",
+      "priority": 17,
+      "title": "Concise passenger UI",
+      "behavior": "Search and result screens show the same information with less repeated explanation: compact two-column train cards, one shared formation-freshness line, collapsible filters with a changed-filter count, short warnings, and footer notes that appear only when a visible result needs them.",
+      "depends_on": [
+        "RADAR-011"
+      ],
+      "in_scope": [
+        "Card, search panel, warning, and footer layout",
+        "Shorter localized copy in ja, en, and zh-CN"
+      ],
+      "out_of_scope": [
+        "Search, classification, prediction, or filter semantics",
+        "Data generation or sources"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "All Python and frontend tests, validation, build, and smoke pass with updated UI assertions."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-11-09",
+          "repository_state": "working tree based on 8db7d4c",
+          "command": "npm run verify",
+          "result": "Passed 59 Python tests, static/archive/model validation, 79 frontend tests, build, and preview smoke for 30 daily bundles. Headless Chromium at 390 px and 1000 px showed the compact header, search panel, collapsed filters, shared freshness line, two-column cards, and complete-route legs with seat, formation, planned, and surcharge labels intact."
+        }
+      ]
+    },
     {
       "id": "RADAR-011",
       "priority": 16,

@@ -7,7 +7,7 @@
 - Standard start: `npm run dev`
 - Standard verification: `npm run verify`
 - Baseline result: `npm run verify` passed on 2026-10-27 with 59 Python tests, archive/data/formation-model validation, 79 frontend tests, build, and production smoke for all 30 daily bundles plus `formation-model.json`
-- Active feature: none; `RADAR-011` passed local and hosted verification
+- Active feature: none; `RADAR-012` (concise UI) passed local verification and awaits commit/deploy approval
 - Current blocker: none
 - Next best action: confirm the next updater run adds `trainType` to today's snapshot, regenerates `formation-model.json`, and Pages deploys
 
@@ -29,6 +29,7 @@
 | `RADAR-008` | `npm run verify` passed with one localized Tokaido corridor identifier, no duplicate subtitle, independent-service disclosure, all 55 frontend tests, build, and smoke; headless Firefox covered mobile, desktop, direct, and four-leg indirect layouts | working tree based on `27844c7` |
 | `RADAR-009` | `npm run verify` passed with 27 Python tests, 64 frontend tests, archive validation, build, and production smoke for 15 dated bundles; Git backfill recovered August 27–September 8 | working tree based on `25fbadf`; recovered records from `origin/main` at `e24ee78` |
 | `REPO-002` | Local and hosted full verification passed with 50 Python tests, 64 frontend tests, build, and smoke for 30 bundles; Pages runs `37006529446`/`37006717296` and live updater `37006657728` passed | fix `296a510`; updater snapshot `fb21dfa` |
+| `RADAR-012` | `npm run verify` passed with 59 Python tests, 79 frontend tests, build, and smoke; headless Chromium checked 390 px and 1000 px layouts | working tree based on `8db7d4c` |
 | `RADAR-010` | `npm run verify` passed with 57 Python tests, archive-consistent model validation, 74 frontend tests, build, and smoke including `formation-model.json`; rolling Git-history backtest scored 87.6% cross/no-cross accuracy (Brier 0.088); headless Chromium showed live estimates on mobile cards and itinerary legs; Pages run `40468467206` passed and the deployed model matched the commit | `c7561f1` |
 
 ## Known Failures and Risks
@@ -76,6 +77,7 @@
 - Complete-route searches reuse Pareto-safe feeder and onward profiles across every matching train in the same query; candidates already excluded by formation settings are removed before journey planning.
 - Generated build output, caches, logs, environments, editor files, and interrupted atomic-write scratch files are ignored.
 - Final `public/data/*.json` snapshots remain tracked because the static site and scheduled updater require them.
+- User request 2026-11-09: keep the UI concise. Shared notices (freshness, stale, planned, prediction, surcharge, route caveats) appear once per page instead of on every card; footer notes appear only when a visible result uses them. Unknown, planned, predicted, stale, and historical states stay visibly labeled.
 - The passenger theme uses JR Central's published orange-and-white corporate color pairing and railway-information geometry without reproducing its logo; the interface identifies itself as an independent, unofficial guide.
 
 ## Latest Session

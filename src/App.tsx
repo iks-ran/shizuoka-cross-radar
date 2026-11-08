@@ -86,7 +86,7 @@ function PredictionNote({ prediction, locale }: { prediction: FormationPredictio
         <span className="prediction-badge">{t('predicted')}</span>
         <strong>{t(predictionMessage(prediction), { percent: predictionPercent(prediction) })}</strong>
       </p>
-      <p>
+      <p className="prediction-basis">
         {t('predictionBasis', {
           days: prediction.observedDays,
           from: prediction.trainingFrom,
@@ -103,9 +103,6 @@ interface TrainCardProps {
   summary: FormationSummary
   stations: Station[]
   locale: Locale
-  data: StaticData
-  stale: boolean
-  historical: boolean
   journey: ScheduledJourney | null
   journeyLegSummaries: FormationSummary[]
 }
@@ -115,9 +112,6 @@ function TrainCard({
   summary,
   stations,
   locale,
-  data,
-  stale,
-  historical,
   journey,
   journeyLegSummaries,
 }: TrainCardProps) {
@@ -128,42 +122,69 @@ function TrainCard({
   const segmentStartStation = stationName(stations, result.segmentStartStop.stationId, locale)
   const segmentEndStation = stationName(stations, result.segmentEndStop.stationId, locale)
   const displayedFormation = formationLabel(summary)
-  const statusText = t(seatMessage[summary.status])
   const surcharge = surchargeMessage(result.service)
+  const direct = result.matchType === 'direct'
+  const lastLeg = journey?.legs.at(-1)
 
   return (
-    <article className="train-card">
-      <div className="time-row">
-        <time className="departure-time" dateTime={result.segmentStartStop.departure ?? undefined}>
-          {stopTime(result.segmentStartStop.departure, result.segmentStartStop.dayOffset)}
-        </time>
-        <span className="time-arrow" aria-hidden="true">→</span>
-        <time className="arrival-time" dateTime={result.segmentEndStop.arrival ?? undefined}>
-          {stopTime(result.segmentEndStop.arrival, result.segmentEndStop.dayOffset)}
-        </time>
-      </div>
-
-      <span className={`route-kind route-kind-${result.matchType}`}>{t(routeMessage[result.matchType])}</span>
-
-      <div className="service-row">
-        <strong>{result.service.trainNumber}</strong>
-        <span aria-hidden="true">·</span>
-        <span>{t('forDestination', { station: trainDestination })}</span>
-        {surcharge && <span className="surcharge-badge">{t(surcharge)}</span>}
-      </div>
-
-      <p className="segment-note">
-        {t('overlapSegment', { origin: segmentStartStation, destination: segmentEndStation })}
-      </p>
-
-      {result.matchType !== 'direct' && (
-        <section className="complete-route" aria-label={t('fastestWholeRoute')}>
-          <div className="complete-route-heading">
-            <h3>{t('fastestWholeRoute')}</h3>
-            <span>{t('scheduledRoute')}</span>
+    <article className={`train-card train-card-${summary.status}`}>
+      <div className="card-main">
+        <div className="card-service">
+          <div className="time-row">
+            <time className="departure-time" dateTime={result.segmentStartStop.departure ?? undefined}>
+              {stopTime(result.segmentStartStop.departure, result.segmentStartStop.dayOffset)}
+            </time>
+            <span className="time-arrow" aria-hidden="true">→</span>
+            <time className="arrival-time" dateTime={result.segmentEndStop.arrival ?? undefined}>
+              {stopTime(result.segmentEndStop.arrival, result.segmentEndStop.dayOffset)}
+            </time>
           </div>
-          {journey ? (
+          <div className="service-row">
+            <strong>{result.service.trainNumber}</strong>
+            <span>{t('forDestination', { station: trainDestination })}</span>
+            {surcharge && <span className="surcharge-badge">{t(surcharge)}</span>}
+          </div>
+          {!direct && (
+            <p className="segment-note">
+              <span className={`route-kind route-kind-${result.matchType}`}>{t(routeMessage[result.matchType])}</span>
+              <span>{t('overlapSegment', { origin: segmentStartStation, destination: segmentEndStation })}</span>
+            </p>
+          )}
+        </div>
+
+        <div className={`seat-status status-${summary.status}`}>
+          <span className="status-mark" aria-hidden="true" />
+          <div className="seat-body">
+            <h3>{t(seatMessage[summary.status])}</h3>
+            {(summary.crossSeatCarCount !== null && summary.totalCarCount !== null) || displayedFormation !== '—' ? (
+              <p className="seat-meta">
+                {summary.crossSeatCarCount !== null && summary.totalCarCount !== null && (
+                  <span>{t('carCount', { cross: summary.crossSeatCarCount, total: summary.totalCarCount })}</span>
+                )}
+                {displayedFormation !== '—' && <strong className="formation-code">{displayedFormation}</strong>}
+                {summary.basis === 'planned' && <span className="planned-badge">{t('planned')}</span>}
+              </p>
+            ) : null}
+            {summary.prediction && <PredictionNote prediction={summary.prediction} locale={locale} />}
+          </div>
+        </div>
+      </div>
+
+      {!direct && (
+        <section className="complete-route" aria-label={t('fastestWholeRoute')}>
+          {journey && lastLeg ? (
             <>
+              <p className="journey-summary">
+                <span className="journey-title">{t('fastestWholeRoute')}</span>
+                <strong>
+                  {t('finalArrival', {
+                    station: stationName(stations, lastLeg.toStop.stationId, locale),
+                    time: stopTime(lastLeg.toStop.arrival, lastLeg.toStop.dayOffset),
+                  })}
+                </strong>
+                <span>{t('transfers', { count: journey.transferCount })}</span>
+                <span>{t('totalMinutes', { minutes: journey.durationMinutes })}</span>
+              </p>
               <ol className="journey-legs">
                 {journey.legs.map((leg, index) => {
                   const fromStation = stationName(stations, leg.fromStop.stationId, locale)
@@ -184,10 +205,8 @@ function TrainCard({
                         <strong>{fromStation} → {toStation}</strong>
                         <span>{leg.service.trainNumber}</span>
                         {featured && <span className="featured-train-badge">{t('thisTrain')}</span>}
+                        {featured && <span>{t('rideMinutes', { minutes: journey.featuredDurationMinutes })}</span>}
                         {legSurcharge && <span className="surcharge-badge">{t(legSurcharge)}</span>}
-                        {featured && (
-                          <span>{t('rideMinutes', { minutes: journey.featuredDurationMinutes })}</span>
-                        )}
                       </div>
                       <div className={`journey-seat-category journey-seat-${legStatus}`}>
                         <span className="journey-seat-mark" aria-hidden="true" />
@@ -206,58 +225,12 @@ function TrainCard({
                   )
                 })}
               </ol>
-              <p className="journey-summary">
-                <strong>
-                  {t('finalArrival', {
-                    station: stationName(stations, journey.legs.at(-1)?.toStop.stationId ?? '', locale),
-                    time: stopTime(
-                      journey.legs.at(-1)?.toStop.arrival ?? null,
-                      journey.legs.at(-1)?.toStop.dayOffset ?? 0,
-                    ),
-                  })}
-                </strong>
-                <span>{t('transfers', { count: journey.transferCount })}</span>
-                <span>{t('totalMinutes', { minutes: journey.durationMinutes })}</span>
-              </p>
             </>
           ) : (
             <p className="route-unavailable">{t('noCompleteRoute')}</p>
           )}
-          <p className="journey-disclaimer">{t('journeyDisclaimer')}</p>
         </section>
       )}
-
-      <div className={`seat-status status-${summary.status}`}>
-        <span className="status-mark" aria-hidden="true" />
-        <div>
-          <h3>{statusText}</h3>
-          <p>
-            {summary.crossSeatCarCount !== null && summary.totalCarCount !== null
-              ? t('carCount', { cross: summary.crossSeatCarCount, total: summary.totalCarCount })
-              : t('unknown')}
-          </p>
-          {summary.prediction && <PredictionNote prediction={summary.prediction} locale={locale} />}
-        </div>
-      </div>
-
-      <div className="formation-row">
-        <span>{t('formation', { station: segmentStartStation })}</span>
-        <div className="formation-value">
-          <strong>{displayedFormation}</strong>
-          {summary.basis === 'planned' && <span className="planned-badge">{t('planned')}</span>}
-        </div>
-      </div>
-
-      <div className="freshness-row">
-        <span>
-          {summary.basis === 'planned'
-            ? t('plannedWarning')
-            : t('updated', { time: data.latest ? formatUpdatedAt(data.latest.updatedAt, intlLocale(locale)) : '—' })}
-        </span>
-        {data.latest?.source.isMock && <span className="mini-badge">{t('fixture')}</span>}
-        {historical && summary.basis !== 'planned' && <span className="mini-badge">{t('historicalObservation')}</span>}
-        {summary.basis !== 'planned' && stale && <span className="stale-badge">{t('stale')}</span>}
-      </div>
     </article>
   )
 }
@@ -472,6 +445,33 @@ export default function App() {
   }
 
   const isDemo = data.timetable.isFixture || data.timetable.source.isMock || data.latest?.source.isMock
+  const changedFilters = (Object.keys(DEFAULT_RESULT_VISIBILITY) as (keyof ResultVisibilitySettings)[])
+    .filter((key) => key !== 'minimumIndirectMinutes' && resultVisibility[key] !== DEFAULT_RESULT_VISIBILITY[key])
+    .length
+  const visibleResults = results.slice(0, visibleCount)
+  const showsPlanned = visibleResults.some(({ summary, journeyLegSummaries }) =>
+    summary.basis === 'planned' || journeyLegSummaries.some((leg) => leg.basis === 'planned'))
+  const showsIndirect = visibleResults.some(({ result }) => result.matchType !== 'direct')
+  const showsPrediction = visibleResults.some(({ summary, journeyLegSummaries }) =>
+    summary.prediction || journeyLegSummaries.some((leg) => leg.prediction))
+  const showsSurcharge = visibleResults.some(({ result, journey }) =>
+    surchargeMessage(result.service) || journey?.legs.some((leg) => surchargeMessage(leg.service)))
+  const filterToggle = (key: Exclude<keyof ResultVisibilitySettings, 'minimumIndirectMinutes'>, label: MessageKey) => (
+    <label className="filter-option">
+      <input
+        type="checkbox"
+        checked={resultVisibility[key]}
+        onChange={(event) => setResultVisibility((current) => ({ ...current, [key]: event.target.checked }))}
+      />
+      <span>{t(label)}</span>
+    </label>
+  )
+  const stationOptions = data.timetable.stations.map((station) => (
+    <option key={station.id} value={station.id}>
+      {stationName(data.timetable.stations, station.id, locale)}
+    </option>
+  ))
+
   return (
     <div className="page">
       <header className="site-header">
@@ -505,36 +505,17 @@ export default function App() {
       <main className="shell">
         {isDemo && (
           <aside className="demo-banner" role="note">
-            <span className="demo-icon" aria-hidden="true">!</span>
-            <div>
-              <strong>{t('demoTitle')}</strong>
-              <p>{t('demoBody')}</p>
-            </div>
+            <strong>{t('demoTitle')}</strong>
+            <span>{t('demoBody')}</span>
           </aside>
         )}
 
         <section className="search-panel" aria-label={t('upcoming')}>
-          <div className="history-date">
-            <label htmlFor="schedule-date">{t('serviceDate')}</label>
-            <select id="schedule-date" aria-describedby={!baseData?.timetable.isFixture ? 'history-coverage' : undefined} value={selectedDate} onChange={(event) => setChosenDate(event.target.value)}>
-              <option value={today}>{today} · {t('today')}</option>
-              {calendarDates.slice(1).map((day) => (
-                <option key={day} value={day} disabled={!availableDates.includes(day)}>
-                  {day}{availableDates.includes(day) ? '' : ` · ${t('historyMissing')}`}
-                </option>
-              ))}
-            </select>
-            {!baseData?.timetable.isFixture && <small id="history-coverage">{t('historyCoverage', { count: availableDates.length })}</small>}
-          </div>
           <div className="station-fields">
             <label>
               <span>{t('departureStation')}</span>
               <select value={origin} onChange={(event) => setOrigin(event.target.value)}>
-                {data.timetable.stations.map((station) => (
-                  <option key={station.id} value={station.id}>
-                    {stationName(data.timetable.stations, station.id, locale)}
-                  </option>
-                ))}
+                {stationOptions}
               </select>
             </label>
 
@@ -545,98 +526,81 @@ export default function App() {
             <label>
               <span>{t('destinationStation')}</span>
               <select value={destination} onChange={(event) => setDestination(event.target.value)}>
-                {data.timetable.stations.map((station) => (
-                  <option key={station.id} value={station.id}>
-                    {stationName(data.timetable.stations, station.id, locale)}
-                  </option>
-                ))}
+                {stationOptions}
               </select>
             </label>
           </div>
 
-          <div className="time-field">
-            <label>
-              <span>{t('departureTime')}</span>
-              <input type="time" value={departureTime} onChange={(event) => setDepartureTime(event.target.value)} />
-            </label>
-            <button type="button" onClick={() => setDepartureTime(getTokyoTime())}>{t('now')}</button>
+          <div className="when-fields">
+            <div className="history-date">
+              <div className="history-date-label">
+                <label htmlFor="schedule-date"><span>{t('serviceDate')}</span></label>
+                {!baseData?.timetable.isFixture && (
+                  <small id="history-coverage">{t('historyCoverage', { count: availableDates.length })}</small>
+                )}
+              </div>
+              <select id="schedule-date" aria-describedby={!baseData?.timetable.isFixture ? 'history-coverage' : undefined} value={selectedDate} onChange={(event) => setChosenDate(event.target.value)}>
+                <option value={today}>{today} · {t('today')}</option>
+                {calendarDates.slice(1).map((day) => (
+                  <option key={day} value={day} disabled={!availableDates.includes(day)}>
+                    {day}{availableDates.includes(day) ? '' : ` · ${t('historyMissing')}`}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="time-field">
+              <label>
+                <span>{t('departureTime')}</span>
+                <input type="time" value={departureTime} onChange={(event) => setDepartureTime(event.target.value)} />
+              </label>
+              <button type="button" onClick={() => setDepartureTime(getTokyoTime())}>{t('now')}</button>
+            </div>
           </div>
 
-          <fieldset className="result-filters">
-            <legend>{t('resultFilters')}</legend>
-            <p>{t('resultFiltersHint')}</p>
+          <details className="result-filters">
+            <summary>
+              {t('resultFilters')}
+              {changedFilters > 0 && <span className="filter-count">{changedFilters}</span>}
+            </summary>
             <div className="filter-grid">
-              <label className="filter-option">
-                <input
-                  type="checkbox"
-                  checked={resultVisibility.showDirectLongitudinal}
-                  onChange={(event) => setResultVisibility((current) => ({
-                    ...current,
-                    showDirectLongitudinal: event.target.checked,
-                  }))}
-                />
-                <span>{t('showDirectLongitudinal')}</span>
-              </label>
-              <label className="filter-option">
-                <input
-                  type="checkbox"
-                  checked={resultVisibility.showDirectUnknown}
-                  onChange={(event) => setResultVisibility((current) => ({
-                    ...current,
-                    showDirectUnknown: event.target.checked,
-                  }))}
-                />
-                <span>{t('showDirectUnknown')}</span>
-              </label>
-              <label className="filter-option">
-                <input
-                  type="checkbox"
-                  checked={resultVisibility.showIndirectUnknown}
-                  onChange={(event) => setResultVisibility((current) => ({
-                    ...current,
-                    showIndirectUnknown: event.target.checked,
-                  }))}
-                />
-                <span>{t('showIndirectUnknown')}</span>
-              </label>
-              <label className="filter-option">
-                <input
-                  type="checkbox"
-                  checked={resultVisibility.requireMinimumIndirectMinutes}
-                  onChange={(event) => setResultVisibility((current) => ({
-                    ...current,
-                    requireMinimumIndirectMinutes: event.target.checked,
-                  }))}
-                />
-                <span>{t('requireMinimumIndirectRide')}</span>
-              </label>
+              {filterToggle('showDirectLongitudinal', 'showDirectLongitudinal')}
+              {filterToggle('showDirectUnknown', 'showDirectUnknown')}
+              {filterToggle('showIndirectUnknown', 'showIndirectUnknown')}
+              <div className="minimum-ride">
+                {filterToggle('requireMinimumIndirectMinutes', 'requireMinimumIndirectRide')}
+                <label className="minimum-ride-input">
+                  <input
+                    type="number"
+                    min="0"
+                    step="1"
+                    aria-label={t('minimumRideMinutes')}
+                    value={resultVisibility.minimumIndirectMinutes}
+                    disabled={!resultVisibility.requireMinimumIndirectMinutes}
+                    onChange={(event) => setResultVisibility((current) => ({
+                      ...current,
+                      minimumIndirectMinutes: Math.max(0, Math.floor(Number(event.target.value) || 0)),
+                    }))}
+                  />
+                  <span>{t('minutesShort')}</span>
+                </label>
+              </div>
             </div>
-            <label className="minimum-ride-input">
-              <span>{t('minimumRideMinutes')}</span>
-              <input
-                type="number"
-                min="0"
-                step="1"
-                value={resultVisibility.minimumIndirectMinutes}
-                disabled={!resultVisibility.requireMinimumIndirectMinutes}
-                onChange={(event) => setResultVisibility((current) => ({
-                  ...current,
-                  minimumIndirectMinutes: Math.max(0, Math.floor(Number(event.target.value) || 0)),
-                }))}
-              />
-              <span>{t('minutesShort')}</span>
-            </label>
-          </fieldset>
+          </details>
         </section>
 
         {data.latestLoadFailed && <p className="inline-warning" role="alert">{t('latestError')}</p>}
-        {todayUnavailable && <aside className="inline-warning" role="status"><p>{t('timetableStale')}</p><p>{availability}</p></aside>}
-        {historical && <aside className="inline-warning" role="note">{t('historyBanner', { date: selectedDate })}</aside>}
+        {todayUnavailable && <p className="inline-warning" role="status">{t('timetableStale')} {availability}</p>}
+        {historical && <p className="inline-warning inline-history" role="note">{t('historyBanner', { date: selectedDate })}</p>}
 
         <section className="results" aria-labelledby="results-title" aria-live="polite">
           <div className="results-heading">
             <h2 id="results-title">{t(historical ? 'historicalTrains' : 'upcoming')}</h2>
-            {!sameStation && <span>{t('count', { count: results.length })}</span>}
+            {!sameStation && <span className="result-count">{t('count', { count: results.length })}</span>}
+            <span className="freshness">
+              {data.latest && t('updated', { time: formatUpdatedAt(data.latest.updatedAt, intlLocale(locale)) })}
+              {data.latest?.source.isMock && <span className="mini-badge">{t('fixture')}</span>}
+              {stale && <span className="stale-badge">{t('stale')}</span>}
+            </span>
           </div>
 
           {historyError ? (
@@ -651,16 +615,13 @@ export default function App() {
             <div className="empty-state">{t('noTrains')}</div>
           ) : (
             <div className="train-list">
-              {results.slice(0, visibleCount).map(({ result, summary, journey, journeyLegSummaries }) => (
+              {visibleResults.map(({ result, summary, journey, journeyLegSummaries }) => (
                 <TrainCard
                   key={result.service.id}
                   result={result}
                   summary={summary}
                   stations={data.timetable.stations}
                   locale={locale}
-                  data={data}
-                  stale={stale}
-                  historical={historical}
                   journey={journey}
                   journeyLegSummaries={journeyLegSummaries}
                 />
@@ -677,29 +638,28 @@ export default function App() {
 
         <footer className="site-footer">
           <p className="independent-note">{t('independentNotice')}</p>
-          <p>{t('firstLegNote')}</p>
-          {data.formationModel && !data.timetable.isFixture && <p>{t('predictionNote')}</p>}
-          {data.timetable.services.some((service) => service.trainType) && <p>{t('surchargeNote')}</p>}
-          <p>
+          <ul className="footer-notes">
+            {showsIndirect && <li>{t('firstLegNote')}</li>}
+            {showsPlanned && <li>{t('plannedWarning')}</li>}
+            {showsPrediction && <li>{t('predictionNote')}</li>}
+            {showsSurcharge && <li>{t('surchargeNote')}</li>}
+          </ul>
+          <p className="sources">
             {data.timetable.source.url ? (
               <a href={data.timetable.source.url} target="_blank" rel="noreferrer">
                 {t('timetableSource', { source: data.timetable.source.label })}
               </a>
             ) : (
-              t('timetableSource', { source: data.timetable.source.label })
+              <span>{t('timetableSource', { source: data.timetable.source.label })}</span>
             )}
+            {data.latest && (data.latest.source.url ? (
+              <a href={data.latest.source.url} target="_blank" rel="noreferrer">
+                {t('formationSource', { source: data.latest.source.label })}
+              </a>
+            ) : (
+              <span>{t('formationSource', { source: data.latest.source.label })}</span>
+            ))}
           </p>
-          {data.latest && (
-            <p>
-              {data.latest.source.url ? (
-                <a href={data.latest.source.url} target="_blank" rel="noreferrer">
-                  {t('formationSource', { source: data.latest.source.label })}
-                </a>
-              ) : (
-                t('formationSource', { source: data.latest.source.label })
-              )}
-            </p>
-          )}
         </footer>
       </main>
     </div>
