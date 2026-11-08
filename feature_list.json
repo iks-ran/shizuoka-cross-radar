@@ -39,9 +39,15 @@
       "evidence": [
         {
           "date": "2026-11-09",
-          "repository_state": "working tree based on 8db7d4c",
+          "repository_state": "2a5c550",
           "command": "npm run verify",
-          "result": "Passed 59 Python tests, static/archive/model validation, 79 frontend tests, build, and preview smoke for 30 daily bundles. Headless Chromium at 390 px and 1000 px showed the compact header, search panel, collapsed filters, shared freshness line, two-column cards, and complete-route legs with seat, formation, planned, and surcharge labels intact."
+          "result": "After rebasing onto updater snapshot f336500: passed 59 Python tests, static/archive/model validation, 79 frontend tests, build, and preview smoke for 30 daily bundles. Headless Chromium at 390 px and 1000 px showed the compact header, search panel, collapsed filters, shared freshness line, two-column cards, and complete-route legs with seat, formation, planned, and surcharge labels intact."
+        },
+        {
+          "date": "2026-11-09",
+          "repository_state": "2a5c550",
+          "command": "GitHub Actions Pages 42499074035",
+          "result": "The push-triggered Pages workflow passed full verification, build, and deployment. The deployed page loads assets/index-I7qoihcs.js, matching the local build, and it contains the concise localized copy."
         }
       ]
     },
