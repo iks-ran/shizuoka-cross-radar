@@ -5,7 +5,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-11-08",
-    "updatedAt": "2026-11-08T15:28:25+09:00",
+    "updatedAt": "2026-11-08T22:47:14+09:00",
     "source": {
       "id": "jr-central",
       "label": "JR Central conventional-line train information",
@@ -53786,7 +53786,7 @@
     "schemaVersion": 1,
     "timeZone": "Asia/Tokyo",
     "serviceDate": "2026-11-08",
-    "updatedAt": "2026-11-08T15:00:01+09:00",
+    "updatedAt": "2026-11-08T22:00:02+09:00",
     "source": {
       "id": "tokaido-shizuoka",
       "label": "Tokaido Line Shizuoka Area Operation Information",
@@ -53794,6 +53794,14 @@
       "isMock": false
     },
     "assignments": [
+      {
+        "diagramId": "A150",
+        "rawFormation": "V13→L5",
+        "currentUnits": [
+          "L5"
+        ],
+        "parseStatus": "parsed"
+      },
       {
         "diagramId": "A21",
         "rawFormation": "T8",
@@ -53835,6 +53843,14 @@
         "parseStatus": "parsed"
       },
       {
+        "diagramId": "A26",
+        "rawFormation": "T5",
+        "currentUnits": [
+          "T5"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
         "diagramId": "A27",
         "rawFormation": "T16",
         "currentUnits": [
@@ -53847,6 +53863,14 @@
         "rawFormation": "S3",
         "currentUnits": [
           "S3"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A29",
+        "rawFormation": "N10",
+        "currentUnits": [
+          "N10"
         ],
         "parseStatus": "parsed"
       },
@@ -53911,6 +53935,14 @@
         "rawFormation": "S1",
         "currentUnits": [
           "S1"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A40",
+        "rawFormation": "T10",
+        "currentUnits": [
+          "T10"
         ],
         "parseStatus": "parsed"
       },
@@ -54071,6 +54103,14 @@
         "rawFormation": "U8",
         "currentUnits": [
           "U8"
+        ],
+        "parseStatus": "parsed"
+      },
+      {
+        "diagramId": "A75",
+        "rawFormation": "U13",
+        "currentUnits": [
+          "U13"
         ],
         "parseStatus": "parsed"
       },
