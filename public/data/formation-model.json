@@ -278,13 +278,13 @@
     },
     {
       "diagramId": "A31",
-      "observedDays": 29,
+      "observedDays": 30,
       "outcomes": [
         {
           "families": [
             "T"
           ],
-          "days": 20
+          "days": 21
         },
         {
           "families": [
@@ -686,7 +686,7 @@
     },
     {
       "diagramId": "A59",
-      "observedDays": 28,
+      "observedDays": 29,
       "outcomes": [
         {
           "families": [
@@ -698,7 +698,7 @@
           "families": [
             "S"
           ],
-          "days": 6
+          "days": 7
         }
       ]
     },
@@ -863,13 +863,13 @@
     },
     {
       "diagramId": "A72",
-      "observedDays": 23,
+      "observedDays": 24,
       "outcomes": [
         {
           "families": [
             "U"
           ],
-          "days": 23
+          "days": 24
         }
       ]
     },
@@ -899,13 +899,13 @@
     },
     {
       "diagramId": "A75",
-      "observedDays": 29,
+      "observedDays": 30,
       "outcomes": [
         {
           "families": [
             "U"
           ],
-          "days": 29
+          "days": 30
         }
       ]
     },
@@ -924,7 +924,7 @@
     },
     {
       "diagramId": "A82",
-      "observedDays": 28,
+      "observedDays": 29,
       "outcomes": [
         {
           "families": [
@@ -952,7 +952,7 @@
             "L",
             "W"
           ],
-          "days": 3
+          "days": 4
         },
         {
           "families": [
@@ -1191,14 +1191,14 @@
     },
     {
       "diagramId": "A88",
-      "observedDays": 28,
+      "observedDays": 29,
       "outcomes": [
         {
           "families": [
             "K",
             "W"
           ],
-          "days": 9
+          "days": 10
         },
         {
           "families": [
@@ -1517,13 +1517,13 @@
     },
     {
       "diagramId": "A150",
-      "observedDays": 25,
+      "observedDays": 26,
       "outcomes": [
         {
           "families": [
             "V"
           ],
-          "days": 21
+          "days": 22
         },
         {
           "families": [
@@ -1661,13 +1661,13 @@
     },
     {
       "diagramId": "A704",
-      "observedDays": 20,
+      "observedDays": 21,
       "outcomes": [
         {
           "families": [
             "F"
           ],
-          "days": 20
+          "days": 21
         }
       ]
     },
