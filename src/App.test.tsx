@@ -50,18 +50,18 @@ describe('App', () => {
 
   it('renders the disclosed fixture experience and search controls', async () => {
     render(<App />)
-    expect(await screen.findByText('Demo data')).toBeInTheDocument()
+    expect(await screen.findByText('Sample data')).toBeInTheDocument()
     expect(screen.getByText('Tokaido Main Line')).toBeInTheDocument()
     expect(screen.getByText('Toyohashi — Atami')).toBeInTheDocument()
     expect(screen.queryByText('Toyohashi ↔ Atami · Tokaido Main Line')).not.toBeInTheDocument()
-    expect(screen.getByText('Unofficial guide · not affiliated with JR Central')).toBeInTheDocument()
+    expect(screen.getByText('Unofficial site, not affiliated with JR Central')).toBeInTheDocument()
     expect(screen.getByLabelText('From')).toHaveValue('hamamatsu')
     expect(screen.getByLabelText('To')).toHaveValue('shizuoka')
-    expect(screen.getByLabelText('Direct, no cross seats')).toBeChecked()
-    expect(screen.getByLabelText('Direct, unknown seating')).toBeChecked()
-    expect(screen.getByLabelText('Indirect, unknown seating')).toBeChecked()
-    expect(screen.getByLabelText('Min. time on featured train')).not.toBeChecked()
-    expect(screen.getByText('No matching trains after this time.')).toBeInTheDocument()
+    expect(screen.getByLabelText('Direct trains with no cross seats')).toBeChecked()
+    expect(screen.getByLabelText('Direct trains, seats unknown')).toBeChecked()
+    expect(screen.getByLabelText('Part-way trains, seats unknown')).toBeChecked()
+    expect(screen.getByLabelText('Part-way trains: at least')).not.toBeChecked()
+    expect(screen.getByText('No trains match after this time.')).toBeInTheDocument()
   })
 
   it('does not label aligned live snapshots as fixture data', async () => {
@@ -104,7 +104,7 @@ describe('App', () => {
 
     render(<App />)
     expect(await screen.findByLabelText('From')).toBeInTheDocument()
-    expect(screen.queryByText('Demo data')).not.toBeInTheDocument()
+    expect(screen.queryByText('Sample data')).not.toBeInTheDocument()
     expect(screen.getByText(/Timetable: JR Central/)).toBeInTheDocument()
     expect(screen.getByText('Formations: Tokaido Shizuoka')).toBeInTheDocument()
   })
@@ -194,33 +194,33 @@ describe('App', () => {
     )
 
     render(<App />)
-    fireEvent.change(await screen.findByLabelText('Depart after (JST)'), { target: { value: '00:00' } })
+    fireEvent.change(await screen.findByLabelText('Leaving after (JST)'), { target: { value: '00:00' } })
 
     const routeKind = await screen.findByText('Mid-route')
     expect(routeKind.closest('.segment-note')).toHaveTextContent('Kakegawa → Shizuoka')
     const trainCard = routeKind.closest('article')
     expect(trainCard).not.toBeNull()
-    expect(within(trainCard!).getByText('Fastest complete route')).toBeInTheDocument()
+    expect(within(trainCard!).getByText('Fastest full route')).toBeInTheDocument()
     expect(within(trainCard!).getByText('90M')).toBeInTheDocument()
     expect(within(trainCard!).getAllByText('100M')).toHaveLength(2)
     expect(within(trainCard!).getByText('45 min on this train')).toBeInTheDocument()
-    expect(within(trainCard!).getByText('Arrive Shizuoka at 10:45')).toBeInTheDocument()
-    expect(within(trainCard!).getByText('Transfers: 1')).toBeInTheDocument()
+    expect(within(trainCard!).getByText('Arrives Shizuoka 10:45')).toBeInTheDocument()
+    expect(within(trainCard!).getByText('Changes: 1')).toBeInTheDocument()
     const journeyLegs = trainCard!.querySelector<HTMLElement>('.journey-legs')
     expect(journeyLegs).not.toBeNull()
-    expect(within(journeyLegs!).getByText('All longitudinal seating')).toBeInTheDocument()
+    expect(within(journeyLegs!).getByText('Longitudinal seats only')).toBeInTheDocument()
     expect(within(journeyLegs!).getByText('U1')).toBeInTheDocument()
-    expect(within(journeyLegs!).getByText('Full convertible cross seating')).toBeInTheDocument()
+    expect(within(journeyLegs!).getByText('Convertible cross seats, all cars')).toBeInTheDocument()
     expect(within(journeyLegs!).getByText('K1')).toBeInTheDocument()
-    expect(screen.getByText(/Scheduled times only; platform walks, delays and connections are not guaranteed\./)).toBeInTheDocument()
+    expect(screen.getByText(/don’t allow for walking between platforms or delays\./)).toBeInTheDocument()
 
-    const minimumToggle = screen.getByLabelText('Min. time on featured train')
-    const minimumInput = screen.getByRole('spinbutton', { name: /Minimum featured-train time/ })
+    const minimumToggle = screen.getByLabelText('Part-way trains: at least')
+    const minimumInput = screen.getByRole('spinbutton', { name: /Minimum minutes on a part-way train/ })
     expect(minimumInput).toBeDisabled()
     fireEvent.click(minimumToggle)
     expect(minimumInput).toBeEnabled()
     fireEvent.change(minimumInput, { target: { value: '50' } })
-    expect(await screen.findByText('No matching trains after this time.')).toBeInTheDocument()
+    expect(await screen.findByText('No trains match after this time.')).toBeInTheDocument()
     expect(screen.queryByText('100M')).not.toBeInTheDocument()
   })
 
@@ -264,9 +264,9 @@ describe('App', () => {
     )
 
     render(<App />)
-    fireEvent.change(await screen.findByLabelText('Depart after (JST)'), { target: { value: '00:00' } })
+    fireEvent.change(await screen.findByLabelText('Leaving after (JST)'), { target: { value: '00:00' } })
 
-    expect(await screen.findByText('No matching trains after this time.')).toBeInTheDocument()
+    expect(await screen.findByText('No trains match after this time.')).toBeInTheDocument()
     expect(screen.queryByText('300M')).not.toBeInTheDocument()
   })
 
@@ -329,9 +329,9 @@ describe('App', () => {
     )
 
     render(<App />)
-    fireEvent.change(await screen.findByLabelText('Depart after (JST)'), { target: { value: '00:00' } })
+    fireEvent.change(await screen.findByLabelText('Leaving after (JST)'), { target: { value: '00:00' } })
 
-    expect(await screen.findByText('No matching trains after this time.')).toBeInTheDocument()
+    expect(await screen.findByText('No trains match after this time.')).toBeInTheDocument()
     expect(screen.queryByText('200M')).not.toBeInTheDocument()
   })
 
@@ -399,18 +399,18 @@ describe('App', () => {
     )
 
     render(<App />)
-    fireEvent.change(await screen.findByLabelText('Depart after (JST)'), { target: { value: '00:00' } })
+    fireEvent.change(await screen.findByLabelText('Leaving after (JST)'), { target: { value: '00:00' } })
 
-    expect(await screen.findByText('All longitudinal seating')).toBeInTheDocument()
+    expect(await screen.findByText('Longitudinal seats only')).toBeInTheDocument()
     expect(screen.getByText('U')).toBeInTheDocument()
     expect(screen.getByText('Planned')).toBeInTheDocument()
-    expect(screen.getByText('Planned: scheduled formation; substitutions may not be reflected.')).toBeInTheDocument()
+    expect(screen.getByText('Planned: the formation in the timetable. Last-minute swaps may not show up.')).toBeInTheDocument()
     expect(
-      screen.getByText('Current formations unavailable; showing verified planned formations where possible.'),
+      screen.getByText('Couldn’t get today’s formations. Showing verified planned ones instead.'),
     ).toBeInTheDocument()
 
-    fireEvent.click(screen.getByLabelText('Direct, no cross seats'))
-    expect(await screen.findByText('No matching trains after this time.')).toBeInTheDocument()
+    fireEvent.click(screen.getByLabelText('Direct trains with no cross seats'))
+    expect(await screen.findByText('No trains match after this time.')).toBeInTheDocument()
     expect(screen.getByText('Filters').querySelector('.filter-count')).toHaveTextContent('1')
     expect(screen.queryByText('1420M')).not.toBeInTheDocument()
   })

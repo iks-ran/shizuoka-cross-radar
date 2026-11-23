@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Shizuoka Cross-Seat Radar",
-  "last_updated": "2026-11-09",
+  "last_updated": "2026-11-24",
   "rules": {
     "single_active_feature": true,
     "passing_requires_evidence": true
@@ -13,6 +13,40 @@
     "passing": "Required verification passed and evidence is recorded."
   },
   "features": [
+    {
+      "id": "RADAR-013",
+      "priority": 18,
+      "title": "Natural passenger copy",
+      "behavior": "All ja, en, and zh-CN interface strings read as plain, natural passenger language instead of stiff machine-translated phrasing, with the same meaning, disclosures, and placeholders.",
+      "depends_on": [
+        "RADAR-012"
+      ],
+      "in_scope": [
+        "Rewording of src/i18n.ts messages in ja, en, and zh-CN",
+        "Test assertions and README labels that quote the copy"
+      ],
+      "out_of_scope": [
+        "Search, classification, prediction, or filter semantics",
+        "Layout or styling",
+        "Source-provided train-type names in public/data"
+      ],
+      "status": "passing",
+      "verification": [
+        {
+          "command": "npm run verify",
+          "expected": "All Python and frontend tests, validation, build, and smoke pass with updated copy assertions."
+        }
+      ],
+      "evidence": [
+        {
+          "date": "2026-11-24",
+          "repository_state": "working tree based on a8214ac",
+          "command": "npm run verify",
+          "result": "Passed 59 Python tests, static/archive/model validation, 79 frontend tests with updated copy assertions, build, and preview smoke. Planned, unknown, estimate, unofficial-service, and verified-planned-fallback disclosures were kept in every locale. Headless browser screenshots were not possible in this sandbox; the filter rows were checked to wrap via flex-wrap."
+        }
+      ],
+      "notes": "zh-CN now uses 横排座椅 / 长条座椅 for cross / longitudinal seating and 交路 for operating diagrams."
+    },
     {
       "id": "RADAR-012",
       "priority": 17,
