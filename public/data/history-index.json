@@ -3,6 +3,11 @@
   "timeZone": "Asia/Tokyo",
   "dates": [
     {
+      "serviceDate": "2026-11-26",
+      "path": "history/2026-11-26-96bc4038cacb1a14.json",
+      "firstObservedAt": "2026-11-26T06:54:38.014794+09:00"
+    },
+    {
       "serviceDate": "2026-11-25",
       "path": "history/2026-11-25-85872fc832b7e7a5.json",
       "firstObservedAt": "2026-11-25T11:56:02.870774+09:00"
@@ -146,11 +151,6 @@
       "serviceDate": "2026-10-28",
       "path": "history/2026-10-28-a58c656d82c430fd.json",
       "firstObservedAt": "2026-10-28T08:55:01.891561+09:00"
-    },
-    {
-      "serviceDate": "2026-10-27",
-      "path": "history/2026-10-27-050cb5ebc6c49f2e.json",
-      "firstObservedAt": "2026-10-27T08:34:36.256007+09:00"
     }
   ]
 }
